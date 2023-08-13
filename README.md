@@ -53,7 +53,7 @@ Mission Statement: "Southville Sporting Club's mission is to unite vintage athle
 
 ### Wireframes
 
-![Add Initial Mockup](static/img/readme/initial-mockup.png)
+![Add Initial Mockup](media/readme/initial-mockup.png)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [issues-shield]: https://img.shields.io/badge/ISSUES-2%20OPEN-yellow?style=for-the-badge&logo=closed
