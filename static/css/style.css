@@ -1,14 +1,84 @@
 /* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
 
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
-	font-size: inherit;
+  font-size: inherit;
 }
+
+pre {
+  font-family: Helvetica, sans-serif, monospace;
+}
+
+code,
+kbd,
+samp {
+  font-family: Helvetica, sans-serif, monospace;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: Helvetica, sans-serif, monospace;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: Helvetica, sans-serif;
+}
+
+html {
+  line-height: 1.5;
+  font-family: Helvetica, sans-serif;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.hero-image {
+  background-image: url('../../media/hero-image-maybe.png');
+}
+
+nav ul a {
+  padding: 0 10px;
+}
+
+/* Top Banner */
+
+.marquee {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100vw;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.marquee>* {
+  -webkit-animation: marquee 30s linear infinite both alternate;
+  animation: marquee 30s linear infinite both alternate;
+}
+
+@-webkit-keyframes marquee {
+  to {
+    transform: translateX(calc(50vw - 50%));
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc(50vw - 50%));
+  }
+}
+
+/* Media Queries */
