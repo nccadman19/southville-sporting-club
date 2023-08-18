@@ -1,10 +1,58 @@
 /* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
+/* Top Banner */
+
+.marquee {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100vw;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.marquee>* {
+  -webkit-animation: marquee 30s linear infinite both alternate;
+  animation: marquee 30s linear infinite both alternate;
+}
+
+@-webkit-keyframes marquee {
+  to {
+    transform: translateX(calc(50vw - 50%));
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc(50vw - 50%));
+  }
+}
+
+nav,
+nav .nav-wrapper i,
+nav a.sidenav-trigger,
+nav a.sidenav-trigger i {
+  height: 70px;
+  line-height: 69px;
+}
+
+.section.no-pad-bot {
+  padding: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* Navbar */
+
+nav ul a {
+  padding: 0 10px;
+}
+
+.mobile-logo {
+  display: none;
+}
 
 .icon-block {
   padding: 0 15px;
@@ -47,46 +95,40 @@ html {
   color: rgba(0, 0, 0, 0.87);
 }
 
+/* ... Homepage ... */
 .hero-image {
-  background: url('../../media/hero-image-maybe.png') no-repeat center center fixed;
+  background: url('../../media/hero-image.png') no-repeat center center fixed;
   background-size: cover;
-
 }
 
-nav ul a {
-  padding: 0 10px;
+.section.no-pad-bot {
+  padding: 3rem;
+  height: 35rem;
 }
 
-/* Top Banner */
-
-.marquee {
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100vw;
-  padding: 5px;
-  background-color: black;
-  color: white;
-  font-weight: lighter;
-  font-size: 20px;
+.grey.lighten-3 {
+  color: black;
 }
 
-.marquee>* {
-  -webkit-animation: marquee 30s linear infinite both alternate;
-  animation: marquee 30s linear infinite both alternate;
-}
-
-@-webkit-keyframes marquee {
-  to {
-    transform: translateX(calc(50vw - 50%));
-  }
-}
-
-@keyframes marquee {
-  to {
-    transform: translateX(calc(50vw - 50%));
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .background-images {
+    grid-template-columns: 1fr;
   }
 }
 
 /* Media Queries */
+/* Navbar */
+@media (max-width: 860px) {
+  .brand-logo.center {
+    display: none;
+    padding: 0 10px;
+  }
+
+  .mobile-logo {
+    display: inline-block;
+    /* Show the mobile logo on mobile */
+    max-height: 100%;
+    /* Adjust the max height as needed */
+  }
+}

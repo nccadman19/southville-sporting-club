@@ -64,3 +64,8 @@ Mission Statement: "Southville Sporting Club's mission is to unite vintage athle
 <!-- [linkedin-url]:  -->
 [website-shield]: https://img.shields.io/badge/VISIT%20WEBSITE-HERE-green?style=for-the-badge&logo=closed
 <!-- [website-url]:  -->
+
+### Credit
+
+Infinite Scrolling Banner
+https://www.cssscript.com/responsive-text-scrolling-marquee/
