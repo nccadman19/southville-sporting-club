@@ -69,3 +69,7 @@ Mission Statement: "Southville Sporting Club's mission is to unite vintage athle
 
 Infinite Scrolling Banner
 https://www.cssscript.com/responsive-text-scrolling-marquee/
+Ordering footer col/row wise
+https://codeburst.io/how-to-position-html-elements-side-by-side-with-css-e1fae72ddcc
+Moving navbar dropdown items under the menu
+https://stackoverflow.com/questions/51563809/materialize-css-navbar-menu-dropdown-wont-go-below-origin

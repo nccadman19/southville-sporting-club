@@ -27,6 +27,7 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"
         integrity="sha384-fj9YEHKNa/e0CNquG4NcocjoyMATYo1k2Ff5wGB42C/9AwOlJjDoySPtNJalccfI"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f0f8e6b416.js" crossorigin="anonymous"></script>
     <script src="{% static 'js/materialize.js' %}"></script>
     <script src="{% static 'js/init.js' %}"></script>
     {% endblock%}
@@ -49,7 +50,7 @@
         </div>
     </a>
     <nav class="white" role="navigation">
-        <ul class="left hide-on-med-and-down">
+        <ul class="left hide-on-med-and-down search">
             <li>
                 <form>
                     <div class="input-field">
@@ -62,27 +63,50 @@
             </li>
         </ul>
         <div class="nav-wrapper">
-            <a id="logo-container" href="#" class="brand-logo center black-text"
-                style="font-family: 'Times New Roman', Times, serif;">SOUTHVILLE SPORTING CLUB</a>
+            <a id="logo-container" href="#" class="brand-logo center black-text">SOUTHVILLE SPORTING CLUB</a>
             <img class="mobile-logo" src="../../media/mobile-logo.png" alt="Mobile Logo">
-            <ul class="right">
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#" class="black-text">ABOUT US</a></li>
-                    <li><a href="#" class="black-text">THE RUNNING CLUB</a></li>
-                    <li><a href="#" class="black-text">SHOP NOW</a></li>
-                </ul>
-
-                <ul id="nav-mobile" class="sidenav">
-                    <li><a href="#" class="black-text">ABOUT US</a></li>
-                    <li><a href="#" class="black-text">THE RUNNING CLUB</a></li>
-                    <li><a href="#" class="black-text">SHOP NOW</a></li>
-                </ul>
-
-                <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text"><i
-                        class="material-icons">menu</i></a>
-
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#" class="black-text">ABOUT US</a></li>
+                <li><a href="#" class="black-text">RUNNING CLUB</a></li>
+                <!-- Dropdown Trigger -->
+                <li>
+                    <a class="dropdown-trigger black-text" href="#!" data-target="dropdown-shop">SHOP NOW</a>
+                </li>
+                <li><a href="#" class="black-text">
+                        <i class="fa-regular fa-user" style="color: #000000;"></i>
+                    </a></li>
+                <li><a href="#" class="black-text">
+                        <i class="fa-sharp fa-solid fa-bag-shopping" style="color: #000000;"></i>
+                    </a></li>
             </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#" class="black-text">ABOUT US</a></li>
+                <li><a href="#" class="black-text">RUNNING CLUB</a></li>
+                <!-- Dropdown Trigger -->
+                <li>
+                    <a class="dropdown-trigger black-text" href="#!" data-target="dropdown-shop-mobile">SHOP NOW</a>
+                </li>
+            </ul>
+
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text"><i
+                    class="material-icons">menu</i></a>
         </div>
+
+        <!-- Dropdown Structure for Desktop -->
+        <ul id="dropdown-shop" class="dropdown-content">
+            <li class="navbar-dropdown"><a href="#!">T-Shirts</a></li>
+            <li><a href="#!">Hoodies</a></li>
+            <li><a href="#!">Sweatpants</a></li>
+        </ul>
+
+        <!-- Dropdown Structure for Mobile -->
+        <ul id="dropdown-shop-mobile" class="dropdown-content">
+            <li><a href="#!">Category 1</a></li>
+            <li><a href="#!">Category 2</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Category 3</a></li>
+        </ul>
     </nav>
 
     {% block page_header %}
@@ -94,20 +118,31 @@
     <footer class="page-footer white">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="black-text">Company Bio</h5>
-                    <p class="black-text text-lighten-4">We are a team of college students working on this project like
-                        it's our full time job.</p>
+                <div class="col l1 s2">
+                    <img class="footer-logo" src="../../media/mobile-logo.png" alt="Mobile Logo">
                 </div>
-                <div class="col l3 s12">
-                    <h5 class="black-text">Settings</h5>
-                    <ul>
-                        <li><a class="black-text" href="#!">Link 1</a></li>
-                        <li><a class="black-text" href="#!">Link 2</a></li>
+                <div class="col l5 s12">
+                    <ul class="inline-list footer-links">
+                        <li><a class="footer-links" href="#!">Terms & Conditions</a></li>
+                        <li><a class="footer-links" href="#!">Shipping & Returns</a></li>
+                        <li><a class="footer-links" href="#!">Contact</a></li>
                     </ul>
                 </div>
+                <div class="col l6 s12">
+                    <p class="footer-info">
+                        <i class="fa-brands fa-cc-visa" style="color: #525252;"></i>
+                        <i class="fa-brands fa-cc-mastercard" style="color: #525252;"></i>
+                        <i class="fa-brands fa-apple-pay" style="color: #525252;"></i><br>
+                        Copyright © NCBC Limited 2023 | All Rights Reserved <br>
+                        Company registration number: 019884950 | VAT number: GB 916577890
+                    </p>
+                </div>
             </div>
+        </div>
     </footer>
+
+
+
 
     {% block postloadjs %}
     {% endblock %}
