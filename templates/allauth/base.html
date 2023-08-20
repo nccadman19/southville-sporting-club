@@ -50,60 +50,25 @@
         </div>
     </a>
     <nav class="white" role="navigation">
-        <ul class="left hide-on-med-and-down search">
-            <li>
+        <div class="nav-wrapper">
+            <ul class="left search">
                 <form>
                     <div class="input-field">
                         <input id="search" type="search" required>
-                        <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
-                        <i class="material-icons black-text">close</i>
+                        <label class="label-icon" for="search">
+                            <i class="material-icons black-text">search</i></label>
+                        <i class="material-icons black-text close-icon">close</i>
                     </div>
                 </form>
-
-            </li>
-        </ul>
-        <div class="nav-wrapper">
-            <a id="logo-container" href="#" class="brand-logo center black-text">SOUTHVILLE SPORTING CLUB</a>
-            <img class="mobile-logo" src="../../media/mobile-logo.png" alt="Mobile Logo">
-
-            <ul id="slide-out" class="sidenav">
-                <li><a class="sidenav-close" href="#!">
-                        <i class="material-icons">close</i></a></li>
-                <li><a href="#" class="black-text">ABOUT US</a></li>
-                <li><a href="#" class="black-text">RUNNING CLUB</a></li>
-                <ul class="collapsible collapsible-accordion">
-                    <li>
-                        <a class="collapsible-header">SHOP<i class="material-icons">arrow_drop_down</i></a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="#!">T-Shirts</a></li>
-                                <li><a href="#!">Hoodies</a></li>
-                                <li><a href="#!">Sweatpants</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
             </ul>
-
             <ul class="right">
                 <li><a href="#" class="black-text"><i class="fa-regular fa-user" style="color: #000000;"></i></a></li>
                 <li><a href="#" class="black-text"><i class="fa-sharp fa-solid fa-bag-shopping"
-                            style="color: #000000;"></i></a></li>
-            </ul>
-
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#" class="black-text">ABOUT US</a></li>
-                <li><a href="#" class="black-text">RUNNING CLUB</a></li>
-                <li>
-                    <a class="dropdown-trigger black-text" href="#!" data-target="dropdown-shop">SHOP</a>
+                            style="color: #000000;"></i></a>
                 </li>
-                <ul id='dropdown-shop' class='dropdown-content'>
-                    <li><a href="#!">T-Shirts</a></li>
-                    <li><a href="#!">Hoodies</a></li>
-                    <li><a href="#!">Sweatpants</a></li>
-                </ul>
             </ul>
-            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            {% include 'includes/mobile-nav.html' %}
+            {% include 'includes/main-nav.html' %}
         </div>
     </nav>
 
