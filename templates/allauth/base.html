@@ -65,48 +65,46 @@
         <div class="nav-wrapper">
             <a id="logo-container" href="#" class="brand-logo center black-text">SOUTHVILLE SPORTING CLUB</a>
             <img class="mobile-logo" src="../../media/mobile-logo.png" alt="Mobile Logo">
+
+            <ul id="slide-out" class="sidenav">
+                <li><a class="sidenav-close" href="#!">
+                        <i class="material-icons">close</i></a></li>
+                <li><a href="#" class="black-text">ABOUT US</a></li>
+                <li><a href="#" class="black-text">RUNNING CLUB</a></li>
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <a class="collapsible-header">SHOP<i class="material-icons">arrow_drop_down</i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#!">T-Shirts</a></li>
+                                <li><a href="#!">Hoodies</a></li>
+                                <li><a href="#!">Sweatpants</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </ul>
+
+            <ul class="right">
+                <li><a href="#" class="black-text"><i class="fa-regular fa-user" style="color: #000000;"></i></a></li>
+                <li><a href="#" class="black-text"><i class="fa-sharp fa-solid fa-bag-shopping"
+                            style="color: #000000;"></i></a></li>
+            </ul>
+
             <ul class="right hide-on-med-and-down">
                 <li><a href="#" class="black-text">ABOUT US</a></li>
                 <li><a href="#" class="black-text">RUNNING CLUB</a></li>
-                <!-- Dropdown Trigger -->
                 <li>
-                    <a class="dropdown-trigger black-text" href="#!" data-target="dropdown-shop">SHOP NOW</a>
+                    <a class="dropdown-trigger black-text" href="#!" data-target="dropdown-shop">SHOP</a>
                 </li>
-                <li><a href="#" class="black-text">
-                        <i class="fa-regular fa-user" style="color: #000000;"></i>
-                    </a></li>
-                <li><a href="#" class="black-text">
-                        <i class="fa-sharp fa-solid fa-bag-shopping" style="color: #000000;"></i>
-                    </a></li>
+                <ul id='dropdown-shop' class='dropdown-content'>
+                    <li><a href="#!">T-Shirts</a></li>
+                    <li><a href="#!">Hoodies</a></li>
+                    <li><a href="#!">Sweatpants</a></li>
+                </ul>
             </ul>
-
-            <ul id="nav-mobile" class="sidenav">
-                <li><a href="#" class="black-text">ABOUT US</a></li>
-                <li><a href="#" class="black-text">RUNNING CLUB</a></li>
-                <!-- Dropdown Trigger -->
-                <li>
-                    <a class="dropdown-trigger black-text" href="#!" data-target="dropdown-shop-mobile">SHOP NOW</a>
-                </li>
-            </ul>
-
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text"><i
-                    class="material-icons">menu</i></a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
-
-        <!-- Dropdown Structure for Desktop -->
-        <ul id="dropdown-shop" class="dropdown-content">
-            <li class="navbar-dropdown"><a href="#!">T-Shirts</a></li>
-            <li><a href="#!">Hoodies</a></li>
-            <li><a href="#!">Sweatpants</a></li>
-        </ul>
-
-        <!-- Dropdown Structure for Mobile -->
-        <ul id="dropdown-shop-mobile" class="dropdown-content">
-            <li><a href="#!">Category 1</a></li>
-            <li><a href="#!">Category 2</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">Category 3</a></li>
-        </ul>
     </nav>
 
     {% block page_header %}
@@ -118,17 +116,17 @@
     <footer class="page-footer white">
         <div class="container">
             <div class="row">
-                <div class="col l1 s2">
+                <div class="col l1 m2 s2">
                     <img class="footer-logo" src="../../media/mobile-logo.png" alt="Mobile Logo">
                 </div>
-                <div class="col l5 s12">
+                <div class="col l5 m5 s12">
                     <ul class="inline-list footer-links">
                         <li><a class="footer-links" href="#!">Terms & Conditions</a></li>
                         <li><a class="footer-links" href="#!">Shipping & Returns</a></li>
                         <li><a class="footer-links" href="#!">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col l6 s12">
+                <div class="col l6 m5 s12">
                     <p class="footer-info">
                         <i class="fa-brands fa-cc-visa" style="color: #525252;"></i>
                         <i class="fa-brands fa-cc-mastercard" style="color: #525252;"></i>

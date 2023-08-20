@@ -59,8 +59,14 @@ nav ul a {
   font-family: 'Times New Roman', Times, serif;
 }
 
-.navbar-dropdown {
-  margin-right: 10px;
+nav .sidenav-trigger {
+  float: right;
+  position: relative;
+  color: black;
+}
+
+.sidenav {
+  width: 90%;
 }
 
 .dropdown-content li>a,
@@ -167,6 +173,7 @@ html {
 .hero-image {
   background: url('../../media/hero-image.png') no-repeat center center fixed;
   background-size: cover;
+  height: 75vh !important;
 }
 
 .section.no-pad-bot {
@@ -180,26 +187,48 @@ html {
 }
 
 /* Media Queries */
+
 /* Navbar */
-@media (max-width: 860px) {
+@media (max-width: 1144px) {
   .brand-logo.center {
     display: none;
     padding: 0 10px;
   }
 
   .mobile-logo {
-    display: inline-block;
-    /* Show the mobile logo on mobile */
+    display: block;
+    /* Display the mobile logo on mobile */
     max-height: 100%;
-    /* Adjust the max height as needed */
+    position: absolute;
+    left: 50%;
+    /* Center the image horizontally */
+    transform: translateX(-50%);
   }
-}
 
-/* Homepage */
-@media (max-width: 768px) {
-  .background-images {
-    grid-template-columns: 1fr;
+  nav .sidenav-trigger {
+    float: left;
+    position: relative;
+    color: black;
   }
 }
 
 /* Footer */
+@media (max-width: 600px) {
+  .footer-logo {
+    display: block;
+    max-height: 100%;
+    position: absolute;
+    left: 90%;
+    transform: translateX(-50%);
+  }
+
+  .footer-info {
+    text-align: center;
+  }
+
+  .footer-links {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+}

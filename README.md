@@ -73,3 +73,5 @@ Ordering footer col/row wise
 https://codeburst.io/how-to-position-html-elements-side-by-side-with-css-e1fae72ddcc
 Moving navbar dropdown items under the menu
 https://stackoverflow.com/questions/51563809/materialize-css-navbar-menu-dropdown-wont-go-below-origin
+Collapisble error on mobile 
+https://stackoverflow.com/questions/53973266/materializecss-collapsibles-not-working-properly

@@ -1,12 +1,11 @@
-(function ($) {
-  $(function () {
-
-    $('.sidenav').sidenav();
-
-  }); // end of document ready
-})(jQuery); // end of jQuery name space
-
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function () {
+  // Initialize sidenav
+  var sidenavElems = document.querySelectorAll('.sidenav');
+  var sidenavInstances = M.Sidenav.init(sidenavElems);
   // Initialize dropdown triggers with hover option and belowOrigin
-  $(".dropdown-trigger").dropdown({ hover: true, coverTrigger: false });
+  var dropdownElems = document.querySelectorAll('.dropdown-trigger');
+  var dropdownOptions = { hover: true, coverTrigger: false };
+  var dropdownInstances = M.Dropdown.init(dropdownElems, dropdownOptions);
+  var elems = document.querySelectorAll('.collapsible');
+  var instances = M.Collapsible.init(elems, { accordion: false });
 });
