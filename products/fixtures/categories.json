@@ -1,0 +1,50 @@
+[
+    {
+        "pk": 1,
+        "model": "products.category",
+        "fields": {
+            "name": "new",
+            "friendly_name": "New"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.category",
+        "fields": {
+            "name": "t_shirts",
+            "friendly_name": "T-Shirts"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.category",
+        "fields": {
+            "name": "hoodies",
+            "friendly_name": "Hoodies"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.category",
+        "fields": {
+            "name": "sweatpants",
+            "friendly_name": "Sweatpants"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.category",
+        "fields": {
+            "name": "all_products",
+            "friendly_name": "All Products"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.category",
+        "fields": {
+            "name": "tracksuits",
+            "friendly_name": "Tracksuits"
+        }
+    }
+]

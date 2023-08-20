@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-nccadman19-southvillesp-c4an6g7t30k.ws-eu104.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1', 'https://8000-nccadman19-southvillesp-c4an6g7t30k.ws-eu103.gitpod.io', 'https://8000-nccadman19-southvillesp-c4an6g7t30k.ws-eu103.gitpod.io/*']
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1', 'https://8000-nccadman19-southvillesp-c4an6g7t30k.ws-eu104.gitpod.io', 'https://8000-nccadman19-southvillesp-c4an6g7t30k.ws-eu103.gitpod.io/*']
 
 # Application definition
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.apple',
     'allauth.socialaccount.providers.google',
     'home',
+    'products',
 ]
 
 MIDDLEWARE = [

@@ -55,6 +55,13 @@ Mission Statement: "Southville Sporting Club's mission is to unite vintage athle
 
 ![Add Initial Mockup](media/readme/initial-mockup.png)
 
+### Schema
+
+Initial product schema. 
+
+![Product Schema](media/readme/products-schema.png)
+
+
 <!-- MARKDOWN LINKS & IMAGES -->
 [issues-shield]: https://img.shields.io/badge/ISSUES-2%20OPEN-yellow?style=for-the-badge&logo=closed
 <!-- [issues-url]:  -->
@@ -75,3 +82,5 @@ Moving navbar dropdown items under the menu
 https://stackoverflow.com/questions/51563809/materialize-css-navbar-menu-dropdown-wont-go-below-origin
 Collapisble error on mobile 
 https://stackoverflow.com/questions/53973266/materializecss-collapsibles-not-working-properly
+Schema
+https://dbdiagram.io/d
