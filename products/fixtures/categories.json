@@ -4,7 +4,9 @@
         "model": "products.category",
         "fields": {
             "name": "new",
-            "friendly_name": "New"
+            "friendly_name": "New",
+            "created_at": "2023-08-22T20:59:00Z",
+            "updated_at": "2023-08-22T20:59:00Z"
         }
     },
     {
@@ -12,7 +14,9 @@
         "model": "products.category",
         "fields": {
             "name": "t_shirts",
-            "friendly_name": "T-Shirts"
+            "friendly_name": "T-Shirts",
+            "created_at": "2023-08-22T20:59:00Z",
+            "updated_at": "2023-08-22T20:59:00Z"
         }
     },
     {
@@ -20,7 +24,9 @@
         "model": "products.category",
         "fields": {
             "name": "hoodies",
-            "friendly_name": "Hoodies"
+            "friendly_name": "Hoodies",
+            "created_at": "2023-08-22T20:59:00Z",
+            "updated_at": "2023-08-22T20:59:00Z"
         }
     },
     {
@@ -28,7 +34,9 @@
         "model": "products.category",
         "fields": {
             "name": "sweatpants",
-            "friendly_name": "Sweatpants"
+            "friendly_name": "Sweatpants",
+            "created_at": "2023-08-22T20:59:00Z",
+            "updated_at": "2023-08-22T20:59:00Z"
         }
     },
     {
@@ -36,7 +44,9 @@
         "model": "products.category",
         "fields": {
             "name": "all_products",
-            "friendly_name": "All Products"
+            "friendly_name": "All Products",
+            "created_at": "2023-08-22T20:59:00Z",
+            "updated_at": "2023-08-22T20:59:00Z"
         }
     },
     {
@@ -44,7 +54,9 @@
         "model": "products.category",
         "fields": {
             "name": "tracksuits",
-            "friendly_name": "Tracksuits"
+            "friendly_name": "Tracksuits",
+            "created_at": "2023-08-22T20:59:00Z",
+            "updated_at": "2023-08-22T20:59:00Z"
         }
     }
 ]
