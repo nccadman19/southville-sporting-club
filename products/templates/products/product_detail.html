@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="section" id="index-banner">
+    <div class="container">
+        <div class="row product-detail">
+            <div class="col s12 m6 l6">
+                <div class="card no-shadow">
+                    <div class="card-image">
+                        <div class="img-container-detail">
+                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'placeholder.png' %}{% endif %}"
+                                alt="{{ product.name }}" class="zoom-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l6">
+                <div class="card no-shadow">
+                    <div class="card-content product-text">
+                        <span class="">{{ product.name }}</span>
+                        <span class="">{{ product.color }}</span>
+                        <p>{{ product.description }}</p>
+                        <p><strong>Price: £{{ product.price }}</strong></p>
+                        <a href="#">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

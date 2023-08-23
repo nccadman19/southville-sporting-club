@@ -84,3 +84,5 @@ Collapisble error on mobile
 https://stackoverflow.com/questions/53973266/materializecss-collapsibles-not-working-properly
 Schema
 https://dbdiagram.io/d
+Products, Categories, Showing products on website
+https://www.youtube.com/watch?v=obZMr9URmVI&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=2
