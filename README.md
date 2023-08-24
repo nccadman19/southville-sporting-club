@@ -90,3 +90,5 @@ Zoom on hover
 https://www.w3schools.com/howto/howto_css_zoom_hover.asp
 Collapsible product details page
 https://materializecss.com/collapsible.html
+center col in materialize 
+https://stackoverflow.com/questions/38492194/centering-a-col-card-panel-in-materialize

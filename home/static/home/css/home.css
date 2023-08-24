@@ -1,0 +1,10 @@
+/* Shipping & Returns */
+
+.hero-image {
+    background: url('/../media/hero-image-maybe.png') no-repeat center center fixed;
+    height: 170vh !important;
+}
+
+.row .col.card {
+    background-color: #ffffffdb;
+}
