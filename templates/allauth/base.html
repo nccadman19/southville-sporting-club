@@ -1,117 +1,46 @@
-{% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
-    {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
     {% endblock %}
-
-    {% block extra_meta %}
-    {% endblock %}
-
-    {% block corecss %}
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
-    {% endblock %}
-
-    {% block extra_css %}
-    {% endblock %}
-
-    {% block corejs %}
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"
-        integrity="sha384-fj9YEHKNa/e0CNquG4NcocjoyMATYo1k2Ff5wGB42C/9AwOlJjDoySPtNJalccfI"
-        crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/f0f8e6b416.js" crossorigin="anonymous"></script>
-    <script src="{% static 'js/materialize.js' %}"></script>
-    <script src="{% static 'js/init.js' %}"></script>
-    {% endblock%}
-
-    {% block extra_js %}
-    {% endblock %}
-
-    <title>Southville Sporting Club {% block extra_title %}{% endblock %}</title>
-
 </head>
 
 <body>
-    <a href="" class="wrapper">
-        <div class="marquee">
-            <span>SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING SUMMER
-                2023&nbsp;&nbsp;&nbsp;SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING
-                SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING SUMMER
-                2023&nbsp;&nbsp;&nbsp;SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING
-                SUMMER 2023&nbsp;&nbsp;&nbsp;<span>
-        </div>
-    </a>
-    <nav class="white" role="navigation">
-        <div class="nav-wrapper">
-            <ul class="left search">
-                <form>
-                    <div class="input-field">
-                        <input id="search" type="search" required>
-                        <label class="label-icon" for="search">
-                            <i class="material-icons black-text">search</i></label>
-                        <i class="material-icons black-text close-icon">close</i>
-                    </div>
-                </form>
-            </ul>
-            <ul class="right">
-                <li><a href="#" class="black-text"><i class="fa-regular fa-user" style="color: #000000;"></i></a></li>
-                <li><a href="#" class="black-text"><i class="fa-sharp fa-solid fa-bag-shopping"
-                            style="color: #000000;"></i></a>
-                </li>
-            </ul>
-            {% include 'includes/mobile-nav.html' %}
-            {% include 'includes/main-nav.html' %}
-        </div>
-    </nav>
+    {% block body %}
 
-    {% block page_header %}
-    {% endblock %}
+    {% if messages %}
+    <div>
+        <strong>Messages:</strong>
+        <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <div>
+        <strong>Menu:</strong>
+        <ul>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+            <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+            {% else %}
+            <li><a href="{% url 'account_login' %}">Sign In</a></li>
+            <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </div>
 
     {% block content %}
     {% endblock %}
 
-    <footer class="page-footer white">
-        <div class="container">
-            <div class="row">
-                <div class="col l1 m2 s2">
-                    <img class="footer-logo" src="../../media/mobile-logo.png" alt="Mobile Logo">
-                </div>
-                <div class="col l5 m5 s12">
-                    <ul class="inline-list footer-links">
-                        <li><a class="footer-links" href="#!">Terms & Conditions</a></li>
-                        <li><a class="footer-links" href="#!">Shipping & Returns</a></li>
-                        <li><a class="footer-links" href="#!">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col l6 m5 s12">
-                    <p class="footer-info">
-                        <i class="fa-brands fa-cc-visa" style="color: #525252;"></i>
-                        <i class="fa-brands fa-cc-mastercard" style="color: #525252;"></i>
-                        <i class="fa-brands fa-apple-pay" style="color: #525252;"></i><br>
-                        Copyright © NCBC Limited 2023 | All Rights Reserved <br>
-                        Company registration number: 019884950 | VAT number: GB 916577890
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-
-
-    {% block postloadjs %}
     {% endblock %}
 
-    <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
-
+    {% block extra_body %}
+    {% endblock %}
 </body>
 
 </html>
