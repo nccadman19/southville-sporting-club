@@ -86,3 +86,7 @@ Schema
 https://dbdiagram.io/d
 Products, Categories, Showing products on website
 https://www.youtube.com/watch?v=obZMr9URmVI&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=2
+Zoom on hover
+https://www.w3schools.com/howto/howto_css_zoom_hover.asp
+Collapsible product details page
+https://materializecss.com/collapsible.html

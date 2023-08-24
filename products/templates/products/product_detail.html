@@ -18,11 +18,31 @@
             <div class="col s12 m6 l6">
                 <div class="card no-shadow">
                     <div class="card-content product-text">
-                        <span class="">{{ product.name }}</span>
-                        <span class="">{{ product.color }}</span>
-                        <p>{{ product.description }}</p>
-                        <p><strong>Price: £{{ product.price }}</strong></p>
-                        <a href="#">Add to Cart</a>
+                        <span class="product-name">{{ product.name }}</span>
+                        <span class="product-color">{{ product.color }}</span>
+                        <span class="product-price">£{{ product.price }}</span>
+                        <a href="#">ADD TO CART</a>
+                        <ul class="collapsible card no-shadow">
+                            <li class="active">
+                                <div class="collapsible-header card-details">
+                                    Description <span class="icon">-</span>
+                                </div>
+                                <div class="collapsible-body"><span>{{ product.description }}</span></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header card-details">
+                                    Shipping & Returns <span class="icon">+</span>
+                                </div>
+                                <div class="collapsible-body"><span>TEST</span></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header card-details">
+                                    Size Guide <span class="icon">+</span>
+                                </div>
+                                <div class="collapsible-body"><span>TEST</span></div>
+                            </li>
+                        </ul>
+
                     </div>
                 </div>
             </div>

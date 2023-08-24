@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var instances = M.Collapsible.init(elems, { accordion: false });
   var searchInput = document.getElementById("search");
   var closeIcon = document.querySelector(".close-icon");
+  var collapsibleHeaders = document.querySelectorAll('.collapsible-header');
 
   // When the search input gains focus (is clicked)
   searchInput.addEventListener("focus", function () {
@@ -22,4 +23,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Hide the close icon
     closeIcon.style.display = "none";
   });
+
+  // When the product details cards clicked shows respective icon
+  collapsibleHeaders.forEach(function (header) {
+    header.addEventListener('click', function () {
+      var icon = header.querySelector('.icon');
+      if (icon.innerHTML === '+') {
+        icon.innerHTML = '-';
+      } else {
+        icon.innerHTML = '+';
+      }
+    });
+  });
+
 });
