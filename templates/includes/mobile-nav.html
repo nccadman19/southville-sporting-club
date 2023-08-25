@@ -1,6 +1,16 @@
 <a href="{% url 'home' %}"><img class="mobile-logo" src="../../media/mobile-logo.png" alt="Mobile Logo"></a>
 <ul id="slide-out" class="sidenav">
     <li><a class="sidenav-close" href="#!"><i class="material-icons">close</i></a></li>
+    <ul class="left search">
+        <form method="GET" action="{% url 'products' %}">
+            <div class="input-field">
+                <input id="search" type="search" name="q" required>
+                <label class="label-icon" for="search">
+                    <i class="material-icons black-text">search</i></label>
+                <i class="material-icons black-text close-icon">close</i>
+            </div>
+        </form>
+    </ul>
     <ul class="collapsible collapsible-accordion">
         <li>
             <a class="collapsible-header">INFO<i class="material-icons">arrow_drop_down</i></a>

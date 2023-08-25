@@ -52,10 +52,10 @@
         </a>
         <nav class="white" role="navigation">
             <div class="nav-wrapper">
-                <ul class="left search">
-                    <form>
+                <ul class="left search hide-on-med-and-down">
+                    <form method="GET" action="{% url 'products' %}">
                         <div class="input-field">
-                            <input id="search" type="search" required>
+                            <input id="search" type="search" name="q" required>
                             <label class="label-icon" for="search">
                                 <i class="material-icons black-text">search</i></label>
                             <i class="material-icons black-text close-icon">close</i>
@@ -103,6 +103,11 @@
             </div>
         </div>
     </footer>
+
+    {% if messages %}
+    <div class="message-container"></div>
+    {% endif %}
+
 
     {% block postloadjs %}
     {% endblock %}
