@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product
+from .models import Product, Category
 
 def product_list(request):
     # Retrieve all products from the database
     products = Product.objects.all()
     query = None
+    category = None
 
     if request.GET:
         if 'q' in request.GET:
@@ -22,10 +23,19 @@ def product_list(request):
                 messages.error(request, "No products match your search criteria.")
                 return redirect(reverse('products'))
 
+        if 'category' in request.GET:
+            category = request.GET['category']
+            if category:
+                products = products.filter(category__name=category)
+    
+    categories = Category.objects.all()
+
     context = {
         'products': products,
         'title': 'Product List',
         'search_term': query,
+        'categories': categories,
+        'selected_category': category,
     }
     return render(request, 'products/products.html', context)
 
