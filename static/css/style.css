@@ -195,7 +195,6 @@ html {
 @media (max-width: 1144px) {
   .brand-logo.center {
     display: none;
-    padding: 0 10px;
   }
 
   .mobile-logo {
@@ -217,9 +216,12 @@ html {
   .nav-wrapper .input-field input[type=search] {
     height: 68px;
   }
+}
 
+@media (max-width: 992px) {
   nav .input-field {
     height: 4rem;
+    margin-left: 2rem;
   }
 }
 
