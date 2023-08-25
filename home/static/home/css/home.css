@@ -2,9 +2,13 @@
 
 .hero-image {
     background: url('/../media/hero-image-maybe.png') no-repeat center center fixed;
-    height: 170vh !important;
 }
 
 .row .col.card {
     background-color: #ffffffdb;
+}
+
+.card .card-content {
+    max-height: 69vh;
+    overflow-y: auto;
 }

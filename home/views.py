@@ -13,3 +13,8 @@ def shipping(request):
 
     return render(request, 'home/shipping-and-returns.html')
 
+def terms(request):
+    """ A view to return the terms and conditions page """
+
+    return render(request, 'home/terms-and-conditions.html')
+
