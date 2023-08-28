@@ -73,6 +73,10 @@ nav .sidenav-trigger {
   color: #000000;
 }
 
+.dropdown-content {
+  width: max-content !important;
+}
+
 .icon-block {
   padding: 0 15px;
 }

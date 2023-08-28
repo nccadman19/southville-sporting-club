@@ -9,7 +9,9 @@
 <div class="section no-pad-bot hero-image" id="index-banner">
     <div class="container latest-drop">
         <br><br>
-        <a class="waves-effect waves-light btn-large N/A transparent">Shop Latest Drop</a>
+        <a href="{% url 'products' %}?category=new" class="waves-effect waves-light btn-large N/A transparent">
+            Shop Latest Drop
+        </a>
         <br><br>
 
         {% if messages %}
