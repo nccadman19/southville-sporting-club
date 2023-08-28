@@ -7,6 +7,7 @@ from django.db.models.functions import Lower
 synonyms = {
     "hoody": "hoodie",
     "joggers": "sweatpants",
+    "jogger": "sweatpants",
     "tshirt": "t-shirt",
 
 }
@@ -22,6 +23,7 @@ def product_list(request):
     products = Product.objects.all()
     query = None
     sort = None
+    category = None
     direction = None
 
     if request.GET:
@@ -50,8 +52,14 @@ def product_list(request):
             if not products:
                 messages.error(request, "No products match your search criteria.")
                 return redirect(reverse('nothing_found'))
+        
+        if 'category' in request.GET:
+            category = request.GET['category']
+            if category:
+                products = products.filter(category__name=category)
 
     current_sorting = f'{sort}_{direction}'
+    categories = Category.objects.all()
 
     context = {
         'products': products,

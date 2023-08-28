@@ -96,3 +96,6 @@ cards on t&cs
 https://stackoverflow.com/questions/41040506/materialize-scroll-tbody
 adding multiple categories
 https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django
+search function synonyms 
+https://www.holisticseo.digital/python-seo/nltk/wordnet
+
