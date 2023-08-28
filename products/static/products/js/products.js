@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var sidenavInstances = M.Sidenav.init(sidenavElems);
 
     // Initialize the specific dropdown trigger with click option and coverTrigger
-    var specificDropdownElem = document.querySelector('.specific-dropdown-trigger');
+    var sortDropdownElem = document.querySelector('.sort-dropdown-trigger');
     var dropdownOptions = { alignment: 'right', coverTrigger: false, closeOnClick: true };
-    var specificDropdownInstance = M.Dropdown.init(specificDropdownElem, dropdownOptions);
+    var specificDropdownInstance = M.Dropdown.init(sortDropdownElem, dropdownOptions);
 
     // ...rest of your JavaScript code
 });

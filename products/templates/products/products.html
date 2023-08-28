@@ -10,34 +10,75 @@
 {% endblock %}
 
 {% block content %}
-<div class="section no-pad-bot" id="index-banner">
+<main class="section no-pad-bot" id="index-banner">
     <div class="container">
-        <ul class="right">
-            <li class="specific-dropdown-trigger black-text" data-target="dropdown-filter">SORT</li>
-            <ul id="dropdown-filter" class="dropdown-content">
-                <li>
-                    <a href="{% url 'products' %}?sort=price&direction=desc{% if selected_category %}&category={{ selected_category }}{% endif %}">
-                        Price, High to Low
-
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'products' %}?sort=price&direction=asc{% if selected_category %}&category={{ selected_category }}{% endif %}">
-                        Price, Low to High
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'products' %}?sort=name&direction=asc{% if selected_category %}&category={{ selected_category }}{% endif %}">
-                        Alphabetically, A-Z
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'products' %}?sort=name&direction=desc{% if selected_category %}&category={{ selected_category }}{% endif %}">
-                        Alphabetically, Z-A
-                    </a>
-                </li>
-            </ul>
-    </div>    
+        <div class="row center-align">
+            <div class="col center-align">
+                {% if selected_category == 'new' %}
+                <span class="card-title-new">RUN WITH NATURE</span>
+                <p class="new-info">INSPIRED BY NATURE AND RUNNING OUTDOORS, HEAVYWEIGHT AND LONG LASTING FABRICS MADE
+                    FOR LONGEVITY AND DISTANCE.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col right">
+                <ul>
+                    <li class="sort-dropdown-trigger black-text" data-target="dropdown-filter">SORT
+                        <i class="fa-solid fa-chevron-down" style="color: #000000;"></i>
+                    </li>
+                    <ul id="dropdown-filter" class="dropdown-content">
+                        {% if selected_category %}
+                        <li>
+                            <a href="{% url 'products' %}?sort=price&direction=desc&category={{ selected_category }}">
+                                Price, High to Low
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=price&direction=asc&category={{ selected_category }}">
+                                Price, Low to High
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=name&direction=asc&category={{ selected_category }}">
+                                Alphabetically, A-Z
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=name&direction=desc&category={{ selected_category }}">
+                                Alphabetically, Z-A
+                            </a>
+                        </li>
+                        {% endif %}
+                        {% if search_term %}
+                        <li>
+                            <a href="{% url 'products' %}?sort=price&direction=desc&q={{ search_term }}">
+                                Price, High to Low
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=price&direction=asc&q={{ search_term }}">
+                                Price, Low to High
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=name&direction=asc&q={{ search_term }}">
+                                Alphabetically, A-Z
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=name&direction=desc&q={{ search_term }}">
+                                Alphabetically, Z-A
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             {% for product in products %}
@@ -61,5 +102,5 @@
             {% endfor %}
         </div>
     </div>
-</div>
+</main>
 {% endblock %}

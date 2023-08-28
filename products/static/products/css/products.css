@@ -66,6 +66,26 @@
     padding: 10px 10px;
 }
 
+.center-align {
+    text-align: center;
+    float: none !important;
+}
+
+.card-title-new {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.custom-dropdown {
+    width: 300px;
+    /* Adjust the width to your preference */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    overflow: hidden;
+    /* Hide overflowed text */
+}
+
+
 /* Products Details */
 
 .product-detail {
