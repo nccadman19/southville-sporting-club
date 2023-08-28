@@ -4,6 +4,19 @@ from django.db.models import Q
 from .models import Product, Category
 from django.db.models.functions import Lower
 
+synonyms = {
+    "hoody": "hoodie",
+    "joggers": "sweatpants",
+    "tshirt": "t-shirt",
+
+}
+
+def preprocess_query(query):
+    # Check if the query is in the synonyms dictionary
+    if query in synonyms:
+        return synonyms[query]
+    return query
+
 def product_list(request):
     # Retrieve all products from the database
     products = Product.objects.all()
@@ -28,8 +41,11 @@ def product_list(request):
         if 'q' in request.GET:
             query = request.GET['q']
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
-            products = products.filter(queries)
+            if query:
+                # Preprocess the query using the preprocess_query function
+                query = preprocess_query(query.lower())  # Convert to lowercase for consistency
+                queries = Q(name__icontains=query) | Q(description__icontains=query)
+                products = products.filter(queries)
 
             if not products:
                 messages.error(request, "No products match your search criteria.")
