@@ -9,7 +9,7 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'color',
         'price',
-        'category',
+        'display_categories',
         'updated_at'
     )
     list_filter = (
@@ -20,6 +20,10 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ('price',)
     list_per_page = 20
     ordering = ('sku',)
+
+    def display_categories(self, obj):
+        return ', '.join([category.name for category in obj.category.all()])
+    display_categories.short_description = 'Category'
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
