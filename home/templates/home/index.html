@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link href="{% static 'home/css/home.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+{% endblock %}
+
 {% block content %}
 <div class="section no-pad-bot hero-image" id="index-banner">
     <div class="container latest-drop">

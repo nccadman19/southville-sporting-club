@@ -172,23 +172,6 @@ html {
   color: #000000;
 }
 
-/* ... Homepage ... */
-.hero-image {
-  background: url('../../media/hero-image.png') no-repeat center center fixed;
-  background-size: cover;
-  height: 75vh !important;
-}
-
-.latest-drop {
-  padding: 5rem;
-  padding-left: 12rem;
-}
-
-.transparent {
-  border: 2px solid white;
-  color: white;
-}
-
 /* Media Queries */
 
 /* Navbar */
