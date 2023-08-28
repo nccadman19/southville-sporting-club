@@ -13,7 +13,7 @@
                 <div class="card no-shadow">
                     <div class="card-image">
                         <div class="img-container-detail">
-                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'placeholder.png' %}{% endif %}"
+                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
                                 alt="{{ product.name }}" class="zoom-image">
                         </div>
                     </div>

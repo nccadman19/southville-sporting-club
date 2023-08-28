@@ -2,7 +2,7 @@
 .hero-image {
     background: url('/../media/hero-image.png') no-repeat center center fixed;
     background-size: cover;
-    height: 75vh !important;
+    height: 73vh !important;
 }
 
 .latest-drop {

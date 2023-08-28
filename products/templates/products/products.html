@@ -77,7 +77,7 @@
                     <div class="card-image">
                         <div class="img-container">
                             <a href="{% url 'product_detail' product.id %}">
-                                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'placeholder.png' %}{% endif %}"
+                                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
                                     alt="{{ product.name }}" class="zoom-image">
                             </a>
                         </div>
