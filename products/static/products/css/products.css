@@ -85,7 +85,6 @@
     /* Hide overflowed text */
 }
 
-
 /* Products Details */
 
 .product-detail {
@@ -140,4 +139,17 @@
         margin-left: 20px;
         margin-right: 20px;
     }
+}
+
+/* Nothing Found */
+
+.nothing-found {
+    height: 60vh;
+    padding: 20px;
+    text-align: center;
+}
+
+.nothing-found p {
+    text-align: left;
+    margin-top: 20px;
 }

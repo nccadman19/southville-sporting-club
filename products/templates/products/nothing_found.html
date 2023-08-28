@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'products/css/products.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'products/js/products.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<main class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <div class="row center-align">
+            <div class="col center-align">
+                {% if selected_category == 'new' %}
+                <span class="card-title-new">RUN WITH NATURE</span>
+                <p class="new-info">INSPIRED BY NATURE AND RUNNING OUTDOORS, HEAVYWEIGHT AND LONG LASTING FABRICS MADE
+                    FOR LONGEVITY AND DISTANCE.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col right">
+                <ul>
+                    <li class="sort-dropdown-trigger black-text" data-target="dropdown-filter">SORT
+                        <i class="fa-solid fa-chevron-down" style="color: #000000;"></i>
+                    </li>
+                    <ul id="dropdown-filter" class="dropdown-content">
+                        {% if selected_category %}
+                        <li>
+                            <a href="{% url 'products' %}?sort=price&direction=desc&category={{ selected_category }}">
+                                Price, High to Low
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=price&direction=asc&category={{ selected_category }}">
+                                Price, Low to High
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=name&direction=asc&category={{ selected_category }}">
+                                Alphabetically, A-Z
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=name&direction=desc&category={{ selected_category }}">
+                                Alphabetically, Z-A
+                            </a>
+                        </li>
+                        {% endif %}
+                        {% if search_term %}
+                        <li>
+                            <a href="{% url 'products' %}?sort=price&direction=desc&q={{ search_term }}">
+                                Price, High to Low
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=price&direction=asc&q={{ search_term }}">
+                                Price, Low to High
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=name&direction=asc&q={{ search_term }}">
+                                Alphabetically, A-Z
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'products' %}?sort=name&direction=desc&q={{ search_term }}">
+                                Alphabetically, Z-A
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section no-pad-bot hero-image" id="index-banner">
+        <div class="container nothing-found">
+            <h5 class="center-align">0 Products</h5>
+            <hr class="custom-line">
+            <p>No products match your search criteria.</p>
+        </div>
+    </div>
+</main>
+{% endblock %}

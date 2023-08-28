@@ -37,7 +37,7 @@ def product_list(request):
 
             if not products:
                 messages.error(request, "No products match your search criteria.")
-                return redirect(reverse('products'))
+                return redirect(reverse('nothing_found'))
 
         if 'category' in request.GET:
             category = request.GET['category']
@@ -65,3 +65,6 @@ def product_detail(request, product_id):
     
     context = {'product': product, 'title': 'Product Detail'}
     return render(request, 'products/product_detail.html', context)
+
+def nothing_found(request):
+    return render(request, 'products/nothing_found.html')
