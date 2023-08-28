@@ -13,51 +13,44 @@ synonyms = {
 }
 
 def preprocess_query(query):
+    query = query.lower()
     # Check if the query is in the synonyms dictionary
     if query in synonyms:
         return synonyms[query]
     return query
 
+
 def product_list(request):
     # Retrieve all products from the database
     products = Product.objects.all()
-    query = None
-    sort = None
-    category = None
-    direction = None
+    query = request.GET.get('q')
+    sort = request.GET.get('sort', 'name')  # Default sorting by 'name'
+    category = request.GET.get('category', 'all')
+    direction = request.GET.get('direction', 'asc')
 
-    if request.GET:
-        if 'sort' in request.GET:
-            sortkey = request.GET['sort']
-            sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
+    if sort == 'name':
+        sortkey = 'lower_name'
+        products = products.annotate(lower_name=Lower('name'))
+    else:
+        sortkey = sort
 
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
+    if direction == 'desc':
+        sortkey = f'-{sortkey}'
 
-        if 'q' in request.GET:
-            query = request.GET['q']
+    if query:
+        query = preprocess_query(query.lower())
+        queries = Q(name__icontains=query) | Q(description__icontains=query)
+        products = products.filter(queries)
 
-            if query:
-                # Preprocess the query using the preprocess_query function
-                query = preprocess_query(query.lower())  # Convert to lowercase for consistency
-                queries = Q(name__icontains=query) | Q(description__icontains=query)
-                products = products.filter(queries)
+        if not products:
+            messages.error(request, "No products match your search criteria.")
+            return redirect(reverse('nothing_found'))
 
-            if not products:
-                messages.error(request, "No products match your search criteria.")
-                return redirect(reverse('nothing_found'))
-        
-        if 'category' in request.GET:
-            category = request.GET['category']
-            if category:
-                products = products.filter(category__name=category)
+    if category != 'all':
+        products = products.filter(category__name=category)
 
+    products = products.order_by(sortkey)
+    
     current_sorting = f'{sort}_{direction}'
     categories = Category.objects.all()
 
@@ -66,6 +59,8 @@ def product_list(request):
         'title': 'Product List',
         'search_term': query,
         'current_sorting': current_sorting,
+        'categories': categories,
+        'selected_category': category,
     }
     return render(request, 'products/products.html', context)
 

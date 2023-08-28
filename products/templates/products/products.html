@@ -31,16 +31,28 @@
                     </li>
                     <ul id="dropdown-filter" class="dropdown-content">
                         <li>
-                            <a href="?sort=price&direction=desc{{ request.GET.q|urlencode }}">Price, High to Low</a>
+                            <a
+                                href="?sort=price&direction=desc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                                Price, High to Low
+                            </a>
                         </li>
                         <li>
-                            <a href="?sort=price&direction=asc{{ request.GET.q|urlencode }}">Price, Low to High</a>
+                            <a
+                                href="?sort=price&direction=asc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                                Price, Low to High
+                            </a>
                         </li>
                         <li>
-                            <a href="?sort=name&direction=asc{{ request.GET.q|urlencode }}">Alphabetically, A-Z</a>
+                            <a
+                                href="?sort=name&direction=asc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                                Alphabetically, A-Z
+                            </a>
                         </li>
                         <li>
-                            <a href="?sort=name&direction=desc{{ request.GET.q|urlencode }}">Alphabetically, Z-A</a>
+                            <a
+                                href="?sort=name&direction=desc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                                Alphabetically, Z-A
+                            </a>
                         </li>
                     </ul>
                 </ul>
@@ -54,8 +66,10 @@
                 <div class="card no-shadow">
                     <div class="card-image">
                         <div class="img-container">
-                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'placeholder.png' %}{% endif %}"
-                                alt="{{ product.name }}" class="zoom-image">
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'placeholder.png' %}{% endif %}"
+                                    alt="{{ product.name }}" class="zoom-image">
+                            </a>
                         </div>
                     </div>
                     <div class="card-content">
