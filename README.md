@@ -94,3 +94,5 @@ center col in materialize
 https://stackoverflow.com/questions/38492194/centering-a-col-card-panel-in-materialize
 cards on t&cs
 https://stackoverflow.com/questions/41040506/materialize-scroll-tbody
+adding multiple categories
+https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django
