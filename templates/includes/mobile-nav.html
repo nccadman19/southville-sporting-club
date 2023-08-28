@@ -8,7 +8,7 @@
                 <ul>
                     <li><a href="#!">ABOUT US</a></li>
                     <li><a href="#!">CONTACT</a></li>
-                    <li><a href="#!">SHIPPING & RETURNS</a></li>
+                    <li><a href="{% url 'shipping' %}">SHIPPING & RETURNS</a></li>
                 </ul>
             </div>
         </li>
@@ -19,7 +19,7 @@
             <a class="collapsible-header">SHOP<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
-                    <li><a href="#!">NEW</a></li>
+                    <li><a href="{% url 'products' %}?category=new">NEW</a></li>
                     <li><a href="{% url 'products' %}?category=t_shirts">T-SHIRTS</a></li>
                     <li><a href="{% url 'products' %}?category=hoodies">HOODIES</a></li>
                     <li><a href="{% url 'products' %}?category=sweatpants">SWEATPANTS</a></li>
