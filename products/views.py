@@ -50,7 +50,6 @@ def product_list(request):
         products = products.filter(category__name=category)
 
     products = products.order_by(sortkey)
-    
     current_sorting = f'{sort}_{direction}'
     categories = Category.objects.all()
 
