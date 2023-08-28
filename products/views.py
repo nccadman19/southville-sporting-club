@@ -8,7 +8,6 @@ def product_list(request):
     # Retrieve all products from the database
     products = Product.objects.all()
     query = None
-    category = None
     sort = None
     direction = None
 
@@ -25,13 +24,10 @@ def product_list(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-        
+
         if 'q' in request.GET:
             query = request.GET['q']
-            if not query:
-                messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('products'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -39,22 +35,12 @@ def product_list(request):
                 messages.error(request, "No products match your search criteria.")
                 return redirect(reverse('nothing_found'))
 
-        if 'category' in request.GET:
-            category = request.GET['category']
-            if category:
-                products = products.filter(category__name=category)
-
     current_sorting = f'{sort}_{direction}'
-    
-    categories = Category.objects.all()
 
     context = {
         'products': products,
         'title': 'Product List',
         'search_term': query,
-        'categories': categories,
-        'selected_category': category,
-        'current_categories': categories,
         'current_sorting': current_sorting,
     }
     return render(request, 'products/products.html', context)
