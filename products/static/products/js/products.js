@@ -8,5 +8,27 @@ document.addEventListener('DOMContentLoaded', function () {
     var dropdownOptions = { alignment: 'right', coverTrigger: false, closeOnClick: true };
     var specificDropdownInstance = M.Dropdown.init(sortDropdownElem, dropdownOptions);
 
-    // ...rest of your JavaScript code
+    // Initialize the return to top button
+    var backToTopBtn = document.getElementById('back-to-top');
+    var backToTopContainer = document.getElementById('back-to-top-container');
+
+    function toggleBackToTopButton() {
+        if (window.scrollY > 300) { // Adjust the value as needed
+            backToTopContainer.style.display = 'block';
+        } else {
+            backToTopContainer.style.display = 'none';
+        }
+    }
+
+    // Attach a scroll event listener to the window
+    window.addEventListener('scroll', toggleBackToTopButton);
+
+    // Scroll to the top when the button is clicked
+    backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // For smooth scrolling behavior
+        });
+        backToTopBtn.classList.remove('waves-ripple');
+    });
 });

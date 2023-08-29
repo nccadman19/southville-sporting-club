@@ -78,11 +78,30 @@
 
 .custom-dropdown {
     width: 300px;
-    /* Adjust the width to your preference */
     white-space: nowrap;
-    /* Prevent text from wrapping */
     overflow: hidden;
-    /* Hide overflowed text */
+}
+
+/* Back to top container */
+#back-to-top-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 1000;
+}
+
+#back-to-top {
+    background-color: #525050d6 !important;
+}
+
+#back-to-top:hover,
+#back-to-top:active {
+    background-color: #8b8989;
+}
+
+.waves-effect .waves-ripple {
+    background-color: #525050d4;
 }
 
 /* Products Details */
