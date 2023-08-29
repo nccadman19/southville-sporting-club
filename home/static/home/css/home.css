@@ -6,14 +6,21 @@
 }
 
 .latest-drop {
-    padding: 5rem;
-    padding-left: 12rem;
+    padding-left: 55rem;
 }
 
-.transparent {
-    border: 2px solid white;
+.latest-drop-button {
     color: white;
+    background: #000000e6 !important;
 }
+
+.btn,
+.btn-large,
+.btn-small,
+.btn-flat {
+    border-radius: 0px;
+}
+
 
 /* Shipping & Returns */
 
@@ -22,7 +29,7 @@
 }
 
 .row .col.card {
-    background-color: #ffffffdb;
+    background-color: #ffffff;
 }
 
 .card .card-content {
@@ -32,6 +39,11 @@
 
 @media (max-width: 600px) {
     .waves-effect {
-        background: #00000082 !important;
+        position: absolute;
+    }
+
+    .latest-drop {
+        padding: 2rem;
+        padding-left: 11rem;
     }
 }
