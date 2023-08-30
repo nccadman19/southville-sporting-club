@@ -82,6 +82,10 @@
     overflow: hidden;
 }
 
+.right {
+    text-align: right;
+}
+
 /* Back to top container */
 #back-to-top-container {
     position: fixed;
@@ -148,6 +152,10 @@
 
 .all-products {
     color: #999999;
+}
+
+.all-products-main {
+    padding: 1rem !important;
 }
 
 /* Media Queries */

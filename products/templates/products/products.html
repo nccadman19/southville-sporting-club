@@ -24,17 +24,13 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col l6 all-products-main">
                 {% if search_term or categories or current_sorting != 'None_None' %}
                 <span class="small"><a class="all-products" href="{% url 'products' %}">All Products</a> |
                     Total: {{ products|length }}</span>
                 {% endif %}
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col right">
+            <div class="col l6 right">
                 <ul>
                     <li class="sort-dropdown-trigger black-text" data-target="dropdown-filter">SORT
                         <i class="fa-solid fa-chevron-down" style="color: #000000;"></i>
@@ -69,6 +65,7 @@
             </div>
         </div>
     </div>
+
     <div class="container">
         <div class="row">
             {% for product in products %}
