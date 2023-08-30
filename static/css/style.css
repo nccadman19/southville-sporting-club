@@ -236,6 +236,11 @@ html {
   .nav-wrapper .input-field input[type=search] {
     height: 68px;
   }
+
+  /* Cart */
+  .cart-overlay {
+    width: 50%
+  }
 }
 
 @media (max-width: 992px) {
@@ -245,8 +250,9 @@ html {
   }
 }
 
-/* Footer */
 @media (max-width: 600px) {
+
+  /* Footer */
   .footer-logo {
     display: block;
     max-height: 100%;
@@ -263,5 +269,9 @@ html {
     display: block;
     text-align: center;
     padding: 0;
+  }
+
+  .cart-overlay {
+    width: 90%
   }
 }
