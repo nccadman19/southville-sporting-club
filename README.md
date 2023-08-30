@@ -99,3 +99,5 @@ https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield
 search function synonyms 
 https://www.holisticseo.digital/python-seo/nltk/wordnet
 
+errors
+cannot get the cart popup to disappear when user clicks away from the display

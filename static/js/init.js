@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Initialize sidenav
   var sidenavElems = document.querySelectorAll('.sidenav');
   var sidenavInstances = M.Sidenav.init(sidenavElems);
-  // Initialize dropdown triggers with hover option and belowOrigin
   var dropdownElems = document.querySelectorAll('.dropdown-trigger');
   var dropdownOptions = { hover: true, coverTrigger: false };
   var dropdownInstances = M.Dropdown.init(dropdownElems, dropdownOptions);
@@ -36,4 +34,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Function to show the cart overlay
+  function showCartOverlay() {
+    var cartOverlay = document.getElementById('cart-overlay');
+    cartOverlay.style.display = 'flex';
+  }
+
+  // Function to hide the cart overlay
+  function hideCartOverlay() {
+    var cartOverlay = document.getElementById('cart-overlay');
+    cartOverlay.style.display = 'none';
+  }
+
+  // Add a click event listener to the bag icon
+  document.getElementById('bag-icon').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent the default link behavior if it's a link
+    showCartOverlay(); // Call the function to show the overlay
+  });
+
+  // Add a click event listener to the close button
+  document.getElementById('close-cart-overlay').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent the default link behavior if it's a link
+    hideCartOverlay(); // Call the function to hide the overlay
+  });
 });
