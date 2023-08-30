@@ -7,7 +7,6 @@ def index(request):
 
     return render(request, 'home/index.html')
 
-
 def shipping(request):
     """ A view to return the shipping and returns page """
 
