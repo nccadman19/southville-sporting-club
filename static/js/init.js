@@ -12,13 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // When the search input gains focus (is clicked)
   searchInput.addEventListener("focus", function () {
-    // Show the close icon
     closeIcon.style.display = "inline";
   });
 
   // When the search input loses focus (is clicked outside of)
   searchInput.addEventListener("blur", function () {
-    // Hide the close icon
     closeIcon.style.display = "none";
   });
 
@@ -37,7 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to show the cart overlay
   function showCartOverlay() {
     var cartOverlay = document.getElementById('cart-overlay');
+    var closeOverlay = document.getElementById('close-cart-overlay');
     cartOverlay.style.display = 'flex';
+    closeOverlay.style.display = 'block';
   }
 
   // Function to hide the cart overlay
@@ -48,13 +48,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Add a click event listener to the bag icon
   document.getElementById('bag-icon').addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent the default link behavior if it's a link
-    showCartOverlay(); // Call the function to show the overlay
+    showCartOverlay();
   });
 
   // Add a click event listener to the close button
-  document.getElementById('close-cart-overlay').addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent the default link behavior if it's a link
-    hideCartOverlay(); // Call the function to hide the overlay
+  document.getElementById('close-cart-btn').addEventListener('click', function (event) {
+    hideCartOverlay();
   });
+
+  // Add a click event listener to the close overlay
+  document.getElementById('close-cart-overlay').addEventListener('click', function (event) {
+    hideCartOverlay();
+    this.style.display = 'none';
+  });
+
 });

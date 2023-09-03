@@ -1,14 +1,25 @@
 <!-- Modal Structure -->
 <div class="cart-overlay" id="cart-overlay">
     <div class="modal-content">
-        <div class="cart">
-            <h4>Your Cart</h4>
-            <div class="empty-cart-message">
-                <h6>Your cart is currently empty.</h6>
+        <div class="row cart">
+            <div class="col s9 offset-s1 center-align black-text">
+                <h4>Your Cart</h4>
+            </div>
+            <div class="col s2 right-align">
+                <button class="modal-close cart-btn btn" id="close-cart-btn">
+                    <span class="material-icons black-text">close</span>
+                </button>
+            </div>
+        </div>
+        <div class="row cart">
+            <div class="col s12">
+                <div class="empty-cart-message black-text">
+                    <h6>Your cart is currently empty.</h6>
+                </div>
             </div>
         </div>
     </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn" id="close-cart-overlay">Close</a>
-    </div>
+</div>
+<div id="close-cart-overlay">
+    <button class="modal-close btn close-cart"></button>
 </div>

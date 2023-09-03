@@ -183,31 +183,62 @@ html {
   right: 0;
   width: 30%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: white;
   z-index: 1000;
   display: none;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
-
-.cart {
-  color: #000000;
+  justify-content: center;
 }
 
 .modal-content {
-  display: flex;
+  width: 100%;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
-  padding: 20px;
-  text-align: center;
   flex-grow: 1;
 }
 
 .modal-footer {
   padding: 10px;
   text-align: center;
+}
+
+.cart-btn {
+  background: transparent !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.cart-btn:hover {
+  background: transparent !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.close-cart {
+  width: 70%;
+  position: fixed;
+  height: 100%;
+  background-color: transparent;
+  z-index: 1001;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  cursor: auto !important;
+}
+
+.close-cart:hover,
+.close-cart:focus,
+.close-cart:active {
+  background: transparent !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  cursor: auto !important;
+}
+
+.cart {
+  display: flex;
 }
 
 
@@ -239,7 +270,11 @@ html {
 
   /* Cart */
   .cart-overlay {
-    width: 50%
+    width: 50%;
+  }
+
+  .close-cart {
+    width: 50%;
   }
 }
 
@@ -272,6 +307,10 @@ html {
   }
 
   .cart-overlay {
-    width: 90%
+    width: 90%;
+  }
+
+  .close-cart {
+    width: 10%;
   }
 }
