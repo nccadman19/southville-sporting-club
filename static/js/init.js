@@ -43,7 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to hide the cart overlay
   function hideCartOverlay() {
     var cartOverlay = document.getElementById('cart-overlay');
+    var closeOverlay = document.getElementById('close-cart-overlay');
     cartOverlay.style.display = 'none';
+    closeOverlay.style.display = 'none';
   }
 
   // Add a click event listener to the bag icon
