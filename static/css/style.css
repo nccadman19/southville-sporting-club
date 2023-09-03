@@ -191,6 +191,21 @@ html {
   justify-content: center;
 }
 
+.close-cart {
+  width: 70%;
+  position: fixed;
+  height: 100%;
+  background-color: transparent;
+  z-index: 1001;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  cursor: auto !important;
+}
+
+#close-cart-overlay {
+  display: none;
+}
+
 .modal-content {
   width: 100%;
   text-align: center;
@@ -215,17 +230,6 @@ html {
   background: transparent !important;
   -webkit-box-shadow: none;
   box-shadow: none;
-}
-
-.close-cart {
-  width: 70%;
-  position: fixed;
-  height: 100%;
-  background-color: transparent;
-  z-index: 1001;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  cursor: auto !important;
 }
 
 .close-cart:hover,
