@@ -12,10 +12,15 @@
             </div>
         </div>
         <div class="row cart">
-            <div class="col s12">
-                <div class="empty-cart-message black-text">
+            <div class="col l10 m12 s12 offset-l1">
+                {% if bag_items %}
+                <div class=""></div>
+                {% else %}
+                <div class="empty-cart-message black-text center-align">
                     <h6>Your cart is currently empty.</h6>
+                    <a href="{% url 'products' %}?category=new" class="center-align black-text">View Latest Drop</a>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>

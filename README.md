@@ -1,4 +1,4 @@
-# Southville Sporting Club | Data Storing
+# Southville Sporting Club | Full Stack Website
 
 ## Bristol Based Vintage Athletic Wear
 -------
@@ -71,6 +71,10 @@ Initial product schema.
 <!-- [linkedin-url]:  -->
 [website-shield]: https://img.shields.io/badge/VISIT%20WEBSITE-HERE-green?style=for-the-badge&logo=closed
 <!-- [website-url]:  -->
+[issues-url]:https://github.com/nccadman19/southville-sporting-club/issues
+<!--- [issues-url] -->
+https://github.com/nccadman19/southville-sporting-club/issues?q=is%3Aissue+is%3Aclosed
+<!--- [closed-url] -->
 
 ### Credit
 

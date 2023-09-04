@@ -10,48 +10,37 @@
 }
 
 .latest-drop-button {
-    color: white;
-    background: #000000e6 !important;
+    border: 2px solid black;
+    color: black;
 }
-
-.btn,
-.btn-large,
-.btn-small,
-.btn-flat {
-    border-radius: 0px;
-}
-
 
 /* Shipping & Returns */
-
-.hero-image-info {
-    background: url('/../media/hero-image-maybe.png') no-repeat center center fixed;
+.info-title {
+    font-size: 24px;
+    font-weight: 300;
 }
 
-.row .col.card {
-    background-color: #ffffff;
+.info-content {
+    padding: 2rem;
 }
 
-.card .card-content {
-    max-height: 69vh;
-    overflow-y: auto;
-}
+/* Media Queries */
 
-@media (max-width: 600px) {
-    .latest-drop {
-        padding: 2rem;
-        padding-left: 10rem !important;
-    }
-}
-
-@media (max-width: 1144px) {
+@media (max-width: 1020px) {
     .latest-drop {
         padding-left: 40rem;
     }
 }
 
-@media (max-width: 900px) {
+
+@media (max-width: 790px) {
     .latest-drop {
         padding-left: 26rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .latest-drop {
+        padding-left: 10rem !important;
     }
 }
