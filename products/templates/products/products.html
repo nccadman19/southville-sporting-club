@@ -10,94 +10,100 @@
 {% endblock %}
 
 {% block content %}
-<main class="section no-pad-bot" id="index-banner">
-    <div class="container">
-        <div class="row center-align">
-            <div class="col center-align">
-                {% if selected_category == 'new' %}
-                <span class="card-title-new">RUN WITH NATURE</span>
-                <p class="new-info">INSPIRED BY NATURE AND RUNNING OUTDOORS, HEAVYWEIGHT AND LONG LASTING FABRICS MADE
-                    FOR LONGEVITY AND DISTANCE.</p>
-                {% endif %}
+<main>
+    <section class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <div class="row center-align">
+                <div class="col center-align">
+                    {% if selected_category == 'new' %}
+                    <!-- Display information for new products -->
+                    <span class="card-title-new">RUN WITH NATURE</span>
+                    <p class="new-info">INSPIRED BY NATURE AND RUNNING OUTDOORS, HEAVYWEIGHT AND LONG LASTING FABRICS
+                        MADE
+                        FOR LONGEVITY AND DISTANCE.</p>
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col l6 all-products-main">
-                {% if search_term or categories or current_sorting != 'None_None' %}
-                <span class="small"><a class="all-products" href="{% url 'products' %}">All Products</a> |
-                    Total: {{ products|length }}</span>
-                {% endif %}
-            </div>
-            <div class="col l6 right">
-                <ul>
-                    <li class="sort-dropdown-trigger black-text" data-target="dropdown-filter">SORT
-                        <i class="fa-solid fa-chevron-down" style="color: #000000;"></i>
-                    </li>
-                    <ul id="dropdown-filter" class="dropdown-content">
-                        <li>
-                            <a
-                                href="?sort=price&direction=desc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
-                                Price, High to Low
-                            </a>
+        <div class="container">
+            <div class="row">
+                <div class="col l6 all-products-main">
+                    <!-- Display total product count if search, categories, or sorting applied -->
+                    {% if search_term or categories or current_sorting != 'None_None' %}
+                    <span class="small"><a class="all-products" href="{% url 'products' %}">All Products</a> |
+                        Total: {{ products|length }}</span>
+                    {% endif %}
+                </div>
+                <div class="col l6 right-align">
+                    <ul>
+                        <li class="sort-dropdown-trigger black-text" data-target="dropdown-filter">SORT
+                            <i class="fa-solid fa-chevron-down" style="color: #000000;"></i>
                         </li>
-                        <li>
-                            <a
-                                href="?sort=price&direction=asc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
-                                Price, Low to High
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="?sort=name&direction=asc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
-                                Alphabetically, A-Z
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="?sort=name&direction=desc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
-                                Alphabetically, Z-A
-                            </a>
-                        </li>
+                        <ul id="dropdown-filter" class="dropdown-content">
+                            <!-- Sorting options for product list -->
+                            <li>
+                                <!-- Sort products high to low -->
+                                <a
+                                    href="?sort=price&direction=desc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                                    Price, High to Low
+                                </a>
+                            </li>
+                            <li>
+                                <!-- Sort products low to high -->
+                                <a
+                                    href="?sort=price&direction=asc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                                    Price, Low to High
+                                </a>
+                            </li>
+                            <li>
+                                <!-- Sort products alpabetically A-Z -->
+                                <a
+                                    href="?sort=name&direction=asc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                                    Alphabetically, A-Z
+                                </a>
+                            </li>
+                            <li>
+                                <!-- Sort products alpabetically Z-A -->
+                                <a
+                                    href="?sort=name&direction=desc{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                                    Alphabetically, Z-A
+                                </a>
+                            </li>
+                        </ul>
                     </ul>
-                </ul>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="container">
+    </section>
+    <section class="container">
         <div class="row">
             {% for product in products %}
-            <div class="col s12 m6 l4">
-                <div class="card no-shadow">
-                    <div class="card-image">
-                        <div class="img-container">
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
-                                    alt="{{ product.name }}" class="zoom-image">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title">{{ product.name }}</span>
-                        <span class="color-title">{{ product.color }}</span>
-                    </div>
-                    <div class="card-action">
-                        <span class="price">£{{ product.price }}</span>
-                    </div>
+            <div class="col s12 m6 l4 card no-shadow">
+                <div class="card-image">
+                        <a href="{% url 'product_detail' product.id %}">
+                            <!-- Link to individual product detail page -->
+                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
+                                alt="{{ product.name }}" class="zoom-image">
+                        </a>
+                </div>
+                <div class="card-content">
+                    <!-- Display product name and color -->
+                    <span class="card-title">{{ product.name }}</span>
+                    <span class="color-title">{{ product.color }}</span>
+                </div>
+                <div class="card-action">
+                    <!-- Display product price -->
+                    <span class="price">£{{ product.price }}</span>
                 </div>
             </div>
             {% endfor %}
         </div>
-    </div>
+    </section>
     <!-- Back to Top Button using Materialize CSS -->
     <div id="back-to-top-container">
         <a id="back-to-top" class="btn-floating btn-large waves-effect">
             <i class="material-icons">keyboard_arrow_up</i>
         </a>
     </div>
-
-
 </main>
 {% endblock %}
