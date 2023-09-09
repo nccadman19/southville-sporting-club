@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decimal import Decimal
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -76,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'bag.contexts.bag_contents',
             ],
         },
     },
@@ -189,3 +191,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #         }
 #     }
 # }
+
+DELIVERY_THRESHOLDS = {
+    'UK_MAINLAND_1ST_CLASS': Decimal('100.00'),
+    'UK_MAINLAND_STANDARD': Decimal('80.00'),
+    'EUROPE_MAINLAND': Decimal('150.00'),
+    'REST_WORLDWIDE': Decimal('300.00'),
+}
