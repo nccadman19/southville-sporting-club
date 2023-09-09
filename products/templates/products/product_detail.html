@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-<link href="{% static 'products/css/products.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+<link href="{% static 'products/css/products.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
 {% endblock %}
 
 {% block content %}
@@ -25,7 +25,7 @@
                         <span class="product-name">{{ product.name }}</span>
                         <span class="product-color">{{ product.color }}</span>
                         <span class="product-price">£{{ product.price }}</span>
-                        <a href="#">ADD TO CART</a>
+                        <a class="product-cart-btn" href="#">ADD TO CART</a>
                         <ul class="collapsible card no-shadow">
                             <li class="active">
                                 <div class="collapsible-header card-details">
@@ -54,7 +54,35 @@
                                 <div class="collapsible-header card-details">
                                     Size Guide <span class="icon">+</span>
                                 </div>
-                                <div class="collapsible-body"><span>TEST</span></div>
+                                <div class="collapsible-body">
+                                    <h6>Size Guide</h6>
+                                    <p>Use the following size guide to find the perfect fit for your clothing:
+                                    </p><br>
+                                    <ul>
+                                        <li class="bold-title">T-Shirts:</li>
+                                        <li>Small (S): Chest: 36-38 inches</li>
+                                        <li>Medium (M): Chest: 38-40 inches</li>
+                                        <li>Large (L): Chest: 40-42 inches</li>
+                                        <li>X-Large (XL): Chest: 42-44 inches</li>
+                                        <li>XX-Large (XXL): Chest: 44-46 inches</li><br>
+                                        <li class="bold-title">Hoodies:</li>
+                                        <li>Small (S): Chest: 38-40 inches</li>
+                                        <li>Medium (M): Chest: 40-42 inches</li>
+                                        <li>Large (L): Chest: 42-44 inches</li>
+                                        <li>X-Large (XL): Chest: 44-46 inches</li>
+                                        <li>XX-Large (XXL): Chest: 46-48 inches</li><br>
+                                        <li class="bold-title">Joggers:</li>
+                                        <li>Small (S): Waist: 28-30 inches</li>
+                                        <li>Medium (M): Waist: 30-32 inches</li>
+                                        <li>Large (L): Waist: 32-34 inches</li>
+                                        <li>X-Large (XL): Waist: 34-36 inches</li>
+                                        <li>XX-Large (XXL): Waist: 36-38 inches</li><br>
+                                        <li>Please note that these measurements are approximate and may vary slightly
+                                            depending on the specific product and brand. We recommend customers refer to
+                                            the sizing chart provided on your website for the most accurate sizing
+                                            information.</li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
 
