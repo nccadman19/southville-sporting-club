@@ -157,6 +157,14 @@
     padding: 1rem !important;
 }
 
+.bold-title {
+    font-weight: bold;
+}
+
+.product-cart-btn {
+    margin-left: 9px;
+}
+
 /* Media Queries */
 
 @media (max-width: 600px) {
