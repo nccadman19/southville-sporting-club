@@ -5,6 +5,10 @@
 <link href="{% static 'products/css/products.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
 {% endblock %}
 
+{% block extra_js %}
+<script src="{% static 'products/js/products.js' %}"></script>
+{% endblock %}
+
 {% block content %}
 <div class="section" id="index-banner">
     <div class="container">
@@ -25,7 +29,36 @@
                         <span class="product-name">{{ product.name }}</span>
                         <span class="product-color">{{ product.color }}</span>
                         <span class="product-price">£{{ product.price }}</span>
-                        <a class="product-cart-btn" href="#">ADD TO CART</a>
+                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                                <!-- Size dropdown menu -->
+                                <div class="col s12 m6">
+                                    <div class="input-field">
+                                        <select id="size" name="size">
+                                            {% for size in product.get_sizes_list %}
+                                            <option value="{{ size }}">{{ size }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <label for="size">Size</label>
+                                    </div>
+                                </div>
+                                <!-- Quantity selector -->
+                                <div class="col s12 m6">
+                                    <div class="input-field">
+                                        <input type="number" id="quantity" name="quantity" value="1" min="1" max="50">
+                                        <label for="quantity">Quantity</label>
+                                    </div>
+                                </div>
+                                <!-- Add to bag button -->
+                                <div class="col s12">
+                                    <button type="submit" class="btn btn-black rounded-0 text-uppercase mt-5">Add to
+                                        Bag</button>
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </form>
+
                         <ul class="collapsible card no-shadow">
                             <li class="active">
                                 <div class="collapsible-header card-details">

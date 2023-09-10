@@ -19,6 +19,7 @@ def bag_contents(request):
             'item_id': item.id,
             'quantity': quantity,
             'product': product,
+            'size': item_data['size'], 
             'item_total': item_total,
         })
 
