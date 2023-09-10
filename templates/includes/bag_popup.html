@@ -14,7 +14,33 @@
         <div class="row cart">
             <div class="col s12">
                 {% if bag_items %}
-                <div class=""></div>
+                <div class="row">
+                    <div class="col s12">
+                        <table class="striped">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Size</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in bag_items %}
+                                <tr>
+                                    <td>{{ item.product.name }}</td>
+                                    <td>{{ item.size }}</td>
+                                    <td>{{ item.quantity }}</td>
+                                    <td>{{ item.product.price }}</td>
+                                    <td>{{ item.item_total }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
                 {% else %}
                 <div class="empty-cart-message black-text center-align">
                     <h6>Your cart is currently empty.</h6>
