@@ -37,15 +37,15 @@
                                     <div class="product-form">
                                         {% for size in product.get_sizes_list %}
                                         <a href="#"
-                                            class="btn btn-small {% if size == 'One Size' %}selected disabled{% endif %}"
+                                            class="btn btn-small product-size-button {% if size == 'One Size' %}selected disabled{% endif %}"
                                             data-size="{{ size }}">{{ size }}</a>
                                         {% endfor %}
                                     </div>
                                 </div>
 
                                 <!-- Add to bag button -->
-                                <div class="col s12">
-                                    <button type="submit" class="btn btn-black rounded-0 text-uppercase mt-5">Add to
+                                <div class="col s12 button-container">
+                                    <button type="submit" class="btn btn-black rounded-0 text-uppercase">Add to
                                         Bag</button>
                                 </div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
