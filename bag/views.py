@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import views
 
 # Create your views here.
@@ -12,6 +12,7 @@ def add_to_bag(request, item_id):
     """ Add item to the bag, add only 1 item initially """
 
     quantity = int(request.POST.get('quantity', 1))
+    selected_size = request.POST.get('selected_size')
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
@@ -22,5 +23,6 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
     print(request.session['bag'])
+    print("Selected Size in view_bag:", selected_size)
     return redirect(redirect_url)
     

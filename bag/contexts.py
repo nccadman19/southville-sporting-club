@@ -16,10 +16,10 @@ def bag_contents(request):
         total += item_total
         product_count += quantity
         bag_items.append({
-            'item_id': item.id,
+            'item_id': product.id,
             'quantity': quantity,
             'product': product,
-            'size': item_data['size'], 
+            'size': product.sizes, 
             'item_total': item_total,
         })
 

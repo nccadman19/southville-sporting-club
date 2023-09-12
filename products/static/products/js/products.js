@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Get all the size buttons within the product detail section
     var sizeButtons = document.querySelectorAll('.product-detail .product-size-button');
 
+    // Initialise a variable to store the selected size
+    var selectedSize = null;
+
     // Attach a click event listener to each size button
     sizeButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
@@ -24,10 +27,32 @@ document.addEventListener('DOMContentLoaded', function () {
             // Select the clicked button
             button.classList.add('selected');
 
-            // Store the selected size in a variable or hidden input field here
-            // For example, you can use the dataset property to store the size value
-            var selectedSize = button.dataset.size;
+            // Store the selected size in the variable
+            selectedSize = button.dataset.size;
+
+            // Log the selected size to the console (optional)
+            console.log("Selected Size:", selectedSize);
         });
+    });
+
+    // Get the "Add to Bag" form
+    var addToBagForm = document.querySelector('.form');
+
+    // Attach a submit event listener to the "Add to Bag" form
+    addToBagForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Find the selected size button within the product detail section
+        var selectedSizeButton = document.querySelector('.product-size-button.selected');
+
+        // If a size is selected, set it in the hidden input field
+        if (selectedSizeButton) {
+            var selectedSize = selectedSizeButton.dataset.size;
+            document.getElementById("selected-size").value = selectedSize;
+        }
+
+        // Submit the form
+        this.submit();
     });
 
     // Initialise the return to top button
