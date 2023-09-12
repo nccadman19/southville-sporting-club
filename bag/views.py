@@ -9,9 +9,9 @@ def view_bag(request):
     return render(request, 'bag/bag.html')
 
 def add_to_bag(request, item_id):
-    """ Add a quantity of the specified product to the shopping bag """
+    """ Add item to the bag, add only 1 item initially """
 
-    quantity = int(request.POST.get('quantity'))
+    quantity = int(request.POST.get('quantity', 1))
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 

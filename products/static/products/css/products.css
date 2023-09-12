@@ -170,6 +170,39 @@
     margin-left: 9px;
 }
 
+/* Sizes buttons */
+
+.product-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-form a.btn {
+    margin: 5px;
+    font-size: 14px;
+    line-height: 1;
+    padding: 9px;
+    border: 1px solid #5250508e;
+    box-shadow: none;
+    width: calc(33% - 10px);
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    border-radius: var(--radius-2);
+}
+
+.product-form a.btn.selected {
+    border: 1.5px solid black;
+}
+
+.product-form a.btn.soldoutstock {
+    background-color: #525050d4;
+    color: white;
+    cursor: not-allowed;
+}
+
+
+
 /* Media Queries */
 
 @media (max-width: 600px) {
