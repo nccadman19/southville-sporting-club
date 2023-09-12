@@ -22,7 +22,5 @@ def add_to_bag(request, item_id):
         bag[item_id] = quantity
 
     request.session['bag'] = bag
-    print(request.session['bag'])
-    print("Selected Size in view_bag:", selected_size)
     return redirect(redirect_url)
     
