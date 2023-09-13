@@ -23,6 +23,7 @@ def bag_contents(request):
                 'product': product,
                 'size': selected_size,
                 'item_total': item_total,
+                'image_url': product.image.url,
             })
         else:
             pass
