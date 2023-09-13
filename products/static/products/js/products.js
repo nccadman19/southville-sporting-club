@@ -1,13 +1,14 @@
+// Define the validateForm function in the global
+function validateForm() {
+    var selectedSize = document.getElementById("selected-size").value;
+    if (selectedSize === "") {
+        alert("Please select a size.");
+        return false;
+    }
+    return true;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialise dropdown trigger for size dropdown menu
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems);
-
-    // Initialise the specific dropdown trigger with click option and coverTrigger
-    var sortDropdownElem = document.querySelector('.sort-dropdown-trigger');
-    var dropdownOptions = { alignment: 'right', coverTrigger: false, closeOnClick: true };
-    var specificDropdownInstance = M.Dropdown.init(sortDropdownElem, dropdownOptions);
-
     // Get all the size buttons within the product detail section
     var sizeButtons = document.querySelectorAll('.product-detail .product-size-button');
 
@@ -30,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Store the selected size in the variable
             selectedSize = button.dataset.size;
 
-            // Log the selected size to the console (optional)
-            console.log("Selected Size:", selectedSize);
+            // Update the hidden input field immediately
+            document.getElementById("selected-size").value = selectedSize;
         });
     });
 
@@ -40,42 +41,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Attach a submit event listener to the "Add to Bag" form
     addToBagForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        // Find the selected size button within the product detail section
-        var selectedSizeButton = document.querySelector('.product-size-button.selected');
-
-        // If a size is selected, set it in the hidden input field
-        if (selectedSizeButton) {
-            var selectedSize = selectedSizeButton.dataset.size;
-            document.getElementById("selected-size").value = selectedSize;
+        // Validate the selected size
+        var selectedSize = document.getElementById("selected-size").value;
+        if (selectedSize === "") {
+            e.preventDefault(); // Prevent form submission
+            alert("Please select a size.");
         }
-
-        // Submit the form
-        this.submit();
     });
+});
 
-    // Initialise the return to top button
+document.addEventListener('DOMContentLoaded', function () {
+    // ... Other code ...
+
+    // Get the elements related to the scroll-to-top button if they exist
     var backToTopBtn = document.getElementById('back-to-top');
     var backToTopContainer = document.getElementById('back-to-top-container');
 
-    function toggleBackToTopButton() {
-        if (window.scrollY > 300) { // Adjust the value as needed
-            backToTopContainer.style.display = 'block';
-        } else {
-            backToTopContainer.style.display = 'none';
+    // Attach the scroll-to-top button functionality if the elements exist
+    if (backToTopBtn && backToTopContainer) {
+        function toggleBackToTopButton() {
+            if (window.scrollY > 300) {
+                backToTopContainer.style.display = 'block';
+            } else {
+                backToTopContainer.style.display = 'none';
+            }
         }
-    }
 
-    // Attach a scroll event listener to the window
-    window.addEventListener('scroll', toggleBackToTopButton);
+        window.addEventListener('scroll', toggleBackToTopButton);
 
-    // Scroll to the top when the button is clicked
-    backToTopBtn.addEventListener('click', function () {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth' // For smooth scrolling behavior
+        backToTopBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            backToTopBtn.classList.remove('waves-ripple');
         });
-        backToTopBtn.classList.remove('waves-ripple');
-    });
+    }
 });

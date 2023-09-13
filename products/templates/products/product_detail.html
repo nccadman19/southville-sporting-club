@@ -29,7 +29,8 @@
                         <span class="product-name">{{ product.name }}</span>
                         <span class="product-color">{{ product.color }}</span>
                         <span class="product-price">£{{ product.price }}</span>
-                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                        <form class="form" action="{% url 'add_to_bag' product.id %}" onsubmit="return validateForm()"
+                            method="POST">
                             {% csrf_token %}
                             <div class="row">
                                 <!-- Size menu -->
@@ -43,7 +44,6 @@
                                         <input type="hidden" name="selected_size" id="selected-size" value="">
                                     </div>
                                 </div>
-
                                 <!-- Add to bag button -->
                                 <div class="col s12 button-container">
                                     <button type="submit" class="btn btn-black rounded-0 text-uppercase">Add to
@@ -52,7 +52,6 @@
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
                         </form>
-
                         <ul class="collapsible card no-shadow">
                             <li class="active">
                                 <div class="collapsible-header card-details">
@@ -112,7 +111,6 @@
                                 </div>
                             </li>
                         </ul>
-
                     </div>
                 </div>
             </div>
