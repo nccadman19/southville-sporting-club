@@ -11,17 +11,21 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
 
     for item_id, quantity in bag.items():
-        product = get_object_or_404(Product, pk=item_id)
-        item_total = quantity * product.price
-        total += item_total
-        product_count += quantity
-        bag_items.append({
-            'item_id': product.id,
-            'quantity': quantity,
-            'product': product,
-            'size': product.sizes, 
-            'item_total': item_total,
-        })
+        if '_' in item_id:
+            product_id, selected_size = item_id.split('_')
+            product = get_object_or_404(Product, pk=product_id)
+            item_total = quantity * product.price
+            total += item_total
+            product_count += quantity
+            bag_items.append({
+                'item_id': product.id,
+                'quantity': quantity,
+                'product': product,
+                'size': selected_size,
+                'item_total': item_total,
+            })
+        else:
+            pass
 
     # Access the thresholds from settings
     thresholds = settings.DELIVERY_THRESHOLDS

@@ -102,6 +102,10 @@ adding multiple categories
 https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django
 search function synonyms 
 https://www.holisticseo.digital/python-seo/nltk/wordnet
+button styling
+https://stackoverflow.com/questions/59607164/adjust-width-of-multiple-buttons-to-follow-the-button-with-the-largest-wrap-cont
+cart error help
+https://stackoverflow.com/questions/63675859/attribute-error-int-object-has-no-attribute-get
 
 errors
 cannot get the cart popup to disappear when user clicks away from the display
