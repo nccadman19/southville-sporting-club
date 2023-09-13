@@ -245,7 +245,9 @@ html {
   display: flex;
 }
 
-.cart-summary-title {
+.cart-subtotal,
+.cart-shipping,
+.cart-total {
   margin: 0px;
   font-weight: 700;
   font-size: 0.8125rem;
@@ -257,6 +259,7 @@ html {
 
 .bag-total {
   min-height: calc(100vh - 640px);
+  padding-top: 10px;
 }
 
 .cart-item {
