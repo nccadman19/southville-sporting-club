@@ -201,6 +201,11 @@
     cursor: not-allowed;
 }
 
+.shipping-btn {
+    color: black;
+    text-decoration: underline;
+}
+
 /* Add to cart button */
 
 .button-container {
