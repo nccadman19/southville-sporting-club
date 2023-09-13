@@ -106,6 +106,8 @@ button styling
 https://stackoverflow.com/questions/59607164/adjust-width-of-multiple-buttons-to-follow-the-button-with-the-largest-wrap-cont
 cart error help
 https://stackoverflow.com/questions/63675859/attribute-error-int-object-has-no-attribute-get
+remove button
+https://stackoverflow.com/questions/72875203/remove-item-from-cart-and-manage-quantity-buttons-not-working-when-i-add-mor
 
 errors
 cannot get the cart popup to disappear when user clicks away from the display
