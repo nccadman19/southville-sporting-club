@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="{% static 'bag/css/bag.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
     {% endblock %}
 
     {% block extra_css %}
@@ -28,8 +29,6 @@
         integrity="sha384-fj9YEHKNa/e0CNquG4NcocjoyMATYo1k2Ff5wGB42C/9AwOlJjDoySPtNJalccfI"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f0f8e6b416.js" crossorigin="anonymous"></script>
-    <script src="{% static 'js/materialize.js' %}"></script>
-    <script src="{% static 'js/init.js' %}"></script>
     {% endblock%}
 
     {% block extra_js %}
@@ -114,8 +113,9 @@
 
     {% block postloadjs %}
     {% endblock %}
-
     <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bag/js/bag.js' %}"></script>
 
 </body>
 
