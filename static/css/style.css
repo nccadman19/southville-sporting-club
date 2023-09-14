@@ -126,8 +126,37 @@ html {
   position: absolute;
 }
 
+/* Mobile sidenav */
+
 .material-icons.close-icon {
   display: none;
+}
+
+.sidenav li>a>i.material-icons.close-btn {
+  float: right;
+  margin: 10px;
+}
+
+.sidenav li>a.sidenav-close {
+  padding: 0;
+}
+
+.sidenav .collapsible-header,
+.sidenav.fixed .collapsible-header,
+.sidenav .sidenav-running {
+  padding: 0 15px;
+}
+
+.sidenav li>a>i,
+.sidenav li>a>[class^="mdi-"],
+.sidenav li>a li>a>[class*="mdi-"],
+.sidenav li>a>i.material-icons {
+  float: right;
+  margin: 0;
+}
+
+.sidenav li>a>i.material-icons.info {
+  margin: 0 -28px;
 }
 
 /* Footer */
