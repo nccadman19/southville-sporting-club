@@ -125,8 +125,17 @@
 .product-color {
     display: block;
     text-transform: uppercase;
-    padding-bottom: 2rem;
-    padding: 2px 10px 10px 10px;
+    padding-bottom: 1rem;
+    padding: 2px 10px 2px 10px;
+}
+
+.product-sku {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding-bottom: 0;
+    padding: 0px 0px 0px 10px;
+    color: #5250508e;
 }
 
 .product-price {

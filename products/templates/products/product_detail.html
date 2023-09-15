@@ -28,6 +28,7 @@
                     <div class="card-content product-text">
                         <span class="product-name">{{ product.name }}</span>
                         <span class="product-color">{{ product.color }}</span>
+                        <span class="product-sku">SKU: {{ product.sku }}</span>
                         <span class="product-price">£{{ product.price }}</span>
                         <form class="form" action="{% url 'add_to_bag' product.id %}" onsubmit="return validateForm()"
                             method="POST">
@@ -67,10 +68,13 @@
                                     <span>
                                         <h6>DELIVERY OPTIONS</h6>
                                         <ul>
-                                            <li>UK Mainland 1st Class (1-3 working days): £5 (Or Free If Over £100)</li>
-                                            <li>UK Mainland Standard (3-5 working days): £3 (Or Free If Over £80)</li>
+                                            <li>UK Mainland 1st Class (1-3 working days): £5 (Or Free If Over £100)
+                                            </li>
+                                            <li>UK Mainland Standard (3-5 working days): £3 (Or Free If Over £80)
+                                            </li>
                                             <li>Europe Mainland (2-5 days): £10 (Or Free If Over £150)</li>
-                                            <li>Rest (Worldwide) (Incl NI) (2-10 days): £16.99 (Or Free if Over £300)
+                                            <li>Rest (Worldwide) (Incl NI) (2-10 days): £16.99 (Or Free if Over
+                                                £300)
                                             </li><br>
                                             <li><a href="{% url 'shipping' %}" class="shipping-btn">Shipping &
                                                     Returns</a>
@@ -106,8 +110,10 @@
                                         <li>Large (L): Waist: 32-34 inches</li>
                                         <li>X-Large (XL): Waist: 34-36 inches</li>
                                         <li>XX-Large (XXL): Waist: 36-38 inches</li><br>
-                                        <li>Please note that these measurements are approximate and may vary slightly
-                                            depending on the specific product and brand. We recommend customers refer to
+                                        <li>Please note that these measurements are approximate and may vary
+                                            slightly
+                                            depending on the specific product and brand. We recommend customers
+                                            refer to
                                             the sizing chart provided on your website for the most accurate sizing
                                             information.</li>
                                     </ul>
