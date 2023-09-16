@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@types/jquery": "^3.5.19",
     "materialize-css": "^1.0.0-rc.2"
   }
 }
