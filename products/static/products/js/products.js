@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var backToTopBtn = document.getElementById('back-to-top');
     var backToTopContainer = document.getElementById('back-to-top-container');
 
+    // Initialise the specific dropdown trigger with click option and coverTrigger
+    var sortDropdownElem = document.querySelector('.sort-dropdown-trigger');
+    var dropdownOptions = { alignment: 'right', coverTrigger: false, closeOnClick: true };
+    var specificDropdownInstance = M.Dropdown.init(sortDropdownElem, dropdownOptions);
+
     // Attach the scroll-to-top button functionality if the elements exist
     if (backToTopBtn && backToTopContainer) {
         function toggleBackToTopButton() {

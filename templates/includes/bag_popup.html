@@ -18,12 +18,13 @@
                     <div class="product-image">
                         <img src="{{ item.image_url }}" alt="{{ item.product.name }}">
                     </div>
-                    <div class="product-info">
+                    <div class="product-info-cart">
                         <p class="product-name-cart">{{ item.product.name }}</p>
                         <p class="product-size-cart">Size: {{ item.size }}</p>
                         <p class="product-quantity-cart">Quantity: {{ item.quantity }}</p>
                         <p class="product-price-cart">{{ item.product.price }} GBP</p>
-                        <button class="remove-button" data-item-id="{{ item.item_id }}">Remove</button>
+                        <a class="remove-item" id="remove_{{ item.item_id }}"
+                            data-product_size="{{ item.size }}">Remove</a>
                     </div>
                 </div>
                 {% endfor %}

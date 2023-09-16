@@ -25,9 +25,8 @@
     {% endblock %}
 
     {% block corejs %}
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"
-        integrity="sha384-fj9YEHKNa/e0CNquG4NcocjoyMATYo1k2Ff5wGB42C/9AwOlJjDoySPtNJalccfI"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f0f8e6b416.js" crossorigin="anonymous"></script>
     {% endblock%}
 
@@ -110,13 +109,10 @@
     <div class="message-container"></div>
     {% endif %}
 
-
     {% block postloadjs %}
     {% endblock %}
     <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/init.js' %}"></script>
-    <script type="text/javascript" src="{% static 'bag/js/bag.js' %}"></script>
-
 </body>
 
 </html>

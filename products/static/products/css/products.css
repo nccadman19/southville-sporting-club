@@ -164,6 +164,11 @@
 
 .all-products-main {
     padding: 1rem !important;
+    width: 50%;
+}
+
+.sort-dropdown {
+    width: 50%;
 }
 
 .bold-title {
