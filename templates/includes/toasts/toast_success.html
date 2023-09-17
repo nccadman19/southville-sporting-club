@@ -3,4 +3,48 @@
         <strong>Success!</strong><br>
         {{ message }}
     </div>
+    {% if grand_total %}
+    <p class="logo-font bg-white text-black py-1 right-align">Your Bag ({{ product_count }})</p>
+    <div class="bag-notification-wrapper">
+        {% if bag_items %}
+        {% with last_item=bag_items|last %}
+        <div class="row">
+            <div class="col s12 m4 toast-description right-align">
+                <p class="my-0"><strong>{{ last_item.product.name }}</strong></p>
+                <p class="my-0 small">Size:
+                    {% if last_item.product.sizes %}
+                    {{ last_item.size }}
+                    {% else %}
+                    N/A
+                    {% endif %}
+                </p>
+                <p class="my-0 small grey-text text-darken-1">Qty: {{ last_item.quantity }}</p>
+            </div>
+            <div class="col s12 m6 my-1">
+                <img class="responsive-img" src="{{ last_item.product.image.url }}">
+            </div>
+        </div>
+        {% endwith %}
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col s12 right-align">
+            <strong>
+                <p class="mt-3 mb-1 text-black right-align">
+                    Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}:
+                    <span class="right-align">£{{ total|floatformat:2 }}</span>
+                </p>
+            </strong>
+            {% if free_delivery_delta > 0 %}
+            <p class="mb-0 p-2 yellow lighten-3 z-depth-1 text-black right-align">
+                Spend <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
+            </p>
+            {% endif %}
+            <a href="{% url 'view_bag' %}" class="waves-effect waves-light btn black rounded-0 right-align">
+                <span class="text-uppercase">Go To Secure Checkout</span>
+                <i class="material-icons right">lock</i>
+            </a>
+        </div>
+    </div>
+    {% endif %}
 </div>

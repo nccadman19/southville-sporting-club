@@ -237,6 +237,14 @@ html {
   text-align: end;
 }
 
+img.responsive-img,
+video.responsive-video {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+}
+
 /* Media Queries */
 
 /* Navbar */
