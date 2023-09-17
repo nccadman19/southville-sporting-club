@@ -23,10 +23,11 @@ def add_to_bag(request, item_id):
     
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
+        message = f'Updated {product.name} quantity to {bag[item_id]}'
     else:
         bag[item_id] = quantity
+        message = f'Added {product.name} ({selected_size}) to your bag'
 
-    message = f'Added {product.name} ({selected_size}) to your bag'
     messages.success(request, message)
 
     request.session['bag'] = bag
