@@ -30,8 +30,7 @@
                         <span class="product-color">{{ product.color }}</span>
                         <span class="product-sku">SKU: {{ product.sku }}</span>
                         <span class="product-price">£{{ product.price }}</span>
-                        <form class="form" action="{% url 'add_to_bag' product.id %}" onsubmit="return validateForm()"
-                            method="POST">
+                        <form class="form" action="{% url 'add_to_bag' product.id %}" onsubmit="return" method="POST">
                             {% csrf_token %}
                             <div class="row">
                                 <!-- Size menu -->
