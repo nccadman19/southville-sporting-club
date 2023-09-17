@@ -84,8 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(function () {
         toastContainer.remove();
       }, 500);
-    }, 5000); // 5 seconds (5000 milliseconds)
+    }, 4000); // 5 seconds (5000 milliseconds)
   }
 });
-
-
