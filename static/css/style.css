@@ -205,6 +205,35 @@ html {
   color: #000000;
 }
 
+/* Materialize toasts */
+
+#toast-container {
+  position: fixed;
+  top: 8rem;
+  right: 15px;
+  z-index: 99999999999;
+}
+
+.custom-toast {
+  overflow: visible;
+}
+
+.toast {
+  align-items: flex-start;
+  background-color: white;
+  color: #000000;
+  padding: 5px 10px;
+  top: 0;
+}
+
+.toast-header {
+  height: 2px;
+}
+
+.toast-body {
+  text-align: end;
+}
+
 /* Media Queries */
 
 /* Navbar */

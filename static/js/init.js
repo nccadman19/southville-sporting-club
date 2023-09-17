@@ -63,5 +63,29 @@ document.addEventListener('DOMContentLoaded', function () {
     hideCartOverlay();
     this.style.display = 'none';
   });
-
 });
+
+// JavaScript code to slide out the toast message container
+document.addEventListener('DOMContentLoaded', function () {
+  var toastContainer = document.getElementById('toast-container');
+  if (toastContainer) {
+    // Show the toast message container
+    setTimeout(function () {
+      toastContainer.style.opacity = '1';
+    }, 100); // Wait for a brief moment to start the animation
+
+    // Slide out and remove the toast message container
+    setTimeout(function () {
+      toastContainer.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+      toastContainer.style.transform = 'translateX(100%)';
+      toastContainer.style.opacity = '0';
+
+      // Remove the container after the animation finishes (0.5 seconds)
+      setTimeout(function () {
+        toastContainer.remove();
+      }, 500);
+    }, 5000); // 5 seconds (5000 milliseconds)
+  }
+});
+
+

@@ -16,7 +16,7 @@
 
     {% block corecss %}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="{% static 'css/materialize.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="{% static 'bag/css/bag.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
     {% endblock %}
@@ -106,13 +106,28 @@
     </footer>
 
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container toast" id="toast-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
     {% endif %}
+
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/init.js' %}"></script>
 
     {% block postloadjs %}
     {% endblock %}
-    <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/init.js' %}"></script>
 </body>
 
 </html>
