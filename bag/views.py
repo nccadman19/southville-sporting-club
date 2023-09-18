@@ -3,8 +3,6 @@ from django.contrib import messages
 from . import views
 from products.models import Product
 
-# Create your views here.
-
 def view_bag(request):
     """ A view to return contents of the users bag """
 

@@ -108,6 +108,11 @@ cart error help
 https://stackoverflow.com/questions/63675859/attribute-error-int-object-has-no-attribute-get
 remove button
 https://stackoverflow.com/questions/72875203/remove-item-from-cart-and-manage-quantity-buttons-not-working-when-i-add-mor
+address api
+https://pypi.org/project/geopy/
+dialogs
+https://www.tutorialspoint.com/materialize/materialize_dialogs.htm
+
 
 errors
 cannot get the cart popup to disappear when user clicks away from the display

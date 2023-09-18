@@ -2,6 +2,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 from decimal import Decimal
+from checkout.utils import determine_country_from_postcode
 
 def bag_contents(request):
     # Create a dictionary of the shopping bag's contents.

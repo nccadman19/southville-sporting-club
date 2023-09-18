@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load static %}
+{% load subtotal_filters %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <hr>
+            <h2 class="logo-font mb-4">Checkout</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12 l6 offset-l6">
+            <p class="text-muted">Order Summary ({{ product_count }})</p>
+            <ul class="collection">
+                {% for item in bag_items %}
+                <li class="collection-item avatar">
+                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="circle">
+                    <span class="title">{{ item.product.name }}</span>
+                    <p>Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}<br>Qty: {{
+                        item.quantity }}</p>
+                    <span class="secondary-content">${{ item.product.price | calc_subtotal:item.quantity }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            <hr class="my-0">
+            <ul class="collection">
+                <li class="collection-item">
+                    <span class="text-black">Order Total:</span>
+                    <span class="secondary-content">${{ total | floatformat:2 }}</span>
+                </li>
+                <li class="collection-item">
+                    <span class="text-black">Delivery:</span>
+                    <span class="secondary-content">${{ delivery | floatformat:2 }}</span>
+                </li>
+                <li class="collection-item">
+                    <span class="text-black">Grand Total:</span>
+                    <span class="secondary-content"><strong>${{ grand_total | floatformat:2 }}</strong></span>
+                </li>
+            </ul>
+        </div>
+        <div class="col s12 m12 l6">
+            <p class="text-muted">Please fill out the form below to complete your order</p>
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                    <div class="input-field">
+                        {{ order_form.full_name }}
+                        <label for="{{ order_form.full_name.id_for_label }}">Full Name</label>
+                    </div>
+                    <div class="input-field">
+                        {{ order_form.email }}
+                        <label for="{{ order_form.email.id_for_label }}">Email</label>
+                    </div>
+                </fieldset>
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                    <div class="input-field">
+                        {{ order_form.phone_number }}
+                        <label for="{{ order_form.phone_number.id_for_label }}">Phone Number</label>
+                    </div>
+                    <div class="input-field">
+                        {{ order_form.country }}
+                        <label for="{{ order_form.country.id_for_label }}">Country</label>
+                    </div>
+                    <div class="input-field">
+                        {{ order_form.postcode }}
+                        <label for="{{ order_form.postcode.id_for_label }}">Postcode</label>
+                    </div>
+                    <div class="input-field">
+                        {{ order_form.town_or_city }}
+                        <label for="{{ order_form.town_or_city.id_for_label }}">Town or City</label>
+                    </div>
+                    <div class="input-field">
+                        {{ order_form.street_address1 }}
+                        <label for="{{ order_form.street_address1.id_for_label }}">Street Address 1</label>
+                    </div>
+                    <div class="input-field">
+                        {{ order_form.street_address2 }}
+                        <label for="{{ order_form.street_address2.id_for_label }}">Street Address 2</label>
+                    </div>
+                    <div class="input-field">
+                        {{ order_form.county }}
+                        <label for="{{ order_form.county.id_for_label }}">County</label>
+                    </div>
+                    <p>
+                        <label>
+                            <input type="checkbox" class="filled-in" id="id-save-info" name="save-info"
+                                checked="checked" />
+                            <span>Save this delivery information to my profile</span>
+                        </label>
+                    </p>
+                </fieldset>
+                <fieldset class="px-3">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                    <!-- A Stripe card element will go here -->
+                    <div class="mb-3" id="card-element"></div>
+
+                    <!-- Used to display form errors -->
+                    <div class="mb-3 red-text" id="card-errors" role="alert"></div>
+                </fieldset>
+
+                <div class="submit-button text-right mt-5 mb-2">
+                    <a href="{% url 'view_bag' %}" class="waves-effect waves-light btn btn-outline-black rounded-0">
+                        <i class="material-icons left">arrow_back</i>
+                        <span class="font-weight-bold">Adjust Bag</span>
+                    </a>
+                    <button id="submit-button" class="btn btn-black rounded-0">
+                        <span class="font-weight-bold">Complete Order</span>
+                        <i class="material-icons right">lock</i>
+                    </button>
+                    <p class="small red-text my-0">
+                        <i class="material-icons left">error</i>
+                        <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
