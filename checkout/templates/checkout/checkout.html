@@ -26,35 +26,6 @@
     </div>
 
     <div class="row">
-        <div class="col s12 m12 l6 offset-l6">
-            <p class="text-muted">Order Summary ({{ product_count }})</p>
-            <ul class="collection">
-                {% for item in bag_items %}
-                <li class="collection-item avatar">
-                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="circle">
-                    <span class="title">{{ item.product.name }}</span>
-                    <p>Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}<br>Qty: {{
-                        item.quantity }}</p>
-                    <span class="secondary-content">${{ item.product.price | calc_subtotal:item.quantity }}</span>
-                </li>
-                {% endfor %}
-            </ul>
-            <hr class="my-0">
-            <ul class="collection">
-                <li class="collection-item">
-                    <span class="text-black">Order Total:</span>
-                    <span class="secondary-content">${{ total | floatformat:2 }}</span>
-                </li>
-                <li class="collection-item">
-                    <span class="text-black">Delivery:</span>
-                    <span class="secondary-content">${{ delivery | floatformat:2 }}</span>
-                </li>
-                <li class="collection-item">
-                    <span class="text-black">Grand Total:</span>
-                    <span class="secondary-content"><strong>${{ grand_total | floatformat:2 }}</strong></span>
-                </li>
-            </ul>
-        </div>
         <div class="col s12 m12 l6">
             <p class="text-muted">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -132,6 +103,35 @@
                     </p>
                 </div>
             </form>
+        </div>
+        <div class="col s12 m12 l6">
+            <p class="text-muted">Order Summary ({{ product_count }})</p>
+            <ul class="collection">
+                {% for item in bag_items %}
+                <li class="collection-item avatar">
+                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="circle">
+                    <span class="title">{{ item.product.name }}</span>
+                    <p>Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}<br>Qty: {{
+                        item.quantity }}</p>
+                    <span class="secondary-content">£{{ item.product.price | calc_subtotal:item.quantity }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            <hr class="my-0">
+            <ul class="collection">
+                <li class="collection-item">
+                    <span class="text-black">Order Total:</span>
+                    <span class="secondary-content">£{{ total | floatformat:2 }}</span>
+                </li>
+                <li class="collection-item">
+                    <span class="text-black">Delivery:</span>
+                    <span class="secondary-content">£{{ delivery | floatformat:2 }}</span>
+                </li>
+                <li class="collection-item">
+                    <span class="text-black">Grand Total:</span>
+                    <span class="secondary-content"><strong>£{{ grand_total | floatformat:2 }}</strong></span>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
