@@ -32,42 +32,42 @@
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
-                    <div class="input-field">
+                    <div class="input-field checkout">
                         {{ order_form.full_name }}
                         <label for="{{ order_form.full_name.id_for_label }}">Full Name</label>
                     </div>
-                    <div class="input-field">
+                    <div class="input-field checkout">
                         {{ order_form.email }}
                         <label for="{{ order_form.email.id_for_label }}">Email</label>
                     </div>
                 </fieldset>
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
-                    <div class="input-field">
+                    <div class="input-field checkout">
                         {{ order_form.phone_number }}
                         <label for="{{ order_form.phone_number.id_for_label }}">Phone Number</label>
                     </div>
-                    <div class="input-field">
+                    <div class="input-field checkout">
                         {{ order_form.country }}
                         <label for="{{ order_form.country.id_for_label }}">Country</label>
                     </div>
-                    <div class="input-field">
+                    <div class="input-field checkout">
                         {{ order_form.postcode }}
                         <label for="{{ order_form.postcode.id_for_label }}">Postcode</label>
                     </div>
-                    <div class="input-field">
+                    <div class="input-field checkout">
                         {{ order_form.town_or_city }}
                         <label for="{{ order_form.town_or_city.id_for_label }}">Town or City</label>
                     </div>
-                    <div class="input-field">
+                    <div class="input-field checkout">
                         {{ order_form.street_address1 }}
                         <label for="{{ order_form.street_address1.id_for_label }}">Street Address 1</label>
                     </div>
-                    <div class="input-field">
+                    <div class="input-field checkout">
                         {{ order_form.street_address2 }}
                         <label for="{{ order_form.street_address2.id_for_label }}">Street Address 2</label>
                     </div>
-                    <div class="input-field">
+                    <div class="input-field checkout">
                         {{ order_form.county }}
                         <label for="{{ order_form.county.id_for_label }}">County</label>
                     </div>
@@ -108,28 +108,51 @@
             <p class="text-muted">Order Summary ({{ product_count }})</p>
             <ul class="collection">
                 {% for item in bag_items %}
-                <li class="collection-item avatar">
-                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="circle">
-                    <span class="title">{{ item.product.name }}</span>
-                    <p>Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}<br>Qty: {{
-                        item.quantity }}</p>
-                    <span class="secondary-content">£{{ item.product.price | calc_subtotal:item.quantity }}</span>
+                <li class="collection-item">
+                    <div class="item-content">
+                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="responsive-img">
+                        <div class="item-details">
+                            <span class="title">{{ item.product.name }}</span>
+                            <p>Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A
+                                {% endif %}<br>Qty: {{ item.quantity }}</p>
+                            <span class="secondary-content">
+                                £{{ item.product.price | calc_subtotal:item.quantity }}</span>
+                        </div>
+                    </div>
                 </li>
                 {% endfor %}
             </ul>
             <hr class="my-0">
             <ul class="collection">
-                <li class="collection-item">
+                <li class="collection-item total">
                     <span class="text-black">Order Total:</span>
-                    <span class="secondary-content">£{{ total | floatformat:2 }}</span>
+                    <span class="secondary-content">£
+                        {% if total == 0 %}
+                        00.00
+                        {% else %}
+                        {{ total | floatformat:2 }}
+                        {% endif %}
+                    </span>
                 </li>
-                <li class="collection-item">
+                <li class="collection-item total">
                     <span class="text-black">Delivery:</span>
-                    <span class="secondary-content">£{{ delivery | floatformat:2 }}</span>
+                    <span class="secondary-content">£
+                        {% if delivery is null or delivery == 0 %}
+                        00.00
+                        {% else %}
+                        {{ delivery | floatformat:2 }}
+                        {% endif %}
+                    </span>
                 </li>
-                <li class="collection-item">
+                <li class="collection-item total">
                     <span class="text-black">Grand Total:</span>
-                    <span class="secondary-content"><strong>£{{ grand_total | floatformat:2 }}</strong></span>
+                    <span class="secondary-content">£
+                        {% if grand_total == 0 %}
+                        00.00
+                        {% else %}
+                        {{ grand_total | floatformat:2 }}
+                        {% endif %}
+                    </span>
                 </li>
             </ul>
         </div>
