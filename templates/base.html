@@ -70,7 +70,7 @@
                 </ul>
                 {% include 'includes/mobile-nav.html' %}
                 {% include 'includes/main-nav.html' %}
-                {% include 'includes/bag_popup.html' %}
+                {% include 'bag/includes/bag-overlay.html' %}
             </div>
         </nav>
     </header>
@@ -125,6 +125,7 @@
 
     <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bag/js/bag.js' %}"></script>
 
     {% block postloadjs %}
     {% endblock %}
