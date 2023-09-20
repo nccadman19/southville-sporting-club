@@ -117,3 +117,12 @@ p.small.black-text.my-0 {
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
 }
+
+fieldset.px-3.mb-5 {
+    border: none;
+}
+
+#payment-form>legend,
+body>div.container>div:nth-child(2)>div:nth-child(1)>p {
+    padding: 0.35em 0.75em 0.625em;
+}
