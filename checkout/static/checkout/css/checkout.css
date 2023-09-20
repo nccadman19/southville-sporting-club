@@ -1,3 +1,5 @@
+/* Bag */
+
 img.responsive-img,
 video.responsive-video {
     position: absolute;
@@ -29,6 +31,8 @@ video.responsive-video {
     text-align: right;
 }
 
+/* Form */
+
 .secondary-content {
     color: #000000;
     font-weight: 600;
@@ -46,4 +50,70 @@ li.collection-item.total {
 
 div.input-field.checkout {
     position: sticky;
+}
+
+select {
+    display: flex;
+    border: none;
+}
+
+.input-field select {
+    z-index: 2;
+}
+
+select#id_country {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    padding: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transition: border .3s, -webkit-box-shadow .3s;
+    transition: border .3s, -webkit-box-shadow .3s;
+    transition: box-shadow .3s, border .3s;
+    transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+}
+
+/* label focus color */
+.input-field.checkout input[type=text]:focus+label {
+    color: #267d13;
+}
+
+/* label underline focus color */
+.input-field.checkout input[type=text]:focus {
+    border-bottom: 1px solid #267d13;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #267d13;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+/* Submit buttons */
+
+.button-container,
+p.small.black-text.my-0 {
+    display: flex;
+    margin: 1rem 0 1rem 0;
+}
+
+div.button-container.complete,
+p.small.black-text.my-0 {
+    justify-content: right;
+}
+
+.submit-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
 }

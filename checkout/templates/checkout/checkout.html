@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col s12">
             <hr>
-            <h2 class="logo-font mb-4">Checkout</h2>
+            <h3 class="logo-font mb-4">CHECKOUT</h3>
             <hr>
         </div>
     </div>
@@ -48,18 +48,6 @@
                         <label for="{{ order_form.phone_number.id_for_label }}">Phone Number</label>
                     </div>
                     <div class="input-field checkout">
-                        {{ order_form.country }}
-                        <label for="{{ order_form.country.id_for_label }}">Country</label>
-                    </div>
-                    <div class="input-field checkout">
-                        {{ order_form.postcode }}
-                        <label for="{{ order_form.postcode.id_for_label }}">Postcode</label>
-                    </div>
-                    <div class="input-field checkout">
-                        {{ order_form.town_or_city }}
-                        <label for="{{ order_form.town_or_city.id_for_label }}">Town or City</label>
-                    </div>
-                    <div class="input-field checkout">
                         {{ order_form.street_address1 }}
                         <label for="{{ order_form.street_address1.id_for_label }}">Street Address 1</label>
                     </div>
@@ -68,8 +56,25 @@
                         <label for="{{ order_form.street_address2.id_for_label }}">Street Address 2</label>
                     </div>
                     <div class="input-field checkout">
+                        {{ order_form.town_or_city }}
+                        <label for="{{ order_form.town_or_city.id_for_label }}">Town or City</label>
+                    </div>
+                    <div class="input-field checkout">
+                        {{ order_form.postcode }}
+                        <label for="{{ order_form.postcode.id_for_label }}">Postcode</label>
+                    </div>
+                    <div class="input-field checkout">
                         {{ order_form.county }}
                         <label for="{{ order_form.county.id_for_label }}">County</label>
+                    </div>
+                    <div class="input-field checkout">
+                        <select id="{{ order_form.country.id_for_label }}" name="{{ order_form.country.name }}">
+                            <option value="" disabled selected>Choose your country</option>
+                            {% for code, name in order_form.country.field.choices %}
+                            <option value="{{ code }}">{{ name }}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="{{ order_form.country.id_for_label }}" class="active">Select Country</label>
                     </div>
                     <p>
                         <label>
@@ -87,21 +92,23 @@
                     <!-- Used to display form errors -->
                     <div class="mb-3 red-text" id="card-errors" role="alert"></div>
                 </fieldset>
-
                 <div class="submit-button text-right mt-5 mb-2">
-                    <a href="{% url 'view_bag' %}" class="waves-effect waves-light btn btn-outline-black rounded-0">
-                        <i class="material-icons left">arrow_back</i>
-                        <span class="font-weight-bold">Adjust Bag</span>
-                    </a>
-                    <button id="submit-button" class="btn btn-black rounded-0">
-                        <span class="font-weight-bold">Complete Order</span>
-                        <i class="material-icons right">lock</i>
-                    </button>
-                    <p class="small red-text my-0">
-                        <i class="material-icons left">error</i>
-                        <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
-                    </p>
+                    <div class="button-container">
+                        <a href="{% url 'view_bag' %}" class="waves-effect waves-light btn btn-outline-black rounded-0">
+                            <i class="material-icons left">arrow_back</i>
+                            <span class="font-weight-bold">Adjust Bag</span>
+                        </a>
+                    </div>
+                    <div class="button-container complete">
+                        <button id="submit-button" class="btn btn-black rounded-0">
+                            <span class="font-weight-bold">Complete Order</span>
+                            <i class="material-icons right">lock</i>
+                        </button>
+                    </div>
                 </div>
+                <p class="small black-text my-0">
+                    <span>Your card will be charged £{{ grand_total|floatformat:2 }}</span>
+                </p>
             </form>
         </div>
         <div class="col s12 m12 l6">
