@@ -1,8 +1,10 @@
 from django import forms
 from .models import Order
-
+from django_countries.fields import CountryField
 
 class OrderForm(forms.ModelForm):
+    country = CountryField().formfield()
+
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
@@ -13,19 +15,19 @@ class OrderForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
+        labels, and set autofocus on the first field
         """
         super().__init__(*args, **kwargs)
         placeholders = {
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'country': 'Country',
             'postcode': 'Postal Code',
             'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
             'county': 'County',
+            'country': 'Country'
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True

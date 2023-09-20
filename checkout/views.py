@@ -1,19 +1,6 @@
 from django.shortcuts import render, redirect, reverse
-from checkout.utils import determine_country_from_postcode
 from django.contrib import messages
 from .forms import OrderForm
-
-def collect_postcode(request):
-    if request.method == 'POST':
-        user_postcode = request.POST.get('postcode')
-        user_country = determine_country_from_postcode(user_postcode)
-        
-        # Calculate shipping cost and other logic based on user_country
-        
-        # Redirect to the next step in the checkout process
-        return redirect(reverse('checkout:next_step'))
-    
-    return render(request, 'checkout/collect_postcode.html')
 
 def checkout(request):
     bag = request.session.get('bag', {})
@@ -22,9 +9,11 @@ def checkout(request):
         return redirect(reverse('products'))
 
     order_form = OrderForm()
+    user_country = request.session.get('user_country', None)
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
+        'user_country': user_country,
     }
 
     return render(request, template, context)
