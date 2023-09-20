@@ -111,7 +111,10 @@ https://stackoverflow.com/questions/72875203/remove-item-from-cart-and-manage-qu
 address api
 https://pypi.org/project/geopy/
 dialogs
-https://www.tutorialspoint.com/materialize/materialize_dialogs.htm
+https://www.tutorialspoint.com/materialize/materialize_dialogs.html
+country selector
+https://stackoverflow.com/questions/2963930/django-country-drop-down-list
+
 
 
 errors
