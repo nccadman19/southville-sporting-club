@@ -59,10 +59,6 @@
                         <label for="{{ order_form.postcode.id_for_label }}">Postcode</label>
                     </div>
                     <div class="input-field checkout">
-                        {{ order_form.county }}
-                        <label for="{{ order_form.county.id_for_label }}">County</label>
-                    </div>
-                    <div class="input-field checkout">
                         <select id="{{ order_form.country.id_for_label }}" name="{{ order_form.country.name }}">
                             <option value="" disabled selected>Choose your country</option>
                             {% for code, name in order_form.country.field.choices %}
@@ -78,15 +74,10 @@
                             <span>Save this delivery information to my profile</span>
                         </label>
                     </p>
-                </fieldset>
-                <fieldset class="px-3">
                     <legend class="fieldset-label text-black px-2 w-auto">PAYMENT</legend>
                     <!-- A Stripe card element will go here -->
-                    <form id="payment-form">
-                        <!-- Stripe Elements for card input -->
-                        <div id="card-element"></div>
-                        <button type="submit">Submit Payment</button>
-                    </form>
+                    <div id="card-element"></div>
+                    <button type="submit">Submit Payment</button>
                 </fieldset>
                 <div class="submit-button text-right mt-5 mb-2">
                     <div class="button-container">
@@ -96,7 +87,7 @@
                         </a>
                     </div>
                     <div class="button-container complete">
-                        <button id="submit-button" class="btn btn-black rounded-0">
+                        <button type="submit" id="submit-button" class="btn btn-black rounded-0">
                             <span class="font-weight-bold">Complete Order</span>
                             <i class="material-icons right">lock</i>
                         </button>
