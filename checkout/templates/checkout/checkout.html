@@ -80,12 +80,13 @@
                     </p>
                 </fieldset>
                 <fieldset class="px-3">
-                    <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                    <legend class="fieldset-label text-black px-2 w-auto">PAYMENT</legend>
                     <!-- A Stripe card element will go here -->
-                    <div class="mb-3" id="card-element"></div>
-
-                    <!-- Used to display form errors -->
-                    <div class="mb-3 red-text" id="card-errors" role="alert"></div>
+                    <form id="payment-form">
+                        <!-- Stripe Elements for card input -->
+                        <div id="card-element"></div>
+                        <button type="submit">Submit Payment</button>
+                    </form>
                 </fieldset>
                 <div class="submit-button text-right mt-5 mb-2">
                     <div class="button-container">
@@ -160,4 +161,8 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript" src="{% static 'checkout/js/stripe_element.js' %}"></script>
 {% endblock %}
