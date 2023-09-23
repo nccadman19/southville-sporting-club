@@ -114,6 +114,10 @@ dialogs
 https://www.tutorialspoint.com/materialize/materialize_dialogs.html
 country selector
 https://stackoverflow.com/questions/2963930/django-country-drop-down-list
+stripe
+https://www.youtube.com/watch?v=722A27IoQnk&t=776s
+stripe2
+https://dev.to/documatic/integrate-stripe-payments-with-django-by-building-a-digital-products-selling-app-le5
 
 
 
