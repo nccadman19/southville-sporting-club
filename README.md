@@ -118,6 +118,8 @@ stripe
 https://www.youtube.com/watch?v=722A27IoQnk&t=776s
 stripe2
 https://dev.to/documatic/integrate-stripe-payments-with-django-by-building-a-digital-products-selling-app-le5
+stripe3
+https://stripe.com/docs/checkout/quickstart
 
 
 
