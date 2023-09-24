@@ -199,9 +199,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     }
 # }
 
+# Delivery price caps for items
 DELIVERY_THRESHOLDS = {
     'UK_MAINLAND_1ST_CLASS': Decimal('100.00'),
     'UK_MAINLAND_STANDARD': Decimal('80.00'),
     'EUROPE_MAINLAND': Decimal('150.00'),
     'REST_WORLDWIDE': Decimal('300.00'),
 }
+
+# Stripe urls and domains
+BACKEND_DOMAIN = config("BACKEND_DOMAIN")
+PAYMENT_SUCCESS_URL = os.environ.get('PAYMENT_SUCCESS_URL')
+PAYMENT_CANCEL_URL = os.environ.get('PAYMENT_CANCEL_URL')
