@@ -1,6 +1,6 @@
 import stripe
 from django.conf import settings
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from .utils import determine_country_currency
 from .forms import OrderForm
@@ -30,7 +30,7 @@ def checkout(request):
 # Create a separate view for creating the Stripe checkout session
 class CreateStripeCheckoutSessionView(View):
     def post(self, request):
-        domain_url = 'https://8000-nccadman19-southvillesp-6v9qnrfjhft.ws-eu104.gitpod.io'
+        domain_url = 'https://8000-nccadman19-southvillesp-6v9qnrfjhft.ws-eu104.gitpod.io/'
         # Get the shopping cart from the session
         cart = request.session.get('bag', {})
         total_price = 0
@@ -79,14 +79,15 @@ class CreateStripeCheckoutSessionView(View):
             payment_method_types=["card"],
             line_items=line_items,
             mode="payment",
-            success_url=domain_url + '/checkout_success.html',
-            cancel_url=domain_url + '/checkout_cancel.html',
+            success_url=domain_url + reverse('checkout_success'),
+            cancel_url=domain_url + reverse('checkout_cancel'),
             metadata={"product_id": product_id}, 
         )
         return redirect(checkout_session.url, code=303)
+
 
 def checkout_success(request):
     return render(request, 'checkout/checkout_success.html')
 
 def checkout_cancel(request):
-    return render(request, 'checkout/cancel.html') 
+    return render(request, 'checkout/checkout_cancel.html')
