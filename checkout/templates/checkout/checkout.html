@@ -6,6 +6,11 @@
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
+{% block extra_js %}
+<script src="{% static 'checkout/js/stripe_element.js' %}"></script>
+<script src="{% static 'checkout/js/checkout.js' %}"></script>
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -60,10 +65,11 @@
                     </div>
                     <div class="input-field checkout">
                         <select id="{{ order_form.country.id_for_label }}" name="{{ order_form.country.name }}">
-                            <option value="" disabled selected>Choose your country</option>
+                            <option disabled selected>Choose your country</option>
                             {% for code, name in order_form.country.field.choices %}
                             <option value="{{ code }}">{{ name }}</option>
                             {% endfor %}
+                            <input type="hidden" name="selected_country" id="selected-country" value="">
                         </select>
                         <label for="{{ order_form.country.id_for_label }}" class="active">Select Country</label>
                     </div>
@@ -75,19 +81,19 @@
                         </label>
                     </p>
                     <legend class="fieldset-label text-black px-2 w-auto">PAYMENT</legend>
-                    <!-- A Stripe button will go here -->
                     <input type="hidden" name="session_id" id="session_id" value="">
-                    <button type="submit" class="btn btn-primary">Checkout</button>
                 </fieldset>
                 <div class="submit-button text-right mt-5 mb-2">
                     <div class="button-container">
-                        <a href="{% url 'products' %}" class="waves-effect waves-light btn btn-outline-black rounded-0">
+                        <a href="{% url 'products' %}" class="waves-effect waves-light grey darken-3 btn">
                             <i class="material-icons left">arrow_back</i>
                             <span class="font-weight-bold">Keep Shopping</span>
                         </a>
                     </div>
                     <div class="button-container complete">
-                        <button type="submit" id="submit-button" class="btn btn-black rounded-0">
+                        <!-- A Stripe button will go here -->
+                        <button type="submit" id="submit-button"
+                            class="waves-effect waves-light grey darken-3 btn btn-black">
                             <span class="font-weight-bold">Complete Order</span>
                             <i class="material-icons right">lock</i>
                         </button>
@@ -107,8 +113,8 @@
                         <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="responsive-img">
                         <div class="item-details">
                             <span class="title">{{ item.product.name }}</span>
-                            <p>Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A
-                                {% endif %}<br>Qty: {{ item.quantity }}</p>
+                            <p>Size: {{ item.size|default:"N/A"|upper }}</p>
+                            <p>Qty: {{ item.quantity }}</p>
                             <span class="secondary-content">
                                 £{{ item.product.price | calc_subtotal:item.quantity }}</span>
                         </div>

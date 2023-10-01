@@ -21,11 +21,9 @@ def checkout(request):
         return redirect(reverse('products'))
 
     order_form = OrderForm()
-    user_country = request.session.get('user_country', None)
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'user_country': user_country,
     }
 
     return render(request, template, context)
@@ -38,7 +36,7 @@ def generate_order_number():
 # Create a separate view for creating the Stripe checkout session
 class CreateStripeCheckoutSessionView(View):
     def post(self, request):
-        domain_url = 'https://8000-nccadman19-southvillesp-6v9qnrfjhft.ws-eu104.gitpod.io'
+        domain_url = 'https://8000-nccadman19-southvillesp-6v9qnrfjhft.ws-eu105.gitpod.io'
         # Get the shopping cart from the session
         cart = request.session.get('bag', {})
         total_price = 0
@@ -74,7 +72,6 @@ class CreateStripeCheckoutSessionView(View):
                         "currency": currency, 
                         "product_data": {
                             "name": product.name,
-                            # "images": [absolute_image_url],
                         },
                     },
                     "quantity": quantity,
@@ -93,8 +90,16 @@ class CreateStripeCheckoutSessionView(View):
             currency=currency,
             mode="payment",
             success_url=domain_url + reverse('checkout_success'),
-            cancel_url=domain_url + reverse('checkout_cancel'),
-            metadata={"order_number": order_number}, 
+            cancel_url=domain_url + reverse('checkout_cancel'), 
+            metadata={
+                'order_number': order_number,
+                'name': order_form.cleaned_data['full_name'],
+                'street1': order_form.cleaned_data['street_address1'],
+                'street2': order_form.cleaned_data['street_address2'],
+                'city': order_form.cleaned_data['town_or_city'],
+                'postcode': order_form.cleaned_data['postcode'],
+                'phone': order_form.cleaned_data['phone_number'],
+            },
         )
         return redirect(checkout_session.url, code=303)
 
