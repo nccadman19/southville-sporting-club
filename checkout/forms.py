@@ -13,6 +13,9 @@ class OrderForm(forms.ModelForm):
                   'county',)
 
     def __init__(self, *args, **kwargs):
+        # Get the initial value for 'selected_country' from kwargs
+        selected_country = kwargs.pop('selected_country', None)
+
         super().__init__(*args, **kwargs)
         placeholders = {
             'full_name': 'Full Name',
@@ -35,3 +38,6 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+        
+        # Set the initial value for the 'country' field
+        self.fields['country'].initial = selected_country
