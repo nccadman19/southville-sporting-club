@@ -273,11 +273,11 @@ video.responsive-video {
 
   /* Cart */
   .cart-overlay {
-    width: 50%;
+    width: 50% !important;
   }
 
   .close-cart {
-    width: 50%;
+    width: 50% !important;
   }
 }
 
@@ -320,10 +320,15 @@ video.responsive-video {
   }
 
   .cart-overlay {
-    width: 90%;
+    width: 90% !important;
+
   }
 
   .close-cart {
-    width: 10%;
+    width: 10% !important;
+  }
+
+  .bag-total {
+    min-height: min-content !important;
   }
 }
