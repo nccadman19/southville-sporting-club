@@ -1,18 +1,27 @@
-import stripe
-from django.conf import settings
-from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.contrib.sessions.models import Session
+from django.views.decorators.http import require_POST
 from django.contrib import messages
-from .utils import determine_country_currency
-from .forms import OrderForm
+from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.views import View 
 from random import randint
 from datetime import datetime
 
+from .utils import determine_country_currency
+from .forms import OrderForm
+from .models import Order, OrderLineItem
 from products.models import Product
+from bag.contexts import bag_contents
+from .stripe_utils import get_metadata_from_stripe
+
+import json
+import stripe
+import os
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
+endpoint_secret = settings.STRIPE_WEBHOOK_SECRET
 
 def checkout(request):
     bag = request.session.get('bag', {})
@@ -101,50 +110,37 @@ class CreateStripeCheckoutSessionView(View):
                 'phone': order_form.cleaned_data['phone_number'],
             },
         )
+        # Get the session ID
+        session_id = checkout_session.id
         return redirect(checkout_session.url, code=303)
 
-
 def checkout_success(request):
-    # Retrieve the order number from the query parameters in the URL
-    order_number = request.GET.get('order_number')
+    # Retrieve the session_id from the user's session
+    session_id = request.session.get('checkout_session_id')
+
+    # Check if session_id is present
+    if not session_id:
+        # Handle the case where the session_id is missing, e.g., redirect to an error page
+        return HttpResponse("Session ID not found")
+    
+    # Access line_items and amount_total from the request.POST data
+    line_items = request.POST.get('line_items')
+    amount_total = request.POST.get('amount_total')
+
+    metadata = get_metadata_from_stripe(session_id)
+
+    # Clear the session items from the bag after a successful checkout
+    request.session.pop('bag', None)
 
     context = {
-        'order_number': order_number,
+        'metadata': metadata,
+        'line_items': line_items,
+        'amount_total': amount_total,
     }
 
     return render(request, 'checkout/checkout_success.html', context)
 
 
+
 def checkout_cancel(request):
     return render(request, 'checkout/checkout_cancel.html')
-
-@csrf_exempt
-def stripe_webhook(request):
-    # Verify that the request is coming from Stripe using the secret
-    webhook_secret = settings.WEBHOOK_SECRET
-    payload = request.body
-    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
-
-    try:
-        event = stripe.Webhook.construct_event(
-            payload, sig_header, webhook_secret
-        )
-    except ValueError as e:
-        # Invalid payload
-        return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError as e:
-        # Invalid signature
-        return HttpResponse(status=400)
-
-    # Handle specific webhook events
-    if event['type'] == 'payment_intent.succeeded':
-        # Handle successful payment
-        order_number = event['data']['object']['metadata']['order_number']
-
-    elif event['type'] == 'payment_intent.payment_failed':
-        # Handle failed payment
-        return HttpResponse(
-            content=f'Webhook received: {event["type"]}',
-            status=200)
-
-    return HttpResponse(status=200)

@@ -1,9 +1,97 @@
 {% extends "base.html" %}
 {% load static %}
 {% load subtotal_filters %}
-<h1>Thanks for your order!</h1>
-<p>
-    We appreciate your business!
-    If you have any questions, please email
-    <a href="mailto:orders@example.com">orders@example.com</a>.
-</p>
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h4 class="logo-font mb-4">ORDER COMPLETE</h4>
+            <p>Your order has been successfully placed.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12 l4">
+            <!-- Delivery address and order number -->
+            <h5>ORDER INFO</h5>
+            <p>ORDER NUMBER: #{{ metadata.order_number }}</p>
+            <!-- Add other metadata fields here as needed -->
+            <h5>SHIPPING ADDRESS</h5>
+            <p>NAME: {{ metadata.name }}</p>
+            <p>ADDRESS LINE 1: {{ metadata.street1 }}</p>
+            <p>ADDRESS LINE 2: {{ metadata.street2 }}</p>
+            <p>CITY: {{ metadata.city }}</p>
+            <p>POSTCODE: {{ metadata.postcode }}</p>
+            <div class="button-container">
+                <a href="{% url 'products' %}" class="waves-effect waves-light grey darken-3 btn rounded-0">
+                    <i class="material-icons left">arrow_back</i>
+                    <span class="font-weight-bold">Keep Shopping</span>
+                </a>
+            </div>
+        </div>
+        <div class="col s12 m12 l8">
+            <!-- Order summary table without pictures -->
+            <h5>ORDER SUMMARY ({{ product_count }})</h5>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Size</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in bag_items %}
+                    <tr>
+                        <td>{{ item.product.name }}</td>
+                        <td>{{ item.size }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>£{{ item.product.price | calc_subtotal:item.quantity }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <hr class="my-0">
+            <ul class="collection">
+                <li class="collection-item total">
+                    <span class="text-black">Order Total:</span>
+                    <span class="secondary-content">£
+                        {% if total == 0 %}
+                        00.00
+                        {% else %}
+                        {{ total | floatformat:2 }}
+                        {% endif %}
+                    </span>
+                </li>
+                <li class="collection-item total">
+                    <span class="text-black">Delivery:</span>
+                    <span class="secondary-content">£
+                        {% if delivery is null or delivery == 0 %}
+                        00.00
+                        {% else %}
+                        {{ delivery | floatformat:2 }}
+                        {% endif %}
+                    </span>
+                </li>
+                <li class="collection-item total">
+                    <span class="text-black">Grand Total:</span>
+                    <span class="secondary-content">£
+                        {% if grand_total == 0 %}
+                        00.00
+                        {% else %}
+                        {{ grand_total | floatformat:2 }}
+                        {% endif %}
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
