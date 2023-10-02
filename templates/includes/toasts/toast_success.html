@@ -40,10 +40,13 @@
                 Spend <strong>£{{ free_delivery_delta }}</strong> more to get free next day delivery!
             </p>
             {% endif %}
-            <button href="{% url 'checkout' %}" class="waves-effect waves-light btn black rounded-0 right-align">
-                <span class="text-uppercase">Go To Secure Checkout</span>
-                <i class="material-icons right">lock</i>
-            </button>
+            <form action="{% url 'checkout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="waves-effect waves-light btn black rounded-0 right-align">
+                    <span class="text-uppercase">Go To Secure Checkout</span>
+                    <i class="material-icons right">lock</i>
+                </button>
+            </form>
         </div>
     </div>
     {% endif %}
