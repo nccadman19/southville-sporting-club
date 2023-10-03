@@ -120,6 +120,7 @@
     font-size: 1.75rem;
     text-transform: uppercase;
     padding: 10px 10px;
+    display: inline-block;
 }
 
 .product-color {
