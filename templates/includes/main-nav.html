@@ -2,10 +2,10 @@
 
 <ul class="right hide-on-med-and-down">
     <li>
-        <a class="dropdown-trigger black-text" href="#!" data-target="dropdown-info">INFO</a>
+        <a class="dropdown-trigger black-text" href="{% url 'about' %}" data-target="dropdown-info">INFO</a>
     </li>
     <ul id='dropdown-info' class='dropdown-content'>
-        <li><a href="#!">ABOUT US</a></li>
+        <li><a href="{% url 'about' %}">ABOUT US</a></li>
         <li><a href="#!">CONTACT</a></li>
         <li><a href="{% url 'shipping' %}">SHIPPING & RETURNS</a></li>
     </ul>
