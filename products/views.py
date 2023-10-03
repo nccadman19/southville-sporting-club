@@ -24,8 +24,9 @@ def product_list(request):
     # Retrieve all products from the database
     products = Product.objects.all()
     query = request.GET.get('q')
-    sort = request.GET.get('sort', 'name')  # Default sorting by 'name'
+    sort = request.GET.get('sort', 'name') 
     category = request.GET.get('category', 'all')
+    print('cat', category)
     direction = request.GET.get('direction', 'asc')
 
     if sort == 'name':
@@ -38,13 +39,19 @@ def product_list(request):
         sortkey = f'-{sortkey}'
 
     if query:
-        query = preprocess_query(query.lower())
+        # Remove leading and trailing spaces from the query
+        query = preprocess_query(query.strip().lower())
         queries = Q(name__icontains=query) | Q(description__icontains=query)
-        products = products.filter(queries)
 
-        if not products:
-            messages.error(request, "No products match your search criteria.")
-            return redirect(reverse('nothing_found'))
+        # Check if the query contains a space and split it into words
+        if ' ' in query:
+            query_parts = query.split(' ')
+            for part in query_parts:
+                queries |= Q(color__icontains=part.strip())
+        else:
+            queries |= Q(color__icontains=query)
+
+        products = products.filter(queries)
 
     if category != 'all':
         products = products.filter(category__name=category)
