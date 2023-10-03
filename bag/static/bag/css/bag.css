@@ -86,15 +86,20 @@
 
 .cart-item {
     display: flex;
-    align-items: center;
     border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+    padding: 1rem 0 1rem 0;
 }
 
 .product-image img {
     max-width: 100px;
     height: auto;
     margin-right: 10px;
+}
+
+.product-image {
+    width: 50%;
+    justify-content: left;
+    display: flex;
 }
 
 .product-name-cart {
@@ -108,6 +113,9 @@
     flex-direction: column;
     align-items: flex-start;
     line-height: 1px;
+    width: 50%;
+    justify-content: right;
+    display: flex;
 }
 
 .product-size-cart,
