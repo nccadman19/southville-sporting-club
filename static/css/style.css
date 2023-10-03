@@ -46,6 +46,10 @@ nav ul a {
   padding: 0;
 }
 
+nav ul a.black-text.icons {
+  margin-right: 10px;
+}
+
 .mobile-logo {
   display: none;
 }

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'home/css/home.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+{% endblock %}
+
+{% block content %}
+<div class="section no-pad-bot hero-image-about" id="index-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m10 l10 offset-l1 offset-m1">
+                <div class="about-container">
+                    <div class="about-heading white-text">
+                        <h2 class="about">ABOUT US</h2>
+                    </div>
+                    <div class="about white-text">
+                        <p>Crafting dreams into reality through <br>design, nature, and vintage athletics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section no-pad-bot about-quote" id="index-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="about-quote black-text">
+                    <p>At Southville Sporting Club, we invite you to embrace vintage athletics, connect with nature,
+                        and celebrate the vibrant spirit of Bristol. We are committed to sustainability, using
+                        eco-friendly materials, thoughtful art direction, and a fusion of sport and the great
+                        outdoors to create our unique designs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m10 l10 offset-l1 offset-m1">
+                <div class="row">
+                    <div class="col s12 m6 valign-wrapper">
+                        <img src="{% static '../media/inspo-image.png' %}" alt="First line jumpers"
+                            class="responsive-img about">
+                    </div>
+                    <div class="col s12 m6 valign-wrapper">
+                        <div class="about-body black-text center-content">
+                            <h5>VINTAGE TRACK</h5>
+                            <hr class="about-line">
+                            <p> At Southville Sporting Club, our inspiration harks back to the golden era of runners and
+                                classic track events. We draw from the nostalgia of these iconic moments to craft a
+                                brand that embodies the spirit of athleticism and timeless style.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="about-body black-text">
+                            <h5>OUR SHOP</h5>
+                            <hr class="about-line">
+                            <p>Thank you for joining us on this exciting journey. Explore our collection, discover
+                                the beauty of
+                                Bristol, and experience the authenticity of Southville Sporting Club.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m6">
+                        <img src="{% static '../media/hero-image-maybe.png' %}" alt="First line jumpers"
+                            class="responsive-img about">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section no-pad-bot about-quote" id="index-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="about-quote black-text">
+                    <p>Thank you for joining us on this exciting journey. Explore our collection, discover the beauty of
+                        Bristol, and experience the authenticity of Southville Sporting Club.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

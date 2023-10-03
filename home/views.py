@@ -17,3 +17,8 @@ def terms(request):
 
     return render(request, 'home/terms-and-conditions.html')
 
+def about(request):
+    """ A view to return the terms and conditions page """
+
+    return render(request, 'home/about_us.html')
+
