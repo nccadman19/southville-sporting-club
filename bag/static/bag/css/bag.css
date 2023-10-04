@@ -144,3 +144,35 @@ i.material-icons.lock.right {
     margin-top: -16px;
     font-size: 1.5rem;
 }
+
+/* Media Queries */
+
+/* Navbar */
+@media (max-width: 1144px) {
+    .cart-overlay {
+        width: 50% !important;
+    }
+
+    .close-cart {
+        width: 50% !important;
+    }
+
+    .bag-total {
+        min-height: min-content !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .cart-overlay {
+        width: 90% !important;
+
+    }
+
+    .close-cart {
+        width: 10% !important;
+    }
+
+    .bag-total {
+        min-height: min-content !important;
+    }
+}
