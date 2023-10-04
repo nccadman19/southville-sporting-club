@@ -97,7 +97,7 @@
 }
 
 .product-image {
-    width: 50%;
+    width: 30%;
     justify-content: left;
     display: flex;
 }
@@ -106,16 +106,16 @@
     font-weight: bold;
     color: #333;
     text-decoration: none;
+    line-height: 18px;
+    text-align: right;
 }
 
 .product-info-cart {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     line-height: 1px;
-    width: 50%;
-    justify-content: right;
-    display: flex;
+    width: 70%;
 }
 
 .product-size-cart,

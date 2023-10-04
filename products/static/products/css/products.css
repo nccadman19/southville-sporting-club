@@ -260,16 +260,12 @@
         margin-right: 20px;
     }
 
-    .card-image.products {
-        height: 20vh;
-    }
-
     .card .card-title {
         font-size: 14px;
         font-weight: 600;
     }
 
-    div.card-content {
+    div.card-content.products {
         height: 13vh;
         overflow: hidden;
     }
