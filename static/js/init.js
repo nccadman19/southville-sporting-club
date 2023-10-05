@@ -1,40 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
   var sidenavElems = document.querySelectorAll('.sidenav');
   var sidenavInstances = M.Sidenav.init(sidenavElems);
-
   var dropdownElems = document.querySelectorAll('.dropdown-trigger');
   var dropdownOptions = { hover: true, coverTrigger: false };
   var dropdownInstances = M.Dropdown.init(dropdownElems, dropdownOptions);
-
   var elems = document.querySelectorAll('.collapsible');
   var instances = M.Collapsible.init(elems, { accordion: false });
-
   var searchInput = document.getElementById("search");
   var closeIcon = document.querySelector(".close-icon");
-  var logo = document.querySelector(".mobile-logo");
-
   var collapsibleHeaders = document.querySelectorAll('.collapsible-header');
-
-  // Function to hide the logo
-  function hideLogo() {
-    logo.classList.add("hidden-logo");
-  }
-
-  // Function to show the logo
-  function showLogo() {
-    logo.classList.remove("hidden-logo");
-  }
 
   // When the search input gains focus (is clicked)
   searchInput.addEventListener("focus", function () {
+    // Show the close icon
     closeIcon.style.display = "inline";
-    hideLogo();
   });
-
   // When the search input loses focus (is clicked outside of)
   searchInput.addEventListener("blur", function () {
+    // Hide the close icon
     closeIcon.style.display = "none";
-    showLogo();
   });
 
   // When the product details cards clicked shows respective icon

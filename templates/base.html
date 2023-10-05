@@ -54,12 +54,13 @@
                 <ul class="left search">
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-field">
-                            <input id="search" type="search" name="q" required>
-                            <label class="label-icon" for="search">
-                                <i class="material-icons black-text">search</i>
-                            </label>
-                            <i class="material-icons black-text close-icon">close</i>
-                        </div>
+                            <div class="input-field">
+                                <input id="search" type="search" name="q" required>
+                                <label class="label-icon" for="search">
+                                    <i class="material-icons black-text">search</i>
+                                </label>
+                                <i class="material-icons black-text close-icon">close</i>
+                            </div>
                     </form>
                 </ul>
                 <ul class="right">
@@ -83,7 +84,7 @@
         <div class="container">
             <div class="row">
                 <div class="col l1 m2 s2">
-                    <img class="footer-logo" src="../../media/mobile-logo.png" alt="Mobile Logo">
+                    <img class="footer-logo" src="/media/mobile-logo.png" alt="Mobile Logo">
                 </div>
                 <div class="col l5 m5 s12">
                     <ul class="inline-list footer-links">

@@ -130,6 +130,10 @@ html {
   position: absolute;
 }
 
+nav .input-field {
+  width: max-content;
+}
+
 /* Mobile sidenav */
 
 .material-icons.close-icon {
@@ -296,7 +300,8 @@ video.responsive-video {
 @media (max-width: 992px) {
   nav .input-field {
     height: 4rem;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
+    z-index: 999999;
   }
 }
 
