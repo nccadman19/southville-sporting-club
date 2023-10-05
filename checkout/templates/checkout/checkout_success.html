@@ -50,7 +50,7 @@
                     {% for line_item in order.lineitems.all %}
                     <tr>
                         <td>{{ line_item.product.name }}</td>
-                        <td>Size: {{ line_item.product_size|default:"N/A"|upper }}</td>
+                        <td>Size: {{ line_item.product_size }}</td>
                         <td>{{ line_item.quantity }}</td>
                         <td>£{{ line_item.lineitem_total }}</td>
                     </tr>

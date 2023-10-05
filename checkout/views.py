@@ -89,14 +89,6 @@ class CreateStripeCheckoutSessionView(View):
                     messages.error(request, "Invalid quantity selected")
                     return redirect(reverse('checkout'))
 
-                # Create OrderLineItem instance and append it to the list
-                order_line_items_to_save.append(OrderLineItem(
-                    order=None,  # Initially set to None
-                    product=product,
-                    quantity=quantity,
-                    lineitem_total=subtotal,
-                ))
-
                 # Append the line item to the line_items list
                 line_items.append({
                     "price_data": {
