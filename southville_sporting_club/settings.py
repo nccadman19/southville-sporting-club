@@ -119,7 +119,6 @@ DATABASES = {
 
 STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
-STRIPE_WEBHOOK_SECRET = config('STRIPE_WEBHOOK_SECRET')
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -198,11 +197,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Delivery price caps for items
 DELIVERY_THRESHOLDS = {
-    'UK_MAINLAND_1ST_CLASS': Decimal('100.00'),
-    'UK_MAINLAND_STANDARD': Decimal('80.00'),
-    'EUROPE_MAINLAND': Decimal('150.00'),
-    'REST_WORLDWIDE': Decimal('300.00'),
+    'UK_MAINLAND_STANDARD': Decimal('100.00'),  
+    'UK_MAINLAND_1ST_CLASS': Decimal('150.00'),
 }
+
 
 # Stripe urls and domains
 BACKEND_DOMAIN = config("BACKEND_DOMAIN")
