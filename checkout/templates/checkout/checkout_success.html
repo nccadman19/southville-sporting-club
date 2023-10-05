@@ -20,14 +20,13 @@
         <div class="col s12 m12 l4">
             <!-- Delivery address and order number -->
             <h5>ORDER INFO</h5>
-            <p>ORDER NUMBER: #{{ metadata.order_number }}</p>
-            <!-- Add other metadata fields here as needed -->
+            <p>ORDER NUMBER: #{{ order.order_number }}</p>
             <h5>SHIPPING ADDRESS</h5>
-            <p>NAME: {{ metadata.name }}</p>
-            <p>ADDRESS LINE 1: {{ metadata.street1 }}</p>
-            <p>ADDRESS LINE 2: {{ metadata.street2 }}</p>
-            <p>CITY: {{ metadata.city }}</p>
-            <p>POSTCODE: {{ metadata.postcode }}</p>
+            <p>NAME: {{ order.full_name }}</p>
+            <p>ADDRESS LINE 1: {{ order.street_address1 }}</p>
+            <p>ADDRESS LINE 2: {{ order.street_address2 }}</p>
+            <p>CITY: {{ order.town_or_city }}</p>
+            <p>POSTCODE: {{ order.postcode }}</p>
             <div class="button-container">
                 <a href="{% url 'products' %}" class="waves-effect waves-light grey darken-3 btn rounded-0">
                     <i class="material-icons left">arrow_back</i>
@@ -48,12 +47,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for item in bag_items %}
+                    {% for line_item in order.lineitems.all %}
                     <tr>
-                        <td>{{ item.product.name }}</td>
-                        <td>{{ item.size }}</td>
-                        <td>{{ item.quantity }}</td>
-                        <td>£{{ item.product.price | calc_subtotal:item.quantity }}</td>
+                        <td>{{ line_item.product.name }}</td>
+                        <td>Size: {{ line_item.product_size|default:"N/A"|upper }}</td>
+                        <td>{{ line_item.quantity }}</td>
+                        <td>£{{ line_item.lineitem_total }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -62,33 +61,15 @@
             <ul class="collection">
                 <li class="collection-item total">
                     <span class="text-black">Order Total:</span>
-                    <span class="secondary-content">£
-                        {% if total == 0 %}
-                        00.00
-                        {% else %}
-                        {{ total | floatformat:2 }}
-                        {% endif %}
-                    </span>
+                    <span class="secondary-content">£{{ order.order_total }}</span>
                 </li>
                 <li class="collection-item total">
                     <span class="text-black">Delivery:</span>
-                    <span class="secondary-content">£
-                        {% if delivery is null or delivery == 0 %}
-                        00.00
-                        {% else %}
-                        {{ delivery | floatformat:2 }}
-                        {% endif %}
-                    </span>
+                    <span class="secondary-content">£{{ order.delivery_cost }}</span>
                 </li>
                 <li class="collection-item total">
                     <span class="text-black">Grand Total:</span>
-                    <span class="secondary-content">£
-                        {% if grand_total == 0 %}
-                        00.00
-                        {% else %}
-                        {{ grand_total | floatformat:2 }}
-                        {% endif %}
-                    </span>
+                    <span class="secondary-content">£{{ order.grand_total }}</span>
                 </li>
             </ul>
         </div>

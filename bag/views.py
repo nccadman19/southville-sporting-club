@@ -30,7 +30,8 @@ def add_to_bag(request, item_id):
     messages.success(request, message)
 
     request.session['bag'] = bag
-    request.session.modified = True  """ Indicate that the session has been modified """
+    """ Indicate that the session has been modified """
+    request.session.modified = True
     return redirect(redirect_url)
 
 def remove_item(request, item_id):
