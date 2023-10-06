@@ -58,16 +58,6 @@
                         {{ order_form.postcode }}
                         <label for="{{ order_form.postcode.id_for_label }}">Postcode</label>
                     </div>
-                    <div class="input-field checkout">
-                        <select id="{{ order_form.country.id_for_label }}" name="{{ order_form.country.name }}">
-                            <option disabled selected>Choose your country</option>
-                            {% for code, name in order_form.country.field.choices %}
-                            <option value="{{ code }}">{{ name }}</option>
-                            {% endfor %}
-                            <input type="hidden" name="selected_country" id="selected-country" value="">
-                        </select>
-                        <label for="{{ order_form.country.id_for_label }}" class="active">Select Country</label>
-                    </div>
                     <p>
                         <label>
                             <input type="checkbox" class="filled-in" id="id-save-info" name="save-info"

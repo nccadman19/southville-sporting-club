@@ -10,8 +10,6 @@ from random import randint
 from datetime import datetime
 from django.db import transaction
 
-
-from .utils import determine_country_currency
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
@@ -59,7 +57,6 @@ class CreateStripeCheckoutSessionView(View):
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
-            'country': request.POST['country'],
             'postcode': request.POST['postcode'],
             'town_or_city': request.POST['town_or_city'],
             'street_address1': request.POST['street_address1'],
@@ -67,11 +64,10 @@ class CreateStripeCheckoutSessionView(View):
         }
         order_form = OrderForm(form_data)
 
+        # Validate the form before accessing cleaned_data
         if order_form.is_valid():
-            selected_country = order_form.cleaned_data['country']
-
-        # Get the currency code based on the country code
-        currency = determine_country_currency(selected_country)
+            # Access cleaned_data here
+            customer_email = order_form.cleaned_data['email']
 
         for product_id, quantity in cart.items():
             try:
@@ -92,8 +88,8 @@ class CreateStripeCheckoutSessionView(View):
                 # Append the line item to the line_items list
                 line_items.append({
                     "price_data": {
-                        "unit_amount": int(product.price * 100),  # Assuming price is in cents
-                        "currency": currency,
+                        "unit_amount": int(product.price * 100),
+                        "currency": "GBP",
                         "product_data": {
                             "name": product.name,
                         },
@@ -112,7 +108,6 @@ class CreateStripeCheckoutSessionView(View):
             payment_method_types=["card"],
             line_items=line_items,
             customer_email=order_form.cleaned_data['email'],
-            currency=currency,
             mode="payment",
             success_url=domain_url + reverse('checkout_success', args=[order_number]),
             cancel_url=domain_url + reverse('checkout_cancel'), 
@@ -130,7 +125,6 @@ class CreateStripeCheckoutSessionView(View):
                 full_name=order_form.cleaned_data['full_name'],
                 email=order_form.cleaned_data['email'],
                 phone_number=order_form.cleaned_data['phone_number'],
-                country=order_form.cleaned_data['country'],
                 postcode=order_form.cleaned_data['postcode'],
                 town_or_city=order_form.cleaned_data['town_or_city'],
                 street_address1=order_form.cleaned_data['street_address1'],
