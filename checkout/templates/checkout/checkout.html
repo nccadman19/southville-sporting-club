@@ -111,33 +111,36 @@
             <hr class="my-0">
             <ul class="collection">
                 <li class="collection-item total">
-                    <span class="text-black">Order Total:</span>
-                    <span class="secondary-content">£
+                    <span class="text-black">Order Total</span>
+                    <span class="secondary-content">
                         {% if total == 0 %}
                         00.00
                         {% else %}
                         {{ total | floatformat:2 }}
                         {% endif %}
+                        GBP
                     </span>
                 </li>
                 <li class="collection-item total">
-                    <span class="text-black">Delivery:</span>
-                    <span class="secondary-content">£
-                        {% if delivery is null or delivery == 0 %}
+                    <span class="text-black">Delivery</span>
+                    <span class="secondary-content">
+                        {% if delivery_cost is null or delivery == 0 %}
                         00.00
                         {% else %}
-                        {{ delivery | floatformat:2 }}
+                        {{ delivery_cost | floatformat:2 }}
                         {% endif %}
+                        GBP
                     </span>
                 </li>
                 <li class="collection-item total">
-                    <span class="text-black">Grand Total:</span>
-                    <span class="secondary-content">£
+                    <span class="text-black">Grand Total</span>
+                    <span class="secondary-content">
                         {% if grand_total == 0 %}
                         00.00
                         {% else %}
                         {{ grand_total | floatformat:2 }}
                         {% endif %}
+                        GBP
                     </span>
                 </li>
             </ul>
