@@ -249,11 +249,15 @@ nav .input-field {
   text-align: end;
 }
 
-img.responsive-img,
-video.responsive-video {
+.toast-description {
+  text-align: right;
+  font-size: small;
+}
+
+img.responsive-img {
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 10rem;
+  height: 10rem;
   object-fit: cover;
 }
 

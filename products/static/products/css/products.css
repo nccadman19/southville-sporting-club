@@ -35,7 +35,7 @@
 }
 
 .card .card-title {
-    font-size: large;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
@@ -268,5 +268,9 @@
     div.card-content.products {
         height: 13vh;
         overflow: hidden;
+    }
+
+    .card-image {
+        height: 150px;
     }
 }

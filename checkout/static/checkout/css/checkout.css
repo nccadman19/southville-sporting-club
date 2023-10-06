@@ -1,13 +1,4 @@
 /* Bag */
-
-img.responsive-img,
-video.responsive-video {
-    position: absolute;
-    width: 15rem;
-    height: 15rem;
-    object-fit: cover;
-}
-
 .collection {
     border: 0;
 }
@@ -96,6 +87,12 @@ select#id_country {
     box-shadow: 0 1px 0 0 #000;
 }
 
+img.responsive-img.checkout {
+    width: 15rem;
+    height: 15rem;
+}
+
+
 /* Submit buttons */
 
 .button-container,
@@ -132,4 +129,11 @@ fieldset.px-3 {
 #payment-form>legend,
 body>div.container>div:nth-child(2)>div:nth-child(1)>p {
     padding: 0.35em 0.75em 0.625em;
+}
+
+@media (max-width: 600px) {
+    img.responsive-img.checkout {
+        width: 10rem;
+        height: 10rem;
+    }
 }

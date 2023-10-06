@@ -95,7 +95,8 @@
                 {% for item in bag_items %}
                 <li class="collection-item">
                     <div class="item-content">
-                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="responsive-img">
+                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}"
+                            class="responsive-img checkout">
                         <div class="item-details">
                             <span class="title">{{ item.product.name }}</span>
                             <p>Size: {{ item.size|default:"N/A"|upper }}</p>
