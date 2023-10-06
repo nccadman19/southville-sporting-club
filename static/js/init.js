@@ -33,58 +33,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Function to show the cart overlay
-  function showCartOverlay() {
-    var cartOverlay = document.getElementById('cart-overlay');
-    var closeOverlay = document.getElementById('close-cart-overlay');
-    cartOverlay.style.display = 'flex';
-    closeOverlay.style.display = 'block';
-  }
-
-  // Function to hide the cart overlay
-  function hideCartOverlay() {
-    var cartOverlay = document.getElementById('cart-overlay');
-    var closeOverlay = document.getElementById('close-cart-overlay');
-    cartOverlay.style.display = 'none';
-    closeOverlay.style.display = 'none';
-  }
-
-  // Add a click event listener to the bag icon
-  document.getElementById('bag-icon').addEventListener('click', function (event) {
-    showCartOverlay();
-  });
-
-  // Add a click event listener to the close button
-  document.getElementById('close-cart-btn').addEventListener('click', function (event) {
-    hideCartOverlay();
-  });
-
-  // Add a click event listener to the close overlay
-  document.getElementById('close-cart-overlay').addEventListener('click', function (event) {
-    hideCartOverlay();
-    this.style.display = 'none';
-  });
-});
-
-// JavaScript code to slide out the toast message container
-document.addEventListener('DOMContentLoaded', function () {
-  var toastContainer = document.getElementById('toast-container');
-  if (toastContainer) {
-    // Show the toast message container
-    setTimeout(function () {
-      toastContainer.style.opacity = '1';
-    }, 100); // Wait for a brief moment to start the animation
-
-    // Slide out and remove the toast message container
-    setTimeout(function () {
-      toastContainer.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-      toastContainer.style.transform = 'translateX(100%)';
-      toastContainer.style.opacity = '0';
-
-      // Remove the container after the animation finishes (0.5 seconds)
+  // JavaScript code to slide out the toast message container
+  document.addEventListener('DOMContentLoaded', function () {
+    var toastContainer = document.getElementById('toast-container');
+    if (toastContainer) {
+      // Show the toast message container
       setTimeout(function () {
-        toastContainer.remove();
-      }, 500);
-    }, 4000); // 5 seconds (5000 milliseconds)
-  }
+        toastContainer.style.opacity = '1';
+      }, 100); // Wait for a brief moment to start the animation
+
+      // Slide out and remove the toast message container
+      setTimeout(function () {
+        toastContainer.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+        toastContainer.style.transform = 'translateX(100%)';
+        toastContainer.style.opacity = '0';
+
+        // Remove the container after the animation finishes (0.5 seconds)
+        setTimeout(function () {
+          toastContainer.remove();
+        }, 500);
+      }, 4000); // 5 seconds (5000 milliseconds)
+    }
+  });
 });

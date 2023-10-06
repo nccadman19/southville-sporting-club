@@ -65,19 +65,12 @@ document.addEventListener('DOMContentLoaded', function () {
             var cartItemElement = createCartItemElement(item_id, cartData[item_id]);
             cartContent.appendChild(cartItemElement);
         }
-
-        // Update other cart-related information (subtotal, total, etc.) if needed
     }
 
     // Function to create a cart item element
     function createCartItemElement(item_id, quantity) {
-        // Create and return a cart item element based on the item_id and quantity
-        // You can generate the HTML structure for a cart item here
-        // Example:
         var cartItemElement = document.createElement('div');
         cartItemElement.classList.add('cart-item');
-        // Add other HTML and data attributes to the cart item element
-        // ...
 
         return cartItemElement;
     }
@@ -116,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Set the POST data
         var formData = new FormData();
         formData.append('item_id', item_id);
-        formData.append('selected_size', selected_size); // Add selected_size to the POST data
+        formData.append('selected_size', selected_size);
         xhr.send(formData);
     }
 });
