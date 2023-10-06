@@ -28,7 +28,7 @@ def bag_contents(request):
     # Access the thresholds from settings
     thresholds = settings.DELIVERY_THRESHOLDS
 
-    delivery_cost = Decimal('04.00')
+    delivery_cost = Decimal('04.99')
     first_class_delivery_cost = Decimal('09.99')
 
     # Check if the order total is over £100 for free standard delivery

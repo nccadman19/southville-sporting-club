@@ -201,7 +201,6 @@ DELIVERY_THRESHOLDS = {
     'UK_MAINLAND_1ST_CLASS': Decimal('150.00'),
 }
 
-
 # Stripe urls and domains
 BACKEND_DOMAIN = config("BACKEND_DOMAIN")
 PAYMENT_SUCCESS_URL = os.environ.get('PAYMENT_SUCCESS_URL')
