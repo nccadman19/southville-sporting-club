@@ -50,7 +50,6 @@ class CreateStripeCheckoutSessionView(View):
         domain_url = 'https://8000-nccadman19-southvillesp-6v9qnrfjhft.ws-eu105.gitpod.io'
         # Get the shopping cart from the session
         cart = request.session.get('bag', {})
-        print('bag', cart)
         total_price = 0
         line_items = []
 
@@ -64,6 +63,7 @@ class CreateStripeCheckoutSessionView(View):
             'street_address2': request.POST['street_address2'],
         }
         order_form = OrderForm(form_data)
+        delivery_cost = float(request.POST.get('delivery_cost', '0.00'))
 
         # Validate the form before accessing cleaned_data
         if order_form.is_valid():
@@ -100,6 +100,18 @@ class CreateStripeCheckoutSessionView(View):
 
             except Product.DoesNotExist:
                 messages.error(request, "Product not found")
+        
+        # Add a line item for delivery
+        line_items.append({
+            "price_data": {
+                "unit_amount": int(delivery_cost * 100),
+                "currency": "GBP",
+                "product_data": {
+                    "name": "Delivery",
+                },
+            },
+            "quantity": 1, 
+        })
 
         # Generate a unique order number for this order
         order_number = generate_order_number()
