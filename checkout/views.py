@@ -50,6 +50,7 @@ class CreateStripeCheckoutSessionView(View):
         domain_url = 'https://8000-nccadman19-southvillesp-6v9qnrfjhft.ws-eu105.gitpod.io'
         # Get the shopping cart from the session
         cart = request.session.get('bag', {})
+        print('bag', cart)
         total_price = 0
         line_items = []
 
@@ -110,7 +111,7 @@ class CreateStripeCheckoutSessionView(View):
             customer_email=order_form.cleaned_data['email'],
             mode="payment",
             success_url=domain_url + reverse('checkout_success', args=[order_number]),
-            cancel_url=domain_url + reverse('checkout_cancel'), 
+            cancel_url=domain_url + reverse('checkout_cancel'),
         )
 
         # Check if the Stripe payment is successful

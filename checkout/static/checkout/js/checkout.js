@@ -1,17 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the dropdown element and its associated label
-    var countryDropdown = document.getElementById('id_country');
-    var selectedCountry = null;
+    // Initially, update the hidden input value based on the default selection
+    var selectedDeliveryType = $('input[name="delivery_type"]:checked');
+    updateHiddenDeliveryCost(selectedDeliveryType);
 
-    // Attach a change event listener to the select element
-    countryDropdown.addEventListener('change', function (e) {
-        // Get the selected option
-        var selectedOption = countryDropdown.options[countryDropdown.selectedIndex];
-
-        // Store the selected country value
-        selectedCountry = selectedOption.value;
-
-        // Update the hidden input field immediately
-        document.getElementById("selected-country").value = selectedCountry;
+    $('input[name="delivery_type"]').on('change', function () {
+        var selectedDeliveryType = $(this);
+        updateHiddenDeliveryCost(selectedDeliveryType);
     });
+
+    // Define the updateHiddenDeliveryCost function
+    function updateHiddenDeliveryCost(selectedDeliveryType) {
+        // Get the cost value from the selected delivery type label
+        var costText = selectedDeliveryType.siblings('span').text();
+
+        // Extract the cost value using regular expressions
+        var match = costText.match(/\(£([\d.]+)\)/);
+        if (match) {
+            var deliveryCost = parseFloat(match[1]);
+            $('#delivery-cost').val(deliveryCost.toFixed(2));
+        }
+    }
 });

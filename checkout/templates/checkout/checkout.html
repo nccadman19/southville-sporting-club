@@ -65,8 +65,22 @@
                             <span>Save this delivery information to my profile</span>
                         </label>
                     </p>
-                    <legend class="fieldset-label text-black px-2 w-auto">PAYMENT</legend>
-                    <input type="hidden" name="session_id" id="session_id" value="">
+                    <div class="input-field checkout" id="delivery-type">
+                        <p>Choose Delivery Type:</p>
+                        <p>
+                            <label>
+                                <input name="delivery_type" type="radio" value="standard" checked />
+                                <span>Standard Delivery (£{{ delivery_cost|floatformat:2 }})</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="delivery_type" type="radio" value="first_class" />
+                                <span>1st Class Delivery (£{{ first_class_delivery_cost|floatformat:2 }})</span>
+                            </label>
+                        </p>
+                    </div>
+                    <input type="hidden" name="delivery_cost" id="delivery-cost" value="4.99">
                 </fieldset>
                 <div class="submit-button text-right mt-5 mb-2">
                     <div class="button-container">
@@ -111,7 +125,7 @@
             <hr class="my-0">
             <ul class="collection">
                 <li class="collection-item total">
-                    <span class="text-black">Order Total</span>
+                    <span class="text-black">Order Total:</span>
                     <span class="secondary-content">
                         {% if total == 0 %}
                         00.00
@@ -147,4 +161,8 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript" src="{% static 'checkout/js/checkout.js' %}"></script>
 {% endblock %}
