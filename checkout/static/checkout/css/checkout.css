@@ -131,9 +131,21 @@ body>div.container>div:nth-child(2)>div:nth-child(1)>p {
     padding: 0.35em 0.75em 0.625em;
 }
 
+/* Checkout cancel */
+
+div.container.checkout-cancel {
+    height: 73vh !important;
+    padding: 10px;
+}
+
 @media (max-width: 600px) {
     img.responsive-img.checkout {
         width: 10rem;
         height: 10rem;
+    }
+
+    div.container.checkout-cancel {
+        height: 65vh !important;
+        padding: 20px;
     }
 }

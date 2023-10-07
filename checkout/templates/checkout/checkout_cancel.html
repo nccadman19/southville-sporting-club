@@ -7,12 +7,27 @@
 {% endblock %}
 
 {% block content %}
-<main class="section no-pad-bot" id="index-banner">
-    <h1>Oh no!</h1>
-    <p>
-        Something went wrong
-        If you have any questions, please email
-        <a href="mailto:contact@southvillesportingclub.com">contact@southvillesportingclub.com</a>.
-    </p>
-</main>
+<div class="container checkout-cancel">
+    <div class="row">
+        <div class="col s12">
+            <h4 class="logo-font mb-4">OH NO!</h4>
+            <p>Something went wrong. If you have any questions, please email <a
+                    href="mailto:contact@southvillesportingclub.com">contact@southvillesportingclub.com</a>.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="button-container">
+                <a href="{% url 'products' %}" class="waves-effect waves-light grey darken-3 btn">
+                    <i class="material-icons left">arrow_back</i>
+                    <span class="font-weight-bold">Keep Shopping</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript" src="{% static 'checkout/js/checkout.js' %}"></script>
 {% endblock %}
