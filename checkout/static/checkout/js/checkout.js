@@ -18,6 +18,16 @@ document.addEventListener('DOMContentLoaded', function () {
         if (match) {
             var deliveryCost = parseFloat(match[1]);
             $('#delivery-cost').val(deliveryCost.toFixed(2));
+
+            // Update the displayed delivery cost
+            $('#hidden-delivery-cost').text(deliveryCost.toFixed(2) + " GBP");
         }
     }
+
+    // Trigger the initial update when the page loads
+    updateHiddenDeliveryCost(selectedDeliveryType);
+
+    // Update the hidden-delivery-cost element's text based on the hidden input value
+    var hiddenValue = parseFloat($('#delivery-cost').val()).toFixed(2);
+    $('#hidden-delivery-cost').text(hiddenValue + " GBP");
 });

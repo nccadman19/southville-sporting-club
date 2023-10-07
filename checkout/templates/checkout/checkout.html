@@ -137,14 +137,7 @@
                 </li>
                 <li class="collection-item total">
                     <span class="text-black">Delivery</span>
-                    <span class="secondary-content">
-                        {% if delivery_cost is null or delivery == 0 %}
-                        00.00
-                        {% else %}
-                        {{ delivery_cost | floatformat:2 }}
-                        {% endif %}
-                        GBP
-                    </span>
+                    <span class="secondary-content" id="hidden-delivery-cost"></span>
                 </li>
                 <li class="collection-item total">
                     <span class="text-black">Grand Total</span>
