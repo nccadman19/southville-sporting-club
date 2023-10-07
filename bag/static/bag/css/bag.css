@@ -145,6 +145,10 @@ i.material-icons.lock.right {
     font-size: 1.5rem;
 }
 
+form.bag-btn {
+    height: fit-content;
+}
+
 /* Media Queries */
 
 /* Navbar */
