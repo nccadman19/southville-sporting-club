@@ -270,7 +270,12 @@
         overflow: hidden;
     }
 
+    .card-image.products,
     .card-image.product-detail {
         height: 250px;
+    }
+
+    .card-title {
+        height: 40px;
     }
 }

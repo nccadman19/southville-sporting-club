@@ -54,19 +54,17 @@
                 <ul class="left search">
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-field">
-                            <div class="input-field">
-                                <input id="search" type="search" name="q" required>
-                                <label class="label-icon" for="search">
+                            <input id="search" type="search" name="q" required>
+                            <label class="label-icon" for="search">
+                                <a href="#" id="search-icon">
                                     <i class="material-icons black-text">search</i>
-                                </label>
-                                <i class="material-icons black-text close-icon">close</i>
-                            </div>
+                                </a>
+                            </label>
+                            <i class="material-icons black-text close-icon">close</i>
+                        </div>
                     </form>
                 </ul>
                 <ul class="right">
-                    <li><a href="#" class="black-text icons"><i class="material-icons"
-                                style="color: #000000;">person</i></a>
-                    </li>
                     <li><a href="#" class="black-text icons" id="bag-icon"><i class="material-icons"
                                 style="color: #000000;">shopping_bag</i></a></li>
                 </ul>

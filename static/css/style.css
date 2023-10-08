@@ -171,6 +171,16 @@ nav .input-field {
   display: none !important;
 }
 
+.full-width-btn {
+  width: 90%;
+  font-size: 12px;
+}
+
+.button-container-sidenav {
+  margin: 10px 0px;
+  line-height: 3rem;
+}
+
 /* Footer */
 
 .container {
@@ -304,7 +314,7 @@ img.responsive-img {
 @media (max-width: 992px) {
   nav .input-field {
     height: 4rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
     z-index: 999;
   }
 }
