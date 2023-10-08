@@ -50,14 +50,20 @@ document.addEventListener('DOMContentLoaded', function () {
     // When the product details cards clicked shows respective icon
     var collapsibleHeaders = document.querySelectorAll('.collapsible-header-product');
 
-    collapsibleHeaders.forEach(function (header) {
-        header.addEventListener('click', function () {
-            var icon = header.querySelector('.icon');
-            if (icon.innerHTML === '+') {
-                icon.innerHTML = '-';
-            } else {
-                icon.innerHTML = '+';
-            }
+    // Check if there are collapsible headers with icons on the page
+    var collapsibleHeadersProduct = document.querySelectorAll('.collapsible-header-product');
+
+    if (collapsibleHeadersProduct.length > 0) {
+        // Attach click event listener to collapsible headers with icons
+        collapsibleHeadersProduct.forEach(function (header) {
+            header.addEventListener('click', function () {
+                var icon = header.querySelector('.icon');
+                if (icon.innerHTML === '+') {
+                    icon.innerHTML = '-';
+                } else {
+                    icon.innerHTML = '+';
+                }
+            });
         });
-    });
+    }
 });
