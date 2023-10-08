@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var sidenavElems = document.querySelectorAll('.sidenav');
   var sidenavInstances = M.Sidenav.init(sidenavElems);
 
+  // Dropdown menu items
+  var dropdownElems = document.querySelectorAll('.dropdown-trigger');
+  var dropdownOptions = { hover: true, coverTrigger: false };
+  var dropdownInstances = M.Dropdown.init(dropdownElems, dropdownOptions);
+
   // Accordian menu on mobile sidenav
   var elems = document.querySelectorAll('.collapsible');
   var instances = M.Collapsible.init(elems, { accordion: false });
@@ -10,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Select search and home logos 
   var searchInput = document.getElementById("search");
   var closeIcon = document.querySelector(".close-icon");
-  var homeLogo = document.getElementById("home-logo"); // Add this line to select the home logo
-  var isSearchFocused = false; // Add this line to track search input focus status
+  var homeLogo = document.getElementById("home-logo");
+  var isSearchFocused = false;
 
   // Initial z-index for the home logo
   homeLogo.style.zIndex = "1000";
