@@ -82,7 +82,7 @@
                     </div>
                     <input type="hidden" name="delivery_cost" id="delivery-cost" value="4.99">
                 </fieldset>
-                <div class="submit-button text-right mt-5 mb-2">
+                <div class="submit-button text-right">
                     <div class="button-container">
                         <a href="{% url 'products' %}" class="waves-effect waves-light grey darken-3 btn">
                             <i class="material-icons left">arrow_back</i>
@@ -91,8 +91,7 @@
                     </div>
                     <div class="button-container complete">
                         <!-- A Stripe button will go here -->
-                        <button type="submit" id="submit-button"
-                            class="waves-effect waves-light grey darken-3 btn btn-black">
+                        <button type="submit" id="submit-button" class="waves-effect waves-light grey darken-3 btn">
                             <span class="font-weight-bold">Continue to Payment</span>
                             <i class="material-icons right">lock</i>
                         </button>
