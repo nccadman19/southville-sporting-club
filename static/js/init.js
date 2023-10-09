@@ -4,9 +4,14 @@ document.addEventListener('DOMContentLoaded', function () {
   var sidenavInstances = M.Sidenav.init(sidenavElems);
 
   // Dropdown menu items
-  var dropdownElems = document.querySelectorAll('.dropdown-trigger');
+  var dropdownElems = document.querySelectorAll('.dropdown-trigger:not(.profile-trigger)');
   var dropdownOptions = { hover: true, coverTrigger: false };
   var dropdownInstances = M.Dropdown.init(dropdownElems, dropdownOptions);
+
+  // Dropdown profile icon
+  var elems = document.querySelectorAll('.profile-trigger');
+  var instances = M.Dropdown.init(elems);
+  var instance = M.Dropdown.getInstance(elems);
 
   // Accordian menu on mobile sidenav
   var elems = document.querySelectorAll('.collapsible');
@@ -66,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   var toastContainer = document.getElementById('toast-container');
+
   if (toastContainer) {
     // Show the toast message container
     setTimeout(function () {
@@ -83,5 +89,20 @@ document.addEventListener('DOMContentLoaded', function () {
         toastContainer.remove();
       }, 500);
     }, 4000);
+  }
+
+  // Add click event listener to the profile icon
+  var profileIcon = document.querySelector('.profile-trigger');
+  if (profileIcon) {
+    profileIcon.addEventListener('click', function (event) {
+      // Initialize the profile dropdown with the constrainWidth option set to false
+      var profileDropdownOptions = { constrainWidth: false };
+      var profileDropdownInstance = M.Dropdown.init(profileIcon, profileDropdownOptions);
+
+      // Open the profile dropdown
+      if (profileDropdownInstance) {
+        profileDropdownInstance.open();
+      }
+    });
   }
 });

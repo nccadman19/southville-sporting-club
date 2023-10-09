@@ -285,6 +285,18 @@ img.responsive-img {
   width: 90%;
 }
 
+.waves-effect input[type="button"],
+.waves-effect input[type="reset"],
+.waves-effect input[type="submit"] {
+  color: white;
+}
+
+/* Profiles Icon */
+
+#dropdown-profiles.dropdown-content {
+  top: -70px;
+}
+
 /* Media Queries */
 
 /* Navbar */
