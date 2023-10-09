@@ -271,6 +271,20 @@ img.responsive-img {
   object-fit: cover;
 }
 
+/* AllAuth */
+
+.container.allauth {
+  width: 90%;
+  height: calc(100vh - (100px + 110px));
+  min-height: 73vh;
+  overflow-y: auto;
+}
+
+.container.allauth-long {
+  margin-bottom: 2rem;
+  width: 90%;
+}
+
 /* Media Queries */
 
 /* Navbar */
@@ -361,5 +375,17 @@ img.responsive-img {
 
   .bag-total {
     min-height: min-content !important;
+  }
+
+  .container.allauth {
+    width: 90%;
+    height: calc(100vh - (110px + 176.25px));
+    min-height: 66vh;
+    overflow-y: auto;
+  }
+
+  .container.allauth-long {
+    margin-bottom: 2rem;
+    width: 90%;
   }
 }
