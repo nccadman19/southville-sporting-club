@@ -40,7 +40,6 @@ class Order(models.Model):
         elif self.order_total < settings.DELIVERY_THRESHOLDS['UK_MAINLAND_1ST_CLASS']:
             self.delivery_cost = 0  # First-class delivery is free
         else:
-            # You can set a default delivery cost here if needed
             self.delivery_cost = 0
         self.grand_total = self.order_total + self.delivery_cost
         self.save()

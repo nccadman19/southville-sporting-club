@@ -73,5 +73,23 @@
             </ul>
         </div>
     </div>
-</div>
-{% endblock %}
+    <div class="row">
+        <div class="col sm12">
+            <div class="submit-button text-right">
+                <div class="button-container">
+                    {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="waves-effect waves-light grey darken-3 btn">
+                        <i class="material-icons left">arrow_back</i>
+                        <span class="font-weight-bold">Back to Profile</span>
+                    </a>
+                    {% else %}
+                    <a href="{% url 'products' %}" class="waves-effect waves-light grey darken-3 btn">
+                        <i class="material-icons left">arrow_back</i>
+                        <span class="font-weight-bold">Keep Shopping</span>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
