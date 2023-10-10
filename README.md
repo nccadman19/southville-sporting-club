@@ -120,6 +120,9 @@ stripe2
 https://dev.to/documatic/integrate-stripe-payments-with-django-by-building-a-digital-products-selling-app-le5
 stripe3
 https://stripe.com/docs/checkout/quickstart
+buttons
+https://stackoverflow.com/questions/64232515/css-on-clickable-element-onclickhover
+
 
 
 
