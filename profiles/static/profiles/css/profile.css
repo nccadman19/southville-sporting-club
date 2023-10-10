@@ -1,6 +1,6 @@
 .container.profile {
     width: 90%;
-    height: calc(100vh - (100px + 110px));
+    height: fit-content;
     min-height: 73vh;
     overflow-y: auto;
 }
