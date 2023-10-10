@@ -1,0 +1,10 @@
+.container.profile {
+    width: 90%;
+    height: calc(100vh - (100px + 110px));
+    min-height: 73vh;
+    overflow-y: auto;
+}
+
+.waves-effect.waves-light.grey.darken-3.btn.profile {
+    float: right;
+}

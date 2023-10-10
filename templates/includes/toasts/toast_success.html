@@ -3,7 +3,7 @@
         <strong>Success!</strong><br>
         {{ message }}
     </div>
-    {% if bag_items %}
+    {% if bag_items and not on_profile_page %}
     <p class="logo-font bg-white text-black py-1 right-align">Your Bag ({{ product_count }})</p>
     <div class="bag-notification-wrapper">
         {% with last_item=bag_items|last %}
