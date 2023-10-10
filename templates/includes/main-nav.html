@@ -30,10 +30,11 @@
     {% if request.user.is_superuser %}
     <ul id='dropdown-profiles' class='dropdown-content'>
         <li><a href="{% url 'account_logout' %}">PRODUCT MANAGEMENT</a></li>
+        <li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
     </ul>
     {% endif %}
     <ul id='dropdown-profiles' class='dropdown-content'>
-        <li><a href="#!">MY PROFILE</a></li>
+        <li><a href="{% url 'profile' %}">MY PROFILE</a></li>
         <li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
     </ul>
     {% else %}
