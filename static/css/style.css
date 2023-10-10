@@ -271,6 +271,11 @@ img.responsive-img {
   object-fit: cover;
 }
 
+div.col.s12.m6.toast {
+  display: block;
+  box-shadow: none;
+}
+
 /* AllAuth */
 
 .container.allauth {
