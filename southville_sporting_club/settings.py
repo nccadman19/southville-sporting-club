@@ -19,14 +19,14 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4c18glil@s7e!0(v#b2sy$qqs#o#lpfm1@9)q6l$(n#ttlzjjb'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '8000-nccadman19-southvillesp-6v9qnrfjhft.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '8000-nccadman19-southvillesp-vyffy813txj.ws-eu105.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1', 'https://8000-nccadman19-southvillesp-6v9qnrfjhft.ws-eu105.gitpod.io/*']
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1', 'https://8000-nccadman19-southvillesp-vyffy813txj.ws-eu105.gitpod.io/*']
 
 # Application definition
 
@@ -209,5 +209,3 @@ DELIVERY_THRESHOLDS = {
 
 # Stripe urls and domains
 BACKEND_DOMAIN = config("BACKEND_DOMAIN")
-PAYMENT_SUCCESS_URL = os.environ.get('PAYMENT_SUCCESS_URL')
-PAYMENT_CANCEL_URL = os.environ.get('PAYMENT_CANCEL_URL')

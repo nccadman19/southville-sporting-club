@@ -7,8 +7,8 @@
             "name": "Nature Crest Hoodie",
             "color": "Black",
             "description": "Featuring dropped shoulders, an oversized fit & long sleeves to create that beautiful stacking effect. The hoodie also features subtle panelling detailing down the inside of the sleeves & body seams, an extended hem for a bold feature & hidden drawstrings to allow functionality whilst keeping the garment minimal. All seams have been finished with a luxury cover stitch & a large branded print across the front.",
-            "price": 114.99,
-            "category": 2,
+            "price": 99.99,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -22,8 +22,8 @@
             "name": "Nature Crest Hoodie",
             "color": "Black",
             "description": "Featuring dropped shoulders, an oversized fit & long sleeves to create that beautiful stacking effect. The hoodie also features subtle panelling detailing down the inside of the sleeves & body seams, an extended hem for a bold feature & hidden drawstrings to allow functionality whilst keeping the garment minimal. All seams have been finished with a luxury cover stitch & a large branded print across the front.",
-            "price": 114.99,
-            "category": 2,
+            "price": 99.99,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -37,8 +37,8 @@
             "name": "SSC Hoodie",
             "color": "Black",
             "description": "Featuring dropped shoulders, an oversized fit & long sleeves to create that beautiful stacking effect. The hoodie also features subtle panelling detailing down the inside of the sleeves & body seams, an extended hem for a bold feature & hidden drawstrings to allow functionality whilst keeping the garment minimal. All seams have been finished with a luxury cover stitch & a large branded print across the back.",
-            "price": 144.99,
-            "category": 2,
+            "price": 114.99,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -52,8 +52,8 @@
             "name": "Nature Crest Hoodie - Pair",
             "color": "Black & Green",
             "description": "Featuring dropped shoulders, an oversized fit & long sleeves to create that beautiful stacking effect. The hoodie also features subtle panelling detailing down the inside of the sleeves & body seams, an extended hem for a bold feature & hidden drawstrings to allow functionality whilst keeping the garment minimal. All seams have been finished with a luxury cover stitch & a large branded print across the front. Save money by buying the pair.",
-            "price": 200.00,
-            "category": 2,
+            "price": 175.00,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -68,7 +68,7 @@
             "color": "",
             "description": "Step into the world of Southville Sporting Club, a hidden gem in the heart of the UK fashion scene. Nestled in the picturesque landscapes of Britain, we're a small but passionate fashion company dedicated to curating timeless and trendsetting pieces that embody the essence of British style. In our latest issue of Run With Nature, we invite you to explore the very best of British fashion. From classic designs that pay homage to our rich heritage to contemporary creations that push the boundaries of style, our pieces reflect the diversity and creativity of the UK fashion landscape.",
             "price": 16.99,
-            "category": 4,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -82,8 +82,8 @@
             "name": "Runner Tracksuit Heavyweight",
             "color": "Green",
             "description": "Elevate your style with the Southville Runner Green Tracksuit, including Hoodie and Joggers. Our tracksuit offers an oversized fit with unique paneling and an extended hem for a bold look. Hidden drawstrings maintain a sleek appearance, and our logo adds an athletic touch Enjoy both comfort and style with our joggers.",
-            "price": 249.99,
-            "category": 5,
+            "price": 149.99,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -97,8 +97,8 @@
             "name": "Nature Crest T-Shirt",
             "color": "Black",
             "description": "Brand new for SS23 is our fern print t-shirt. This t-shirt has all the signature SSC design cues such as a coverstitched neckline, offset shoulder seam and slight dropped shoulder. ",
-            "price": 249.99,
-            "category": 1,
+            "price": 114.99,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -113,7 +113,7 @@
             "color": "White",
             "description": "Featuring an oversized fit, with dropped shoulders, exaggerated wide long sleeves, a centre back seam and a heavy fabric that give this a noticeably luxury drape across the body. The neck fit is close to a mock neck tee. It is finished with our signature logo and lemon tree background.",
             "price": 84.99,
-            "category": 1,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -128,7 +128,7 @@
             "color": "Black",
             "description": "Featuring an oversized fit, with dropped shoulders, exaggerated wide long sleeves, a centre back seam and a heavy fabric that give this a noticeably luxury drape across the body. The neck fit is close to a mock neck tee and is finished with our signature logo print.",
             "price": 84.99,
-            "category": 1,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -143,7 +143,7 @@
             "color": "Green",
             "description": "Featuring an oversized fit, with dropped shoulders, exaggerated wide long sleeves, a centre back seam and a heavy fabric that give this a noticeably luxury drape across the body. The neck fit is close to a mock neck tee and is finished with our signature logo print.",
             "price": 84.99,
-            "category": 1,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -158,7 +158,7 @@
             "color": "Black",
             "description": "Featuring an oversized fit, with dropped shoulders, exaggerated wide long sleeves, a centre back seam and a heavy fabric that give this a noticeably luxury drape across the body. The neck fit is close to a mock neck tee. It is finished with our signature logo print and runner club print.",
             "price": 84.99,
-            "category": 1,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -173,7 +173,7 @@
             "color": "White",
             "description": "Featuring an oversized fit, with dropped shoulders, exaggerated wide long sleeves, a centre back seam and a heavy fabric that give this a noticeably luxury drape across the body. The neck fit is close to a mock neck tee. It is finished with our signature logo print and runner club print.",
             "price": 84.99,
-            "category": 1,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -188,7 +188,7 @@
             "color": "White",
             "description": "Featuring an oversized fit, with dropped shoulders, exaggerated wide long sleeves, a centre back seam and a heavy fabric that give this a noticeably luxury drape across the body. The neck fit is close to a mock neck tee. It is finished with our signature logo print and running club print.",
             "price": 84.99,
-            "category": 1,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -203,7 +203,7 @@
             "color": "Black",
             "description": "Featuring an oversized fit, with dropped shoulders, exaggerated wide long sleeves, a centre back seam and a heavy fabric that give this a noticeably luxury drape across the body. The neck fit is close to a mock neck tee. It is finished with our signature logo and track print.",
             "price": 84.99,
-            "category": 1,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -217,8 +217,8 @@
             "name": "Split Leg Sweatpants",
             "color": "Black",
             "description": "Our split pants are a blend of sportswear and functional tailoring, cut with a straight leg and an open placket on the ankle perfectly split over any shoe. It is finished with our signature logo print.",
-            "price": 175,
-            "category": 3,
+            "price": 65,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"
@@ -232,8 +232,8 @@
             "name": "Split Leg Sweatpants",
             "color": "Green",
             "description": "Our split pants are a blend of sportswear and functional tailoring, cut with a straight leg and an open placket on the ankle perfectly split over any shoe. It is finished with our signature logo print.",
-            "price": 175,
-            "category": 3,
+            "price": 65,
+            "category": "",
             "image": "",
             "created_at": "2023-08-22T20:59:00Z",
             "updated_at": "2023-08-22T20:59:00Z"

@@ -64,7 +64,7 @@ class CreateStripeCheckoutSessionView(View):
         # Initialize the list to store OrderLineItem instances to save later
         order_line_items_to_save = []
 
-        domain_url = 'https://8000-nccadman19-southvillesp-6v9qnrfjhft.ws-eu105.gitpod.io'
+        domain_url = 'https://8000-nccadman19-southvillesp-vyffy813txj.ws-eu105.gitpod.io'
         # Get the shopping cart from the session
         cart = request.session.get('bag', {})
         total_price = 0
@@ -81,6 +81,7 @@ class CreateStripeCheckoutSessionView(View):
         }
         order_form = OrderForm(form_data)
         delivery_cost = float(request.POST.get('delivery_cost', '0.00'))
+        print('delivery_cost', delivery_cost)
 
         # Validate the form before accessing cleaned_data
         if order_form.is_valid():
@@ -143,6 +144,9 @@ class CreateStripeCheckoutSessionView(View):
             cancel_url=domain_url + reverse('checkout_cancel'),
         )
 
+        # Store delivery_cost in the session
+        request.session['delivery_cost'] = delivery_cost
+
         # Check if the Stripe payment is successful
         if checkout_session.payment_status == "paid":
             for line_item in order_line_items_to_save:
@@ -174,6 +178,9 @@ class CreateStripeCheckoutSessionView(View):
 def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     save_info = request.session.get('save_info')
+    # Retrieve the delivery_cost from the session
+    delivery_cost = request.session.get('delivery_cost', 0.00)
+    print('delivery_cost', delivery_cost)
 
     # Store the bag items as line items in the order
     for item_key, quantity in request.session.get('bag', {}).items():
@@ -196,6 +203,10 @@ def checkout_success(request, order_number):
             messages.error(request, "Product not found")
 
     profile = UserProfile.objects.get(user=request.user)
+
+    # Update the delivery_cost field in the Order instance and save it
+    order.delivery_cost = delivery_cost
+    order.save()
 
     # Attach the user's profile to the order
     order.user_profile = profile
@@ -224,6 +235,7 @@ def checkout_success(request, order_number):
 
     context = {
         'order': order,
+        'delivery_cost': delivery_cost,
     }
 
     return render(request, 'checkout/checkout_success.html', context)
