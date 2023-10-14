@@ -22,8 +22,12 @@ class OrderAdmin(admin.ModelAdmin):
 
     list_display = ('order_number', 'date', 'full_name',
                     'order_total', 'delivery_cost',
-                    'grand_total',)
+                    'grand_total_with_delivery',)
 
     ordering = ('-date',)
+
+    def grand_total_with_delivery(self, obj):
+        return obj.grand_total
+    grand_total_with_delivery.short_description = 'Grand Total with Delivery'
 
 admin.site.register(Order, OrderAdmin)
