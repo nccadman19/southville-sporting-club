@@ -29,20 +29,27 @@ class Order(models.Model):
         """
         return uuid.uuid4().hex.upper()
 
-    def update_total(self):
+    def update_total(self, delivery_type=None):
         """
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
         self.order_total = sum(item.lineitem_total for item in self.lineitems.all())
-        if self.order_total < settings.DELIVERY_THRESHOLDS['UK_MAINLAND_STANDARD']:
-            self.delivery_cost = 4.99
-        elif self.order_total < settings.DELIVERY_THRESHOLDS['UK_MAINLAND_1ST_CLASS']:
-            self.delivery_cost = 9.99 
-        else:
-            self.delivery_cost = 0 # Delivery is free 
+        
+        if delivery_type == 'standard':
+            if self.order_total < settings.DELIVERY_THRESHOLDS['UK_MAINLAND_STANDARD']:
+                self.delivery_cost = 0.00  # Standard delivery is free
+            else:
+                self.delivery_cost = 4.99
+        elif delivery_type == 'first_class':
+            if self.order_total < settings.DELIVERY_THRESHOLDS['UK_MAINLAND_1ST_CLASS']:
+                self.delivery_cost = 0.00  # First-class delivery is free
+            else:
+                self.delivery_cost = 9.99
+
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
+
 
     def save(self, *args, **kwargs):
         """
