@@ -26,7 +26,6 @@ def product_list(request):
     query = request.GET.get('q')
     sort = request.GET.get('sort', 'name') 
     category = request.GET.get('category', 'all')
-    print('cat', category)
     direction = request.GET.get('direction', 'asc')
 
     if sort == 'name':
