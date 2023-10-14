@@ -36,11 +36,11 @@ class Order(models.Model):
         """
         self.order_total = sum(item.lineitem_total for item in self.lineitems.all())
         if self.order_total < settings.DELIVERY_THRESHOLDS['UK_MAINLAND_STANDARD']:
-            self.delivery_cost = 0  # Standard delivery is free
+            self.delivery_cost = 4.99
         elif self.order_total < settings.DELIVERY_THRESHOLDS['UK_MAINLAND_1ST_CLASS']:
-            self.delivery_cost = 0  # First-class delivery is free
+            self.delivery_cost = 9.99 
         else:
-            self.delivery_cost = 0
+            self.delivery_cost = 0 # Delivery is free 
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 

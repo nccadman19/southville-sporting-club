@@ -121,7 +121,7 @@
             <ul class="collection">
                 <li class="collection-item total">
                     <span class="text-black">Order Total:</span>
-                    <span class="secondary-content">
+                    <span id="order-total" class="secondary-content">
                         {% if total == 0 %}
                         00.00
                         {% else %}
@@ -136,7 +136,7 @@
                 </li>
                 <li class="collection-item total">
                     <span class="text-black">Grand Total</span>
-                    <span class="secondary-content">
+                    <span id="grand-total" class="secondary-content">
                         {% if grand_total == 0 %}
                         00.00
                         {% else %}
