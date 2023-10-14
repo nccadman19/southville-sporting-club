@@ -81,7 +81,6 @@ class CreateStripeCheckoutSessionView(View):
         }
         order_form = OrderForm(form_data)
         delivery_cost = float(request.POST.get('delivery_cost', '0.00'))
-        print('delivery_cost', delivery_cost)
 
         # Validate the form before accessing cleaned_data
         if order_form.is_valid():
@@ -151,6 +150,8 @@ class CreateStripeCheckoutSessionView(View):
         if checkout_session.payment_status == "paid":
             for line_item in order_line_items_to_save:
                 line_item.order = order
+        
+        print('checkout session payment status', checkout_session.payment_status)
 
         # Save order data to your database after successful payment
         with transaction.atomic():
@@ -176,11 +177,10 @@ class CreateStripeCheckoutSessionView(View):
         return redirect(checkout_session.url, code=303)
 
 def checkout_success(request, order_number):
+    # Retrieve the delivery_cost, order and saved info from the session
     order = get_object_or_404(Order, order_number=order_number)
     save_info = request.session.get('save_info')
-    # Retrieve the delivery_cost from the session
     delivery_cost = request.session.get('delivery_cost', 0.00)
-    print('delivery_cost', delivery_cost)
 
     # Store the bag items as line items in the order
     for item_key, quantity in request.session.get('bag', {}).items():
@@ -224,6 +224,8 @@ def checkout_success(request, order_number):
         user_profile_form = UserProfileForm(profile_data, instance=profile)
         if user_profile_form.is_valid():
             user_profile_form.save()
+
+    print('save_info', save_info)
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
