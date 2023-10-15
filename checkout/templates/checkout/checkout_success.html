@@ -86,4 +86,14 @@
             </div>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+<script>
+    if (performance.navigation.type === 2) {
+        // If the page was accessed via the back button
+        window.location.href = "{% url 'checkout_cancel' %}";
+    }
+</script>
+{% endblock %}

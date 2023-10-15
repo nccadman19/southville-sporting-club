@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.views.decorators.cache import never_cache
 from django.contrib.sessions.models import Session
 from django.views.decorators.http import require_POST
 from django.contrib import messages
@@ -179,6 +180,7 @@ class CreateStripeCheckoutSessionView(View):
 
         return redirect(checkout_session.url, code=303)
 
+@never_cache
 def checkout_success(request, order_number):
     # Retrieve the delivery_cost, order and saved info from the session
     order = get_object_or_404(Order, order_number=order_number)
@@ -206,6 +208,12 @@ def checkout_success(request, order_number):
                 lineitem_total=subtotal,
                 product_size=selected_size,
             )
+
+            # Decrement item quantity in the bag
+            if product_id in request.session['bag']:
+                request.session['bag'][product_id] -= quantity
+                if request.session['bag'][product_id] <= 0:
+                    del request.session['bag'][product_id]
 
         except Product.DoesNotExist:
             messages.error(request, "Product not found")
