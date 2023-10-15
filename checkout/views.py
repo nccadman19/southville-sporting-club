@@ -18,6 +18,7 @@ from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
 from decimal import Decimal
+from .utils import update_total_quantity
 
 import json
 import stripe
@@ -247,6 +248,9 @@ def checkout_success(request, order_number):
     # Clear the bag from the session
     request.session['bag'] = {}
     request.session.modified = True
+
+    # Call the update_total_quantity function with the order object
+    update_total_quantity(order)
 
     context = {
         'order': order,
