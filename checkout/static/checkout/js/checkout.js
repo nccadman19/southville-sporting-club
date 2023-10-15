@@ -26,13 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateGrandTotal() {
         // Get the order total from HTML
         var orderTotal = parseFloat(document.getElementById('order-total').textContent);
+        var deliveryCost = parseFloat($('#delivery-cost').val());
 
         // Calculate the new grand total
-        var deliveryCost = parseFloat($('#delivery-cost').val());
         var newGrandTotal = orderTotal + deliveryCost;
 
-        // Update the grand total element
+        // Update the grand total elements
         $('#grand-total').text(newGrandTotal.toFixed(2) + " GBP");
+        $('#grand-total-input').val(newGrandTotal.toFixed(2));
     }
 
     // Listen for changes in the delivery type radio buttons
@@ -43,8 +44,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Trigger the initial update when the page loads
     updateHiddenDeliveryCost(selectedDeliveryType);
-
-    // Update the hidden-delivery-cost element's text based on the hidden input value
-    var hiddenValue = parseFloat($('#delivery-cost').val()).toFixed(2);
-    $('#hidden-delivery-cost').text(hiddenValue + " GBP");
 });

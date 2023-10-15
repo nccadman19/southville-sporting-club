@@ -54,15 +54,15 @@
             <ul class="collection">
                 <li class="collection-item total">
                     <span class="text-black">Order Total:</span>
-                    <span class="secondary-content">£{{ order.order_total }}</span>
+                    <span id="order-total" class="secondary-content">£{{ order.order_total }}</span>
                 </li>
                 <li class="collection-item total">
                     <span class="text-black">Delivery:</span>
-                    <span class="secondary-content">£{{ order.delivery_cost }}</span>
+                    <span class="secondary-content">£{{ order.delivery_cost|floatformat:2 }}</span>
                 </li>
                 <li class="collection-item total">
                     <span class="text-black">Grand Total:</span>
-                    <span class="secondary-content">£{{ order.grand_total }}</span>
+                    <span id="grand-total" class="secondary-content">£{{ order.grand_total|floatformat:2 }}</span>
                 </li>
             </ul>
         </div>

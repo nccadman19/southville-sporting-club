@@ -16,6 +16,7 @@ from products.models import Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
+from decimal import Decimal
 
 import json
 import stripe
@@ -81,6 +82,7 @@ class CreateStripeCheckoutSessionView(View):
         }
         order_form = OrderForm(form_data)
         delivery_cost = float(request.POST.get('delivery_cost', '0.00'))
+        grand_total = float(request.POST.get('grand_total', '0.00'))
 
         # Validate the form before accessing cleaned_data
         if order_form.is_valid():
@@ -145,6 +147,7 @@ class CreateStripeCheckoutSessionView(View):
 
         # Store delivery_cost in the session
         request.session['delivery_cost'] = delivery_cost
+        request.session['grand_total'] = grand_total
 
         # Check if the Stripe payment is successful
         if checkout_session.payment_status == "paid":
@@ -179,8 +182,13 @@ class CreateStripeCheckoutSessionView(View):
 def checkout_success(request, order_number):
     # Retrieve the delivery_cost, order and saved info from the session
     order = get_object_or_404(Order, order_number=order_number)
-    save_info = request.session.get('save_info')
-    delivery_cost = request.session.get('delivery_cost', 0.00)
+    delivery_cost = Decimal(request.session.get('delivery_cost', '0.00'))
+    grand_total = Decimal(request.session.get('grand_total', '0.00'))
+
+    # Update the delivery_cost and grand_total field in the Order instance and save it
+    order.delivery_cost = delivery_cost
+    order.grand_total = grand_total
+    order.save()
 
     # Store the bag items as line items in the order
     for item_key, quantity in request.session.get('bag', {}).items():
@@ -202,19 +210,17 @@ def checkout_success(request, order_number):
         except Product.DoesNotExist:
             messages.error(request, "Product not found")
 
-    profile = UserProfile.objects.get(user=request.user)
+    # Handle user-specific actions if the user is authorized (logged in)
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
 
-    # Update the delivery_cost field in the Order instance and save it
-    order.delivery_cost = delivery_cost
-    order.save()
+        # Attach the user's profile to the order
+        order.user_profile = profile
+        order.save()
 
-    # Attach the user's profile to the order
-    order.user_profile = profile
-    order.save()
-
-    # Save the user's info
-    if save_info:
+        # Save the user's info if needed
         profile_data = {
+            'default_full_name': order.full_name,
             'default_phone_number': order.phone_number,
             'default_postcode': order.postcode,
             'default_town_or_city': order.town_or_city,
@@ -225,8 +231,7 @@ def checkout_success(request, order_number):
         if user_profile_form.is_valid():
             user_profile_form.save()
 
-    print('save_info', save_info)
-
+    # Display a success message and clear the shopping bag from the session
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
