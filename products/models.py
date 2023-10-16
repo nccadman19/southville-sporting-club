@@ -12,9 +12,6 @@ class Category(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
-
-    def __str__(self):
         return self.friendly_name
 
 class Product(models.Model):
