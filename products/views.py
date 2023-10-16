@@ -4,6 +4,9 @@ from django.db.models import Q
 from .models import Product, Category
 from django.db.models.functions import Lower
 
+from .models import Product, Category
+from .forms import ProductForm
+
 synonyms = {
     "hoody": "hoodie",
     "joggers": "sweatpants",
@@ -78,3 +81,13 @@ def product_detail(request, product_id):
 
 def nothing_found(request):
     return render(request, 'products/nothing_found.html')
+
+def add_product(request):
+    """ Add a product to the store """
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

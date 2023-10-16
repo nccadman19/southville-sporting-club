@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'products/css/products.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+{% endblock %}
+
+{% block content %}
+<section class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <div class="row center-align">
+            <div class="col s12">
+                <hr>
+                <h2 class="logo-font mb-4">Product Management</h2>
+                <h5 class="text-muted">Add a Product</h5>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <form method="POST" action="{% url 'add_product' %}" class="col s12" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form }}
+                    <div class="row right-align">
+                        <a class="btn grey darken-3" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn black" type="submit">Add Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
