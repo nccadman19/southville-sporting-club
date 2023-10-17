@@ -277,6 +277,11 @@
     margin-bottom: 2rem;
 }
 
+div#quantity-container {
+    height: min-content;
+    min-height: 3rem;
+}
+
 /* Media Queries */
 
 @media (max-width: 600px) {

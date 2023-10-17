@@ -21,10 +21,10 @@
                 <form method="post" action="{% url 'add_product' %}" class="form col s12" enctype="multipart/form-data">
                     {% csrf_token %}
                     <label for="id_sku" class="active">Sku:</label>
-                    <input type="text" name="sku" maxlength="50" required="" id="id_sku">
+                    <input type="text" placeholder="SSC00XXX" name="sku" maxlength="50" required="" id="id_sku">
 
                     <label for="id_name" class="active">Name:</label>
-                    <input type="text" name="name" maxlength="255" required="" id="id_name">
+                    <input type="text" placeholder="Name" name="name" maxlength="255" required="" id="id_name">
 
                     <label for="id_color" class="active">Color:</label>
                     <input type="text" name="color" value="N/A" maxlength="255" required="" id="id_color">
@@ -36,49 +36,49 @@
                     <input type="number" name="price" step="0.01" required="" id="id_price">
 
                     <label for="id_sizes" class="active">Sizes:</label>
+                    <input type="checkbox" name="sizes" value="" id="id_sizes">
                     <div>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="Small" />
+                                <input type="checkbox" name="size" value="Small" id="size-small" />
                                 <span>Small</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="Medium" />
+                                <input type="checkbox" name="size" value="Medium" id="size-medium" />
                                 <span>Medium</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="Large" />
+                                <input type="checkbox" name="size" value="Large" id="size-large" />
                                 <span>Large</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="XL" />
+                                <input type="checkbox" name="size" value="XL" id="size-xl" />
                                 <span>XL</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="XXL" />
+                                <input type="checkbox" name="size" value="XXL" id="size-xxl" />
                                 <span>XXL</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="One Size" />
+                                <input type="checkbox" name="size" value="One Size" id="one-size" />
                                 <span>One Size</span>
                             </label>
                         </p>
                     </div>
 
                     <label for="id_size_quantity" class="active">Size quantity:</label>
-                    <textarea name="size_quantity" cols="40" rows="10" required=""
-                        id="id_size_quantity">{}</textarea><input type="hidden" name="initial-size_quantity" value="{}"
-                        id="initial-id_size_quantity">
+                    <input type="hidden" name="size_quantity" value="{}" id="id_size_quantity">
+                    <div id="quantity-container"></div>
 
                     <label for="id_image" class="active">Image:</label>
                     <input type="file" name="image" accept="image/*" id="id_image">
@@ -101,4 +101,7 @@
         </div>
     </div>
 </section>
+{% block postloadjs %}
+<script type="text/javascript" src="{% static 'products/js/products.js' %}"></script>
+{% endblock %}
 {% endblock %}

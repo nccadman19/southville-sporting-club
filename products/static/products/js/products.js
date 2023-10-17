@@ -28,4 +28,77 @@ document.addEventListener('DOMContentLoaded', function () {
             backToTopBtn.classList.remove('waves-ripple');
         });
     }
+
+    // Create an object to store the selected sizes and their quantities
+    var selectedSizes = {};
+
+    // Listen for changes on size checkboxes
+    $('input[type="checkbox"]').off('change').on('change', function () {
+        // Get the size from the checkbox's value
+        var size = this.value; // Use the checkbox's value to get the size
+
+        if (this.checked) {
+            // Create a container for the size input
+            var sizeContainer = document.createElement('div');
+            sizeContainer.className = 'size-container';
+
+            // Create a label for the size
+            var sizeLabel = document.createElement('label');
+            sizeLabel.textContent = size;
+
+            // Create an input field for quantity
+            var input = document.createElement('input');
+            input.type = 'number';
+            input.name = 'size-quantity-' + size;
+            input.placeholder = 'Enter quantity';
+            input.max = 999;
+
+            // Append the label and input field to the size container
+            sizeContainer.appendChild(sizeLabel);
+            sizeContainer.appendChild(input);
+
+            // Append the size container to the quantity-container
+            $('#quantity-container').append(sizeContainer);
+
+            // Handle quantity input changes using event delegation
+            $(input).on('input', function () {
+                selectedSizes[size] = parseInt(input.value, 10) || 0;
+                updateHiddenInput();
+            });
+
+            // Add the size to the selected sizes object
+            selectedSizes[size] = 0; // Initialize quantity to 0
+        } else {
+            // Remove the size and its quantity input field from the selected sizes object
+            delete selectedSizes[size];
+
+            // Remove the size container
+            $('.size-container:has(input[name="size-quantity-' + size + '"])').remove();
+            updateHiddenInput();
+        }
+
+        // Update the hidden input for 'id_sizes' with selected sizes
+        $('#id_sizes').val(Object.keys(selectedSizes).join(', '));
+        updateHiddenInput();
+    });
+
+    // Function to update the hidden input with selected sizes and quantities
+    function updateHiddenInput() {
+        // Create an object with the selected sizes and their quantities
+        var sizeQuantity = {};
+        Object.keys(selectedSizes).forEach(function (size) {
+            sizeQuantity[size] = selectedSizes[size];
+        });
+
+        // Convert the sizeQuantity object to a JSON string and set it as a hidden field value
+        $('input[name="size_quantity"]').val(JSON.stringify(sizeQuantity));
+    }
+
+    // Handle form submission
+    $('form').on('submit', function (e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        // Submit the form (if needed) or perform any additional actions
+        this.submit();
+    });
 });
