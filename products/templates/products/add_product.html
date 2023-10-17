@@ -18,10 +18,81 @@
         </div>
         <div class="row">
             <div class="col s12">
-                <form method="POST" action="{% url 'add_product' %}" class="col s12" enctype="multipart/form-data">
+                <form method="post" action="{% url 'add_product' %}" class="form col s12" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form }}
-                    <div class="row right-align">
+                    <label for="id_sku" class="active">Sku:</label>
+                    <input type="text" name="sku" maxlength="50" required="" id="id_sku">
+
+                    <label for="id_name" class="active">Name:</label>
+                    <input type="text" name="name" maxlength="255" required="" id="id_name">
+
+                    <label for="id_color" class="active">Color:</label>
+                    <input type="text" name="color" value="N/A" maxlength="255" required="" id="id_color">
+
+                    <label for="id_description" class="active">Description:</label>
+                    <textarea name="description" cols="40" rows="10" id="id_description"></textarea>
+
+                    <label for="id_price" class="active">Price:</label>
+                    <input type="number" name="price" step="0.01" required="" id="id_price">
+
+                    <label for="id_sizes" class="active">Sizes:</label>
+                    <div>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="Small" />
+                                <span>Small</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="Medium" />
+                                <span>Medium</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="Large" />
+                                <span>Large</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="XL" />
+                                <span>XL</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="XXL" />
+                                <span>XXL</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="One Size" />
+                                <span>One Size</span>
+                            </label>
+                        </p>
+                    </div>
+
+                    <label for="id_size_quantity" class="active">Size quantity:</label>
+                    <textarea name="size_quantity" cols="40" rows="10" required=""
+                        id="id_size_quantity">{}</textarea><input type="hidden" name="initial-size_quantity" value="{}"
+                        id="initial-id_size_quantity">
+
+                    <label for="id_image" class="active">Image:</label>
+                    <input type="file" name="image" accept="image/*" id="id_image">
+
+                    <label for="id_category" class="active">Category:</label>
+                    <select name="category" required="" id="id_category" multiple="">
+                        <option value="1">T-Shirts</option>
+                        <option value="2">Hoodies</option>
+                        <option value="3">Sweatpants</option>
+                        <option value="4">All Products</option>
+                        <option value="5">Tracksuits</option>
+                    </select>
+
+                    <div class="col s12 right-align">
                         <a class="btn grey darken-3" href="{% url 'products' %}">Cancel</a>
                         <button class="btn black" type="submit">Add Product</button>
                     </div>

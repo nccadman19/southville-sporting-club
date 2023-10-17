@@ -105,8 +105,12 @@
                 {% for item in bag_items %}
                 <li class="collection-item">
                     <div class="item-content">
+                        {% if item.product.image %}
                         <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}"
                             class="responsive-img checkout">
+                        {% else %}
+                        <img src="/media/no-image.png" alt="No Image" class="responsive-img checkout">
+                        {% endif %}
                         <div class="item-details">
                             <span class="title">{{ item.product.name }}</span>
                             <p>Size: {{ item.size|default:"N/A"|upper }}</p>
