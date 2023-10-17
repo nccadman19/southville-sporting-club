@@ -16,7 +16,7 @@ from decouple import config
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
@@ -24,9 +24,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '8000-nccadman19-southvillesp-vyffy813txj.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '8000-nccadman19-southvillesp-stcnkh7zpki.ws-eu105.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1', 'https://8000-nccadman19-southvillesp-vyffy813txj.ws-eu105.gitpod.io/*']
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1', 'https://8000-nccadman19-southvillesp-stcnkh7zpki.ws-eu105.gitpod.io/*']
 
 # Application definition
 
@@ -119,13 +119,12 @@ WSGI_APPLICATION = 'southville_sporting_club.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
 STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
-STRIPE_WEBHOOK = config('STRIPE_WEBHOOK')
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

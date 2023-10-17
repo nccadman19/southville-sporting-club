@@ -67,7 +67,7 @@ class CreateStripeCheckoutSessionView(View):
         # Initialize the list to store OrderLineItem instances to save later
         order_line_items_to_save = []
 
-        domain_url = 'https://8000-nccadman19-southvillesp-vyffy813txj.ws-eu105.gitpod.io'
+        domain_url = 'https://8000-nccadman19-southvillesp-stcnkh7zpki.ws-eu105.gitpod.io'
         # Get the shopping cart from the session
         cart = request.session.get('bag', {})
         total_price = 0

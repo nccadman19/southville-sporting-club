@@ -7,6 +7,10 @@ from products.models import Product
 def view_bag(request):
     """ A view to return contents of the users bag """
 
+    for item in bag_items:
+        if not item.product.image:
+            item.image_url = "/media/no-image.png"
+
     return render(request, 'bag/bag.html')
 
 def add_to_bag(request, item_id):

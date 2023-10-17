@@ -9,7 +9,7 @@
         {% with last_item=bag_items|last %}
         <div class="row">
             <div class="col s12 m6 toast">
-                <img class="responsive-img" src="{{ last_item.product.image.url }}">
+                <img class="responsive-img" src="{{ last_item.image_url }}">
             </div>
             <div class="col s12 m6 toast-description">
                 <p class="my-0"><strong>{{ last_item.product.name }}</strong></p>

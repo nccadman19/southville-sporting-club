@@ -16,13 +16,20 @@ def bag_contents(request):
             item_total = quantity * product.price
             total += item_total
             product_count += quantity
+
+            # Check if the product has an image, and handle it accordingly
+            if product.image:
+                image_url = product.image.url
+            else:
+                image_url = "/media/no-image.png"
+
             bag_items.append({
                 'item_id': product.id,
                 'quantity': quantity,
                 'product': product,
                 'size': selected_size,
                 'item_total': item_total,
-                'image_url': product.image.url,
+                'image_url': image_url,
             })
 
     # Access the thresholds from settings
