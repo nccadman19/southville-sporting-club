@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category
 from django.db.models.functions import Lower
+from django.urls import reverse
 
 from .models import Product, Category
 from .forms import ProductForm
@@ -84,7 +84,25 @@ def nothing_found(request):
 
 def add_product(request):
     """ Add a product to the store """
-    form = ProductForm()
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            # Retrieve the selected sizes
+            selected_sizes = request.POST.getlist('size')
+            sizes_csv = ', '.join(selected_sizes)
+
+            # Create and save the product instance with the sizes
+            product = form.save(commit=False)
+            product.sizes = sizes_csv
+            product.save()
+
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = ProductForm()
+        
     template = 'products/add_product.html'
     context = {
         'form': form,
