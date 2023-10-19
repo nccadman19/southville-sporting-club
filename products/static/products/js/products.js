@@ -94,6 +94,18 @@ document.addEventListener('DOMContentLoaded', function () {
         $('input[name="size_quantity"]').val(JSON.stringify(sizeQuantity));
     }
 
+    // Handle category selection
+    $('#id_category').on('change', function () {
+        // Get the selected categories
+        var selectedCategories = $('#id_category option:selected');
+
+        // Remove the "selected" attribute from all options
+        $('#id_category option').removeAttr('selected');
+
+        // Add the "selected" attribute to the selected options
+        selectedCategories.attr('selected', 'selected');
+    });
+
     // Handle form submission
     $('form').on('submit', function (e) {
         e.preventDefault(); // Prevent the default form submission
