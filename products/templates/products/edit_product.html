@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'products/css/products.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+{% endblock %}
+
+{% block content %}
+<section class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <div class="row center-align">
+            <div class="col s12">
+                <hr>
+                <h2 class="logo-font mb-4">Product Management</h2>
+                <h5 class="text-muted">Add a Product</h5>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <form method="post" action="{% url 'edit_product' product_id=product.id %}" class="form col s12"
+                    enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label for="id_sku" class="active">Sku:</label>
+                    <input type="text" placeholder="SSC00XXX" name="sku" maxlength="50" required="" id="id_sku"
+                        value="{{ product.sku }}">
+
+                    <label for="id_name" class="active">Name:</label>
+                    <input type="text" placeholder="Name" name="name" maxlength="255" required="" id="id_name"
+                        value="{{ product.name }}">
+
+                    <label for=" id_color" class="active">Color:</label>
+                    <input type="text" name="color" maxlength="255" required="" id="id_color"
+                        value="{{ product.color }}">
+
+                    <label for="id_description" class="active">Description:</label>
+                    <textarea name="description" cols="40" rows="10"
+                        id="id_description">{{ product.description }}</textarea>
+
+                    <label for="id_price" class="active">Price:</label>
+                    <input type="number" name="price" step="0.01" required="" id="id_price" value="{{ product.price }}">
+
+                    <label for="id_sizes" class="active">Sizes:</label>
+                    <input type="checkbox" name="sizes" value="{}" id="id_sizes">
+                    <div>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="Small" id="size-small" 
+                                {% if 'Small' in product.sizes %}checked{% endif %} />
+                                <span>Small</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="Medium" id="size-medium" 
+                                {% if 'Medium' in product.sizes %}checked{% endif %} />
+                                <span>Medium</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="Large" id="size-large" 
+                                {% if 'Large' in product.sizes %}checked{% endif %}/>
+                                <span>Large</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="XL" id="size-xl" 
+                                {% if 'XL' in product.sizes %}checked{% endif %} />
+                                <span>XL</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="XXL" id="size-xxl" 
+                                {% if 'XXL' in product.sizes %}checked{% endif %} />
+                                <span>XXL</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="size" value="One Size" id="one-size" 
+                                {% if 'One Size' in product.sizes %}checked{% endif %}/>
+                                <span>One Size</span>
+                            </label>
+                        </p>
+                    </div>
+
+                    <label for="id_size_quantity" class="active">Size quantity:</label>
+                    <input type="hidden" name="size_quantity" value="{{ products.size_quantity }}"
+                        id="id_size_quantity">
+                    <div id="quantity-container"></div>
+
+                    <label for="id_image" class="active">Image:</label>
+                    <input type="file" name="image" value="{{ products.image }}" accept="image/*" id="id_image">
+
+                    <label for="id_category" class="active">Category:</label>
+                    <select name="category" required="" id="id_category" value="{{ product.category }}" multiple="">
+                        <option value="1" {% if product.category == 'T-Shirts' %}selected{% endif %}>T-Shirts</option>
+                        <option value="2" {% if product.category == 'Hoodies' %}selected{% endif %}>Hoodies</option>
+                        <option value="3" {% if product.category == 'Sweatpants' %}selected{% endif %}>Sweatpants</option>
+                        <option value="4" {% if product.category == 'All Products' %}selected{% endif %}>All Products</option>
+                        <option value="5" {% if product.category == 'Tracksuits' %}selected{% endif %}>Tracksuits</option>
+                    </select>
+                    <div class="help" id="id_category_helptext">
+                        <div>Hold down “Control”, or “Command” on a Mac, to select more than one.</div>
+                    </div>
+                    <div class="col s12 right-align">
+                        <a class="btn grey darken-3" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn black" type="submit">Update Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% block postloadjs %}
+<script type="text/javascript" src="{% static 'products/js/products.js' %}"></script>
+{% endblock %}
+{% endblock %}
