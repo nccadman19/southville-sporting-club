@@ -91,6 +91,26 @@
                     <div class="card-action">
                         <!-- Display product price -->
                         <span class="price">£{{ product.price }}</span>
+                        {% if request.user.is_superuser %}
+                        <span class="product-edit">
+                            <a href="{% url 'edit_product' product.id %}" class="teal-text text-darken-1">Edit</a> |
+                            <a class="red-text text-accent-4 btn transparent z-depth-0 modal-trigger"
+                                href="#deleteModal{{ product.id }}">Delete</a>
+                        </span>
+                        <!-- Modal Structure Delete Button -->
+                        <div id="deleteModal{{ product.id }}" class="modal">
+                            <div class="modal-content">
+                                <h4>Delete Product</h4>
+                                <p>Are you sure you want to delete {{ product.name }} (Product ID: {{ product.id }})?
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close waves-effect btn-flat">Cancel</a>
+                                <a href="{% url 'delete_product' product.id %}"
+                                    class="waves-effect waves-red btn-flat">Delete</a>
+                            </div>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

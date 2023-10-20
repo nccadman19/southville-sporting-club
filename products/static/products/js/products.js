@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    var modals = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(modals);
+
     // Create an object to store the selected sizes and their quantities
     var selectedSizes = {};
 
