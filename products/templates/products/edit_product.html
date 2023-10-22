@@ -41,7 +41,8 @@
                     <input type="number" name="price" step="0.01" required="" id="id_price" value="{{ product.price }}">
 
                     <label for="id_sizes" class="active">Sizes:</label>
-                    <input type="checkbox" name="sizes" value="{}" id="id_sizes">
+                    <input type="checkbox" name="sizes" value="" id="id_sizes">
+                    {{ product.sizes }}
                     <div>
                         <p>
                             <label>
@@ -92,7 +93,9 @@
                         id="id_size_quantity">
                     <div id="quantity-container"></div>
 
-                    <label for="id_image" class="active">Image:</label>
+                    <label for="id_image" class="active">Image:</label><br>
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="edit-image"><br>
+                    <p>Image URL: <a href="{{ product.image.url }}" target="_blank">{{ product.image.url }}</a></p>
                     <input type="file" name="image" value="{{ products.image }}" accept="image/*" id="id_image">
 
                     <label for="id_category" class="active">Category:</label>

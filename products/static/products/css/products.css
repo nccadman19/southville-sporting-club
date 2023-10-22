@@ -308,6 +308,13 @@ div#quantity-container {
     min-height: 3rem;
 }
 
+/* Edit Product */
+
+.edit-image {
+    height: 30%;
+    width: 30%;
+}
+
 /* Media Queries */
 
 @media (max-width: 620px) {
