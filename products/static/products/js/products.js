@@ -35,6 +35,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // Create an object to store the selected sizes and their quantities
     var selectedSizes = {};
 
+    // Populate the selected sizes from the 'id_sizes' input
+    var initialSelectedSizes = $('#id_sizes').val();
+    if (initialSelectedSizes) {
+        initialSelectedSizes.split(', ').forEach(function (size) {
+            selectedSizes[size] = 0; // Initialize quantity to 0
+        });
+        updateHiddenInput();
+    }
+
     // Listen for changes on size checkboxes
     $('input[type="checkbox"]').off('change').on('change', function () {
         // Get the size from the checkbox's value
@@ -84,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $('#id_sizes').val(Object.keys(selectedSizes).join(', '));
         updateHiddenInput();
     });
+
 
     // Function to update the hidden input with selected sizes and quantities
     function updateHiddenInput() {
