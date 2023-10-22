@@ -122,9 +122,8 @@ stripe3
 https://stripe.com/docs/checkout/quickstart
 buttons
 https://stackoverflow.com/questions/64232515/css-on-clickable-element-onclickhover
-
-
-
+modal for delete buttons
+https://materializecss.com/modals.html#!
 
 errors
 cannot get the cart popup to disappear when user clicks away from the display
