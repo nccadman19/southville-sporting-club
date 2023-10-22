@@ -41,7 +41,7 @@
                     <input type="number" name="price" step="0.01" required="" id="id_price" value="{{ product.price }}">
 
                     <label for="id_sizes" class="active">Sizes:</label>
-                    <input type="checkbox" name="sizes" value="{% if product.sizes %}{{ product.sizes }}{% endif %}" 
+                    <input type="hidden" name="sizes" value="{% if product.sizes %}{{ product.sizes }}{% endif %}" 
                         id="id_sizes">
                     <div>
                         <p>
@@ -89,9 +89,17 @@
                     </div>
 
                     <label for="id_size_quantity" class="active">Size quantity:</label>
-                    <input type="hidden" name="size_quantity" value="{{ products.size_quantity }}"
-                        id="id_size_quantity">
-                    <div id="quantity-container"></div>
+                    <input type="hidden" name="size_quantity" value="" id="id_size_quantity">
+                    <div id="quantity-container">
+                        {% for size, quantity in size_quantity.items %}
+                        {% if quantity > 0 %}
+                        <div class="size-container">
+                            <label>{{ size }}</label>
+                            <input type="number" name="size-quantity-{{ size }}" placeholder="Enter quantity" max="999" value="{{ quantity }}">
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
 
                     <label for="id_image" class="active">Image:</label><br>
                     <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"

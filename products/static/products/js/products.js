@@ -32,17 +32,34 @@ document.addEventListener('DOMContentLoaded', function () {
     var modals = document.querySelectorAll('.modal');
     var instances = M.Modal.init(modals);
 
-    // Create an object to store the selected sizes and their quantities
+    // Create objects to store the selected sizes and their quantities
     var selectedSizes = {};
+    var sizeQuantities = {};
 
     // Populate the selected sizes from the 'id_sizes' input
     var initialSelectedSizes = $('#id_sizes').val();
     if (initialSelectedSizes) {
         initialSelectedSizes.split(', ').forEach(function (size) {
-            selectedSizes[size] = 0; // Initialize quantity to 0
+            selectedSizes[size] = 0;
         });
         updateHiddenInput();
     }
+
+    // Loop through size containers in the HTML and extract size and quantity
+    $('.size-container').each(function () {
+        var size = $(this).find('label').text();
+        var quantity = parseInt($(this).find('input[type="number"]').val(), 10) || 0;
+
+        if (quantity > 0) {
+            sizeQuantities[size] = quantity;
+        }
+    });
+
+    // Assign the sizeQuantities object to the selectedSizes
+    selectedSizes = sizeQuantities;
+
+    // Update the hidden input
+    updateHiddenInput();
 
     // Listen for changes on size checkboxes
     $('input[type="checkbox"]').off('change').on('change', function () {
@@ -93,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
         $('#id_sizes').val(Object.keys(selectedSizes).join(', '));
         updateHiddenInput();
     });
-
 
     // Function to update the hidden input with selected sizes and quantities
     function updateHiddenInput() {

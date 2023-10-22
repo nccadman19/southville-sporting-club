@@ -127,6 +127,8 @@ def edit_product(request, product_id):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
+            selected_sizes = request.POST.getlist('size')
+            product.sizes = ', '.join(selected_sizes)
             form.save()
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
@@ -140,6 +142,7 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'product': product,
+        'size_quantity': product.size_quantity,  # Add size_quantity to the context
     }
 
     return render(request, template, context)
