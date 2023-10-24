@@ -124,6 +124,11 @@ buttons
 https://stackoverflow.com/questions/64232515/css-on-clickable-element-onclickhover
 modal for delete buttons
 https://materializecss.com/modals.html#!
+detecting ctrl click
+https://stackoverflow.com/questions/16190455/how-to-detect-controlclick-in-javascript-from-an-onclick-div-attribute
+checkboxes
+https://materializecss.com/checkboxes.html
 
-errors
+bugs
 cannot get the cart popup to disappear when user clicks away from the display
+xl being checked in edit product as its inside XXL 
