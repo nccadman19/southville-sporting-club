@@ -123,23 +123,62 @@ document.addEventListener('DOMContentLoaded', function () {
         $('input[name="size_quantity"]').val(JSON.stringify(sizeQuantity));
     }
 
-    // Handle category selection
-    $('#id_category').on('change', function () {
-        // Get the selected categories
-        var selectedCategories = $('#id_category option:selected');
+    var categorySelect = document.getElementById('id_category');
+    var options = categorySelect.options;
 
-        // Remove the "selected" attribute from all options
-        $('#id_category option').removeAttr('selected');
+    // Log initially selected options
+    for (var i = 0; i < options.length; i++) {
+        if (options[i].selected) {
+            console.log('Initially Selected Option:', options[i].textContent);
+        }
+    }
 
-        // Add the "selected" attribute to the selected options
-        selectedCategories.attr('selected', 'selected');
+    categorySelect.addEventListener('change', function (event) {
+        if (event.ctrlKey || event.metaKey) {
+            // Ctrl (or Command) is held while clicking, add or remove the class to/from the chosen category
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].selected) {
+                    if (options[i].classList.contains('selected')) {
+                        options[i].classList.remove('selected');
+                    } else {
+                        options[i].classList.add('selected');
+                    }
+                }
+            }
+        } else {
+            // Create a set to keep track of the selected option values
+            var selectedValues = new Set();
+
+            // Identify the selected values and add them to the set
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].selected) {
+                    selectedValues.add(options[i].value);
+                }
+            }
+
+            // Remove the "selected" class and "selected" attribute from all options
+            for (var i = 0; i < options.length; i++) {
+                options[i].classList.remove('selected');
+                options[i].removeAttribute('selected');
+            }
+
+            // Now, add the "selected" class to the currently selected options
+            for (var i = 0; i < options.length; i++) {
+                if (selectedValues.has(options[i].value)) {
+                    options[i].classList.add('selected');
+                    options[i].setAttribute('selected', 'selected');
+                }
+            }
+        }
     });
+
+
 
     // Handle form submission
     $('form').on('submit', function (e) {
         e.preventDefault(); // Prevent the default form submission
 
-        // Submit the form (if needed) or perform any additional actions
+        // Submit the form
         this.submit();
     });
 });

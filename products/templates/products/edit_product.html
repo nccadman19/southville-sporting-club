@@ -12,7 +12,7 @@
             <div class="col s12">
                 <hr>
                 <h2 class="logo-font mb-4">Product Management</h2>
-                <h5 class="text-muted">Add a Product</h5>
+                <h5 class="text-muted">Edit a Product</h5>
                 <hr>
             </div>
         </div>
@@ -110,20 +110,19 @@
                             target="_blank">{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}
                         </a>
                     </p>
-
                     <input type="file" name="image" value="{{ products.image }}" accept="image/*" id="id_image">
 
                     <label for="id_category" class="active">Category:</label>
-                    <select name="category" required="" id="id_category" value="{{ product.category }}" multiple="">
-                        <option value="1" {% if product.category == 'T-Shirts' %}selected{% endif %}>T-Shirts</option>
-                        <option value="2" {% if product.category == 'Hoodies' %}selected{% endif %}>Hoodies</option>
-                        <option value="3" {% if product.category == 'Sweatpants' %}selected{% endif %}>Sweatpants</option>
-                        <option value="4" {% if product.category == 'All Products' %}selected{% endif %}>All Products</option>
-                        <option value="5" {% if product.category == 'Tracksuits' %}selected{% endif %}>Tracksuits</option>
+                    <select name="category" required id="id_category" multiple>
+                        <option value="1" {% if 1 in selected_category_ids %}selected{% endif %}>T-Shirts</option>
+                        <option value="2" {% if 2 in selected_category_ids %}selected{% endif %}>Hoodies</option>
+                        <option value="3" {% if 3 in selected_category_ids %}selected{% endif %}>Sweatpants</option>
+                        <option value="4" {% if 4 in selected_category_ids %}selected{% endif %}>All Products</option>
+                        <option value="5" {% if 5 in selected_category_ids %}selected{% endif %}>Tracksuits</option>
                     </select>
                     <div class="help" id="id_category_helptext">
                         <div>Hold down “Control”, or “Command” on a Mac, to select more than one.</div>
-                    </div>
+                    </div>                   
                     <div class="col s12 right-align">
                         <a class="btn grey darken-3" href="{% url 'products' %}">Cancel</a>
                         <button class="btn black" type="submit">Update Product</button>

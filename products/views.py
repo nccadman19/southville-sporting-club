@@ -102,10 +102,19 @@ def add_product(request):
             product.sizes = sizes_csv
             product.save()
 
+            # Save selected categories
+            selected_categories = request.POST.getlist('category')
+            product.category.clear()  # Clear existing categories
+            for category_id in selected_categories:
+                category = Category.objects.get(pk=category_id)
+                product.category.add(category)
+            product.save()
+
             messages.success(request, 'Successfully added product!')
+
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add the product. Please ensure the form is valid.')
     else:
         form = ProductForm()
         
@@ -116,14 +125,20 @@ def add_product(request):
 
     return render(request, template, context)
 
+
 @login_required
 def edit_product(request, product_id):
     """ Edit a product in the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+    
+    # Retrieve the product information  
     product = get_object_or_404(Product, pk=product_id)
+    
+    # Retrieve the selected category IDs for the product
+    selected_category_ids = product.category.all().values_list('id', flat=True)
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
@@ -131,6 +146,10 @@ def edit_product(request, product_id):
             product.sizes = ', '.join(selected_sizes)
             form.save()
             messages.success(request, 'Successfully updated product!')
+
+            # Print the full form data
+            print("Full Form Data:", request.POST)
+
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to update product. Please ensure the form is valid.')
@@ -142,10 +161,12 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'product': product,
-        'size_quantity': product.size_quantity,  # Add size_quantity to the context
+        'size_quantity': product.size_quantity,
+        'selected_category_ids': selected_category_ids,
     }
 
     return render(request, template, context)
+
 
 @login_required
 def delete_product(request, product_id):
