@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col s12 m12 l6">
             <p class="text-muted">Please fill out the form below to complete your order</p>
-            <form action="{% url 'create-checkout-session' %}" method="POST" id="payment-form">
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <legend class="fieldset-label text-black px-2 w-auto">BILLING INFORMATION</legend>
                 <fieldset class="px-3 mb-5">
@@ -82,6 +82,15 @@
                     <input type="hidden" name="delivery_cost" id="delivery-cost" value="4.99">
                     <input type="hidden" name="grand_total" id="grand-total-input" value="{{ grand_total }}">
                 </fieldset>
+                <fieldset class="px-3">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                    <!-- A Stripe card element will go here -->
+                    <div class="mb-3" id="card-element"></div>
+                    <!-- Used to display form errors -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <!-- Pass the client secret to the view so we can get the payment intent id -->
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                </fieldset>
                 <div class="submit-button text-right">
                     <div class="button-container">
                         <a href="{% url 'products' %}" class="waves-effect waves-light grey darken-3 btn">
@@ -92,7 +101,7 @@
                     <div class="button-container complete">
                         <!-- A Stripe button will go here -->
                         <button type="submit" id="submit-button" class="waves-effect waves-light grey darken-3 btn">
-                            <span class="font-weight-bold">Continue to Payment</span>
+                            <span class="font-weight-bold">Pay Now</span>
                             <i class="material-icons right">lock</i>
                         </button>
                     </div>
@@ -157,5 +166,9 @@
 {% endblock %}
 
 {% block postloadjs %}
-<script type="text/javascript" src="{% static 'checkout/js/checkout.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/checkout.js' %}"></script>
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
