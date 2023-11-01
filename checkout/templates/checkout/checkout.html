@@ -54,6 +54,14 @@
                         <label for="{{ order_form.town_or_city.id_for_label }}">Town or City</label>
                     </div>
                     <div class="input-field checkout">
+                        {{ order_form.county }}
+                        <label for="{{ order_form.county.id_for_label }}">County</label>
+                    </div>
+                    <div class="input-field checkout">
+                        <input type="text" name="country" id="id_country" value="United Kingdom" readonly>
+                        <label for="id_country">Country</label>
+                    </div>
+                    <div class="input-field checkout">
                         {{ order_form.postcode }}
                         <label for="{{ order_form.postcode.id_for_label }}">Postcode</label>
                     </div>
