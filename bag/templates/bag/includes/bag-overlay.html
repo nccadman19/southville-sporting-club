@@ -44,13 +44,10 @@
                         </p>
                     </div>
                 </div>
-                <form action="{% url 'checkout' %}" method="post" class="bag-btn">
-                    {% csrf_token %}
-                    <button type="submit" class="waves-effect waves-light btn black rounded-0 right-align">
-                        <span class="text-uppercase">Go To Secure Checkout</span>
-                        <i class="material-icons lock right">lock</i>
-                    </button>
-                </form>
+                <a href="{% url 'checkout' %}" class="waves-effect waves-light btn black rounded-0 right-align">
+                    <span class="text-uppercase">Go To Secure Checkout</span>
+                    <i class="material-icons lock right">lock</i>
+                </a>                
                 {% else %}
                 <div class="empty-cart-message black-text center-align">
                     <h6>Your cart is currently empty.</h6>
