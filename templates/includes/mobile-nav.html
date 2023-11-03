@@ -33,8 +33,8 @@
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
         <div class="button-container-sidenav">
-            <a href="{% url 'account_logout' %}"
-                class="waves-effect waves-light grey darken-3 btn full-width-btn">PRODUCT MANAGEMENT</a>
+            <a href="{% url 'profile' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">PRODUCT
+                MANAGEMENT</a>
         </div>
         {% endif %}
         <div class="button-container-sidenav">
