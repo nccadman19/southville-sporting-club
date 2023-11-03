@@ -130,6 +130,8 @@ checkboxes
 https://materializecss.com/checkboxes.html
 fixing selected options
 https://stackoverflow.com/questions/46415457/jquery-onclick-change-option-selected-attribute
+slack thread 
+- fixed the issue i was having with the webhook!!!!
 
 
 bugs

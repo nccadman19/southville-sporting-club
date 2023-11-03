@@ -41,10 +41,6 @@ def checkout(request):
             # Empty string to gather form data
             form_data = {}
 
-            # Gather form data if form valid 
-            for field in OrderForm.Meta.fields:
-                form_data[field] = request.POST.get(field, '')
-
             order = order_form.save(commit=False)  # Don't save it to the database yet
 
             # Calculate the delivery cost
