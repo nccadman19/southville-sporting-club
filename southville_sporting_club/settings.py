@@ -18,6 +18,8 @@ from dotenv import load_dotenv
 import os
 
 
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -126,12 +128,9 @@ DATABASES = {
     }
 }
 
-# STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
-# STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
-# STRIPE_WH_SECRET = config('STRIPE_WH_SECRET')
-STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY")
-STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
-STRIPE_WH_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
+STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+STRIPE_WH_SECRET = config('STRIPE_WH_SECRET')
 STRIPE_CURRENCY = 'gbp'
 
 # Password validation
@@ -217,3 +216,6 @@ DELIVERY_THRESHOLDS = {
 
 # Stripe urls and domains
 # BACKEND_DOMAIN = config("BACKEND_DOMAIN")
+
+# Email
+DEFAULT_FROM_EMAIL = 'noreply@southville-sporting-club.com'
