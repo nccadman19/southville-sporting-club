@@ -58,7 +58,7 @@
                         <label for="{{ order_form.county.id_for_label }}">County</label>
                     </div>
                     <div class="input-field checkout">
-                        <input type="text" name="country" id="id_country" value="United Kingdom" readonly>
+                        <input type="text" name="country" id="id_country" value="UK" readonly>
                         <label for="id_country">Country</label>
                     </div>
                     <div class="input-field checkout">
@@ -66,9 +66,9 @@
                         <label for="{{ order_form.postcode.id_for_label }}">Postcode</label>
                     </div>
                     <p>
-                        <label>
-                            <input type="checkbox" class="filled-in" id="id-save-info" name="save-info"
-                                checked="checked" />
+                        <label class="form-check-label" for="id-save-info">
+                            <input type="checkbox" class="filled-in form-check-input" id="id-save-info" name="save-info"
+                                checked="checked"/>
                             <span>Save this delivery information to my profile</span>
                         </label>
                     </p>
