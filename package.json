@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@types/jquery": "^3.5.19",
-    "materialize-css": "^1.0.0-rc.2"
+    "dotenv": "^16.3.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "stripe": "^14.3.0"
   }
 }
