@@ -22,3 +22,21 @@ def about(request):
 
     return render(request, 'home/about_us.html')
 
+def contact(request):
+    """ A view to return the terms and conditions page """
+    if request.method == 'POST':
+        name = request.POST.get('firstname')
+        email = request.POST.get('email')
+        message = request.POST.get('subject')
+
+        # Validate and process the form data
+        if not name or not email or not message:
+            messages.error(request, "Please fill in all the required fields.")
+
+        # Process the form data and send an email
+
+        # After successful processing
+        messages.success(request, "Your message has been sent successfully.")
+        return redirect('index')
+    return render(request, 'home/contact_us.html')
+

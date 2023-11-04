@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'home/css/home.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+{% endblock %}
+
+{% block content %}
+<div class="section" id="contact-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m10 l10 offset-l1 offset-m1">
+                <h2 class="contact-title">Contact Us</h2>
+                <div class="container form-container">
+                    <form action="action_page.php">
+                        <div class="input-field contact">
+                            <input type="text" id="fname" name="firstname" class="validate" required>
+                            <label for="fname">First Name</label>
+                        </div>
+
+                        <div class="input-field contact">
+                            <input type="text" id="lname" name="lastname" class="validate">
+                            <label for="lname">Last Name</label>
+                        </div>
+
+                        <div class="input-field contact">
+                            <input type="email" id="email" name="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+
+                        <div class="input-field contact">
+                            <textarea id="subject" name="subject" class="materialize-textarea"></textarea>
+                            <label for="subject">Subject</label>
+                        </div>
+
+                        <button class="waves-effect waves-light btn black rounded-0 right-align" type="submit"
+                            name="action">Submit</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section" id="contact-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m4 l4">
+                <div class="container contact-container">
+                    <h5>Opening Hours</h5>
+                    <p>Mon-Sat 9AM - 5PM</p>
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="container contact-container">
+                    <h5>Email</h5>
+                    <p>Contact Us:
+                        <a href="mailto:contact@southvillesportingclub.com"
+                            class="email-link">contact@southvillesportingclub.com</a>
+                    </p>
+                    <p>Press: <a href="mailto:press@southvillesportingclub.com"
+                            class="email-link">press@southvillesportingclub.com</a></p>
+
+                </div>
+            </div>
+            <div class="col s12 m4 l4">
+                <div class="container contact-container">
+                    <h5>Head Office</h5>
+                    <p>Southville Sporting Club<br>
+                        96 Pinchbeck Rd<br>
+                        Spalding,<br>
+                        Lincolnshire<br>
+                        PE11 1QL<br>
+                        United Kingdom<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
