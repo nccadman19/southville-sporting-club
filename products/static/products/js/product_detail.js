@@ -47,23 +47,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // When the product details cards clicked shows respective icon
-    var collapsibleHeaders = document.querySelectorAll('.collapsible-header-product');
+    let isFavorited = false; // Declare the isFavorited variable here
 
-    // Check if there are collapsible headers with icons on the page
-    var collapsibleHeadersProduct = document.querySelectorAll('.collapsible-header-product');
+    function toggleHeartIcon() {
+        isFavorited = !isFavorited;
 
-    if (collapsibleHeadersProduct.length > 0) {
-        // Attach click event listener to collapsible headers with icons
-        collapsibleHeadersProduct.forEach(function (header) {
-            header.addEventListener('click', function () {
-                var icon = header.querySelector('.icon');
-                if (icon.innerHTML === '+') {
-                    icon.innerHTML = '-';
-                } else {
-                    icon.innerHTML = '+';
-                }
-            });
-        });
+        // Toggle the visibility of heart icons
+        var filledHeartIcon = document.querySelector('.love-icon-filled');
+        var outlineHeartIcon = document.querySelector('.love-icon-outline');
+
+        if (isFavorited) {
+            filledHeartIcon.style.display = 'block';
+            outlineHeartIcon.style.display = 'none';
+        } else {
+            filledHeartIcon.style.display = 'none';
+            outlineHeartIcon.style.display = 'block';
+        }
     }
+
+    // Add an event listener to toggle the heart icon when clicked
+    var heartIcons = document.querySelectorAll('.material-icons.love-icon-filled, .material-icons.love-icon-outline');
+    heartIcons.forEach(function (icon) {
+        icon.addEventListener('click', toggleHeartIcon);
+    });
 });

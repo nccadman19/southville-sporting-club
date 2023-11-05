@@ -315,6 +315,15 @@ div#quantity-container {
     width: 30%;
 }
 
+/* Wishlist */
+
+i.material-icons.love-icon-filled,
+i.material-icons.love-icon-outline {
+    position: absolute;
+    z-index: 9999;
+    cursor: pointer;
+}
+
 /* Media Queries */
 
 @media (max-width: 620px) {

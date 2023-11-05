@@ -16,6 +16,15 @@
             <div class="col s12 m6 l6">
                 <div class="card no-shadow">
                     <div class="card-image">
+                        <!-- Love heart icons -->
+                        {% if isFavorited %}
+                        <i class="material-icons love-icon-filled" style="display: block">favorite</i>
+                        <i class="material-icons love-icon-outline" style="display: none">favorite_border</i>
+                        {% else %}
+                        <i class="material-icons love-icon-filled" style="display: none">favorite</i>
+                        <i class="material-icons love-icon-outline" style="display: block">favorite_border</i>
+                        {% endif %}
+
                         <div class="img-container-detail">
                             <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
                                 alt="{{ product.name }}" class="zoom-image">
