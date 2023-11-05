@@ -119,8 +119,6 @@ def checkout(request):
         messages.error(request, "There's nothing in your bag at the moment")
         return redirect(reverse('products'))
 
-    order_form = OrderForm()
-
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
