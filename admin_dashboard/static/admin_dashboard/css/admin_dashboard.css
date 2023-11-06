@@ -1,0 +1,10 @@
+/* Order List */
+
+.container.order-list {
+    width: 90%;
+}
+
+.order-number {
+    white-space: normal;
+    height: 2em;
+}

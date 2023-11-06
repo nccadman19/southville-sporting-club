@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'admin_dashboard/css/admin_dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container order-list">
+    <h1>All Orders</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Order Number</th>
+                <th>Date</th>
+                <th>Shipping Address</th>
+                <th>Items</th>
+                <th>Order Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.order_number|truncatechars:10 }}</td>
+                <td>{{ order.date }}</td>
+                <td>
+                    {{ order.full_name }}<br>
+                    {{ order.street_address1 }}<br>
+                    {{ order.street_address2 }}<br>
+                    {{ order.town_or_city }}<br>
+                    {{ order.county }}<br>
+                    {{ order.postcode }}<br>
+                    {{ order.country }}
+                </td>
+                <td>
+                    <ul>
+                        {% for line_item in order.lineitems.all %}
+                        {{ line_item.product.name }}<br>
+                        Size: {{ line_item.product_size }}<br>
+                        Quantity: {{ line_item.quantity }}<br>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>£{{ order.grand_total }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
