@@ -160,6 +160,17 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
+    # Iterate through the order line items and update the product quantities
+    for line_item in order.lineitems.all():
+        product = line_item.product
+        product_size = line_item.product_size
+        quantity = line_item.quantity
+
+        # Update the product size quantity in your database
+        if product_size in product.size_quantity:
+            product.size_quantity[product_size] -= quantity
+            product.save()
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
