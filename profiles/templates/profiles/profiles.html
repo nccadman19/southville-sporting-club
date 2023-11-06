@@ -16,9 +16,12 @@
     <div class="row">
         <div class="col l6 s12">
             <p class="">Default Delivery Information</p>
+            <button id="edit-button" class="waves-effect waves-light grey darken-3 btn profile">Edit</button>
             <form class="" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
-                {{ form }}
+                <div id="editable-fields">
+                    {{ form }}
+                </div>
                 <button class="waves-effect waves-light grey darken-3 btn profile">Update Information</button>
             </form>
         </div>
@@ -63,4 +66,8 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+<script src="{% static 'profiles/js/profiles.js' %}"></script>
 {% endblock %}
