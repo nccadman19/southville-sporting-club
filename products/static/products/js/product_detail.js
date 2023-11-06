@@ -47,27 +47,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    let isFavorited = false; // Declare the isFavorited variable here
+    // When the product details cards are clicked, change the icon and toggle between + and -
+    var collapsibleHeaders = document.querySelectorAll('.collapsible-header.card-details');
 
-    function toggleHeartIcon() {
-        isFavorited = !isFavorited;
+    collapsibleHeaders.forEach(function (header) {
+        header.addEventListener('click', function () {
+            var icon = header.querySelector('.icon');
+            var rotation = parseFloat(icon.style.transform.replace('rotate(', '').replace('deg)', ''));
 
-        // Toggle the visibility of heart icons
-        var filledHeartIcon = document.querySelector('.love-icon-filled');
-        var outlineHeartIcon = document.querySelector('.love-icon-outline');
-
-        if (isFavorited) {
-            filledHeartIcon.style.display = 'block';
-            outlineHeartIcon.style.display = 'none';
-        } else {
-            filledHeartIcon.style.display = 'none';
-            outlineHeartIcon.style.display = 'block';
-        }
-    }
-
-    // Add an event listener to toggle the heart icon when clicked
-    var heartIcons = document.querySelectorAll('.material-icons.love-icon-filled, .material-icons.love-icon-outline');
-    heartIcons.forEach(function (icon) {
-        icon.addEventListener('click', toggleHeartIcon);
+            if (icon.innerHTML === '+') {
+                icon.innerHTML = '-';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                icon.innerHTML = '+';
+                icon.style.transform = 'rotate(90deg)';
+            }
+        });
     });
+
 });

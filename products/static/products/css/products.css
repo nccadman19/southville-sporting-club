@@ -175,10 +175,6 @@
     transition: transform 0.3s;
 }
 
-.expanded {
-    transform: rotate(45deg);
-}
-
 .collapsible-header {
     justify-content: space-between;
 }
