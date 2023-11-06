@@ -10,12 +10,12 @@ def index(request):
 def shipping(request):
     """ A view to return the shipping and returns page """
 
-    return render(request, 'home/shipping-and-returns.html')
+    return render(request, 'home/shipping_and_returns.html')
 
 def terms(request):
     """ A view to return the terms and conditions page """
 
-    return render(request, 'home/terms-and-conditions.html')
+    return render(request, 'home/terms_and_conditions.html')
 
 def about(request):
     """ A view to return the terms and conditions page """
@@ -40,3 +40,7 @@ def contact(request):
         return redirect('index')
     return render(request, 'home/contact_us.html')
 
+def error(request):
+    """ A view to return the terms and conditions page """
+
+    return render(request, 'home/error.html')

@@ -90,6 +90,40 @@ h2.about {
     height: 100%;
 }
 
+.container.error-page {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+}
+
+.error-title {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Contact */
+div.input-field.contact {
+    position: sticky !important;
+}
+
+.contact-container {
+    text-align: center;
+}
+
+.contact-container h5 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.email-link {
+    color: black;
+    text-decoration: underline;
+}
+
+.contact-title {
+    font-family: 'Times New Roman', Times, serif;
+}
+
 /* Media Queries */
 
 @media (max-width: 1020px) {
@@ -109,30 +143,8 @@ h2.about {
     .latest-drop {
         padding-left: 10rem !important;
     }
-}
 
-/* Contact */
-div.input-field.contact {
-    position: sticky !important;
-}
-
-/* #contact-banner {
-    min-height: 73vh;
-} */
-
-.contact-container {
-    text-align: center;
-}
-
-.contact-container h5 {
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.email-link {
-    color: black;
-    text-decoration: underline;
-}
-
-.contact-title {
-    font-family: 'Times New Roman', Times, serif;
+    .container.error-page {
+        width: 90%;
+    }
 }
