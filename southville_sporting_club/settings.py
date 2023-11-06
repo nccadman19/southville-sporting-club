@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
+    'admin_dashboard',
 ]
 
 MIDDLEWARE = [
@@ -219,3 +220,6 @@ DELIVERY_THRESHOLDS = {
 
 # Email
 DEFAULT_FROM_EMAIL = 'noreply@southville-sporting-club.com'
+
+# Custom 404 page
+handler404 = 'home.views.error'
