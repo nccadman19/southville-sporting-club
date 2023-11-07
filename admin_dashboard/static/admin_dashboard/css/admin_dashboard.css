@@ -18,3 +18,9 @@
 .stock-list-image {
     width: 10rem;
 }
+
+/* Dashboard */
+
+.container.admin-dashboard {
+    width: 95%;
+}

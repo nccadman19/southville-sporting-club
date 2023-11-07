@@ -8,9 +8,18 @@
 
 {% block content %}
 <div class="container admin-dashboard">
-    <h1>Admin Dashboard</h1>
+    <h3 class="">ADMIN DASHBOARD</h3>
     <div class="row">
-        <div class="col s12 m6 l4">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Monthly Sales</span>
+                    <p>Your currently monthly sales data:</p>
+                    <h5>£{{ monthly_sales_figure|floatformat:2 }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-content">
                     <span class="card-title">Stock List</span>
@@ -21,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 m6 l4">
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-content">
                     <span class="card-title">Order History</span>
@@ -32,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 m6 l4">
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-content">
                     <span class="card-title">Add New Product</span>
@@ -43,15 +52,17 @@
                 </div>
             </div>
         </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Manage Profile</span>
+                    <p>Update your account information.</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'profile' %}">Go to Profile</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-{% endblock %}
-
-{% block postloadjs %}
-<script>
-    var monthlySalesData = JSON.parse('{{ monthly_sales_data|escapejs }}');
-    // Now you can use 'monthlySalesData' in your external JavaScript files
-</script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="{% static 'admin_dashboard/js/chart.js' %}"></script>
 {% endblock %}
