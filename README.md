@@ -1,24 +1,225 @@
+<div style="color: white;">
+
 # Southville Sporting Club | Full Stack Website
 
 ## Bristol Based Vintage Athletic Wear
--------
+
+This website has been created to sell UK created athletic wear, it is based on a small UK concept business. 
+
 [![VisitWebsite][website-shield]][website-url]&nbsp;&nbsp;
 [![Issues][issues-shield]][issues-url]&nbsp;&nbsp;
 [![ClosedIssues][closed-shield]][closed-url]&nbsp;&nbsp;
 [![LinkedIn][linkedin-shield]][linkedin-url]
+<br/>
 
-## Table of Contents 
+## **Table of Contents**
 
+1. [User Experience](#user-experience)
+2. [Design](#design)
+3. [Features](#features)
+4. [Accessibility](#accessibility)
+5. [Technologies Used](#technologies-used)
+6. [Deployment and Local Development](#deployment-and-local-development)
+7. [Testing](#testing)
+8. [Credits](#credits)
+---
+# User Experience
 
-
-# User Experience 
+1. [Goals](#goals)
+2. [Visual Design](#visual-design)
 
 ## Goals
+
+1. [Business Goals](#business-goals)
+2. [User Goals](#user-goals)
+3. [Strategy](#strategy)
 
 ### Business Goals
 ------
 This website performs a twofold mission, finely honed to achieve tangible results: firstly, by meticulously crafting an effortlessly navigable e-commerce platform that seamlessly converts visitors into loyal customers. The user-friendly online store is fortified with secure transactions and showcases the captivating 'Run with Nature' collection - a harmonious blend of vintage athletics and natural elements that guarantees an immersive and satisfying shopping experience, ultimately translating clicks into sales. Secondly, the ambition is to cement an unmistakable identity as the icon of vintage athletic wear intertwined with nature's allure, forging an enduring connection with Bristol's scenic landscapes. 
 Mission Statement: "Southville Sporting Club's mission is to unite vintage athletics, nature's beauty, and seamless e-commerce, crafting an active, nostalgic, and environmentally attuned lifestyle."
+
+### User Goals
+------
+Prospective users of this website seek a seamless and enjoyable online shopping experience where they can explore and purchase the captivating 'Run with Nature' collection. They aim to find high-quality vintage athletic wear that reflects their active lifestyle and appreciation for eco-friendly materials, all while connecting with the vibrant spirit of Bristol's scenic landscapes. Additionally, users intend to make secure and hassle-free transactions, converting their interest into a satisfying shopping journey.
+### Strategy
+------
+The primary target audience for Southville Sporting Club is individuals aged 20-40 who seek stylish and sustainable unisex clothing that resonates with the spirit of vintage athletics and nature's beauty.
+
+What the users would be looking for:
+* Effortless Navigation: Users expect a user-friendly and intuitive interface that allows them to easily explore the website and find products.
+* Account Creation: Users should be able to create a personal account for a customised shopping experience, including saving preferences and order history.
+* Product Information: Comprehensive product descriptions, high-quality images, and sizing information to help users make informed choices.
+* Security: Users want to feel confident that their personal and financial information is secure when making purchases.
+* Sustainability Information: Details about the use of eco-friendly materials, reinforcing the brand's commitment to sustainability.
+* Contact and Support: Access to customer support or contact information for inquiries and assistance.
+
+[Back to top](#table-of-contents)
+
+## Visual Design
+
+### Fonts 
+------
+I used Google fonts 'Helvetica' and 'Times New Roman'. I used the Times New Roman font to make the header text on the index page stand out from the regular font on the site. I then used 'Helvetica' as I thought it was very easy to read and looks professional.
+
+### Styling 
+------
+* Materialize CSS files have been incorporated into the project to leverage its pre-defined class defaults and components.
+* The class defaults of Materialize CSS have been overridden to align with the desired styling preferences.
+* Customisation has been made easier by modifying the source files directly, allowing for a consistent and unified design.
+* The website incorporates responsive web design, allowing the site to adjust dynamically based on the screen size.
+* Links present on each page have been intelligently designed to redirect users to essential sections, such as the Client or the Register page, irrespective of their current location.
+
+### Wireframes
+------
+<details>
+<summary>Index</summary>
+
+Desktop
+
+![Desktop Index Wireframe](media/readme/wireframes/index-desktop.png)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+
+Mobile
+
+![Mobile Index Wireframe](media/readme/wireframes/index-mobile.png)
+
+</details>
+<br>
+
+<details>
+<summary>Products</summary>
+
+Desktop
+
+![Desktop Products Wireframe](media/readme/wireframes/products-desktop.png)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+
+Mobile
+
+![Mobile Products Wireframe](media/readme/wireframes/products-mobile.png)
+
+</details>
+<br>
+
+<details>
+<summary>Product Detail</summary>
+
+Desktop
+
+![Desktop Product Detail Wireframe](media/readme/wireframes/product-detail-desktop.png)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+
+Mobile
+
+![Mobile Product Detail Wireframe](media/readme/wireframes/product-detail-mobile.png)
+
+</details>
+<br>
+
+<details>
+<summary>Bag</summary>
+
+Desktop
+
+![Desktop Bag Wireframe](media/readme/wireframes/bag-desktop.png)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+
+Mobile
+
+![Mobile Bag Wireframe](media/readme/wireframes/bag-mobile.png)
+
+</details>
+<br>
+
+<details>
+<summary>Checkout</summary>
+
+Desktop
+
+![Desktop Checkout Wireframe](media/readme/wireframes/checkout-desktop.png)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+
+Mobile
+
+![Mobile Checkout Wireframe](media/readme/wireframes/checkout-mobile.png)
+
+</details>
+<br>
+
+<details>
+<summary>Profile</summary>
+
+Desktop
+
+![Desktop Profile Wireframe](media/readme/wireframes/profile-desktop.png)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+
+Mobile
+
+![Mobile Profile Wireframe](media/readme/wireframes/profile-mobile.png)
+
+</details>
+<br>
+
+<details>
+<summary>Contact</summary>
+
+Desktop
+
+![Desktop Contact Wireframe](media/readme/wireframes/contact-desktop.png)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+
+Mobile
+
+![Mobile Contact Wireframe](media/readme/wireframes/contact-mobile.png)
+
+</details>
+<br>
+
+<details>
+<summary>Admin Dashboard</summary>
+
+Desktop
+
+![Desktop Admin Dashboard Wireframe](media/readme/wireframes/admin-dashboard-desktop.png)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+
+Mobile
+
+![Mobile Admin Dashboard Wireframe](media/readme/wireframes/admin-dashboard-mobile.png)
+
+</details>
+<br>
+
+<details>
+<summary>Shipping & Terms</summary>
+
+Desktop
+
+![Desktop Shipping & Terms Wireframe](media/readme/wireframes/shipping-terms-desktop.png)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+
+Mobile
+
+![Mobile Shipping & Terms Wireframe](media/readme/wireframes/shipping-terms-mobile.png)
+
+</details>
+<br>
+
+### Database Schema
+------
+
+
+
+
+
+
+
+
+
+
+
 
 ### User Stories 
 
@@ -63,18 +264,23 @@ Initial product schema.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
+<!-- [issues-shield]:  -->
 [issues-shield]: https://img.shields.io/badge/ISSUES-2%20OPEN-yellow?style=for-the-badge&logo=closed
-<!-- [issues-url]:  -->
+<!--- [issues-url] -->
+[issues-url]:https://github.com/nccadman19/southville-sporting-club/issues
+<!-- [closed-shield]:  -->
 [closed-shield]: https://img.shields.io/badge/CLOSED%20ISSUES-11%20CLOSED-blue?style=for-the-badge&logo=closed
 <!-- [closed-url]:  -->
+[closed-url]: https://github.com/nccadman19/southville-sporting-club/issues?q=is%3Aissue+is%3Aclosed
+<!-- [linkedin-shield]:  -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 <!-- [linkedin-url]:  -->
+[linkedin-url]: https://www.linkedin.com/in/nicoleccadman/
+<!-- [website-shield]:  -->
 [website-shield]: https://img.shields.io/badge/VISIT%20WEBSITE-HERE-green?style=for-the-badge&logo=closed
 <!-- [website-url]:  -->
-[issues-url]:https://github.com/nccadman19/southville-sporting-club/issues
-<!--- [issues-url] -->
-https://github.com/nccadman19/southville-sporting-club/issues?q=is%3Aissue+is%3Aclosed
-<!--- [closed-url] -->
+[website-url]: https://southville-sporting-club-ed7d11c9dd6e.herokuapp.com/
+
 
 ### Credit
 
@@ -136,6 +342,8 @@ getting quantity to show correctly
 https://www.quora.com/How-do-I-fix-AttributeError-int-object-has-no-attribute-get-in-Python
 timezone help
 https://stackoverflow.com/questions/18622007/runtimewarning-datetimefield-received-a-naive-datetime
+favicon error
+https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests
 
 
 
