@@ -8,3 +8,13 @@
     white-space: normal;
     height: 2em;
 }
+
+.checkbox-order-list {
+    text-align: center;
+}
+
+/* Stock List */
+
+.stock-list-image {
+    width: 10rem;
+}

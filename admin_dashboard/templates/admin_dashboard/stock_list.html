@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'admin_dashboard/css/admin_dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Stock Management</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>SKU</th>
+                <th>Color</th>
+                <th>Available Stock</th>
+                <th>Product Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr class="{% if product.quantity_below_5 %}red-text{% endif %}">
+                <td>{{ product.name }}</td>
+                <td>{{ product.sku }}</td>
+                <td>{{ product.color }}</td>
+                <td>
+                    {% for size, quantity in product.size_quantity.items %}
+                    {{ size }}: {{ quantity }}<br>
+                    {% endfor %}
+                </td>
+                <td>
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
+                        alt="{{ product.name }}" class="stock-list-image">
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
