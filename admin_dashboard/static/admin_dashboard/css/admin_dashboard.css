@@ -13,6 +13,11 @@
     text-align: center;
 }
 
+.order-list-hint {
+    font-style: italic;
+    text-align: right;
+}
+
 /* Stock List */
 
 .stock-list-image {
@@ -23,4 +28,40 @@
 
 .container.admin-dashboard {
     width: 95%;
+}
+
+.admin-header {
+    padding-left: 10px;
+}
+
+/* Media Query for Mobile Devices (e.g., screens with a max-width of 600px) */
+@media (max-width: 600px) {
+
+    th:nth-child(1),
+    td:nth-child(1),
+    th:nth-child(2),
+    td:nth-child(2),
+    th:nth-child(3),
+    td:nth-child(3) {
+        display: block;
+        /* Display the first three headers and data cells as blocks (stacked) */
+        margin-bottom: 0px;
+        padding: 5px 5px;
+    }
+
+    /* Optional: Style adjustments specific to the first three headers */
+    th:nth-child(1),
+    th:nth-child(2),
+    th:nth-child(3) {
+        font-weight: bold;
+        /* Make the first three headers bold for emphasis */
+    }
+
+    td {
+        padding: 5px 5px;
+        display: table-cell;
+        text-align: left;
+        vertical-align: top;
+        border-radius: 2px;
+    }
 }

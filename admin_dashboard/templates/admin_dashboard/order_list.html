@@ -7,7 +7,9 @@
 
 {% block content %}
 <div class="container order-list">
-    <h1>All Orders</h1>
+    <h3>ALL ORDERS</h3>
+    <p>View order history and track customer orders.</p>
+    <p class="order-list-hint">Select the order number to copy full code.</p>
     <table>
         <thead>
             <tr>
@@ -22,7 +24,9 @@
         <tbody>
             {% for order in orders %}
             <tr>
-                <td>{{ order.order_number|truncatechars:10 }}</td>
+                <td class="order-number" data-order-number="{{ order.order_number|escapejs }}">
+                    {{ order.order_number|truncatechars:10 }}
+                </td>
                 <td>{{ order.date }}</td>
                 <td>
                     {{ order.full_name }}<br>

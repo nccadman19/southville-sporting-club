@@ -25,22 +25,7 @@ def admin_dashboard(request):
         # Calculate sales for the current month
         monthly_sales = Order.objects.filter(date__gte=first_day_of_month, date__lte=last_day_of_month).aggregate(total_sales=Sum('order_total'))['total_sales'] or 0
 
-        # Calculate the date 12 months ago from today
-        twelve_months_ago = today - timedelta(days=365)
-
-        # Initialize an empty list to store the monthly sales data
-        monthly_sales_data = []
-
-        # Iterate over the last 12 months and calculate sales for each month
-        for i in range(12):
-            start_date = twelve_months_ago + timedelta(days=30 * i)
-            end_date = twelve_months_ago + timedelta(days=30 * (i + 1))
-            monthly_sales = Order.objects.filter(date__gte=start_date, date__lt=end_date).aggregate(total_sales=Sum('order_total'))['total_sales'] or 0
-
-            # Create a dictionary for the month and sales
-            monthly_sales_data.append({'month': start_date.strftime('%b'), 'sales': monthly_sales})
-
-        return render(request, 'admin_dashboard/admin_dashboard.html', {'monthly_sales_figure': monthly_sales, 'monthly_sales_data': monthly_sales_data})
+        return render(request, 'admin_dashboard/admin_dashboard.html', {'monthly_sales_figure': monthly_sales})
     else:
         # User is not an admin, return a 404 Not Found response
         return HttpResponseNotFound()
