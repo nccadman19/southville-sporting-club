@@ -132,6 +132,9 @@ fixing selected options
 https://stackoverflow.com/questions/46415457/jquery-onclick-change-option-selected-attribute
 slack thread 
 - fixed the issue i was having with the webhook!!!!
+getting quantity to show correctly 
+https://www.quora.com/How-do-I-fix-AttributeError-int-object-has-no-attribute-get-in-Python
+
 
 
 bugs
