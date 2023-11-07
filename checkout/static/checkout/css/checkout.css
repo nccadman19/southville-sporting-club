@@ -73,17 +73,20 @@ select#id_country {
     transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
 }
 
-.input-field.checkout input[type=text]:focus+label {
-    color: #267d13;
+.input-field.checkout input[type=text]:focus+label,
+.input-field.checkout input[type=email]:focus+label {
+    color: #27290d;
 }
 
-.input-field.checkout input[type=text]:focus {
-    border-bottom: 1px solid #267d13;
+.input-field.checkout input[type=text]:focus,
+.input-field.checkout input[type=email]:focus {
+    border-bottom: 1px solid #27290d;
     box-shadow: 0 1px 0 0 #000;
 }
 
-.input-field input[type=text].valid {
-    border-bottom: 1px solid #267d13;
+.input-field.checkout input[type=text].valid,
+.input-field.checkout input[type=email].valid {
+    border-bottom: 1px solid #27290d;
     box-shadow: 0 1px 0 0 #000;
 }
 

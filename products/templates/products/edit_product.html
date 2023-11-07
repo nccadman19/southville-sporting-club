@@ -21,28 +21,36 @@
                 <form method="post" action="{% url 'edit_product' product_id=product.id %}" class="form col s12"
                     enctype="multipart/form-data">
                     {% csrf_token %}
-                    <label for="id_sku" class="active">Sku:</label>
-                    <input type="text" placeholder="SSC00XXX" name="sku" maxlength="50" required="" id="id_sku"
-                        value="{{ product.sku }}">
-
-                    <label for="id_name" class="active">Name:</label>
-                    <input type="text" placeholder="Name" name="name" maxlength="255" required="" id="id_name"
-                        value="{{ product.name }}">
-
-                    <label for=" id_color" class="active">Color:</label>
-                    <input type="text" name="color" maxlength="255" required="" id="id_color"
-                        value="{{ product.color }}">
-
-                    <label for="id_description" class="active">Description:</label>
-                    <textarea name="description" cols="40" rows="10"
-                        id="id_description">{{ product.description }}</textarea>
-
-                    <label for="id_price" class="active">Price:</label>
-                    <input type="number" name="price" step="0.01" required="" id="id_price" value="{{ product.price }}">
-
-                    <label for="id_sizes" class="active">Sizes:</label>
-                    <input type="hidden" name="sizes" value="{% if product.sizes %}{{ product.sizes }}{% endif %}" 
-                        id="id_sizes">
+                    <div>
+                        <label for="id_sku" class="active">Sku:</label>
+                        <input type="text" placeholder="SSC00XXX" name="sku" maxlength="50" required="" id="id_sku"
+                            value="{{ product.sku }}">
+                    </div>
+                    <div>
+                        <label for="id_name" class="active">Name:</label>
+                        <input type="text" placeholder="Name" name="name" maxlength="255" required="" id="id_name"
+                            value="{{ product.name }}">
+                    </div>
+                    <div>
+                        <label for=" id_color" class="active">Color:</label>
+                        <input type="text" name="color" maxlength="255" required="" id="id_color"
+                            value="{{ product.color }}">
+                    </div>
+                    <div>
+                        <label for="id_description" class="active">Description:</label>
+                        <textarea name="description" cols="40" rows="10"
+                            id="id_description">{{ product.description }}</textarea>
+                    </div>
+                    <div>
+                        <label for="id_price" class="active">Price:</label>
+                        <input type="number" name="price" step="0.01" required="" id="id_price"
+                            value="{{ product.price }}">
+                    </div>
+                    <div>
+                        <label for="id_sizes" class="active">Sizes:</label>
+                        <input type="hidden" name="sizes" value="{% if product.sizes %}{{ product.sizes }}{% endif %}"
+                            id="id_sizes">
+                    </div>
                     <div>
                         <p>
                             <label>
@@ -61,13 +69,13 @@
                         <p>
                             <label>
                                 <input type="checkbox" name="size" value="Large" id="size-large" 
-                                {% if 'Large' in product.sizes %}checked{% endif %}/>
+                                {% if 'Large' in product.sizes %}checked{% endif %} />
                                 <span>Large</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="XL" id="size-xl" 
+                                <input type="checkbox" name="size" value="XL" id="size-xl"
                                 {% if 'XL' in product.sizes and 'XXL' not in product.sizes %}checked{% endif %} />
                                 <span>XL</span>
                             </label>
@@ -82,47 +90,52 @@
                         <p>
                             <label>
                                 <input type="checkbox" name="size" value="One Size" id="one-size" 
-                                {% if 'One Size' in product.sizes %}checked{% endif %}/>
+                                {% if 'One Size' in product.sizes %}checked{% endif %} />
                                 <span>One Size</span>
                             </label>
                         </p>
                     </div>
-
-                    <label for="id_size_quantity" class="active">Size quantity:</label>
-                    <input type="hidden" name="size_quantity" value="" id="id_size_quantity">
+                    <div>
+                        <label for="id_size_quantity" class="active">Size quantity:</label>
+                        <input type="hidden" name="size_quantity" value="" id="id_size_quantity">
+                    </div>
                     <div id="quantity-container">
                         {% for size, quantity in size_quantity.items %}
                         {% if quantity > 0 %}
                         <div class="size-container">
                             <label>{{ size }}</label>
-                            <input type="number" name="size-quantity-{{ size }}" placeholder="Enter quantity" max="999" value="{{ quantity }}">
+                            <input type="number" name="size-quantity-{{ size }}" placeholder="Enter quantity" max="999"
+                                value="{{ quantity }}">
                         </div>
                         {% endif %}
                         {% endfor %}
                     </div>
-
-                    <label for="id_image" class="active">Image:</label><br>
-                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
-                        alt="{{ product.name }}" class="edit-image">
-                    <br>
-                    <p>Image URL: 
-                        <a href="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
-                            target="_blank">{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}
-                        </a>
-                    </p>
-                    <input type="file" name="image" value="{{ products.image }}" accept="image/*" id="id_image">
-
-                    <label for="id_category" class="active">Category:</label>
-                    <select name="category" required id="id_category" multiple>
-                        <option value="1" {% if 1 in selected_category_ids %}selected{% endif %}>T-Shirts</option>
-                        <option value="2" {% if 2 in selected_category_ids %}selected{% endif %}>Hoodies</option>
-                        <option value="3" {% if 3 in selected_category_ids %}selected{% endif %}>Sweatpants</option>
-                        <option value="4" {% if 4 in selected_category_ids %}selected{% endif %}>All Products</option>
-                        <option value="5" {% if 5 in selected_category_ids %}selected{% endif %}>Tracksuits</option>
-                    </select>
+                    <div>
+                        <label for="id_image" class="active">Image:</label><br>
+                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
+                            alt="{{ product.name }}" class="edit-image">
+                        <br>
+                        <p>Image URL:
+                            <a href="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
+                                target="_blank">{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix
+                                %}no-image.png{% endif %}
+                            </a>
+                        </p>
+                        <input type="file" name="image" value="{{ products.image }}" accept="image/*" id="id_image">
+                    </div>
+                    <div>
+                        <label for="id_category" class="active">Category:</label>
+                        <select name="category" required id="id_category" multiple>
+                            <option value="1" {% if 1 in selected_category_ids %}selected{% endif %}>T-Shirts</option>
+                            <option value="2" {% if 2 in selected_category_ids %}selected{% endif %}>Hoodies</option>
+                            <option value="3" {% if 3 in selected_category_ids %}selected{% endif %}>Sweatpants</option>
+                            <option value="4" {% if 4 in selected_category_ids %}selected{% endif %}>All Products</option>
+                            <option value="5" {% if 5 in selected_category_ids %}selected{% endif %}>Tracksuits</option>
+                        </select>
+                    </div>
                     <div class="help" id="id_category_helptext">
                         <div>Hold down “Control”, or “Command” on a Mac, to select more than one.</div>
-                    </div>                   
+                    </div>
                     <div class="col s12 right-align">
                         <a class="btn grey darken-3" href="{% url 'products' %}">Cancel</a>
                         <button class="btn black" type="submit">Update Product</button>
