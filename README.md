@@ -58,6 +58,13 @@ What the users would be looking for:
 
 ## Visual Design
 
+1. [Fonts](#fonts)
+2. [Styling](#styling)
+3. [Wireframes](#wireframes)
+4. [Database Schema](#database-schema)
+5. [Surface](#surface)
+6. [Coolors](#coolors)
+
 ### Fonts 
 ------
 I used Google fonts 'Helvetica' and 'Times New Roman'. I used the Times New Roman font to make the header text on the index page stand out from the regular font on the site. I then used 'Helvetica' as I thought it was very easy to read and looks professional.
@@ -209,11 +216,21 @@ Mobile
 
 ### Database Schema
 ------
+IN PROGRESS
 
 
+### Surface
+------
 
+The color palette for the website is derived from the hero image. Using Photoshop, colors were extracted directly from the image, resulting in the shades noted below. 
 
+These colors, including black and white for a clean, minimalistic appearance, were carefully selected to mirror the image's essence, offering a contemporary and visually striking aesthetic.
 
+### Coolors
+------
+Using the coolors palette on the image I selected the colours from this along with a darker and lighter shade of contrasting colours to create a balanced palette. 
+
+![Coolors](/media/readme/color-scheme.png)
 
 
 
