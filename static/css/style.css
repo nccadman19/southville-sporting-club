@@ -181,6 +181,10 @@ nav .input-field {
   line-height: 3rem;
 }
 
+ul#slide-out.sidenav {
+  z-index: 1001;
+}
+
 /* Footer */
 
 .container {
