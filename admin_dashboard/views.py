@@ -5,6 +5,10 @@ from checkout.models import Order
 from products.models import Product
 
 @login_required
+def admin_dashboard(request):
+    return render(request, 'admin_dashboard/admin_dashboard.html')
+
+@login_required
 def order_list(request):
     if request.user.is_staff:
         orders = Order.objects.all().prefetch_related('lineitems')
