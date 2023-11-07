@@ -1,6 +1,7 @@
 /* Order List */
 
-.container.order-list {
+.container.order-list,
+.container.stock-list {
     width: 90%;
 }
 
@@ -32,6 +33,10 @@
 
 .admin-header {
     padding-left: 10px;
+}
+
+a.admin-dashboard-btn {
+    color: #ec4e20 !important;
 }
 
 /* Media Query for Mobile Devices (e.g., screens with a max-width of 600px) */
