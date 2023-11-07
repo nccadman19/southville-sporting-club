@@ -29,7 +29,7 @@
     {% if request.user.is_authenticated %}
     {% if request.user.is_superuser %}
     <ul id='dropdown-profiles' class='dropdown-content'>
-        <li><a href="{% url 'add_product' %}">ADD A PRODUCT</a></li>
+        <li><a href="{% url 'admin_dashboard' %}">ADMIN DASHBOARD</a></li>
         <li><a href="{% url 'profile' %}">MY PROFILE</a></li>
         <li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
     </ul>

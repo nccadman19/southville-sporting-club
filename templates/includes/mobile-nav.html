@@ -33,8 +33,9 @@
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
         <div class="button-container-sidenav">
-            <a href="{% url 'profile' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">ADD A
-                PRODUCT</a>
+            <a href="{% url 'admin_dashboard' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">
+                ADMIN DASHBOARD
+            </a>
         </div>
         {% endif %}
         <div class="button-container-sidenav">

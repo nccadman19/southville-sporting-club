@@ -134,6 +134,8 @@ slack thread
 - fixed the issue i was having with the webhook!!!!
 getting quantity to show correctly 
 https://www.quora.com/How-do-I-fix-AttributeError-int-object-has-no-attribute-get-in-Python
+timezone help
+https://stackoverflow.com/questions/18622007/runtimewarning-datetimefield-received-a-naive-datetime
 
 
 

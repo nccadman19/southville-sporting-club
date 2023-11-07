@@ -29,9 +29,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '8000-nccadman19-southvillesp-dw34vuby9zs.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '8000-nccadman19-southvillesp-dw34vuby9zs.ws-eu106.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1', 'https://8000-nccadman19-southvillesp-dw34vuby9zs.ws-eu105.gitpod.io/*']
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1', 'https://8000-nccadman19-southvillesp-dw34vuby9zs.ws-eu106.gitpod.io/*']
 
 # Application definition
 
