@@ -396,6 +396,13 @@ div.col.s12.m6.toast {
   box-shadow: 0 1px 0 0 #000;
 }
 
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid #568259;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+
 
 @media (max-width: 992px) {
   nav .input-field {
