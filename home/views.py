@@ -40,6 +40,11 @@ def contact(request):
         return redirect('index')
     return render(request, 'home/contact_us.html')
 
+def club(request):
+    """ A view to return the terms and conditions page """
+
+    return render(request, 'home/running_club.html')
+
 def error(request):
     """ A view to return the terms and conditions page """
 
