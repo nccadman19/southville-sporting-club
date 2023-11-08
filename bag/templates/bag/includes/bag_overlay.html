@@ -58,17 +58,9 @@
             </div>
         </div>
     </div>
-    <div id="loading-overlay" class="loading-overlay">
-        <div class="loading-spinner"></div>
-        <div class="loading-message">Loading...</div>
-    </div>
 </div>
 <div id="close-cart-overlay">
     <button class="modal-close btn close-cart"></button>
 </div>
-
 {% block postloadjs %}
-<script>
-    var bag_overlay_url = "{% url 'view_bag' %}";
-</script>
 {% endblock %}

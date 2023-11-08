@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Update the cart display after removing the item
                     updateCartDisplay(response.cart_data);
+                    location.reload();
                 } else {
                     console.error('AJAX request error:', response.message); // Log error
                 }
