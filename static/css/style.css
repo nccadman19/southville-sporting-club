@@ -280,6 +280,10 @@ div.col.s12.m6.toast {
   box-shadow: none;
 }
 
+.row.checkout-btn {
+  float: right;
+}
+
 /* AllAuth */
 
 .container.allauth {
@@ -355,19 +359,19 @@ div.col.s12.m6.toast {
 
 .input-field input[type=text]:focus+label,
 .input-field input[type=email]:focus+label {
-    color: #568259;
+  color: #568259;
 }
 
 .input-field input[type=text]:focus,
 .input-field input[type=email]:focus {
-    border-bottom: 1px solid #568259;
-    box-shadow: 0 1px 0 0 #000;
+  border-bottom: 1px solid #568259;
+  box-shadow: 0 1px 0 0 #000;
 }
 
 .input-field input[type=text].valid,
 .input-field input[type=email].valid {
-    border-bottom: 1px solid #568259;
-    box-shadow: 0 1px 0 0 #000;
+  border-bottom: 1px solid #568259;
+  box-shadow: 0 1px 0 0 #000;
 }
 
 
