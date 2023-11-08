@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'home/css/home.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+{% endblock %}
+
+{% block content %}
+<div class="video-container">
+    <video autoplay muted loop id="hero-video">
+        <source src="../../../media/our-mission.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="sustainability-text">
+        <h2 class="about sustainability">Let's Be Honest</h2>
+        <p>In the world of fashion, it's time for change. The fashion industry has long neglected its
+            responsibility to people and the planet. The term "sustainability" has lost its meaning
+            through overuse, and the greenest choice may be not to buy new clothes at all.</p>
+        <p>However, as creators of clothing, we're on a mission to ensure that our creations have a
+            purpose beyond your wardrobe. We pledge that our garments won't end up in landfills.
+            Instead, we encourage you to mend them, share them, and pass them on. Our pieces are made
+            to withstand the test of time and can bring joy to not just one, but many. <br><br>
+            Create memories, make informed choices, and embrace a life that's conscious and vibrant.</p>
+    </div>
+</div>
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6 valign-wrapper">
+                <img src="{% static '../media/runners.jpg' %}" alt="First line jumpers" class="responsive-img about">
+            </div>
+            <div class="col s12 m6 valign-wrapper">
+                <div class="about-body black-text center-content">
+                    <h5>OUR MISSION</h5>
+                    <hr class="about-line">
+                    <p>At Southville Sporting Club, we inspire a love for vintage athletics, nature, and Bristol's
+                        vibrant spirit through our sustainable clothing. We craft high-quality, eco-friendly garments
+                        designed to last. We measure value by both style and environmental impact, ensuring our
+                        customers get outstanding value.</p>
+                    <p>At Southville Sporting Club, we take pride in looking after our team members within the company
+                        and across our supply chains worldwide. Our goal is to ensure that our clothing is worn for a
+                        long time and doesn't end up in landfills.</p>
+                    <p>We prioritize fair working conditions and waste reduction throughout our supply chain, fostering
+                        respect and longevity. For us, a sale is complete when our products are worn out and recycled,
+                        reflecting our commitment to sustainability.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section no-pad-bot about-quote" id="index-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="about-quote black-text">
+                    <p>Thank you for joining us on this exciting journey. Explore our collection, discover the beauty of
+                        Bristol, and experience the authenticity of Southville Sporting Club.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

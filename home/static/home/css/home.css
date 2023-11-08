@@ -124,11 +124,34 @@ div.input-field.contact {
     font-family: 'Times New Roman', Times, serif;
 }
 
+/* Sustainability */
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.sustainability-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    color: white;
+    font-weight: 600;
+}
+
 /* Media Queries */
 
 @media (max-width: 1020px) {
     .latest-drop {
         padding-left: 40rem;
+    }
+
+    h2.sustainability {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 2rem;
     }
 }
 
@@ -136,6 +159,14 @@ div.input-field.contact {
 @media (max-width: 790px) {
     .latest-drop {
         padding-left: 26rem;
+    }
+
+    .sustainability-text {
+        font-weight: 400;
+    }
+
+    h2.sustainability {
+        font-size: 2rem;
     }
 }
 
@@ -146,5 +177,28 @@ div.input-field.contact {
 
     .container.error-page {
         width: 90%;
+    }
+
+    #hero-video {
+        position: absolute;
+        transform: rotate(90deg);
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        height: 100%;
+    }
+
+    .video-container {
+        padding-bottom: 177.77%;
+    }
+
+    .sustainability-text {
+        width: 100%;
+        font-weight: 600;
+    }
+
+    h2.sustainability {
+        font-size: 4rem;
     }
 }
