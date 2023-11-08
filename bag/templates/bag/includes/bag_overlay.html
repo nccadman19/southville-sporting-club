@@ -21,7 +21,16 @@
                     <div class="product-info-cart">
                         <p class="product-name-cart">{{ item.product.name }}</p>
                         <p class="product-size-cart">Size: {{ item.size }}</p>
-                        <p class="product-quantity-cart">Quantity: {{ item.quantity }}</p>
+                        <div class="cart-quantity">
+                            <button type="button" class="cart-quantity-button js-remove-single">
+                                <i class="material-icons">remove</i>
+                            </button>
+                            <button type="button" class="cart-quantity-button js-add-single">
+                                <i class="material-icons">add</i>
+                            </button>
+                            <div class="cart-item-total js-single-quantity">01</div>
+                        </div>
+
                         <p class="product-price-cart">{{ item.product.price }} GBP</p>
                         <a class="remove-item" id="remove_{{ item.item_id }}"
                             data-product_size="{{ item.size }}">Remove</a>
@@ -47,7 +56,7 @@
                 <a href="{% url 'checkout' %}" class="waves-effect waves-light btn black rounded-0 right-align">
                     <span class="text-uppercase">Go To Secure Checkout</span>
                     <i class="material-icons lock right bag">lock</i>
-                </a>                
+                </a>
                 {% else %}
                 <div class="empty-cart-message black-text center-align">
                     <h6>Your cart is currently empty.</h6>
