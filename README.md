@@ -216,7 +216,9 @@ Mobile
 
 ### Database Schema
 ------
-IN PROGRESS
+This map represents the current models in the relational database, a few of the database been modified or are completely new.
+
+![Database Schema](media/readme/database-schema.png)
 
 
 ### Surface
@@ -232,8 +234,81 @@ Using the coolors palette on the image I selected the colours from this along wi
 
 ![Coolors](/media/readme/color-scheme.png)
 
+# Features
 
+This is a fully responsive website that was designed mobile-first as this is the most likely way it will be viewed; the website is divided into the 22 pages, along with a base template using allauth and toasts for extra functionality. The profile pages are not available until the user is logged into the website. There is also a 404 page for when someone ends up on an incorrect page.
 
+- [Home](#home)
+- [Navbar & Footer](#navbar-footer)
+- [Bag Overlay](#bag-overlay)
+- [About Us](#about-us)
+- [Contact Us](#contact-us)
+- [Error](#error)
+- [Shipping & Returns](#shipping-and-returns)
+- [Sustainability](#sustainability)
+- [Terms & Conditions](#terms-and-conditions)
+
+- [Products](#products)
+- [Product Detail](#product-detail)
+- [Nothing Found](#nothing-found)
+
+- [Shopping Bag](#shopping-bag)
+- [Checkout](#checkout)
+- [Checkout Success](#checkout-success)
+- [Checkout Cancel](#checkout-cancel)
+
+- [Admin Dashboard](#admin-dashboard)
+- [Add Product](#add-product)
+- [Edit Product](#edit-product)
+- [Order List](#order-list)
+- [Stock List](#stock-list)
+
+- [Register](#register)
+- [Login](#login)
+- [Profile](#profile)
+
+### Home
+
+The index page has:
+
+A "Shop Now" button, which takes the user to the "Latest Drop" page of the newest products. 
+
+<details>
+<summary>View Here</summary>
+
+![Home](/media/readme/features/index.png)
+
+</details>
+<br>
+   
+
+### Navbar Footer
+
+ADD
+
+<details>
+<summary>View Here</summary>
+
+![Home](/media/readme/features/.png)
+
+</details>
+<br>
+
+### Bag Overlay
+
+The bag overlay page has the following features:
+
+The details of the products being bought, with an option to remove each product.
+
+The details of the total and delivery price along with a button to continue to the checkout.
+
+<details>
+<summary>View Here</summary>
+
+![Home](/media/readme/features/bag-overlay.png)
+
+</details>
+<br>
 
 
 
@@ -272,12 +347,6 @@ Using the coolors palette on the image I selected the colours from this along wi
 ### Wireframes
 
 ![Add Initial Mockup](media/readme/initial-mockup.png)
-
-### Schema
-
-Initial product schema. 
-
-![Product Schema](media/readme/products-schema.png)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
