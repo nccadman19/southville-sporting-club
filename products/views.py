@@ -63,15 +63,19 @@ def product_list(request):
     current_sorting = f'{sort}_{direction}'
     categories = Category.objects.all()
 
-    context = {
-        'products': products,
-        'title': 'Product List',
-        'search_term': query,
-        'current_sorting': current_sorting,
-        'categories': categories,
-        'selected_category': category,
-    }
-    return render(request, 'products/products.html', context)
+    if products.exists():
+        context = {
+            'products': products,
+            'title': 'Product List',
+            'search_term': query,
+            'current_sorting': current_sorting,
+            'categories': categories,
+            'selected_category': category,
+        }
+        return render(request, 'products/products.html', context)
+    else:
+        # Redirect to the "nothing found" view when no results are found
+        return redirect('nothing_found')
 
 def product_detail(request, product_id):
     # Retrieve the product with the specified ID or return a 404 error if not found
