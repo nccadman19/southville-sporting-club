@@ -284,12 +284,26 @@ A "Shop Now" button, which takes the user to the "Latest Drop" page of the newes
 
 ### Navbar Footer
 
-ADD
+The navbar and footer has the following features:
+
+A logo that when clicked takes the user back to the index page.
+
+A search function
+
+A drop-down menu for the user account. Which only shows 'log in' and 'register' if the user is not logged in, but shows 'Admin Dashboard', 'Profile' and 'logout'.
 
 <details>
-<summary>View Here</summary>
+<summary>NavBar</summary>
 
-![Home](/media/readme/features/.png)
+![NavBar](/media/readme/features/navbar.png)
+
+</details>
+<br>
+
+<details>
+<summary>Footer</summary>
+
+![Footer](/media/readme/features/footer.png)
 
 </details>
 <br>
@@ -310,8 +324,165 @@ The details of the total and delivery price along with a button to continue to t
 </details>
 <br>
 
+### About Us
 
+The about us page has the following features:
 
+A hero image with a about us title and capturing caption to catch the users eye. 
+
+Futher information about the brand and where the store is located. 
+
+<details>
+<summary>About Us Part 1</summary>
+
+![About Us](/media/readme/features/about-us.png)
+
+</details>
+<br>
+
+<details>
+<summary>About Us Part 2</summary>
+
+![About Us Info](/media/readme/features/about-us-info.png)
+
+</details>
+<br>
+
+### Contact Us
+
+The contact us page has the following features:
+
+A form for the user to fill out to get in contact with the brand. 
+
+Information about the location and opening times of the store. 
+
+<details>
+<summary>View Here</summary>
+
+![Contact Us](/media/readme/features/contact.png)
+
+</details>
+<br>
+
+### Error
+
+The error page has the following features:
+
+A message notifying the user that they have found themselves on a page that doesn't exist. 
+
+A button to return the user to the homepage. 
+
+<details>
+<summary>View Here</summary>
+
+![Error](/media/readme/features/error.png)
+
+</details>
+<br>
+
+### Shipping & Returns
+
+The shipping page has the following features:
+
+A text based page to inform the user on the shipping and returns policy.  
+
+<details>
+<summary>View Here</summary>
+
+![Shipping & Returns](/media/readme/features/shipping-returns.png)
+
+</details>
+<br>
+
+### Sustainability
+
+The sustainability page has the following features:
+
+A hero looping video with a title and capturing caption to catch the users eye. 
+
+Futher information about the sustainability and mission of the brand.  
+
+<details>
+<summary>Sustainability Part 1</summary>
+
+![Our Mission 1](/media/readme/features/our-mission.png)
+
+</details>
+<br>
+
+<details>
+<summary>Sustainability Part 2</summary>
+
+![Our Mission 2](/media/readme/features/our-mission-info.png)
+
+</details>
+<br>
+
+### Terms & Conditions
+
+The terms page has the following features:
+
+A text based page to inform the user on the shipping and returns policy.
+
+A button at the end of the text to send the user to the contact form if they have further questions. 
+
+<details>
+<summary>View Here</summary>
+
+![Terms & Conditions](/media/readme/features/terms.png)
+
+</details>
+<br>
+
+### Products
+
+The products page has the following features:
+
+A list of products, which, when clicked, takes the user to the detail page of that specific product.
+
+If the user is a superuser, at the bottom of each product are links to either edit or delete the product.
+
+Text which lets the user know how many products there are in the category they are browsing. This also shows a link to "All Products".
+
+A dropdown box with the ability to sort by price (low to high), price (high to low), name (a-z) and name (z-a). 
+
+A scroll-up button on the bottom-right-hand-side of the page, which when clicked, will automatically scroll the page up to the top. This is available on all pages that are more than 100vh. 
+
+<details>
+<summary>View Here</summary>
+
+![Products](/media/readme/features/products.png)
+
+</details>
+<br>
+
+<details>
+<summary>Scroll Button</summary>
+
+![Products](/media/readme/features/button.png)
+
+</details>
+<br>
+
+### Product Detail
+
+The product details page has the following features:
+
+If the user is a superuser, two links appear giving the user the ability to edit or delete the product.
+
+The available sizes are button on the page for the user to choose form. If there is only one size then this is selected by default, and not changeable by the user. 
+
+A button that will add the desired size of the product to the user’s checkout cart.
+
+Three cards with a description, shipping returns and size guide for user to read if needed. The shipping section has a button to view the full shipping page. The description is opened on default. 
+
+<details>
+<summary>View Here</summary>
+
+![Product Detail](/media/readme/features/product-detail.png)
+
+</details>
+<br>
 
 ### User Stories 
 
