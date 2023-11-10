@@ -270,7 +270,7 @@
         }
     },
     {
-        "pk": 18,
+        "pk": 19,
         "model": "products.product",
         "fields": {
             "sku": "SSC0019",
