@@ -1,6 +1,5 @@
 /* ... Homepage ... */
 .hero-image {
-    background: url('{{ MEDIA_URL }}hero-image.png') no-repeat center center fixed;
     background-size: cover;
     height: 73vh !important;
 }
