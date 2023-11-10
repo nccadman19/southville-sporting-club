@@ -67,6 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Image that can be enlarged on click
     var elems = document.querySelectorAll('.materialboxed');
-    var instances = M.Materialbox.init(elems, options);
+    var instances = M.Materialbox.init(elems);
 
 });
