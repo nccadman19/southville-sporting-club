@@ -79,8 +79,8 @@
     justify-content: space-between;
 }
 
-.bag-total {
-    min-height: calc(100vh - 640px);
+.spacer-div {
+    min-height: calc(100vh - 460px);
     padding-top: 10px;
 }
 
@@ -163,7 +163,7 @@ form.bag-btn {
         top: 0;
     }
 
-    .bag-total {
+    .spacer-div {
         min-height: min-content !important;
     }
 }
@@ -180,7 +180,7 @@ form.bag-btn {
         top: 0;
     }
 
-    .bag-total {
+    .spacer-div {
         min-height: min-content !important;
     }
 }
