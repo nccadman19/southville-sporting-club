@@ -183,6 +183,10 @@
     margin-left: 9px;
 }
 
+.product-detail-page {
+    min-height: calc(100vh - 198px);
+}
+
 /* Sizes buttons */
 
 .product-form {
