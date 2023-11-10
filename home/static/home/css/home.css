@@ -1,6 +1,6 @@
 /* ... Homepage ... */
 .hero-image {
-    background: url('/../media/hero-image.png') no-repeat center center fixed;
+    background: url('{{ MEDIA_URL }}hero-image.png') no-repeat center center fixed;
     background-size: cover;
     height: 73vh !important;
 }
@@ -27,7 +27,7 @@
 /* About */
 
 .hero-image-about {
-    background: url('/../media/hero-image-maybe.png') no-repeat center center fixed;
+    background: url('{{ MEDIA_URL }}hero-image-maybe.png') no-repeat center center fixed;
     background-size: cover;
     height: 73vh !important;
     filter: grayscale(100%);
