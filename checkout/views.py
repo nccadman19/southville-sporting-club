@@ -184,6 +184,3 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
-
-def checkout_cancel(request):
-    return render(request, 'checkout/checkout_cancel.html')
