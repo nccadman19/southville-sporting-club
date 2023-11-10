@@ -54,43 +54,43 @@
                     <div>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="Small" id="size-small" {% if 'Small' in
-                                    product.sizes %}checked{% endif %} />
+                                <input type="checkbox" name="size" value="Small" id="size-small" 
+                                {% if 'Small' in product.sizes %}checked{% endif %} />
                                 <span>Small</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="Medium" id="size-medium" {% if 'Medium' in
-                                    product.sizes %}checked{% endif %} />
+                                <input type="checkbox" name="size" value="Medium" id="size-medium" 
+                                {% if 'Medium' in product.sizes %}checked{% endif %} />
                                 <span>Medium</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="Large" id="size-large" {% if 'Large' in
-                                    product.sizes %}checked{% endif %} />
+                                <input type="checkbox" name="size" value="Large" id="size-large" 
+                                {% if 'Large' in product.sizes %}checked{% endif %} />
                                 <span>Large</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="XL" id="size-xl" {% if 'XL' in product.sizes
-                                    and 'XXL' not in product.sizes %}checked{% endif %} />
+                                <input type="checkbox" name="size" value="XL" id="size-xl"
+                                {% if 'XL' in product.sizes and 'XXL' not in product.sizes %}checked{% endif %} />
                                 <span>XL</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="XXL" id="size-xxl" {% if 'XXL' in
-                                    product.sizes %}checked{% endif %} />
+                                <input type="checkbox" name="size" value="XXL" id="size-xxl" 
+                                {% if 'XXL' in product.sizes %}checked{% endif %} />
                                 <span>XXL</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="One Size" id="one-size" {% if 'One Size' in
-                                    product.sizes %}checked{% endif %} />
+                                <input type="checkbox" name="size" value="One Size" id="one-size" 
+                                {% if 'One Size' in product.sizes %}checked{% endif %} />
                                 <span>One Size</span>
                             </label>
                         </p>
@@ -112,16 +112,15 @@
                     </div>
                     <div>
                         <label for="id_image" class="active">Image:</label><br>
-                        <!-- <img src="{% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.png{% endif %}"
+                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.png{% endif %}"
                             alt="{{ product.name }}" class="edit-image">
 
                         <br>
                         <p>Image URL:
                             <a href="{% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.png{% endif %}no-image.png{% endif %}"
-                                target="_blank">
-                                {% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.png{% endif %}
+                                target="_blank">{% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.png{% endif %}
                             </a>
-                        </p> -->
+                        </p>
                         <input type="file" name="image" value="{{ products.image }}" accept="image/*" id="id_image">
                     </div>
                     <div>
@@ -130,8 +129,7 @@
                             <option value="1" {% if 1 in selected_category_ids %}selected{% endif %}>T-Shirts</option>
                             <option value="2" {% if 2 in selected_category_ids %}selected{% endif %}>Hoodies</option>
                             <option value="3" {% if 3 in selected_category_ids %}selected{% endif %}>Sweatpants</option>
-                            <option value="4" {% if 4 in selected_category_ids %}selected{% endif %}>All Products
-                            </option>
+                            <option value="4" {% if 4 in selected_category_ids %}selected{% endif %}>All Products</option>
                             <option value="5" {% if 5 in selected_category_ids %}selected{% endif %}>Tracksuits</option>
                         </select>
                     </div>
