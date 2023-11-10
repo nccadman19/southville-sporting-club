@@ -17,8 +17,9 @@
                 <div class="card no-shadow">
                     <div class="card-image">
                         <div class="img-container-detail">
-                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
-                                alt="{{ product.name }}" class="zoom-image">
+                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.png{% endif %}"
+                                alt="{{ product.name }}" class="materialboxed">
+
                         </div>
                     </div>
                 </div>

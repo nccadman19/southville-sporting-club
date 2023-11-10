@@ -80,8 +80,8 @@
                 <div class="card-image products">
                     <a href="{% url 'product_detail' product.id %}">
                         <!-- Link to individual product detail page -->
-                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
-                            alt="{{ product.name }}" class="zoom-image">
+                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.png{% endif %}"
+                            alt="{{ product.name }}" class="zoom">
                     </a>
                 </div>
                 <div class="card-content">

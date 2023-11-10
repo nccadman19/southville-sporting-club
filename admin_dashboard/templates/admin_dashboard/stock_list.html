@@ -33,7 +33,7 @@
                     {% endfor %}
                 </td>
                 <td>
-                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.png{% endif %}"
                         alt="{{ product.name }}" class="stock-list-image">
                 </td>
             </tr>

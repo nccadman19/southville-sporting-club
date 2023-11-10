@@ -9,7 +9,7 @@ def view_bag(request):
 
     for item in bag_items:
         if not item.product.image:
-            item.image_url = "/media/no-image.png"
+            item.image_url = f"{settings.MEDIA_URL}no-image.png"
 
     return render(request, 'bag/bag.html')
 
