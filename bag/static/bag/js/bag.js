@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.open('POST', `/bag/remove/${item_id}/`, true);
 
         // Set the request header for CSRF protection
-        xhr.setRequestHeader('X-CSRFToken', document.querySelector('input[name=csrfmiddlewaretoken]').value);
+        xhr.setRequestHeader('X-CSRFToken', document.querySelector('meta[name="csrf-token"]').content);
 
         // Set the callback function when the request is complete
         xhr.onload = function () {
