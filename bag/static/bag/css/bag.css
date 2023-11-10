@@ -79,8 +79,7 @@
     justify-content: space-between;
 }
 
-.spacer-div {
-    min-height: calc(100vh - 460px);
+.bag-total {
     padding-top: 10px;
 }
 
@@ -162,10 +161,6 @@ form.bag-btn {
         left: 0;
         top: 0;
     }
-
-    .spacer-div {
-        min-height: min-content !important;
-    }
 }
 
 @media (max-width: 600px) {
@@ -178,9 +173,5 @@ form.bag-btn {
         width: 10% !important;
         left: 0;
         top: 0;
-    }
-
-    .spacer-div {
-        min-height: min-content !important;
     }
 }
