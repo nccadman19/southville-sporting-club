@@ -1,0 +1,1 @@
+web: gunicorn southville-sporting-club.wsgi:application
