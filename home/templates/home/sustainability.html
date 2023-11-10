@@ -8,7 +8,7 @@
 {% block content %}
 <div class="video-container">
     <video autoplay muted loop id="hero-video">
-        <source src="../../../media/our-mission.mp4" type="video/mp4">
+        <source src="{{ MEDIA_URL }}our-mission.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="sustainability-text">
@@ -27,7 +27,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m6 valign-wrapper">
-                <img src="{% static '../media/runners.jpg' %}" alt="First line jumpers" class="responsive-img about">
+                <img src="{{ MEDIA_URL }}runners.jpg" alt="First line jumpers" class="responsive-img about">
             </div>
             <div class="col s12 m6 valign-wrapper">
                 <div class="about-body black-text center-content">
