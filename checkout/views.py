@@ -52,6 +52,7 @@ def checkout(request):
             order.save()  # Now, save the order to the database
 
             grand_total = Decimal(request.POST.get('grand_total', '0.00'))
+            order_total = Decimal(request.POST.get('order_total', '0.00'))
             
             # Store the bag items as line items in the order
             for item_key, quantity in request.session.get('bag', {}).items():
