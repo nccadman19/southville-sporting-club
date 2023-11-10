@@ -234,13 +234,14 @@ Using the coolors palette on the image I selected the colours from this along wi
 
 ![Coolors](/media/readme/color-scheme.png)
 
+[Back to top](#table-of-contents)
+
 # Features
 
 This is a fully responsive website that was designed mobile-first as this is the most likely way it will be viewed; the website is divided into the 22 pages, along with a base template using allauth and toasts for extra functionality. The profile pages are not available until the user is logged into the website. There is also a 404 page for when someone ends up on an incorrect page.
 
 - [Home](#home)
 - [Navbar & Footer](#navbar-footer)
-- [Bag Overlay](#bag-overlay)
 - [About Us](#about-us)
 - [Contact Us](#contact-us)
 - [Error](#error)
@@ -250,9 +251,9 @@ This is a fully responsive website that was designed mobile-first as this is the
 
 - [Products](#products)
 - [Product Detail](#product-detail)
-- [Nothing Found](#nothing-found)
+- [Search & Nothing Found](#search-and-nothing-found)
 
-- [Shopping Bag](#shopping-bag)
+- [Shopping Bag Overlay](#bag-overlay)
 - [Checkout](#checkout)
 - [Checkout Success](#checkout-success)
 - [Checkout Cancel](#checkout-cancel)
@@ -304,22 +305,6 @@ A drop-down menu for the user account. Which only shows 'log in' and 'register' 
 <summary>Footer</summary>
 
 ![Footer](/media/readme/features/footer.png)
-
-</details>
-<br>
-
-### Bag Overlay
-
-The bag overlay page has the following features:
-
-The details of the products being bought, with an option to remove each product.
-
-The details of the total and delivery price along with a button to continue to the checkout.
-
-<details>
-<summary>View Here</summary>
-
-![Home](/media/readme/features/bag-overlay.png)
 
 </details>
 <br>
@@ -483,6 +468,104 @@ Three cards with a description, shipping returns and size guide for user to read
 
 </details>
 <br>
+
+### Search & Nothing Found
+
+The nothing found page has the following features:
+
+Search for a product by name or description.
+
+Easily see what I have searched for and the number of results.
+
+A button that will add the desired size of the product to the user’s checkout cart.
+
+If there are no results it routes to a nothing-found page that lets the user know there are 0 products for the search requested. 
+
+<details>
+<summary>Search Function</summary>
+
+![Search Function](/media/readme/features/search-function.png)
+
+</details>
+<br>
+
+<details>
+<summary>Nothing Found</summary>
+
+![Nothing Found](/media/readme/features/nothing-found.png)
+
+</details>
+<br>
+
+### Bag Overlay
+
+The bag overlay page has the following features:
+
+The details of the products being bought, with an option to remove each product.
+
+The details of the total and delivery price along with a button to continue to the checkout.
+
+<details>
+<summary>View Here</summary>
+
+![Bag Overlay](/media/readme/features/bag-overlay.png)
+
+</details>
+<br>
+
+### Checkout
+
+The checkout page has the following features:
+
+A form that the user fills out to confirm their details for payment and shipping, if they already have an account this will be pre-populated with their information after first order is placed. 
+
+An order summary for the user to see what they're about to purchase with a dynamic total that changes dependant on their shipping method chosen. 
+
+A card payment function. 
+
+A return to shopping button and a confirm checkout button labelled 'Pay Now'. 
+
+<details>
+<summary>Order History</summary>
+
+![Order History](/media/readme/features/order-history.png)
+
+</details>
+<br>
+
+<details>
+<summary>Checkout Form</summary>
+
+![Checkout Form](/media/readme/features/checkout-form.png)
+
+</details>
+<br>
+
+### Checkout Success
+
+The checkout page has the following features:
+
+A form that the user fills out to confirm their details for payment and shipping, if they already have an account this will be pre-populated with their information after first order is placed. 
+
+An order summary for the user to see what they're about to purchase with a dynamic total that changes dependant on their shipping method chosen. 
+
+A card payment function. 
+
+A return to shopping button and a confirm checkout button labelled 'Pay Now'. 
+
+<details>
+<summary>Order History</summary>
+
+![Order History](/media/readme/features/order-history.png)
+
+</details>
+<br>
+
+
+
+
+
+[Back to top](#table-of-contents)
 
 ### User Stories 
 
