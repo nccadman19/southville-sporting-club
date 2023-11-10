@@ -256,17 +256,16 @@ This is a fully responsive website that was designed mobile-first as this is the
 - [Shopping Bag Overlay](#bag-overlay)
 - [Checkout](#checkout)
 - [Checkout Success](#checkout-success)
-- [Checkout Cancel](#checkout-cancel)
 
 - [Admin Dashboard](#admin-dashboard)
+- [Stock List](#stock-list)
+- [Order List](#order-list)
 - [Add Product](#add-product)
 - [Edit Product](#edit-product)
-- [Order List](#order-list)
-- [Stock List](#stock-list)
 
+- [Profile](#profile)
 - [Register](#register)
 - [Login](#login)
-- [Profile](#profile)
 
 ### Home
 
@@ -285,13 +284,23 @@ A "Shop Now" button, which takes the user to the "Latest Drop" page of the newes
 
 ### Navbar Footer
 
-The navbar and footer has the following features:
+The navbar has the following features:
 
 A logo that when clicked takes the user back to the index page.
 
 A search function
 
 A drop-down menu for the user account. Which only shows 'log in' and 'register' if the user is not logged in, but shows 'Admin Dashboard', 'Profile' and 'logout'.
+
+Drop down menus (on desktop) for the info and shopping buttons to see further information such as categories. 
+
+A burger style navbar for mobile users with the same button functionality. 
+
+The footer has the following features:
+
+Buttons links to the Terms & Conditions, Shipping & Returns and Contact pages. 
+
+Icons for payment types accepted and other standard company information. 
 
 <details>
 <summary>NavBar</summary>
@@ -402,6 +411,8 @@ Futher information about the sustainability and mission of the brand.
 
 </details>
 <br>
+
+[Back to top](#table-of-contents)
 
 ### Terms & Conditions
 
@@ -545,27 +556,169 @@ A return to shopping button and a confirm checkout button labelled 'Pay Now'.
 
 The checkout page has the following features:
 
-A form that the user fills out to confirm their details for payment and shipping, if they already have an account this will be pre-populated with their information after first order is placed. 
+Information about the users order.
 
-An order summary for the user to see what they're about to purchase with a dynamic total that changes dependant on their shipping method chosen. 
+A toast popup confirming the order has been sent to the customers email address.
 
-A card payment function. 
-
-A return to shopping button and a confirm checkout button labelled 'Pay Now'. 
+A button to continue shopping. 
 
 <details>
-<summary>Order History</summary>
+<summary>Checkout Success</summary>
 
-![Order History](/media/readme/features/order-history.png)
+![Checkout Success](/media/readme/features/checkout-success.png)
 
 </details>
 <br>
 
+[Back to top](#table-of-contents)
 
+### Admin Dashboard
 
+The dashboard has the following features:
 
+A card showing the site owners current monthly sales. 
+
+4 cards with buttons attached linking to a stock list, order list, adding a new product and managing their own profiles. 
+
+<details>
+<summary>Admin Dashboard</summary>
+
+![Admin Dashboard](/media/readme/features/admin-dashboard.png)
+
+</details>
+<br>
+
+### Stock List
+
+The stock list page has the following features:
+
+A table with all of the site owners current inventory. 
+
+A return button that takes the site owner back to the admin dashboard.
+
+<details>
+<summary>Stock List</summary>
+
+![Stock List](/media/readme/features/stock-list.png)
+
+</details>
+<br>
+
+### Order List
+
+The order list page has the following features:
+
+A table with all of the orders from the site. 
+
+A checkbox so the site owner can track what orders they've processed. 
+
+A return button that takes the site owner back to the admin dashboard.
+
+<details>
+<summary>Order List</summary>
+
+![Order List](/media/readme/features/order-list.png)
+
+</details>
+<br>
+
+### Add Product
+
+The page to add products has the following features:
+
+A form for the site owner to complete and add items to the site. 
+
+Several of the form inputs are mandatory to avoid errors. 
+
+<details>
+<summary>Add Product</summary>
+
+![Add Product](/media/readme/features/add-product.png)
+
+</details>
+<br>
+
+### Edit Product
+
+The page to edit products has the following features:
+
+A form for the site owner to edit with pre-filled data on the item including the current quantity of each size in stock. 
+
+<details>
+<summary>Edit Product 1</summary>
+
+![Edit Product 1](/media/readme/features/edit-product.png)
+
+</details>
+<br>
+
+<details>
+<summary>Edit Product 2</summary>
+
+![Edit Product 2](/media/readme/features/edit-product-btn.png)
+
+</details>
+<br>
+
+### Profile
+
+The profile page has the following features:
+
+A form where the user can update their personal information, which is then auto filled on the checkout form.
+
+A section that shows the user their order history, the order number takes the user to the full information of their order. 
+
+<details>
+<summary>Profile</summary>
+
+![Profile](/media/readme/features/profile.png)
+
+</details>
+<br>
+
+### Register
+
+The register page has the following features:
+
+A link to take the user to the sign-in page if they already have an account.
+
+A form for the user to sign up if they do not already have an account.
+
+This page is only seen if the user is not signed in.
+
+<details>
+<summary>Register</summary>
+
+![Register](/media/readme/features/register.png)
+
+</details>
+<br>
+
+### Login
+
+The login page has the following features:
+
+A form for the user to input the necessary details to login to the site.
+
+A login button that takes the user to the login page in case they already have an account.
+
+A forgot password button for the user to reset their password via their email if they're having issues logging in. 
+
+<details>
+<summary>Login</summary>
+
+![Login](/media/readme/features/login.png)
+
+</details>
+<br>
 
 [Back to top](#table-of-contents)
+
+### **Toasts & Messages**
+
+Many messages are included to alert the user that they have accomplished an action. 
+
+
 
 ### User Stories 
 
