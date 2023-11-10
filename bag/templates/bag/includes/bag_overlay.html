@@ -22,7 +22,7 @@
                         <p class="product-name-cart">{{ item.product.name }}</p>
                         <p class="product-size-cart">Size: {{ item.size }}</p>
                         <p class="product-quantity-cart">Quantity: {{ item.quantity }}</p>
-                        <p class="product-price-cart">{{ item.product.price }} GBP</p>
+                        <p class="product-price-cart">{{ item.product.price | calc_subtotal:item.quantity }} GBP</p>
                         <a class="remove-item" id="remove_{{ item.item_id }}"
                             data-product_size="{{ item.size }}">Remove</a>
                     </div>
