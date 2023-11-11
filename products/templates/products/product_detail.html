@@ -57,11 +57,15 @@
                                 <!-- Size menu -->
                                 <div class="col s12">
                                     <div class="product-form">
-                                        {% for size in product.get_sizes_list %}
-                                        <a href="#"
-                                            class="btn btn-small product-size-button {% if size == 'One Size' %}selected disabled{% endif %}"
-                                            data-size="{{ size }}">{{ size }}</a>
+                                        {% if available_sizes %}
+                                        {% for size, stock in available_sizes.items %}
+                                        <a href="#" class="btn btn-small product-size-button" data-size="{{ size }}">{{
+                                            size }}</a>
                                         {% endfor %}
+                                        <input type="hidden" name="selected_size" id="selected-size" value="">
+                                        {% else %}
+                                        <p>This product is currently out of stock in all sizes.</p>
+                                        {% endif %}
                                         <input type="hidden" name="selected_size" id="selected-size" value="">
                                     </div>
                                 </div>

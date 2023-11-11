@@ -3,6 +3,7 @@
 .container.order-list,
 .container.stock-list {
     width: 90%;
+    min-height: calc(100vh - 220px);
 }
 
 .order-number {

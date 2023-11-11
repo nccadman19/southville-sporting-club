@@ -77,11 +77,27 @@ def product_list(request):
         # Redirect to the "nothing found" view when no results are found
         return redirect('nothing_found')
 
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .models import Product
+
 def product_detail(request, product_id):
     # Retrieve the product with the specified ID or return a 404 error if not found
     product = get_object_or_404(Product, pk=product_id)
-    
-    context = {'product': product, 'title': 'Product Detail'}
+
+    # Check if any size has available stock
+    has_available_stock = any(stock > 0 for stock in product.size_quantity.values())
+
+    # Filter sizes with zero stock
+    available_sizes = {size: stock for size, stock in product.size_quantity.items() if stock > 0}
+
+    # If no sizes have available stock, redirect or handle accordingly
+    if not has_available_stock:
+        messages.warning(request, "This product is currently out of stock.")
+        return redirect(reverse('nothing_found'))
+
+    context = {'product': product, 'title': 'Product Detail', 'available_sizes': available_sizes}
     return render(request, 'products/product_detail.html', context)
 
 def nothing_found(request):
