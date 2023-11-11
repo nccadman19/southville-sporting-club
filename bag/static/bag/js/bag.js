@@ -22,21 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
         closeOverlay.style.display = 'none';
     }
 
-    // Function to adjust the cart's height based on its content
-    function adjustCartHeight() {
-        var cartOverlay = document.getElementById('cart-overlay');
-        var cartItems = document.querySelectorAll('.cart-item');
-        var totalHeight = 0;
-
-        // Calculate the total height of all cart items
-        cartItems.forEach(function (item) {
-            totalHeight += item.scrollHeight;
-        });
-
-        // Set the cart's height to match the total height of cart items
-        cartOverlay.style.height = totalHeight + 'px';
-    }
-
     // Add a click event listener to the bag icon
     document.getElementById('bag-icon').addEventListener('click', function (event) {
         showCartOverlay();
@@ -61,9 +46,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Iterate through cartData and render cart items
         for (var item_id in cartData) {
-            // Create and append cart item elements to cartContent
-            var cartItemElement = createCartItemElement(item_id, cartData[item_id]);
-            cartContent.appendChild(cartItemElement);
+            // Check if the property belongs to the object itself
+            if (cartData.hasOwnProperty(item_id)) {
+                // Create and append cart item elements to cartContent
+                var cartItemElement = createCartItemElement(item_id, cartData[item_id]);
+                cartContent.appendChild(cartItemElement);
+            }
         }
     }
 

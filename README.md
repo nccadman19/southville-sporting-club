@@ -886,7 +886,14 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 </details>
 <br>
 
-- [Edit Product](#edit-product)
+<details>
+<summary>Edit Product</summary>
+
+![Edit Product](/media/readme/validator/w3/edit-product-w3.png)
+
+</details>
+<br>
+
 
 - [Profile](#profile)
 
@@ -906,6 +913,34 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 
 </details>
 <br>
+
+#### CSS Validation
+
+The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS. There were no errors on the css. 
+
+| Page | Test |
+| ------------------------------ | --------------- |
+| Home | ✓ |
+| Bag | ✓ |
+| Checkout | ✓ |
+| Products | ✓ |
+| Admin Dashboard | ✓ |
+| Base Static | ✓ |
+
+#### Javascript Testing
+
+The [JSHint Validator](https://jshint.com/) was used to validate the JavaScript in the script.js file. I needed to use the following code at the top for the proper validation to be shown:   
+
+`/*jshint esversion: 2.13.6 */`
+
+| JS Page | Warning | Reasoning |
+| --------------- | --------------- | --------------- |
+| Admin Dashboard | 1 undefined variable ‘M’ | Relates to the Materialize framework I am using for this project |
+| Admin Dashboard | 1 undefined variable ‘M’ | Relates to the Materialize framework I am using for this project |
+| Admin Dashboard | 1 undefined variable ‘M’ | Relates to the Materialize framework I am using for this project |
+
+
+
 
 
 ## Accessibility
