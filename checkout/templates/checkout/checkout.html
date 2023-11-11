@@ -67,12 +67,12 @@
                     </div>
                     <p>
                         {% if user.is_authenticated %}
-                        <label class="form-check-label" for="id-save-info">Save this delivery information to my
-                            profile</label>
-                        <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info" 
-                            {% if save_info %}checked{% endif %}>
+                        <label>
+                            <input type="checkbox" class="filled-in" id="id-save-info" name="save-info" checked="checked" />
+                            <span>Save this delivery information to my profile</span>
+                        </label>
                         {% else %}
-                        <label class="form-check-label" for="id-save-info">
+                        <label>
                             <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
                             <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
                         </label>
