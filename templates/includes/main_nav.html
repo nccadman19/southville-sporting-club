@@ -38,11 +38,12 @@
             <li><a href="{% url 'profile' %}">MY PROFILE</a></li>
             <li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
         </ul>
-        {% endif %}
+        {% else %}
         <ul id='dropdown-profiles' class='dropdown-content'>
             <li><a href="{% url 'profile' %}">MY PROFILE</a></li>
             <li><a href="{% url 'account_logout' %}">LOGOUT</a></li>
         </ul>
+        {% endif %}
         {% else %}
         <ul id='dropdown-profiles' class='dropdown-content'>
             <li><a href="{% url 'account_signup' %}">REGISTER</a></li>
