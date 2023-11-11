@@ -223,8 +223,9 @@ DELIVERY_THRESHOLDS = {
     'UK_MAINLAND_1ST_CLASS': Decimal('150.00'),
 }
 
-# Custom 404 page
+# Custom error pages
 handler404 = 'home.views.error'
+handler500 = 'home.views.error'
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
