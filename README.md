@@ -861,11 +861,22 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 </details>
 <br>
 
+<details>
+<summary>Stock List</summary>
 
+![Stock List](/media/readme/validator/w3/stock-list-w3.png)
 
+</details>
+<br>
 
-- [Stock List](#stock-list)
-- [Order List](#order-list)
+<details>
+<summary>Order List</summary>
+
+![Order List](/media/readme/validator/w3/order-list-w3.png)
+
+</details>
+<br>
+
 - [Add Product](#add-product)
 - [Edit Product](#edit-product)
 
