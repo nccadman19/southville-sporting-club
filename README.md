@@ -17,10 +17,10 @@ This website has been created to sell UK created athletic wear, it is based on a
 1. [User Experience](#user-experience)
 2. [Design](#design)
 3. [Features](#features)
-4. [Accessibility](#accessibility)
-5. [Technologies Used](#technologies-used)
-6. [Deployment and Local Development](#deployment-and-local-development)
-7. [Testing](#testing)
+4. [Testing](#testing)
+5. [Accessibility](#accessibility)
+6. [Technologies Used](#technologies-used)
+7. [Deployment and Local Development](#deployment-and-local-development)
 8. [Credits](#credits)
 ---
 # User Experience
@@ -56,7 +56,7 @@ What the users would be looking for:
 
 [Back to top](#table-of-contents)
 
-## Visual Design
+## Design
 
 1. [Fonts](#fonts)
 2. [Styling](#styling)
@@ -726,6 +726,25 @@ A forgot password button for the user to reset their password via their email if
 ### Toasts & Messages
 
 Many messages are included to alert the user that they have accomplished an action. 
+
+## Testing
+
+Testing was ongoing throughout the entire build. I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along. Both manual testing and validation was employed.  
+
+I tested the page and had 3 people also manually test it on their own devices. For validation, I used the W3C validator, CSS validator, Python Linter, JSHint validator, and Lighthouse. 
+
+<br/>
+
+### Validation
+
+#### W3C Validator
+
+The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTML on all pages of the website. 
+
+
+
+
+
 
 ## Accessibility
 

@@ -82,4 +82,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    var form = document.getElementById('payment-form');
+
+    form.addEventListener('submit', function (event) {
+        // Check if the checkbox is checked before submitting the form
+        if (saveInfoCheckbox.checked) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Update the profile info
+            updateProfileInfo();
+            form.submit();
+        }
+    });
 });
