@@ -1182,6 +1182,75 @@ HTML5, CSS3, Python, and JavaScript were used to create this website.
 * [DBDiagram](https://dbdiagram.io/) was used to map the models.
 * [Amazon Web Services](https://aws.amazon.com/) was used to host the images for the Heroku-hosted site.
 
+### Deployment
+
+This project was deployed to Heroku using the following steps:
+
+<br/>
+
+#### ElephantSQL
+
+1. Navigate to ElephantSQL.com and create a user account, by using the log-in with GitHub option.
+2. Click “Create New Instance”.
+3. Set up your plan. (You can leave the 'tags' field blank.)
+4. Select a region.
+5. Select a data centre near you
+6. Then click “Review”.
+7. Check your details are correct and then click “Create instance”.
+8. Return to the ElephantSQL dashboard and click on the database instance name for this project
+9. In the URL section, clicking the copy icon will copy the database URL to your clipboard
+10. Leave this tab open, we will come back here later
+
+<br/>
+
+#### Heroku
+
+1. Log into Heroku.com, click “New” and then “Create a new app”.
+2. Choose a unique name for your app, select the region closest to you, and click “Create app”.
+3. Go to the Settings tab of your new app
+4. Click Reveal Config Vars
+5. Return to your ElephantSQL tab and copy your database URL
+6. Back on Heroku, add a Config Var called DATABASE_URL and paste your ElephantSQL database URL in as the value. Make sure you click “Add.”
+7. Add each of your other environment variables except DEVELOPMENT and DB_URL from the env.py file as a Config Var. 
+8. Navigate to the “Deploy” tab of your app.
+9. select “Connect to GitHub” in the Deployment method section.
+10. Search for your repo and click Connect
+11. Optional: You can click Enable Automatic Deploys in case you make any further changes to the project. This will trigger any time code is pushed to your GitHub repository.
+12. As we already have all our changes pushed to GitHub, we will use the Manual Deploy section and click Deploy Branch. This will start the build process. 
+13. Now, we have our project in place, and we have an empty database ready for use. As you may remember from our local development, we still need to add our tables to our database. To do this, we can click the “More” button and select “Run console.”
+14. Type python3 into the console and click Run
+15. In the terminal that opens, write "from eponymous_bosch import db" and then press enter.
+16. In the terminal, write "db.create_all()" and then press enter.
+17. Exit the Python terminal, by typing exit() and hitting enter, and close the console. Our Heroku database should now have the tables and columns created from our models.py file.
+18. The app should be up and running now, so click the “Open app” button
+
+<br/>
+
+### Local Deployment
+
+<br/>
+
+#### How to Fork
+
+To fork the Eponymous Bosch repository:
+
+1) Login (or sign up) to GitHub.
+2) Go to the repository for this project, at [GitHub Repository](https://github.com/Lithill/Eponymous-Bosch).
+3) Click the Fork button in the top right corner.
+
+<br/>
+
+#### How to Clone
+
+To clone the Eponymous Bosch repository:
+
+1) Login (or sign up) to GitHub.
+2) Go to the repository for this project, at [GitHub Repository](https://github.com/Lithill/Eponymous-Bosch).
+3) Above the list of files, click "Code".
+4) Click "Open with GitHub Desktop" to clone and open the repository with GitHub Desktop.
+5) Click "Choose..." and, using Windows Explorer, navigate to a local path where you want to clone the repository.
+6) Click "Clone".
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- [issues-shield]:  -->
 [issues-shield]: https://img.shields.io/badge/ISSUES-2%20OPEN-yellow?style=for-the-badge&logo=closed
@@ -1199,7 +1268,6 @@ HTML5, CSS3, Python, and JavaScript were used to create this website.
 [website-shield]: https://img.shields.io/badge/VISIT%20WEBSITE-HERE-green?style=for-the-badge&logo=closed
 <!-- [website-url]:  -->
 [website-url]: https://southville-sporting-club-ed7d11c9dd6e.herokuapp.com/
-
 
 ## Credit
 
