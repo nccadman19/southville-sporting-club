@@ -1099,11 +1099,11 @@ To fully test the website, I used Google Chrome Developer Tools. I ensured that 
 | 4       |  Webhooks successfully connecting through heroku  | Webhooks not connecting to stripe | After a tutor meeting we decided that Webhooks were not necessary for the information I wanted to pull so I have decided to use a different method to pull the data |
 | 5       |  The user would view up to date when an item is removed from the bag  | The items were not updating in the bag overlay until the user changed the page they were on | Made the bag overlay force refresh to ensure the up to date information was shown to the user |
 
-#### Resolved Bugs
+#### Unresolved Bugs
 
 | Number  | Expected behaviour | Actual behaviour |
 | ---:        |    :----:          |        :----:    |
-| 1       |  When a user clicks away from the cart it will disappear  | The remember me checkbox in allauth isn't loading using materialize |
+| 1       |  Remember me checkbox is clickable | The remember me checkbox in allauth isn't loading using materialize |
 
 ## Accessibility
 
@@ -1162,14 +1162,18 @@ HTML5, CSS3, Python, and JavaScript were used to create this website.
 [website-url]: https://southville-sporting-club-ed7d11c9dd6e.herokuapp.com/
 
 
-### Credit
+## Credit
 
-Infinite Scrolling Banner
-https://www.cssscript.com/responsive-text-scrolling-marquee/
-Ordering footer col/row wise
-https://codeburst.io/how-to-position-html-elements-side-by-side-with-css-e1fae72ddcc
+Thanks are given for the following posts and tutorials:
+
+* [Infinite Scrolling Banner Tutorial](https://www.cssscript.com/responsive-text-scrolling-marquee/) was used for to setup the top scrolling button.
+* [Positioning Elements](https://codeburst.io/how-to-position-html-elements-side-by-side-with-css-e1fae72ddcc) was used to order footer col/row wise.
+* [Navbar Menu Query in Stack Overflow](https://stackoverflow.com/questions/51563809/materialize-css-navbar-menu-dropdown-wont-go-below-origin) was used to fix items that was sitting below the header inside of inside it.
+
+
+
 Moving navbar dropdown items under the menu
-https://stackoverflow.com/questions/51563809/materialize-css-navbar-menu-dropdown-wont-go-below-origin
+
 Collapisble error on mobile 
 https://stackoverflow.com/questions/53973266/materializecss-collapsibles-not-working-properly
 Schema
