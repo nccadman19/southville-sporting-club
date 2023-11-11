@@ -1,7 +1,7 @@
 /* ... Homepage ... */
 .hero-image {
     background-size: cover;
-    height: 73vh !important;
+    height: calc(100vh - 198px) !important
 }
 
 .latest-drop {
@@ -27,7 +27,7 @@
 
 .hero-image-about {
     background-size: cover;
-    height: 73vh !important;
+    height: calc(100vh - 198px) !important;
     filter: grayscale(100%);
 }
 
