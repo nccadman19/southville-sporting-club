@@ -962,6 +962,47 @@ The original results were improved by adding a meta tag with name and descriptio
 | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- |
 | Home | Desktop | 91 | 93 | 100 | 90 |
 | Home | Mobile | 91 | 93 | 100 | 90 |
+| About Us | Desktop | 92 | 90 | 100 | 90 |
+| About Us | Mobile | XX | XX | XX | XX |
+| Contact Us | Desktop | XX | XX | XX | XX |
+| Contact Us | Mobile | XX | XX | XX | XX |
+| Error | Desktop | XX | XX | XX | XX |
+| Error | Mobile | XX | XX | XX | XX |
+| Shipping & Returns | Desktop | XX | XX | XX | XX |
+| Shipping & Returns | Mobile | XX | XX | XX | XX |
+| Sustainability | Desktop | XX | XX | XX | XX |
+| Sustainability | Mobile | XX | XX | XX | XX |
+| Terms & Conditions | Desktop | XX | XX | XX | XX |
+| Terms & Conditions | Mobile | XX | XX | XX | XX |
+| Products | Desktop | XX | XX | XX | XX |
+| Products | Mobile | XX | XX | XX | XX |
+| Product Detail | Desktop | XX | XX | XX | XX |
+| Product Detail | Mobile | XX | XX | XX | XX |
+| Search & Nothing Found | Desktop | XX | XX | XX | XX |
+| Search & Nothing Found | Mobile | XX | XX | XX | XX |
+| Bag Overlay | Desktop | XX | XX | XX | XX |
+| Bag Overlay | Mobile | XX | XX | XX | XX |
+| Checkout | Desktop | XX | XX | XX | XX |
+| Checkout | Mobile | XX | XX | XX | XX |
+| Checkout Success | Desktop | XX | XX | XX | XX |
+| Checkout Success | Mobile | XX | XX | XX | XX |
+| Admin Dashboard | Desktop | XX | XX | XX | XX |
+| Admin Dashboard | Mobile | XX | XX | XX | XX |
+| Stock List | Desktop | XX | XX | XX | XX |
+| Stock List | Mobile | XX | XX | XX | XX |
+| Order List | Desktop | XX | XX | XX | XX |
+| Order List | Mobile | XX | XX | XX | XX |
+| Add Product | Desktop | XX | XX | XX | XX |
+| Add Product | Mobile | XX | XX | XX | XX |
+| Edit Product | Desktop | XX | XX | XX | XX |
+| Edit Product | Mobile | XX | XX | XX | XX |
+| Profile | Desktop | XX | XX | XX | XX |
+| Profile | Mobile | XX | XX | XX | XX |
+| Register | Desktop | XX | XX | XX | XX |
+| Register | Mobile | XX | XX | XX | XX |
+| Login | Desktop | XX | XX | XX | XX |
+| Login | Mobile | XX | XX | XX | XX |
+
 
 
 ## Accessibility
