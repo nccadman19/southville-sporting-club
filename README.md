@@ -940,9 +940,10 @@ I also needed to add the following code so that the use of jquery did not show $
 | JS Page | Warning | Reasoning |
 | --------------- | --------------- | --------------- |
 | Admin Dashboard | 1 undefined variable ‘M’ | Relates to the Materialize framework I am using for this project |
+| Bag | None | N/A |
 | Checkout | None | N/A |
 | Stripe | 1 undefined variable ‘Stripe’  | Relates to the payment system I am using for this project |
-| Admin Dashboard | 1 undefined variable ‘M’ | Relates to the Materialize framework I am using for this project |
+| Product Detail | None | N/A |
 
 
 
