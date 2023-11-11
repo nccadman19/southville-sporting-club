@@ -960,7 +960,8 @@ The original results were improved by adding a meta tag with name and descriptio
 
 | Page | Viewing On | Performance | Accessibility | Best Practices | SEO |
 | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- |
-| Home | Desktop | XX | XX | XX | XX |
+| Home | Desktop | 91 | 93 | 100 | 90 |
+| Home | Mobile | 91 | 93 | 100 | 90 |
 
 
 ## Accessibility
