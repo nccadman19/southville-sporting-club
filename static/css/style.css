@@ -304,6 +304,19 @@ div.col.s12.m6.toast {
   color: white;
 }
 
+.alert {
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+  background-color: #f24333;
+  color: white;
+  border-radius: 5px;
+}
+
+.alert strong {
+  color: #f24333;
+}
+
 /* Profiles Icon */
 
 #dropdown-profiles.dropdown-content {
