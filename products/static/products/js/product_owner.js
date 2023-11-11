@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     categorySelect.addEventListener('change', function (event) {
         if (event.ctrlKey || event.metaKey) {
             // Ctrl (or Command) is held while clicking, add or remove the class to/from the chosen category
-            for (var i = 0; i < options.length; i++) {
+            for (let i = 0; i < options.length; i++) {
                 if (options[i].selected) {
                     if (options[i].classList.contains('selected')) {
                         options[i].classList.remove('selected');
@@ -111,20 +111,20 @@ document.addEventListener('DOMContentLoaded', function () {
             var selectedValues = new Set();
 
             // Identify the selected values and add them to the set
-            for (var i = 0; i < options.length; i++) {
+            for (let i = 0; i < options.length; i++) {
                 if (options[i].selected) {
                     selectedValues.add(options[i].value);
                 }
             }
 
             // Remove the "selected" class and "selected" attribute from all options
-            for (var i = 0; i < options.length; i++) {
+            for (let i = 0; i < options.length; i++) {
                 options[i].classList.remove('selected');
                 options[i].removeAttribute('selected');
             }
 
             // Now, add the "selected" class to the currently selected options
-            for (var i = 0; i < options.length; i++) {
+            for (let i = 0; i < options.length; i++) {
                 if (selectedValues.has(options[i].value)) {
                     options[i].classList.add('selected');
                     options[i].setAttribute('selected', 'selected');

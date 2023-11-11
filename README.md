@@ -931,12 +931,17 @@ The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to valida
 
 The [JSHint Validator](https://jshint.com/) was used to validate the JavaScript in the script.js file. I needed to use the following code at the top for the proper validation to be shown:   
 
-`/*jshint esversion: 2.13.6 */`
+`/*jshint esversion: 6 */`
+
+I also needed to add the following code so that the use of jquery did not show $ as an undefined variable:
+
+ `/*globals $:false */`
 
 | JS Page | Warning | Reasoning |
 | --------------- | --------------- | --------------- |
 | Admin Dashboard | 1 undefined variable ‘M’ | Relates to the Materialize framework I am using for this project |
-| Admin Dashboard | 1 undefined variable ‘M’ | Relates to the Materialize framework I am using for this project |
+| Checkout | None | N/A |
+| Stripe | 1 undefined variable ‘Stripe’  | Relates to the payment system I am using for this project |
 | Admin Dashboard | 1 undefined variable ‘M’ | Relates to the Materialize framework I am using for this project |
 
 

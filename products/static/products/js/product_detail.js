@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
     collapsibleHeaders.forEach(function (header) {
         header.addEventListener('click', function () {
             var icon = header.querySelector('.icon');
-            var rotation = parseFloat(icon.style.transform.replace('rotate(', '').replace('deg)', ''));
 
             if (icon.innerHTML === '+') {
                 icon.innerHTML = '-';
@@ -77,6 +76,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Image that can be enlarged on click
     var elems = document.querySelectorAll('.materialboxed');
-    var instances = M.Materialbox.init(elems);
 
 });
