@@ -306,6 +306,10 @@ div#quantity-container {
     min-height: 3rem;
 }
 
+#id_size_quantity {
+    display: none;
+}
+
 /* Edit Product */
 
 .edit-image {
