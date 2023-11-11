@@ -181,12 +181,17 @@
     width: 50%;
 }
 
-.bold-title {
-    font-weight: bold;
+.collapsible-body ul li {
+    margin-bottom: 8px;
+}
+
+.collapsible-body ul li.bold-title {
+    margin-top: 12px;
 }
 
 .product-cart-btn {
     margin-left: 9px;
+    font-weight: bold;
 }
 
 .quantity {
