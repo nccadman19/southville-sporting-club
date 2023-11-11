@@ -84,12 +84,12 @@ I used Google fonts 'Helvetica' and 'Times New Roman'. I used the Times New Roma
 
 Desktop
 
-![Desktop Index Wireframe](media/readme/wireframes/index-desktop.png)
-<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+![Desktop Index Wireframe](media/readme/wireframes/index-desktop.webp)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.webp) -->
 
 Mobile
 
-![Mobile Index Wireframe](media/readme/wireframes/index-mobile.png)
+![Mobile Index Wireframe](media/readme/wireframes/index-mobile.webp)
 
 </details>
 <br>
@@ -99,12 +99,12 @@ Mobile
 
 Desktop
 
-![Desktop Products Wireframe](media/readme/wireframes/products-desktop.png)
-<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+![Desktop Products Wireframe](media/readme/wireframes/products-desktop.webp)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.webp) -->
 
 Mobile
 
-![Mobile Products Wireframe](media/readme/wireframes/products-mobile.png)
+![Mobile Products Wireframe](media/readme/wireframes/products-mobile.webp)
 
 </details>
 <br>
@@ -114,12 +114,12 @@ Mobile
 
 Desktop
 
-![Desktop Product Detail Wireframe](media/readme/wireframes/product-detail-desktop.png)
-<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+![Desktop Product Detail Wireframe](media/readme/wireframes/product-detail-desktop.webp)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.webp) -->
 
 Mobile
 
-![Mobile Product Detail Wireframe](media/readme/wireframes/product-detail-mobile.png)
+![Mobile Product Detail Wireframe](media/readme/wireframes/product-detail-mobile.webp)
 
 </details>
 <br>
@@ -129,12 +129,12 @@ Mobile
 
 Desktop
 
-![Desktop Bag Wireframe](media/readme/wireframes/bag-desktop.png)
-<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+![Desktop Bag Wireframe](media/readme/wireframes/bag-desktop.webp)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.webp) -->
 
 Mobile
 
-![Mobile Bag Wireframe](media/readme/wireframes/bag-mobile.png)
+![Mobile Bag Wireframe](media/readme/wireframes/bag-mobile.webp)
 
 </details>
 <br>
@@ -144,12 +144,12 @@ Mobile
 
 Desktop
 
-![Desktop Checkout Wireframe](media/readme/wireframes/checkout-desktop.png)
-<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+![Desktop Checkout Wireframe](media/readme/wireframes/checkout-desktop.webp)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.webp) -->
 
 Mobile
 
-![Mobile Checkout Wireframe](media/readme/wireframes/checkout-mobile.png)
+![Mobile Checkout Wireframe](media/readme/wireframes/checkout-mobile.webp)
 
 </details>
 <br>
@@ -159,12 +159,12 @@ Mobile
 
 Desktop
 
-![Desktop Profile Wireframe](media/readme/wireframes/profile-desktop.png)
-<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+![Desktop Profile Wireframe](media/readme/wireframes/profile-desktop.webp)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.webp) -->
 
 Mobile
 
-![Mobile Profile Wireframe](media/readme/wireframes/profile-mobile.png)
+![Mobile Profile Wireframe](media/readme/wireframes/profile-mobile.webp)
 
 </details>
 <br>
@@ -174,12 +174,12 @@ Mobile
 
 Desktop
 
-![Desktop Contact Wireframe](media/readme/wireframes/contact-desktop.png)
-<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+![Desktop Contact Wireframe](media/readme/wireframes/contact-desktop.webp)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.webp) -->
 
 Mobile
 
-![Mobile Contact Wireframe](media/readme/wireframes/contact-mobile.png)
+![Mobile Contact Wireframe](media/readme/wireframes/contact-mobile.webp)
 
 </details>
 <br>
@@ -189,12 +189,12 @@ Mobile
 
 Desktop
 
-![Desktop Admin Dashboard Wireframe](media/readme/wireframes/admin-dashboard-desktop.png)
-<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+![Desktop Admin Dashboard Wireframe](media/readme/wireframes/admin-dashboard-desktop.webp)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.webp) -->
 
 Mobile
 
-![Mobile Admin Dashboard Wireframe](media/readme/wireframes/admin-dashboard-mobile.png)
+![Mobile Admin Dashboard Wireframe](media/readme/wireframes/admin-dashboard-mobile.webp)
 
 </details>
 <br>
@@ -204,12 +204,12 @@ Mobile
 
 Desktop
 
-![Desktop Shipping & Terms Wireframe](media/readme/wireframes/shipping-terms-desktop.png)
-<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.png) -->
+![Desktop Shipping & Terms Wireframe](media/readme/wireframes/shipping-terms-desktop.webp)
+<!-- for when you're on AWS!! (static/images/readme/wireframes/index-desktop.webp) -->
 
 Mobile
 
-![Mobile Shipping & Terms Wireframe](media/readme/wireframes/shipping-terms-mobile.png)
+![Mobile Shipping & Terms Wireframe](media/readme/wireframes/shipping-terms-mobile.webp)
 
 </details>
 <br>
@@ -218,7 +218,7 @@ Mobile
 ------
 This map represents the current models in the relational database, a few of the database been modified or are completely new.
 
-![Database Schema](media/readme/database-schema.png)
+![Database Schema](media/readme/database-schema.webp)
 
 
 ### Surface
@@ -232,7 +232,7 @@ These colors, including black and white for a clean, minimalistic appearance, we
 ------
 Using the coolors palette on the image I selected the colours from this along with a darker and lighter shade of contrasting colours to create a balanced palette. 
 
-![Coolors](/media/readme/color-scheme.png)
+![Coolors](/media/readme/color-scheme.webp)
 
 [Back to top](#table-of-contents)
 
@@ -276,7 +276,7 @@ A "Shop Now" button, which takes the user to the "Latest Drop" page of the newes
 <details>
 <summary>View Here</summary>
 
-![Home](/media/readme/features/index.png)
+![Home](/media/readme/features/index.webp)
 
 </details>
 <br>
@@ -305,7 +305,7 @@ Icons for payment types accepted and other standard company information.
 <details>
 <summary>NavBar Desktop</summary>
 
-![NavBar Desktop](/media/readme/features/navbar.png)
+![NavBar Desktop](/media/readme/features/navbar.webp)
 
 </details>
 <br>
@@ -313,7 +313,7 @@ Icons for payment types accepted and other standard company information.
 <details>
 <summary>NavBar Mobile</summary>
 
-![NavBar Mobile](/media/readme/features/mobile-nav.png)
+![NavBar Mobile](/media/readme/features/mobile-nav.webp)
 
 </details>
 <br>
@@ -322,7 +322,7 @@ Icons for payment types accepted and other standard company information.
 <details>
 <summary>Footer</summary>
 
-![Footer](/media/readme/features/footer.png)
+![Footer](/media/readme/features/footer.webp)
 
 </details>
 <br>
@@ -338,7 +338,7 @@ Futher information about the brand and where the store is located.
 <details>
 <summary>About Us Part 1</summary>
 
-![About Us](/media/readme/features/about-us.png)
+![About Us](/media/readme/features/about-us.webp)
 
 </details>
 <br>
@@ -346,7 +346,7 @@ Futher information about the brand and where the store is located.
 <details>
 <summary>About Us Part 2</summary>
 
-![About Us Info](/media/readme/features/about-us-info.png)
+![About Us Info](/media/readme/features/about-us-info.webp)
 
 </details>
 <br>
@@ -362,7 +362,7 @@ Information about the location and opening times of the store.
 <details>
 <summary>View Here</summary>
 
-![Contact Us](/media/readme/features/contact.png)
+![Contact Us](/media/readme/features/contact.webp)
 
 </details>
 <br>
@@ -378,7 +378,7 @@ A button to return the user to the homepage.
 <details>
 <summary>View Here</summary>
 
-![Error](/media/readme/features/error.png)
+![Error](/media/readme/features/error.webp)
 
 </details>
 <br>
@@ -392,7 +392,7 @@ A text based page to inform the user on the shipping and returns policy.
 <details>
 <summary>View Here</summary>
 
-![Shipping & Returns](/media/readme/features/shipping-returns.png)
+![Shipping & Returns](/media/readme/features/shipping-returns.webp)
 
 </details>
 <br>
@@ -408,7 +408,7 @@ Futher information about the sustainability and mission of the brand.
 <details>
 <summary>Sustainability Part 1</summary>
 
-![Our Mission 1](/media/readme/features/our-mission.png)
+![Our Mission 1](/media/readme/features/our-mission.webp)
 
 </details>
 <br>
@@ -416,7 +416,7 @@ Futher information about the sustainability and mission of the brand.
 <details>
 <summary>Sustainability Part 2</summary>
 
-![Our Mission 2](/media/readme/features/our-mission-info.png)
+![Our Mission 2](/media/readme/features/our-mission-info.webp)
 
 </details>
 <br>
@@ -434,7 +434,7 @@ A button at the end of the text to send the user to the contact form if they hav
 <details>
 <summary>View Here</summary>
 
-![Terms & Conditions](/media/readme/features/terms.png)
+![Terms & Conditions](/media/readme/features/terms.webp)
 
 </details>
 <br>
@@ -456,7 +456,7 @@ A scroll-up button on the bottom-right-hand-side of the page, which when clicked
 <details>
 <summary>View Here</summary>
 
-![Products](/media/readme/features/products.png)
+![Products](/media/readme/features/products.webp)
 
 </details>
 <br>
@@ -464,7 +464,7 @@ A scroll-up button on the bottom-right-hand-side of the page, which when clicked
 <details>
 <summary>Scroll Button</summary>
 
-![Products](/media/readme/features/button.png)
+![Products](/media/readme/features/button.webp)
 
 </details>
 <br>
@@ -484,7 +484,7 @@ Three cards with a description, shipping returns and size guide for user to read
 <details>
 <summary>View Here</summary>
 
-![Product Detail](/media/readme/features/product-detail.png)
+![Product Detail](/media/readme/features/product-detail.webp)
 
 </details>
 <br>
@@ -504,7 +504,7 @@ If there are no results it routes to a nothing-found page that lets the user kno
 <details>
 <summary>Search Function</summary>
 
-![Search Function](/media/readme/features/search-function.png)
+![Search Function](/media/readme/features/search-function.webp)
 
 </details>
 <br>
@@ -512,7 +512,7 @@ If there are no results it routes to a nothing-found page that lets the user kno
 <details>
 <summary>Nothing Found</summary>
 
-![Nothing Found](/media/readme/features/nothing-found.png)
+![Nothing Found](/media/readme/features/nothing-found.webp)
 
 </details>
 <br>
@@ -528,7 +528,7 @@ The details of the total and delivery price along with a button to continue to t
 <details>
 <summary>View Here</summary>
 
-![Bag Overlay](/media/readme/features/bag-overlay.png)
+![Bag Overlay](/media/readme/features/bag-overlay.webp)
 
 </details>
 <br>
@@ -548,7 +548,7 @@ A return to shopping button and a confirm checkout button labelled 'Pay Now'.
 <details>
 <summary>Order History</summary>
 
-![Order History](/media/readme/features/order-history.png)
+![Order History](/media/readme/features/order-history.webp)
 
 </details>
 <br>
@@ -556,7 +556,7 @@ A return to shopping button and a confirm checkout button labelled 'Pay Now'.
 <details>
 <summary>Checkout Form</summary>
 
-![Checkout Form](/media/readme/features/checkout-form.png)
+![Checkout Form](/media/readme/features/checkout-form.webp)
 
 </details>
 <br>
@@ -574,7 +574,7 @@ A button to continue shopping.
 <details>
 <summary>Checkout Success</summary>
 
-![Checkout Success](/media/readme/features/checkout-success.png)
+![Checkout Success](/media/readme/features/checkout-success.webp)
 
 </details>
 <br>
@@ -592,7 +592,7 @@ A card showing the site owners current monthly sales.
 <details>
 <summary>Admin Dashboard</summary>
 
-![Admin Dashboard](/media/readme/features/admin-dashboard.png)
+![Admin Dashboard](/media/readme/features/admin-dashboard.webp)
 
 </details>
 <br>
@@ -608,7 +608,7 @@ A return button that takes the site owner back to the admin dashboard.
 <details>
 <summary>Stock List</summary>
 
-![Stock List](/media/readme/features/stock-list.png)
+![Stock List](/media/readme/features/stock-list.webp)
 
 </details>
 <br>
@@ -626,7 +626,7 @@ A return button that takes the site owner back to the admin dashboard.
 <details>
 <summary>Order List</summary>
 
-![Order List](/media/readme/features/order-list.png)
+![Order List](/media/readme/features/order-list.webp)
 
 </details>
 <br>
@@ -642,7 +642,7 @@ Several of the form inputs are mandatory to avoid errors.
 <details>
 <summary>Add Product</summary>
 
-![Add Product](/media/readme/features/add-product.png)
+![Add Product](/media/readme/features/add-product.webp)
 
 </details>
 <br>
@@ -656,7 +656,7 @@ A form for the site owner to edit with pre-filled data on the item including the
 <details>
 <summary>Edit Product 1</summary>
 
-![Edit Product 1](/media/readme/features/edit-product.png)
+![Edit Product 1](/media/readme/features/edit-product.webp)
 
 </details>
 <br>
@@ -664,7 +664,7 @@ A form for the site owner to edit with pre-filled data on the item including the
 <details>
 <summary>Edit Product 2</summary>
 
-![Edit Product 2](/media/readme/features/edit-product-btn.png)
+![Edit Product 2](/media/readme/features/edit-product-btn.webp)
 
 </details>
 <br>
@@ -680,7 +680,7 @@ A section that shows the user their order history, the order number takes the us
 <details>
 <summary>Profile</summary>
 
-![Profile](/media/readme/features/profile.png)
+![Profile](/media/readme/features/profile.webp)
 
 </details>
 <br>
@@ -698,7 +698,7 @@ This page is only seen if the user is not signed in.
 <details>
 <summary>Register</summary>
 
-![Register](/media/readme/features/register.png)
+![Register](/media/readme/features/register.webp)
 
 </details>
 <br>
@@ -716,7 +716,7 @@ A forgot password button for the user to reset their password via their email if
 <details>
 <summary>Login</summary>
 
-![Login](/media/readme/features/login.png)
+![Login](/media/readme/features/login.webp)
 
 </details>
 <br>
@@ -744,7 +744,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Home Page</summary>
 
-![Home Page](/media/readme/validator/w3/index-w3.png)
+![Home Page](/media/readme/validator/w3/index-w3.webp)
 
 </details>
 <br>
@@ -752,7 +752,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>About Us</summary>
 
-![About Us](/media/readme/validator/w3/about-us-w3.png)
+![About Us](/media/readme/validator/w3/about-us-w3.webp)
 
 </details>
 <br>
@@ -760,7 +760,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Contact</summary>
 
-![Contact](/media/readme/validator/w3/contact-w3.png)
+![Contact](/media/readme/validator/w3/contact-w3.webp)
 
 </details>
 <br>
@@ -768,7 +768,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Error</summary>
 
-![Error](/media/readme/validator/w3/error-w3.png)
+![Error](/media/readme/validator/w3/error-w3.webp)
 
 </details>
 <br>
@@ -776,7 +776,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Shipping & Returns</summary>
 
-![Shipping & Returns](/media/readme/validator/w3/shipping-w3.png)
+![Shipping & Returns](/media/readme/validator/w3/shipping-w3.webp)
 
 </details>
 <br>
@@ -784,7 +784,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Sustainability</summary>
 
-![Sustainability](/media/readme/validator/w3/sustainability-w3.png)
+![Sustainability](/media/readme/validator/w3/sustainability-w3.webp)
 
 </details>
 <br>
@@ -792,7 +792,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Terms & Conditions</summary>
 
-![Terms & Conditions](/media/readme/validator/w3/terms-w3.png)
+![Terms & Conditions](/media/readme/validator/w3/terms-w3.webp)
 
 </details>
 <br>
@@ -800,7 +800,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Products</summary>
 
-![Products](/media/readme/validator/w3/products-w3.png)
+![Products](/media/readme/validator/w3/products-w3.webp)
 
 </details>
 <br>
@@ -808,7 +808,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Product Detail</summary>
 
-![Product Detail](/media/readme/validator/w3/product-detail-w3.png)
+![Product Detail](/media/readme/validator/w3/product-detail-w3.webp)
 
 </details>
 <br>
@@ -816,7 +816,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Nothing Found</summary>
 
-![Nothing Found](/media/readme/validator/w3/nothing-found-w3.png)
+![Nothing Found](/media/readme/validator/w3/nothing-found-w3.webp)
 
 </details>
 <br>
@@ -824,7 +824,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Search</summary>
 
-![Search](/media/readme/validator/w3/search-w3.png)
+![Search](/media/readme/validator/w3/search-w3.webp)
 
 </details>
 <br>
@@ -832,7 +832,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Shopping Bag Overlay</summary>
 
-![Shopping Bag Overlay](/media/readme/validator/w3/bag-overlay-w3.png)
+![Shopping Bag Overlay](/media/readme/validator/w3/bag-overlay-w3.webp)
 
 </details>
 <br>
@@ -840,7 +840,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Checkout</summary>
 
-![Checkout](/media/readme/validator/w3/checkout-w3.png)
+![Checkout](/media/readme/validator/w3/checkout-w3.webp)
 
 </details>
 <br>
@@ -848,7 +848,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Checkout Success</summary>
 
-![Checkout Success](/media/readme/validator/w3/checkout-success-w3.png)
+![Checkout Success](/media/readme/validator/w3/checkout-success-w3.webp)
 
 </details>
 <br>
@@ -856,7 +856,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Admin Dashboard</summary>
 
-![Admin Dashboard](/media/readme/validator/w3/admin-dashboard-w3.png)
+![Admin Dashboard](/media/readme/validator/w3/admin-dashboard-w3.webp)
 
 </details>
 <br>
@@ -864,7 +864,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Stock List</summary>
 
-![Stock List](/media/readme/validator/w3/stock-list-w3.png)
+![Stock List](/media/readme/validator/w3/stock-list-w3.webp)
 
 </details>
 <br>
@@ -872,7 +872,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Order List</summary>
 
-![Order List](/media/readme/validator/w3/order-list-w3.png)
+![Order List](/media/readme/validator/w3/order-list-w3.webp)
 
 </details>
 <br>
@@ -881,7 +881,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Add Product</summary>
 
-![Add Product](/media/readme/validator/w3/add-product-w3.png)
+![Add Product](/media/readme/validator/w3/add-product-w3.webp)
 
 </details>
 <br>
@@ -889,7 +889,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Edit Product</summary>
 
-![Edit Product](/media/readme/validator/w3/edit-product-w3.png)
+![Edit Product](/media/readme/validator/w3/edit-product-w3.webp)
 
 </details>
 <br>
@@ -901,7 +901,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Register</summary>
 
-![Register](/media/readme/validator/w3/register-w3.png)
+![Register](/media/readme/validator/w3/register-w3.webp)
 
 </details>
 <br>
@@ -909,7 +909,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <details>
 <summary>Login</summary>
 
-![Login](/media/readme/validator/w3/login-w3.png)
+![Login](/media/readme/validator/w3/login-w3.webp)
 
 </details>
 <br>
@@ -1032,7 +1032,7 @@ HTML5, CSS3, Python, and JavaScript were used to create this website.
 
 ### Wireframes
 
-![Add Initial Mockup](media/readme/initial-mockup.png)
+![Add Initial Mockup](media/readme/initial-mockup.webp)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->

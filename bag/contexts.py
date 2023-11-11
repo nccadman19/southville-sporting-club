@@ -21,7 +21,7 @@ def bag_contents(request):
             if product.image:
                 image_url = product.image.url
             else:
-                image_url = f"{settings.MEDIA_URL}no-image.png"
+                image_url = f"{settings.MEDIA_URL}no-image.webp"
 
             bag_items.append({
                 'item_id': product.id,
