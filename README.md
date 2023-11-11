@@ -741,6 +741,13 @@ I tested the page and had 3 people also manually test it on their own devices. F
 
 The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTML on all pages of the website. 
 
+<details>
+<summary>Home Page</summary>
+
+![Home Page](/media/readme/features/.png)
+
+</details>
+<br>
 
 
 
