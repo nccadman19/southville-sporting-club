@@ -34,38 +34,40 @@
             </li>
         </ul>
     </li>
-    <div class="text-right">
-        {% if request.user.is_authenticated %}
-        {% if request.user.is_superuser %}
-        <div class="button-container-sidenav">
-            <a href="{% url 'admin_dashboard' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">
-                ADMIN DASHBOARD
-            </a>
+    <li>
+        <div class="text-right">
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <div class="button-container-sidenav">
+                <a href="{% url 'admin_dashboard' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">
+                    ADMIN DASHBOARD
+                </a>
+            </div>
+            {% endif %}
+            <div class="button-container-sidenav">
+                <a href="{% url 'profile' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">
+                    <span class="font-weight-bold">MY PROFILE</span>
+                </a>
+            </div>
+            <div class="button-container-sidenav">
+                <a href="{% url 'account_logout' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">
+                    <span class="font-weight-bold">LOGOUT</span>
+                </a>
+            </div>
+            {% else %}
+            <div class="button-container-sidenav">
+                <a href="{% url 'account_signup' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">
+                    <span class="font-weight-bold">REGISTER</span>
+                </a>
+            </div>
+            <div class="button-container-sidenav">
+                <a href="{% url 'account_login' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">
+                    <span class="font-weight-bold">LOGIN</span>
+                </a>
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
-        <div class="button-container-sidenav">
-            <a href="{% url 'profile' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">
-                <span class="font-weight-bold">MY PROFILE</span>
-            </a>
-        </div>
-        <div class="button-container-sidenav">
-            <a href="{% url 'account_logout' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">
-                <span class="font-weight-bold">LOGOUT</span>
-            </a>
-        </div>
-        {% else %}
-        <div class="button-container-sidenav">
-            <a href="{% url 'account_signup' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">
-                <span class="font-weight-bold">REGISTER</span>
-            </a>
-        </div>
-        <div class="button-container-sidenav">
-            <a href="{% url 'account_login' %}" class="waves-effect waves-light grey darken-3 btn full-width-btn">
-                <span class="font-weight-bold">LOGIN</span>
-            </a>
-        </div>
-        {% endif %}
-    </div>
+    </li>
 </ul>
 
 <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
