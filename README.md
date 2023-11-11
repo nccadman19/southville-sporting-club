@@ -853,10 +853,17 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 </details>
 <br>
 
+<details>
+<summary>Admin Dashboard</summary>
+
+![Admin Dashboard](/media/readme/validator/w3/admin-dashboard-w3.png)
+
+</details>
+<br>
 
 
 
-- [Admin Dashboard](#admin-dashboard)
+
 - [Stock List](#stock-list)
 - [Order List](#order-list)
 - [Add Product](#add-product)

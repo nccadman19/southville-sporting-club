@@ -306,7 +306,8 @@ div#quantity-container {
     min-height: 3rem;
 }
 
-#id_size_quantity {
+#id_size_quantity,
+#id_sizes {
     display: none;
 }
 
