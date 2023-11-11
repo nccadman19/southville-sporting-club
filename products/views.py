@@ -26,7 +26,8 @@ def preprocess_query(query):
 
 def product_list(request):
     # Retrieve all products from the database
-    products = Product.objects.filter(has_available_sizes=True)
+    products = Product.objects.annotate(available_sizes_count=Count('size_quantity', filter=~Q(size_quantity__exact={})))\
+                               .filter(available_sizes_count__gt=0)
     query = request.GET.get('q')
     sort = request.GET.get('sort', 'name') 
     category = request.GET.get('category', 'all')

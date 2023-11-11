@@ -12,7 +12,7 @@ This website has been created to sell UK created athletic wear, it is based on a
 [![LinkedIn][linkedin-shield]][linkedin-url]
 <br/>
 
-## **Table of Contents**
+## Table of Contents
 
 1. [User Experience](#user-experience)
 2. [Design](#design)
@@ -32,7 +32,8 @@ This website has been created to sell UK created athletic wear, it is based on a
 
 1. [Business Goals](#business-goals)
 2. [User Goals](#user-goals)
-3. [Strategy](#strategy)
+3. [User Story](#user-story)
+4. [Strategy](#strategy)
 
 ### Business Goals
 ------
@@ -42,6 +43,37 @@ Mission Statement: "Southville Sporting Club's mission is to unite vintage athle
 ### User Goals
 ------
 Prospective users of this website seek a seamless and enjoyable online shopping experience where they can explore and purchase the captivating 'Run with Nature' collection. They aim to find high-quality vintage athletic wear that reflects their active lifestyle and appreciation for eco-friendly materials, all while connecting with the vibrant spirit of Bristol's scenic landscapes. Additionally, users intend to make secure and hassle-free transactions, converting their interest into a satisfying shopping journey.
+
+### User Stories 
+
+| AS A/AN | I WANT TO BE ABLE TO… | SO I CAN… |
+| --------------- | --------------- | --------------- |
+| Viewing and Navigation |
+| Shopper | View a list of items | See if any interest me to purchase |
+| Shopper  | View product details | View further information such as images, descriptions, prices, and availability.
+| Shopper | View the homepage  | See featured products and promotions |
+| Registration/Accounts |
+| Shopper | Register for an account | Track my purchases |
+| Site User | Log in to my account securely | Access my profile and saved information |
+| Site User | Reset my password | Recover access to my account |
+| Site User | Login through social media | Easily login and set up an account |
+| Site User | Update profile information | Ensure items are received and payments are correct |
+| Sorting and Searching |
+| Shopper | Filter products | View products by various criteria such as popularity, price, and newest arrivals |
+| Shopper | Refine my search | Find specific items based on color or size |
+| Shopper | Search for specific products using keywords | Quickly find what I'm looking for |
+| Purchase and Checkout |
+| Shopper | Add items to my shopping cart | Keep for a later purchase |
+| Shopper | View my cart | See a summary of selected items and their quantities |
+| Shopper | Update quantities or remove items | Purchase the goods I want |
+| Shopper | Apply coupon codes | Save money on my order |
+| Shopper | Choose from different payment options | Easily pay for my order |
+| Shopper | Review order summary | Ensure the order is correct |
+| Shopper | Receive a confirmation email | Confirm order details are correct and ensure the order was processed |
+| Site Owner |
+| Site Owner | Manage and process orders | Send items to customers |
+| Site Owner | Add and remove items from the site |  Show customers items that are in stock |
+
 ### Strategy
 ------
 The primary target audience for Southville Sporting Club is individuals aged 20-40 who seek stylish and sustainable unisex clothing that resonates with the spirit of vintage athletics and nature's beauty.
@@ -216,9 +248,9 @@ Mobile
 
 ### Database Schema
 ------
-This map represents the current models in the relational database, a few of the database been modified or are completely new.
+This map represents the current models in the relational database, a few of the databases been modified or are completely new. Note the green items are new database models added.
 
-![Database Schema](media/readme/database-schema.webp)
+![Database Schema](media/readme/database-schema1.png)
 
 
 ### Surface
@@ -797,6 +829,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 </details>
 <br>
 
+
 <details>
 <summary>Products</summary>
 
@@ -895,7 +928,13 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 <br>
 
 
-- [Profile](#profile)
+<details>
+<summary>Profile</summary>
+
+![Profile](/media/readme/validator/w3/edit-product-w3.webp)
+
+</details>
+<br>
 
 
 <details>
