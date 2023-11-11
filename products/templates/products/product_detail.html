@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-<link href="{% static 'products/css/products.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+<link href="{% static 'products/css/products.css' %}" type="text/css" rel="stylesheet" media="screen">
 {% endblock %}
 
 {% block extra_js %}
@@ -141,5 +141,5 @@
 {% endblock %}
 
 {% block postloadjs %}
-<script type="text/javascript" src="{% static 'products/js/product_detail.js' %}"></script>
+<script src="{% static 'products/js/product_detail.js' %}"></script>
 {% endblock %}
