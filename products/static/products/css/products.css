@@ -268,6 +268,10 @@
     margin-top: 20px;
 }
 
+#index-banner.section.no-pad-bot.nothing.found {
+    min-height: calc(100vh - 198px);
+}
+
 /* Add Product */
 
 #id_image {
