@@ -29,6 +29,9 @@ class Product(models.Model):
 
     def get_sizes_list(self):
         return [size.strip() for size in self.sizes.split(',') if size.strip()]
+    
+    def has_available_sizes(self):
+        return any(quantity > 0 for quantity in self.size_quantity.values())
 
     def __str__(self):
         return self.name

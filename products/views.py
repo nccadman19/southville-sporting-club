@@ -26,7 +26,7 @@ def preprocess_query(query):
 
 def product_list(request):
     # Retrieve all products from the database
-    products = Product.objects.all()
+    products = Product.objects.filter(has_available_sizes=True)
     query = request.GET.get('q')
     sort = request.GET.get('sort', 'name') 
     category = request.GET.get('category', 'all')
@@ -58,9 +58,6 @@ def product_list(request):
 
     if category != 'all':
         products = products.filter(category__name=category)
-    
-    # Filter out products with no stock for any size
-    products = products.exclude(Q(size_quantity__exact={}) | Q(size_quantity__exact={'0'}))
 
     products = products.order_by(sortkey)
     current_sorting = f'{sort}_{direction}'
@@ -84,18 +81,10 @@ def product_detail(request, product_id):
     # Retrieve the product with the specified ID or return a 404 error if not found
     product = get_object_or_404(Product, pk=product_id)
 
-    # Check if any size has available stock
-    has_available_stock = any(stock > 0 for stock in product.size_quantity.values())
+    # Check if the product has available sizes
+    has_available_sizes = product.has_available_sizes()
 
-    # Filter sizes with zero stock
-    available_sizes = {size: stock for size, stock in product.size_quantity.items() if stock > 0}
-
-    # If no sizes have available stock, redirect or handle accordingly
-    if not has_available_stock:
-        messages.warning(request, "This product is currently out of stock.")
-        return redirect(reverse('nothing_found'))
-
-    context = {'product': product, 'title': 'Product Detail', 'available_sizes': available_sizes}
+    context = {'product': product, 'has_available_sizes': has_available_sizes, 'title': 'Product Detail'}
     return render(request, 'products/product_detail.html', context)
 
 def nothing_found(request):

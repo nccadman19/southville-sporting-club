@@ -1166,66 +1166,33 @@ HTML5, CSS3, Python, and JavaScript were used to create this website.
 
 Thanks are given for the following posts and tutorials:
 
-* [Infinite Scrolling Banner Tutorial](https://www.cssscript.com/responsive-text-scrolling-marquee/) was used for to setup the top scrolling button.
-* [Positioning Elements](https://codeburst.io/how-to-position-html-elements-side-by-side-with-css-e1fae72ddcc) was used to order footer col/row wise.
-* [Navbar Menu Query in Stack Overflow](https://stackoverflow.com/questions/51563809/materialize-css-navbar-menu-dropdown-wont-go-below-origin) was used to fix items that was sitting below the header inside of inside it.
-
-
-
-Moving navbar dropdown items under the menu
-
-Collapisble error on mobile 
-https://stackoverflow.com/questions/53973266/materializecss-collapsibles-not-working-properly
-Schema
-https://dbdiagram.io/d
-Products, Categories, Showing products on website
-https://www.youtube.com/watch?v=obZMr9URmVI&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=2
-Zoom on hover
-https://www.w3schools.com/howto/howto_css_zoom_hover.asp
-Collapsible product details page
-https://materializecss.com/collapsible.html
-center col in materialize 
-https://stackoverflow.com/questions/38492194/centering-a-col-card-panel-in-materialize
-cards on t&cs
-https://stackoverflow.com/questions/41040506/materialize-scroll-tbody
-adding multiple categories
-https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django
-search function synonyms 
-https://www.holisticseo.digital/python-seo/nltk/wordnet
-button styling
-https://stackoverflow.com/questions/59607164/adjust-width-of-multiple-buttons-to-follow-the-button-with-the-largest-wrap-cont
-cart error help
-https://stackoverflow.com/questions/63675859/attribute-error-int-object-has-no-attribute-get
-remove button
-https://stackoverflow.com/questions/72875203/remove-item-from-cart-and-manage-quantity-buttons-not-working-when-i-add-mor
-address api
-https://pypi.org/project/geopy/
-dialogs
-https://www.tutorialspoint.com/materialize/materialize_dialogs.html
-country selector
-https://stackoverflow.com/questions/2963930/django-country-drop-down-list
-stripe
-https://www.youtube.com/watch?v=722A27IoQnk&t=776s
-stripe2
-https://dev.to/documatic/integrate-stripe-payments-with-django-by-building-a-digital-products-selling-app-le5
-stripe3
-https://stripe.com/docs/checkout/quickstart
-buttons
-https://stackoverflow.com/questions/64232515/css-on-clickable-element-onclickhover
-modal for delete buttons
-https://materializecss.com/modals.html#!
-detecting ctrl click
-https://stackoverflow.com/questions/16190455/how-to-detect-controlclick-in-javascript-from-an-onclick-div-attribute
-checkboxes
-https://materializecss.com/checkboxes.html
-fixing selected options
-https://stackoverflow.com/questions/46415457/jquery-onclick-change-option-selected-attribute
-slack thread 
-- fixed the issue i was having with the webhook!!!!
-getting quantity to show correctly 
-https://www.quora.com/How-do-I-fix-AttributeError-int-object-has-no-attribute-get-in-Python
-timezone help
-https://stackoverflow.com/questions/18622007/runtimewarning-datetimefield-received-a-naive-datetime
-favicon error
-https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests
+* [Infinite Scrolling Banner Tutorial](https://www.cssscript.com/responsive-text-scrolling-marquee/) - Setting up the top scrolling button
+* [Positioning Elements](https://codeburst.io/how-to-position-html-elements-side-by-side-with-css-e1fae72ddcc) - Ordering footer columns/rows
+* [Navbar Menu Query in Stack Overflow](https://stackoverflow.com/questions/51563809/materialize-css-navbar-menu-dropdown-wont-go-below-origin) - Fixing items below the header in the navbar
+* [Collapsible Query in Stack Overflow](https://stackoverflow.com/questions/53973266/materializecss-collapsibles-not-working-properly) - Fixing collapsible error on mobile
+* [Data Structure Youtbe Video](https://www.youtube.com/watch?v=obZMr9URmVI&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng&index=2) - Organizing products, categories, and showing products on the website
+* [How to Zoom](https://www.w3schools.com/howto/howto_css_zoom_hover.asp) - Zoom images on hover
+* [Collapsible product details page](https://materializecss.com/collapsible.html) - Materialize CSS documentation for collapsible product details page
+* [Center col in Materialize](https://stackoverflow.com/questions/38492194/centering-a-col-card-panel-in-materialize) - Stack Overflow thread on centering columns in Materialize
+* [Cards on T&Cs](https://stackoverflow.com/questions/41040506/materialize-scroll-tbody) - Stack Overflow thread on scrolling tbody in Materialize
+* [Adding multiple categories](https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django) - Adding multiple categories in Django
+* [Search function synonyms](https://www.holisticseo.digital/python-seo/nltk/wordnet) - Using NLTK WordNet for synonyms in the search function
+* [Button styling](https://stackoverflow.com/questions/59607164/adjust-width-of-multiple-buttons-to-follow-the-button-with-the-largest-wrap-cont) - Adjusting the width of multiple buttons
+* [Cart error help](https://stackoverflow.com/questions/63675859/attribute-error-int-object-has-no-attribute-get) - Fixing attribute error in the cart
+* [Remove button](https://stackoverflow.com/questions/72875203/remove-item-from-cart-and-manage-quantity-buttons-not-working-when-i-add-mor) - Fixing remove item and quantity buttons in the cart
+* [Address API](https://pypi.org/project/geopy/) - Using the Geopy library for the address API
+* [Dialogs](https://www.tutorialspoint.com/materialize/materialize_dialogs.html) - Materialize CSS documentation on dialogs
+* [Country selector](https://stackoverflow.com/questions/2963930/django-country-drop-down-list) - Stack Overflow thread on creating a country drop-down list in Django
+* [Stripe](https://www.youtube.com/watch?v=722A27IoQnk&t=776s) - YouTube tutorial on integrating Stripe with Django
+* [Stripe2](https://dev.to/documatic/integrate-stripe-payments-with-django-by-building-a-digital-products-selling-app-le5) - Integrating Stripe payments with Django
+* [Stripe3](https://stripe.com/docs/checkout/quickstart) - Stripe documentation for quickstart with checkout
+* [Buttons](https://stackoverflow.com/questions/64232515/css-on-clickable-element-onclickhover) - Stack Overflow thread on CSS for clickable elements
+* [Modal for delete buttons](https://materializecss.com/modals.html#!) - Materialize CSS documentation for modals
+* [Detecting Ctrl click](https://stackoverflow.com/questions/16190455/how-to-detect-controlclick-in-javascript-from-an-onclick-div-attribute) - Detecting Ctrl click in JavaScript
+* [Checkboxes](https://materializecss.com/checkboxes.html) - Materialize CSS documentation for checkboxes
+* [Fixing selected options](https://stackoverflow.com/questions/46415457/jquery-onclick-change-option-selected-attribute) - Fixing selected options in jQuery
+* Slack thread Project 4 Boutique Ado - Fixed the issue with the webhook!
+* [Getting quantity to show correctly](https://www.quora.com/How-do-I-fix-AttributeError-int-object-has-no-attribute-get-in-Python) - Fixing AttributeError in Python
+* [Timezone help](https://stackoverflow.com/questions/18622007/runtimewarning-datetimefield-received-a-naive-datetime) - Stack Overflow thread on fixing RuntimeWarning in Django
+* [Favicon error](https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests) - Stack Overflow thread on preventing favicon.ico requests
 
