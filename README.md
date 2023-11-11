@@ -956,6 +956,12 @@ The pep8 validator was installed onto gitpod to ensure correct styling throughto
 
 #### Lighthouse
 
+The original results were improved by adding a meta tag with name and description to the base.html.
+
+| Page | Viewing On | Performance | Accessibility | Best Practices | SEO |
+| --------------- | --------------- | --------------- | --------------- | --------------- | --------------- |
+| Home | Desktop | XX | XX | XX | XX |
+
 
 ## Accessibility
 
