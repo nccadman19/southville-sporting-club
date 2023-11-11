@@ -42,8 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var saveInfoCheckbox = document.getElementById('id-save-info');
 
     saveInfoCheckbox.addEventListener('change', function () {
-        if (!saveInfoCheckbox.checked) {
+        if (saveInfoCheckbox.hasAttribute('checked')) {
             saveInfoCheckbox.removeAttribute('checked');
+        } else {
+            saveInfoCheckbox.setAttribute('checked', 'checked');
         }
     });
 

@@ -746,6 +746,29 @@ HTML5, CSS3, Python, and JavaScript were used to create this website.
 
 <br/>
 
+### **Frameworks, Libraries & Programs Used**
+
+* [Google Fonts](https://fonts.google.com/) was used to import Big Shoulders Text.
+* [Git](https://git-scm.com/) was used for version control by using the Gitpod terminal to commit to Git and Push to GitHub.
+* [GitHub](https://github.com/) was used to store the projects' code, and to handle version control.
+* [Photoshop](https://www.adobe.com/uk/products/photoshop.html/) was used to edit and crop images.
+* [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) was used to troubleshoot and test features and solve issues with responsiveness and styling.
+* [Am I Responsive?](https://ui.dev/amiresponsive) was used to show the website on a range of devices.
+* [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) was used for debugging.
+* [SQLAlchemy](https://www.sqlalchemy.org/) was used to connect Python code with the database.
+* [Psycopg2](https://www.psycopg.org/docs/) was used to connect Python code with the database. 
+* [Django](https://www.djangoproject.com/) is a high-level Python web framework.
+* [Materialize](https://materializecss.com//) was used for responsive and pre-designed CSS.
+* [PostgreSQL](https://www.postgresql.org/) was the object-relational database system used.
+* [ElephantSQL](https://www.elephantsql.com/) was used to host the database.
+* [Heroku](https://www.heroku.com/) was used to deploy the website.
+* [Pexels](https://www.pexels.com/) was used for some royalty free images. 
+* [Excel](https://www.microsoft.com/en-gb/microsoft-365/excel) was used to create CSV files.
+* [Convert CSV](https://www.convertcsv.com/csv-to-json.htm) was used to convert CSV files to JSON files.
+* [Font Awesome](https://fontawesome.com/) was used for the icons.
+* [DBDiagram](https://dbdiagram.io/) was used to map the models.
+* [Amazon Web Services](https://aws.amazon.com/) was used to host the images for the Heroku-hosted site.
+
 ### User Stories 
 
 | AS A/AN | I WANT TO BE ABLE TO… | SO I CAN… |
