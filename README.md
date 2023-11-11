@@ -303,12 +303,21 @@ Buttons links to the Terms & Conditions, Shipping & Returns and Contact pages.
 Icons for payment types accepted and other standard company information. 
 
 <details>
-<summary>NavBar</summary>
+<summary>NavBar Desktop</summary>
 
-![NavBar](/media/readme/features/navbar.png)
+![NavBar Desktop](/media/readme/features/navbar.png)
 
 </details>
 <br>
+
+<details>
+<summary>NavBar Mobile</summary>
+
+![NavBar Mobile](/media/readme/features/mobile-nav.png)
+
+</details>
+<br>
+
 
 <details>
 <summary>Footer</summary>
