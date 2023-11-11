@@ -845,9 +845,16 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 </details>
 <br>
 
+<details>
+<summary>Checkout Success</summary>
+
+![Checkout Success](/media/readme/validator/w3/checkout-success-w3.png)
+
+</details>
+<br>
 
 
-- [Checkout Success](#checkout-success)
+
 
 - [Admin Dashboard](#admin-dashboard)
 - [Stock List](#stock-list)

@@ -41,14 +41,12 @@
                     {{ order.country }}
                 </td>
                 <td>
-                    <ul>
-                        {% for line_item in order.lineitems.all %}
-                        {{ line_item.product.name }}<br>
-                        Color: {{ line_item.product.color }}<br>
-                        Size: {{ line_item.product_size }}<br>
-                        Quantity: {{ line_item.quantity }}<br><br>
-                        {% endfor %}
-                    </ul>
+                    {% for line_item in order.lineitems.all %}
+                    {{ line_item.product.name }}<br>
+                    Color: {{ line_item.product.color }}<br>
+                    Size: {{ line_item.product_size }}<br>
+                    Quantity: {{ line_item.quantity }}<br><br>
+                    {% endfor %}
                 </td>
                 <td>£{{ order.grand_total }}</td>
                 <td class="checkbox-order-list">
