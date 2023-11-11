@@ -723,11 +723,28 @@ A forgot password button for the user to reset their password via their email if
 
 [Back to top](#table-of-contents)
 
-### **Toasts & Messages**
+### Toasts & Messages
 
 Many messages are included to alert the user that they have accomplished an action. 
 
+## Accessibility
 
+I have been mindful during coding to ensure that the website is as accessible as possible. I have achieved this by:
+
+* Using semantic HTML.
+* Using descriptive alt attributes on images on the site.
+* Supplying information for screen readers where there are icons used and no text, such as footer icons.
+* Guaranteeing adequate colour contrast throughout the site.
+
+## Technologies Used
+
+<br/>
+
+### Languages Used
+
+HTML5, CSS3, Python, and JavaScript were used to create this website.
+
+<br/>
 
 ### User Stories 
 
