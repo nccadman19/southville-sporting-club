@@ -304,7 +304,7 @@ div.col.s12.m6.toast {
   color: white;
 }
 
-.error-list {
+.error-list.nonfield {
   list-style-type: none;
   padding: 10px;
   margin: 0;
@@ -312,6 +312,20 @@ div.col.s12.m6.toast {
   color: white;
   border-radius: 5px;
 }
+
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ff0000;
+  /* Red border */
+  border-radius: 5px;
+}
+
+.alert strong {
+  color: #ff0000;
+  /* Red text color */
+}
+
 
 /* Profiles Icon */
 
