@@ -935,7 +935,7 @@ The [JSHint Validator](https://jshint.com/) was used to validate the JavaScript 
 
 I also needed to add the following code so that the use of jquery did not show $ as an undefined variable:
 
- `/*globals $:false */`
+`/*globals $:false */`
 
 | JS Page | Warning | Reasoning |
 | --------------- | --------------- | --------------- |
@@ -943,7 +943,9 @@ I also needed to add the following code so that the use of jquery did not show $
 | Bag | None | N/A |
 | Checkout | None | N/A |
 | Stripe | 1 undefined variable ‘Stripe’  | Relates to the payment system I am using for this project |
-| Product Detail | None | N/A |
+| Product Detail | 1 undefined variable ‘M’ | Relates to the Materialize framework I am using for this project |
+| Product Detail | 1 unused variable ‘instances’ | Relates to the Materialize framework I am using for this project |
+| Product Owner | None | N/A |
 
 
 
