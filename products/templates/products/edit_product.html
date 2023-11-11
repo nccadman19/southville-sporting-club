@@ -112,12 +112,13 @@
                     </div>
                     <div>
                         <label for="id_image" class="active">Image:</label><br>
-                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.png{% endif %}"
-                            alt="{{ product.name }}" class="edit-image">
-                        <br>
-                        <p>Image URL:
-                            <a href="{% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.png{% endif %}no-image.png{% endif %}"
-                                target="_blank">no-image.png</a>
+                        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
+                             alt="{{ product.name }}" class="edit-image">
+                         <br>
+                         <p>Image URL:
+                             <a href="{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix %}no-image.png{% endif %}"
+                                target="_blank">{% if product.image %}{{ product.image.url }}{% else %}{% get_media_prefix%}
+                                no-image.png{% endif %}</a>
                         </p>
                         <input type="file" name="image" value="{{ products.image }}" accept="image/*" id="id_image">
                     </div>
