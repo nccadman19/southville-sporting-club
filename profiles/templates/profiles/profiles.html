@@ -17,7 +17,7 @@
         <div class="col l6 s12">
             <p class="">Default Delivery Information</p>
             <button id="edit-button" class="waves-effect waves-light grey darken-3 btn profile">Edit</button>
-            <form class="editable-fields" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+            <form id="editable-fields" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form }}
                 <button class="waves-effect waves-light grey darken-3 btn profile">Update Information</button>
