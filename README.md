@@ -797,16 +797,56 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 </details>
 <br>
 
+<details>
+<summary>Products</summary>
+
+![Products](/media/readme/validator/w3/products-w3.png)
+
+</details>
+<br>
+
+<details>
+<summary>Product Detail</summary>
+
+![Product Detail](/media/readme/validator/w3/product-detail-w3.png)
+
+</details>
+<br>
+
+<details>
+<summary>Nothing Found</summary>
+
+![Nothing Found](/media/readme/validator/w3/nothing-found-w3.png)
+
+</details>
+<br>
+
+<details>
+<summary>Search</summary>
+
+![Search](/media/readme/validator/w3/search-w3.png)
+
+</details>
+<br>
+
+<details>
+<summary>Shopping Bag Overlay</summary>
+
+![Shopping Bag Overlay](/media/readme/validator/w3/bag-overlay-w3.png)
+
+</details>
+<br>
+
+<details>
+<summary>Checkout</summary>
+
+![Checkout](/media/readme/validator/w3/checkout-w3.png)
+
+</details>
+<br>
 
 
 
-
-- [Products](#products)
-- [Product Detail](#product-detail)
-- [Search & Nothing Found](#search-and-nothing-found)
-
-- [Shopping Bag Overlay](#bag-overlay)
-- [Checkout](#checkout)
 - [Checkout Success](#checkout-success)
 
 - [Admin Dashboard](#admin-dashboard)
