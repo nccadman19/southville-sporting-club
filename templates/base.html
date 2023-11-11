@@ -132,18 +132,16 @@
     {% endif %}
 
     {% if form.errors %}
-    {% for field in form %}
-    {% for error in field.errors %}
-    <div class="alert alert-error">
-        <strong>{{ error|escape }}</strong>
+    <div class="message-container toast" id="toast-container">
+        {% for field in form %}
+        {% for error in field.errors %}
+        {% include 'includes/toasts/toast_error.html' with message=error %}
+        {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+        {% include 'includes/toasts/toast_error.html' with message=error %}
+        {% endfor %}
     </div>
-    {% endfor %}
-    {% endfor %}
-    {% for error in form.non_field_errors %}
-    <div class="alert alert-error">
-        <strong>{{ error|escape }}</strong>
-    </div>
-    {% endfor %}
     {% endif %}
 
     <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
