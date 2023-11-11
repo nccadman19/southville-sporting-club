@@ -739,18 +739,49 @@ I tested the page and had 3 people also manually test it on their own devices. F
 
 #### W3C Validator
 
-The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTML on all pages of the website. 
+The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTML on all pages of the website.
 
 <details>
 <summary>Home Page</summary>
 
-![Home Page](/media/readme/features/.png)
+![Home Page](/media/readme/validator/w3/index-w3.png)
+
+</details>
+<br>
+
+<details>
+<summary>About Us</summary>
+
+![About Us](/media/readme/validator/w3/about-us-w3.png)
 
 </details>
 <br>
 
 
 
+- [Contact Us](#contact-us)
+- [Error](#error)
+- [Shipping & Returns](#shipping-and-returns)
+- [Sustainability](#sustainability)
+- [Terms & Conditions](#terms-and-conditions)
+
+- [Products](#products)
+- [Product Detail](#product-detail)
+- [Search & Nothing Found](#search-and-nothing-found)
+
+- [Shopping Bag Overlay](#bag-overlay)
+- [Checkout](#checkout)
+- [Checkout Success](#checkout-success)
+
+- [Admin Dashboard](#admin-dashboard)
+- [Stock List](#stock-list)
+- [Order List](#order-list)
+- [Add Product](#add-product)
+- [Edit Product](#edit-product)
+
+- [Profile](#profile)
+- [Register](#register)
+- [Login](#login)
 
 
 ## Accessibility
