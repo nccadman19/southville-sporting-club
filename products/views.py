@@ -60,7 +60,7 @@ def product_list(request):
         products = products.filter(category__name=category)
     
     # Filter out products with no stock for any size
-    products = products.exclude(size_quantity__exact={}).exclude(size_quantity__exact={0})
+    products = products.exclude(Q(size_quantity__exact={}) | Q(size_quantity__exact={'0'}))
 
     products = products.order_by(sortkey)
     current_sorting = f'{sort}_{direction}'
