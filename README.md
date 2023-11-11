@@ -6,6 +6,8 @@
 
 This website has been created to sell UK created athletic wear, it is based on a small UK concept business. 
 
+![Concept Image](/media/readme/initial-mockup.webp)
+
 [![VisitWebsite][website-shield]][website-url]&nbsp;&nbsp;
 [![Issues][issues-shield]][issues-url]&nbsp;&nbsp;
 [![ClosedIssues][closed-shield]][closed-url]&nbsp;&nbsp;
@@ -1143,6 +1145,7 @@ To fully test the website, I used Google Chrome Developer Tools. I ensured that 
 | Number  | Expected behaviour | Actual behaviour |
 | ---:        |    :----:          |        :----:    |
 | 1       |  Remember me checkbox is clickable | The remember me checkbox in allauth isn't loading using materialize |
+| 2       |  Out of stock items are hidden | Unfortunately ran out of time to fix this bug |
 
 ## Accessibility
 
@@ -1251,25 +1254,9 @@ To clone the Eponymous Bosch repository:
 5) Click "Choose..." and, using Windows Explorer, navigate to a local path where you want to clone the repository.
 6) Click "Clone".
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- [issues-shield]:  -->
-[issues-shield]: https://img.shields.io/badge/ISSUES-2%20OPEN-yellow?style=for-the-badge&logo=closed
-<!--- [issues-url] -->
-[issues-url]:https://github.com/nccadman19/southville-sporting-club/issues
-<!-- [closed-shield]:  -->
-[closed-shield]: https://img.shields.io/badge/CLOSED%20ISSUES-11%20CLOSED-blue?style=for-the-badge&logo=closed
-<!-- [closed-url]:  -->
-[closed-url]: https://github.com/nccadman19/southville-sporting-club/issues?q=is%3Aissue+is%3Aclosed
-<!-- [linkedin-shield]:  -->
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-<!-- [linkedin-url]:  -->
-[linkedin-url]: https://www.linkedin.com/in/nicoleccadman/
-<!-- [website-shield]:  -->
-[website-shield]: https://img.shields.io/badge/VISIT%20WEBSITE-HERE-green?style=for-the-badge&logo=closed
-<!-- [website-url]:  -->
-[website-url]: https://southville-sporting-club-ed7d11c9dd6e.herokuapp.com/
+## Credits
 
-## Credit
+### Tutorials & Code Used 
 
 Thanks are given for the following posts and tutorials:
 
@@ -1303,3 +1290,24 @@ Thanks are given for the following posts and tutorials:
 * [Timezone help](https://stackoverflow.com/questions/18622007/runtimewarning-datetimefield-received-a-naive-datetime) - Stack Overflow thread on fixing RuntimeWarning in Django
 * [Favicon error](https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests) - Stack Overflow thread on preventing favicon.ico requests
 
+### Content
+
+Content was made by [Nathan Brain](https://www.linkedin.com/in/nathan-brain-3434a0163/?originalSubdomain=uk)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- [issues-shield]:  -->
+[issues-shield]: https://img.shields.io/badge/ISSUES-1%20OPEN-yellow?style=for-the-badge&logo=closed
+<!--- [issues-url] -->
+[issues-url]:https://github.com/nccadman19/southville-sporting-club/issues
+<!-- [closed-shield]:  -->
+[closed-shield]: https://img.shields.io/badge/CLOSED%20ISSUES-7%20CLOSED-blue?style=for-the-badge&logo=closed
+<!-- [closed-url]:  -->
+[closed-url]: https://github.com/nccadman19/southville-sporting-club/issues?q=is%3Aissue+is%3Aclosed
+<!-- [linkedin-shield]:  -->
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+<!-- [linkedin-url]:  -->
+[linkedin-url]: https://www.linkedin.com/in/nicoleccadman/
+<!-- [website-shield]:  -->
+[website-shield]: https://img.shields.io/badge/VISIT%20WEBSITE-HERE-green?style=for-the-badge&logo=closed
+<!-- [website-url]:  -->
+[website-url]: https://southville-sporting-club-ed7d11c9dd6e.herokuapp.com/

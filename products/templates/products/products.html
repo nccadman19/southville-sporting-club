@@ -78,7 +78,6 @@
         <h2 class="visually-hidden">Products</h2>
         <div class="row">
             {% for product in products %}
-            {% if product.has_available_sizes %}
             <div class="col s6 m6 l4 card no-shadow">
                 <div class="card-image products">
                     <a href="{% url 'product_detail' product.id %}">
@@ -117,7 +116,6 @@
                     </div>
                 </div>
             </div>
-            {% endif %}
             {% endfor %}
         </div>
     </section>

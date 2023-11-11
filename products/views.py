@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.db.models import Count
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
@@ -27,8 +26,7 @@ def preprocess_query(query):
 
 def product_list(request):
     # Retrieve all products from the database
-    products = Product.objects.annotate(available_sizes_count=Count('size_quantity', filter=~Q(size_quantity__exact={})))\
-                               .filter(available_sizes_count__gt=0)
+    products = Product.objects.all()
     query = request.GET.get('q')
     sort = request.GET.get('sort', 'name') 
     category = request.GET.get('category', 'all')
@@ -82,11 +80,8 @@ def product_list(request):
 def product_detail(request, product_id):
     # Retrieve the product with the specified ID or return a 404 error if not found
     product = get_object_or_404(Product, pk=product_id)
-
-    # Check if the product has available sizes
-    has_available_sizes = product.has_available_sizes()
-
-    context = {'product': product, 'has_available_sizes': has_available_sizes, 'title': 'Product Detail'}
+    
+    context = {'product': product, 'title': 'Product Detail'}
     return render(request, 'products/product_detail.html', context)
 
 def nothing_found(request):
