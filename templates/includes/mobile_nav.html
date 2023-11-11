@@ -2,34 +2,38 @@
         id="home-logo"></a>
 <ul id="slide-out" class="sidenav">
     <li><a class="sidenav-close" href="#!"><i class="material-icons close-btn">close</i></a></li>
-    <ul class="collapsible collapsible-accordion">
-        <li>
-            <a class="collapsible-header">INFO<i class="material-icons info">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-                <ul>
-                    <li><a href="{% url 'about' %}">ABOUT US</a></li>
-                    <li><a href="{% url 'contact' %}">CONTACT</a></li>
-                    <li><a href="{% url 'shipping' %}">SHIPPING & RETURNS</a></li>
-                </ul>
-            </div>
-        </li>
-    </ul>
+    <li>
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header">INFO<i class="material-icons info">arrow_drop_down</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="{% url 'about' %}">ABOUT US</a></li>
+                        <li><a href="{% url 'contact' %}">CONTACT</a></li>
+                        <li><a href="{% url 'shipping' %}">SHIPPING & RETURNS</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
     <li><a href="{% url 'sustainability' %}" class="black-text sidenav-running">OUR MISSION</a></li>
-    <ul class="collapsible collapsible-accordion">
-        <li>
-            <a class="collapsible-header">SHOP<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-                <ul>
-                    <li><a href="{% url 'products' %}?category=new">NEW</a></li>
-                    <li><a href="{% url 'products' %}?category=t_shirts">T-SHIRTS</a></li>
-                    <li><a href="{% url 'products' %}?category=hoodies">HOODIES</a></li>
-                    <li><a href="{% url 'products' %}?category=sweatpants">SWEATPANTS</a></li>
-                    <li><a href="{% url 'products' %}?category=tracksuits">TRACKSUITS</a></li>
-                    <li><a href="{% url 'products' %}">ALL PRODUCTS</a></li>
-                </ul>
-            </div>
-        </li>
-    </ul>
+    <li>
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header">SHOP<i class="material-icons">arrow_drop_down</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="{% url 'products' %}?category=new">NEW</a></li>
+                        <li><a href="{% url 'products' %}?category=t_shirts">T-SHIRTS</a></li>
+                        <li><a href="{% url 'products' %}?category=hoodies">HOODIES</a></li>
+                        <li><a href="{% url 'products' %}?category=sweatpants">SWEATPANTS</a></li>
+                        <li><a href="{% url 'products' %}?category=tracksuits">TRACKSUITS</a></li>
+                        <li><a href="{% url 'products' %}">ALL PRODUCTS</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
     <div class="text-right">
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}

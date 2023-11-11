@@ -8,7 +8,7 @@
     {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token }}">
     {% endblock %}
 
@@ -48,24 +48,23 @@
                     2023&nbsp;&nbsp;&nbsp;SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING
                     SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING SUMMER
                     2023&nbsp;&nbsp;&nbsp;SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING SUMMER 2023&nbsp;&nbsp;&nbsp;SPRING
-                    SUMMER 2023&nbsp;&nbsp;&nbsp;<span>
+                    SUMMER 2023&nbsp;&nbsp;&nbsp;
+                </span>
             </div>
         </a>
-        <nav class="white" role="navigation">
+        <nav class="white">
             <div class="nav-wrapper">
-                <ul class="left search">
-                    <form method="GET" action="{% url 'products' %}">
-                        <div class="input-field">
-                            <input id="search" type="search" name="q" required>
-                            <label class="label-icon" for="search">
-                                <a href="#" id="search-icon">
-                                    <i class="material-icons black-text">search</i>
-                                </a>
-                            </label>
-                            <i class="material-icons black-text close-icon">close</i>
-                        </div>
-                    </form>
-                </ul>
+                <form method="GET" action="{% url 'products' %}">
+                    <div class="input-field">
+                        <input id="search" type="search" name="q" required>
+                        <label class="label-icon" for="search">
+                            <a href="#" id="search-icon">
+                                <i class="material-icons black-text">search</i>
+                            </a>
+                        </label>
+                        <i class="material-icons black-text close-icon">close</i>
+                    </div>
+                </form>
                 <ul class="right">
                     <li><a href="#" class="black-text icons" id="bag-icon"><i class="material-icons"
                                 style="color: #000000;">shopping_bag</i></a></li>
