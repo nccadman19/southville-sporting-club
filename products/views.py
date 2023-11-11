@@ -58,6 +58,9 @@ def product_list(request):
 
     if category != 'all':
         products = products.filter(category__name=category)
+    
+    # Filter out products with no stock for any size
+    products = products.exclude(size_quantity__exact={}).exclude(size_quantity__exact={0})
 
     products = products.order_by(sortkey)
     current_sorting = f'{sort}_{direction}'
@@ -76,11 +79,6 @@ def product_list(request):
     else:
         # Redirect to the "nothing found" view when no results are found
         return redirect('nothing_found')
-
-from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from django.contrib import messages
-from .models import Product
 
 def product_detail(request, product_id):
     # Retrieve the product with the specified ID or return a 404 error if not found

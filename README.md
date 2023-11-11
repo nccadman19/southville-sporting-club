@@ -963,47 +963,147 @@ The original results were improved by adding a meta tag with name and descriptio
 | Home | Desktop | 91 | 93 | 100 | 90 |
 | Home | Mobile | 66 | 96 | 100 | 88 |
 | About Us | Desktop | 92 | 90 | 100 | 90 |
-| About Us | Mobile | XX | XX | XX | XX |
+| About Us | Mobile | 62 | 96 | 100 | 88 |
 | Contact Us | Desktop | 95 | 91 | 100 | 90 |
 | Contact Us | Mobile | 70 | 95 | 100 | 88 |
-| Error | Desktop | XX | XX | XX | XX |
+| Error | Desktop | 93 | 93 | 100 | 90 |
 | Error | Mobile | 70 | 95 | 100 | 88 |
 | Shipping & Returns | Desktop | 92 | 93 | 100 | 90 |
 | Shipping & Returns | Mobile | 70 | 96 | 100 | 88 |
-| Sustainability | Desktop | XX | XX | XX | XX |
-| Sustainability | Mobile | XX | XX | XX | XX |
-| Terms & Conditions | Desktop | XX | XX | XX | XX |
-| Terms & Conditions | Mobile | XX | XX | XX | XX |
-| Products | Desktop | XX | XX | XX | XX |
-| Products | Mobile | XX | XX | XX | XX |
-| Product Detail | Desktop | XX | XX | XX | XX |
-| Product Detail | Mobile | XX | XX | XX | XX |
-| Search & Nothing Found | Desktop | XX | XX | XX | XX |
-| Search & Nothing Found | Mobile | XX | XX | XX | XX |
-| Bag Overlay | Desktop | XX | XX | XX | XX |
-| Bag Overlay | Mobile | XX | XX | XX | XX |
-| Checkout | Desktop | XX | XX | XX | XX |
-| Checkout | Mobile | XX | XX | XX | XX |
-| Checkout Success | Desktop | XX | XX | XX | XX |
-| Checkout Success | Mobile | XX | XX | XX | XX |
-| Admin Dashboard | Desktop | XX | XX | XX | XX |
-| Admin Dashboard | Mobile | XX | XX | XX | XX |
-| Stock List | Desktop | XX | XX | XX | XX |
-| Stock List | Mobile | XX | XX | XX | XX |
-| Order List | Desktop | XX | XX | XX | XX |
-| Order List | Mobile | XX | XX | XX | XX |
-| Add Product | Desktop | XX | XX | XX | XX |
-| Add Product | Mobile | XX | XX | XX | XX |
-| Edit Product | Desktop | XX | XX | XX | XX |
-| Edit Product | Mobile | XX | XX | XX | XX |
-| Profile | Desktop | XX | XX | XX | XX |
-| Profile | Mobile | XX | XX | XX | XX |
-| Register | Desktop | XX | XX | XX | XX |
-| Register | Mobile | XX | XX | XX | XX |
-| Login | Desktop | XX | XX | XX | XX |
-| Login | Mobile | XX | XX | XX | XX |
+| Sustainability | Desktop | 88 | 93 | 100 | 90 |
+| Sustainability | Mobile | 61 | 96 | 100 | 88 |
+| Terms & Conditions | Desktop | 92 | 93 | 100 | 90 |
+| Terms & Conditions | Mobile | 70 | 96 | 100 | 88 |
+| Products | Desktop | 88 | 93 | 100 | 90 |
+| Products | Mobile | 61 | 96 | 100 | 90 |
+| Product Detail | Desktop | 88 | 93 | 100 | 90 |
+| Product Detail | Mobile | 61 | 96 | 100 | 90 |
+| Search & Nothing Found | Desktop | 95 | 93 | 100 | 90 |
+| Search & Nothing Found | Mobile | 63 | 96 | 100 | 88 |
+| Checkout | Desktop | 91 | 92 | 100 | 90 |
+| Checkout | Mobile | 63 | 96 | 100 | 88 |
+| Checkout Success | Desktop | 91 | 92 | 100 | 90 |
+| Checkout Success | Mobile | 63 | 96 | 100 | 88 |
+| Admin Dashboard | Desktop | 95 | 90 | 100 | 90 |
+| Admin Dashboard | Mobile | 65 | 94 | 100 | 89 |
+| Stock List | Desktop | 93 | 93 | 100 | 90 |
+| Stock List | Mobile | 59 | 96 | 100 | 88 |
+| Order List | Desktop | 93 | 93 | 100 | 90 |
+| Order List | Mobile | 59 | 96 | 100 | 88 |
+| Add Product | Desktop | 94 | 91 | 100 | 90 |
+| Add Product | Mobile | 67 | 95 | 100 | 89 |
+| Edit Product | Desktop | 94 | 91 | 100 | 90 |
+| Edit Product | Mobile | 67 | 95 | 100 | 89 |
+| Profile | Desktop | 94 | 94 | 100 | 90 |
+| Profile | Mobile | 59 | 97 | 100 | 90 |
 
+### Manual Testing
 
+To fully test the website, I used Google Chrome Developer Tools. I ensured that the pages were responsive enough on all available screen sizes.  Testing was performed on a variety of browsers (Chrome, Microsoft Edge, and Firefox) and devices (iPhone 14, iPhone SE, Android one+ 9 mobile, Fair Phone).
+
+#### Links
+
+| Expected | Test Performed | Result |
+| :---:    |    :----:      | :---:  |
+| That the user will be taken to the right page when clicking on links | Clicked on every link to make sure that it took the user to the right page | Passed |
+
+#### Buttons
+
+| Expected | Test Performed | Result |
+| :---:    |    :----:      | :---:  |
+| That each button will do what the user expects it to | Clicked on every button to make sure that it worked as expected | Passed |
+
+#### Forms
+
+| Expected | Test Performed | Result |
+| :---:    |    :----:      | :---:  |
+| The form will not submit when required fields are left blank | Checked every form to see if it would be submitted if any of the required fields were left blank | Passed |
+| The user sees a success message when having successfully submitted a form | Successfully submitted all forms to check if they all had success messages | Passed |
+| The form will not submit when input types and lengths/amounts are not appropriate | Tested every form field that takes a specific input type to see if it would submit with an undesired input type | Passed |
+
+#### Authentication
+
+| Expected | Test Performed | Result |
+| :---:    |    :----:      | :---:  |
+| Non-logged-in users cannot see or access the parts of the site that are off-limits to them, and vice versa. | I logged in and out and, on both occasions, I checked to see what options were available to the user | Passed |
+| Users cannot view confidential information about other users, such as user account details. |    I logged in as different users with different details, to check if either user could see the details of the other | Passed |
+
+#### Database
+
+| Expected | Test Performed | Result |
+| :---:    |    :----:      | :---:  |
+| User data is added and persists over time, including order history and personal data. | Added multiple users with different data and checked that throughout logging in and out, and over the course of weeks, the data remained the same | Passed |
+| User is linked to their order history | I made multiple user accounts with different data, and all users can see their own data | Passed |
+| User data can be edited and deleted from the database. | I tested that when deleting a user and then reestablishing them, none of their previous data is visible in their account. I also edited data such as user delivery details, and deleted orders | Passed |
+| Calculations in the models to automatically assign variables to work as expected. | All calculations the model made were independently verified by manipulating the data and checking the results. This focused mostly on sales | Passed |
+
+#### Checkout
+
+| Expected | Test Performed | Result |
+| :---:    |    :----:      | :---:  |
+| Adding, editing, and removing products from the bag work as expected.  | I added, edited and removed products from the bag | Passed |
+| Users’ correct details auto-fill in the checkout form. | Checked that the same details from the user’s profile are the ones that are auto filling the checkout form. I also checked that editing these details will change those on the form. | Passed |
+| Stripe payment goes through without any problems. | I made several orders, which all went through fine. I then checked the Stripe dashboard to make sure it was going through on that side too | Passed |
+| The webhook works so that if the user were to lose connection or close their browser before the transaction completes, the order still goes through, and they are automatically emailed. | I submitted the checkout form but closed the tab before it finished loading. The user still got charged, sent an automatic email, and the order was logged on the system and in their order history | Passed |
+
+#### Products
+
+| Expected | Test Performed | Result |
+| :---:    |    :----:      | :---:  |
+| The sorting and filtering functions work appropriately. | I clicked on each sort and filter function and check to see if they displayed the right products and, in the order, expected | Passed |
+| Products can be added from the product management page. | I created several products using the management page, and checked to see that they showed up in the admin and on the website in the appropriate places. | Passed |
+| They can be edited or deleted by logged-in superusers from the products or product detail pages. | I edited and deleted several products as a superuser in both the 'all products' and 'product detail' pages | Passed |
+
+#### Search
+
+| Expected | Test Performed | Result |
+| :---:    |    :----:      | :---:  |
+| The search function works as expected. | I searched for a wide variety of artwork based on various parts of their products pages, and this worked as expected. | Passed |
+
+#### Profile
+
+| Expected | Test Performed | Result |
+| :---:    |    :----:      | :---:  |
+| Shows the user’s editable details. | I checked on several users’ profiles that their details were editable. | Passed |
+| Shows the users order history | I checked on several users’ profiles that their orders were all visible in their order history after making a variety of orders through their accounts | Passed |
+
+#### General Testing
+
+- Every time a feature was added, all functions were tested to see if there was an impact.
+- All forms have validation and will not submit without the proper information.
+- The site was sent to friends for feedback and testing.
+- All buttons tested thorughly myself and through friends using the website. 
+- 404 page tested by entering incorrect route name in the URL.
+- Edit and delete function tested several times to ensure correct functioning. 
+
+#### Mobile Testing
+
+- I tested the site personally on my Apple device, going through the entire process, checking buttons, functions, checking out, etc. I was personally unable to test on Android.
+- I also tested the site on the following screens sizes on chrome: iPhone SE, iPhone XR, iPhone 12 Pro, Pixel 5, Samsung Galaxy S8+, Samsung Galaxy S20 Ultra, iPad Air, iPad Mini, Surface Pro 7, Surface Duo, Galaxy Fold, Samsung Galaxy A51, Nest Hub and Nest Hub Max. 
+- The site was sent to friends and relatives for them to follow the same process. 
+- Chrome was utilised to inspect the site in mobile format, going through the pages and functions.
+
+#### Desktop Testing
+
+- The site was developed on a Macbook Air and the majority of testing occurred on Chrome.
+- The site was tested by friends and relatives on numerous desktop devices.
+- The site was marginally tested on other browsers, such as Firefox and Edge.
+
+#### Resolved Bugs
+
+| Number  | Expected behaviour | Actual behaviour | Solution |
+| ---:        |    :----:          |        :----:    | :---     |
+| 1       |  When a user clicks away from the cart it will disappear  | Bag overlay staying on the screen | I created a second overlay that's dynamically the size of the empty space, its not visible to the user but with js it waits for a clicks and closes the bag overlay |
+| 2       |  Sizes will dependant on the site owner adding/editing a size  | If the site owner selected XXL and 10 stock it was adding the stock to XL and XXL | Added a not statement: {% if 'XL' in product.sizes and 'XXL' not in product.sizes %} |
+| 3       |  A user friendly page that was scrollable within the container  | Shipping & Terms pages were not looking very user friendly | The shipping and terms pages have been improved for better user-friendliness. The terms and conditions page is now non-scrollable, enhancing the user experience |
+| 4       |  Webhooks successfully connecting through heroku  | Webhooks not connecting to stripe | After a tutor meeting we decided that Webhooks were not necessary for the information I wanted to pull so I have decided to use a different method to pull the data |
+| 5       |  The user would view up to date when an item is removed from the bag  | The items were not updating in the bag overlay until the user changed the page they were on | Made the bag overlay force refresh to ensure the up to date information was shown to the user |
+
+#### Resolved Bugs
+
+| Number  | Expected behaviour | Actual behaviour |
+| ---:        |    :----:          |        :----:    |
+| 1       |  When a user clicks away from the cart it will disappear  | The remember me checkbox in allauth isn't loading using materialize |
 
 ## Accessibility
 
@@ -1016,15 +1116,11 @@ I have been mindful during coding to ensure that the website is as accessible as
 
 ## Technologies Used
 
-<br/>
-
 ### Languages Used
 
 HTML5, CSS3, Python, and JavaScript were used to create this website.
 
-<br/>
-
-### **Frameworks, Libraries & Programs Used**
+### Frameworks, Libraries & Programs Used
 
 * [Google Fonts](https://fonts.google.com/) was used to import Big Shoulders Text.
 * [Git](https://git-scm.com/) was used for version control by using the Gitpod terminal to commit to Git and Push to GitHub.
@@ -1046,42 +1142,6 @@ HTML5, CSS3, Python, and JavaScript were used to create this website.
 * [Font Awesome](https://fontawesome.com/) was used for the icons.
 * [DBDiagram](https://dbdiagram.io/) was used to map the models.
 * [Amazon Web Services](https://aws.amazon.com/) was used to host the images for the Heroku-hosted site.
-
-### User Stories 
-
-| AS A/AN | I WANT TO BE ABLE TO… | SO I CAN… |
-| --------------- | --------------- | --------------- |
-| Viewing and Navigation |
-| Shopper | View a list of items | See if any interest me to purchase |
-| Shopper  | View product details | View further information such as images, descriptions, prices, and availability.
-| Shopper | View the homepage  | See featured products and promotions |
-| Registration/Accounts |
-| Shopper | Register for an account | Track my purchases |
-| Site User | Log in to my account securely | Access my profile and saved information |
-| Site User | Reset my password | Recover access to my account |
-| Site User | Login through social media | Easily login and set up an account |
-| Site User | Update profile information | Ensure items are received and payments are correct |
-| Sorting and Searching |
-| Shopper | Filter products | View products by various criteria such as popularity, price, and newest arrivals |
-| Shopper | Refine my search | Find specific items based on color or size |
-| Shopper | Search for specific products using keywords | Quickly find what I'm looking for |
-| Purchase and Checkout |
-| Shopper | Add items to my shopping cart | Keep for a later purchase |
-| Shopper | View my cart | See a summary of selected items and their quantities |
-| Shopper | Update quantities or remove items | Purchase the goods I want |
-| Shopper | Apply coupon codes | Save money on my order |
-| Shopper | Choose from different payment options | Easily pay for my order |
-| Shopper | Review order summary | Ensure the order is correct |
-| Shopper | Receive a confirmation email | Confirm order details are correct and ensure the order was processed |
-| Shopper | Apply coupon codes | Save money on my order |
-| Site Owner |
-| Site Owner | Manage and process orders | Send items to customers |
-| Site Owner | Add and remove items from the site |  Show customers items that are in stock |
-
-### Wireframes
-
-![Add Initial Mockup](media/readme/initial-mockup.webp)
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- [issues-shield]:  -->
@@ -1165,8 +1225,3 @@ https://stackoverflow.com/questions/18622007/runtimewarning-datetimefield-receiv
 favicon error
 https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests
 
-
-
-bugs
-cannot get the cart popup to disappear when user clicks away from the display
-xl being checked in edit product as its inside XXL 
