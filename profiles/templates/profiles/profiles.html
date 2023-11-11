@@ -19,9 +19,7 @@
             <button id="edit-button" class="waves-effect waves-light grey darken-3 btn profile">Edit</button>
             <form class="" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
-                <table id="editable-fields">
-                    {{ form }}
-                </table>
+                {{ form }}
                 <button class="waves-effect waves-light grey darken-3 btn profile">Update Information</button>
             </form>
         </div>
