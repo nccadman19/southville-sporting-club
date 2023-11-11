@@ -96,6 +96,10 @@ h2.about {
     width: fit-content;
 }
 
+.container.error-height {
+    min-height: calc(100vh - 198px);
+}
+
 .error-title {
     font-family: 'Times New Roman', Times, serif;
 }

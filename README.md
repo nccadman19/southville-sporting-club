@@ -961,15 +961,15 @@ The original results were improved by adding a meta tag with name and descriptio
 | Page | Viewing On | Performance | Accessibility | Best Practices | SEO |
 | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- |
 | Home | Desktop | 91 | 93 | 100 | 90 |
-| Home | Mobile | 91 | 93 | 100 | 90 |
+| Home | Mobile | 66 | 96 | 100 | 88 |
 | About Us | Desktop | 92 | 90 | 100 | 90 |
 | About Us | Mobile | XX | XX | XX | XX |
-| Contact Us | Desktop | XX | XX | XX | XX |
-| Contact Us | Mobile | XX | XX | XX | XX |
+| Contact Us | Desktop | 95 | 91 | 100 | 90 |
+| Contact Us | Mobile | 70 | 95 | 100 | 88 |
 | Error | Desktop | XX | XX | XX | XX |
-| Error | Mobile | XX | XX | XX | XX |
-| Shipping & Returns | Desktop | XX | XX | XX | XX |
-| Shipping & Returns | Mobile | XX | XX | XX | XX |
+| Error | Mobile | 70 | 95 | 100 | 88 |
+| Shipping & Returns | Desktop | 92 | 93 | 100 | 90 |
+| Shipping & Returns | Mobile | 70 | 96 | 100 | 88 |
 | Sustainability | Desktop | XX | XX | XX | XX |
 | Sustainability | Mobile | XX | XX | XX | XX |
 | Terms & Conditions | Desktop | XX | XX | XX | XX |
