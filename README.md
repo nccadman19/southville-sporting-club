@@ -757,13 +757,49 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 </details>
 <br>
 
+<details>
+<summary>Contact</summary>
+
+![Contact](/media/readme/validator/w3/contact-w3.png)
+
+</details>
+<br>
+
+<details>
+<summary>Error</summary>
+
+![Error](/media/readme/validator/w3/error-w3.png)
+
+</details>
+<br>
+
+<details>
+<summary>Shipping & Returns</summary>
+
+![Shipping & Returns](/media/readme/validator/w3/shipping-w3.png)
+
+</details>
+<br>
+
+<details>
+<summary>Sustainability</summary>
+
+![Sustainability](/media/readme/validator/w3/sustainability-w3.png)
+
+</details>
+<br>
+
+<details>
+<summary>Terms & Conditions</summary>
+
+![Terms & Conditions](/media/readme/validator/w3/terms-w3.png)
+
+</details>
+<br>
 
 
-- [Contact Us](#contact-us)
-- [Error](#error)
-- [Shipping & Returns](#shipping-and-returns)
-- [Sustainability](#sustainability)
-- [Terms & Conditions](#terms-and-conditions)
+
+
 
 - [Products](#products)
 - [Product Detail](#product-detail)
