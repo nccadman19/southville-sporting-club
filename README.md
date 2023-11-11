@@ -877,12 +877,35 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 </details>
 <br>
 
-- [Add Product](#add-product)
+
+<details>
+<summary>Add Product</summary>
+
+![Add Product](/media/readme/validator/w3/add-product-w3.png)
+
+</details>
+<br>
+
 - [Edit Product](#edit-product)
 
 - [Profile](#profile)
-- [Register](#register)
-- [Login](#login)
+
+
+<details>
+<summary>Register</summary>
+
+![Register](/media/readme/validator/w3/register-w3.png)
+
+</details>
+<br>
+
+<details>
+<summary>Login</summary>
+
+![Login](/media/readme/validator/w3/login-w3.png)
+
+</details>
+<br>
 
 
 ## Accessibility
