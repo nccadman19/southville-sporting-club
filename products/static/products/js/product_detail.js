@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedSizeInput.value = "One Size";
     }
 
+    // Find the first available size button and set it as the default
+    var firstAvailableSizeButton = document.querySelector('.product-size-button:not(.disabled)');
+    if (firstAvailableSizeButton) {
+        firstAvailableSizeButton.classList.add('selected');
+        selectedSize = firstAvailableSizeButton.dataset.size;
+        selectedSizeInput.value = selectedSize;
+    }
+
     // Attach a click event listener to each size button
     sizeButtons.forEach(function (button) {
         button.addEventListener('click', function (e) {
