@@ -946,9 +946,15 @@ I also needed to add the following code so that the use of jquery did not show $
 | Product Detail | 1 undefined variable ‘M’ | Relates to the Materialize framework I am using for this project |
 | Product Detail | 1 unused variable ‘instances’ | Relates to the Materialize framework I am using for this project |
 | Product Owner | None | N/A |
+| Products | 2 undefined variables ‘M’ | Relates to the Materialize framework I am using for this project |
+| Products | 2 used variables 'specificDropdownInstance', 'instances' | Relates to the Materialize framework I am using for this project |
+| Profiles| None | N/A |
 
+#### Pep8 Validator
 
+The pep8 validator was installed onto gitpod to ensure correct styling throughtout creation. So the code should already be as it supposed to be. 
 
+#### Lighthouse
 
 
 ## Accessibility
