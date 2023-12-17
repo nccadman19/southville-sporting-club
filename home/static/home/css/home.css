@@ -11,6 +11,7 @@
 .latest-drop-button {
     border: 2px solid black;
     color: black;
+    background-color: #ffffff7d !important;
 }
 
 /* Shipping & Returns */
