@@ -24,15 +24,19 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+# # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['localhost', 'southville-sporting-club-ed7d11c9dd6e.herokuapp.com']
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = True
+ALLOWED_HOSTS = ['localhost', '8000-nccadman19-southvillesp-xmp9b25vp00.ws-eu107.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://southville-sporting-club-ed7d11c9dd6e.herokuapp.com/*']
+# ALLOWED_HOSTS = ['localhost', 'southville-sporting-club-ed7d11c9dd6e.herokuapp.com']
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://southville-sporting-club-ed7d11c9dd6e.herokuapp.com/*', 'https://8000-nccadman19-southvillesp-xmp9b25vp00.ws-eu107.gitpod.io']
 
 # Application definition
 
@@ -227,11 +231,26 @@ DELIVERY_THRESHOLDS = {
 handler404 = 'home.views.error'
 handler500 = 'home.views.error'
 
-if 'DEVELOPMENT' in os.environ:
+# if 'DEVELOPMENT' in os.environ:
+#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#     DEFAULT_FROM_EMAIL = 'noreply@southville-sporting-club.com'
+# else:
+#     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#     EMAIL_USE_TLS = True
+#     EMAIL_PORT = 587
+#     EMAIL_HOST = 'smtp.gmail.com'
+#     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+#     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+#     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
+
+if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'noreply@southville-sporting-club.com'
 else:
+    # Use your production email settings here
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'noreply@southville-sporting-club.com'
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587
     EMAIL_HOST = 'smtp.gmail.com'
