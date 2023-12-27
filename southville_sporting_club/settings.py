@@ -228,8 +228,8 @@ DELIVERY_THRESHOLDS = {
 }
 
 # Custom error pages
-handler404 = 'home.views.error'
-handler500 = 'home.views.error'
+handler404 = 'southville_sporting_club.views.error'
+handler500 = 'southville_sporting_club.views.error'
 
 # if 'DEVELOPMENT' in os.environ:
 #     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

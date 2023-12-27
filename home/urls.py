@@ -8,7 +8,4 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('sustainability/', views.sustainability, name='sustainability'),
-    path('error/', views.error, name='error'),
-    path('500/', views.server_error, name='server-error'),
-    re_path(r'^.*/$', views.error, name='catch-all-error'),
 ]

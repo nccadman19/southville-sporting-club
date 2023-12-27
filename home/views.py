@@ -45,13 +45,3 @@ def sustainability(request):
     """ A view to return the terms and conditions page """
 
     return render(request, 'home/sustainability.html')
-
-def error(request):
-    """ A view to return the terms and conditions page """
-
-    return render(request, 'home/error.html', status=404)
-
-def server_error(request):
-    """ A view to return the terms and conditions page """
-
-    return render(request, 'home/server_error.html', status=500)
