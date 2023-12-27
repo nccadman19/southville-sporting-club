@@ -98,7 +98,7 @@ h2.about {
 }
 
 .container.error-height {
-    min-height: calc(100vh - 198px);
+    min-height: calc(100vh - 210px);
 }
 
 .error-title {

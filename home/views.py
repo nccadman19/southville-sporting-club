@@ -38,7 +38,8 @@ def contact(request):
         # After successful processing
         messages.success(request, "Your message has been sent successfully.")
         return redirect('index')
-    return render(request, 'home/contact_us.html')
+    else:
+        return render(request, 'home/contact_us.html')
 
 def sustainability(request):
     """ A view to return the terms and conditions page """
@@ -48,4 +49,9 @@ def sustainability(request):
 def error(request):
     """ A view to return the terms and conditions page """
 
-    return render(request, 'home/error.html')
+    return render(request, 'home/error.html', status=404)
+
+def server_error(request):
+    """ A view to return the terms and conditions page """
+
+    return render(request, 'home/server_error.html', status=500)
