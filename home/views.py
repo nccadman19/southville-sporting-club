@@ -1,6 +1,7 @@
-from django.shortcuts import render
-
-# Create your views here.
+import requests
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import ContactForm
 
 def index(request):
     """ A view to return the index page """
@@ -23,23 +24,22 @@ def about(request):
     return render(request, 'home/about_us.html')
 
 def contact(request):
-    """ A view to return the terms and conditions page """
     if request.method == 'POST':
-        name = request.POST.get('firstname')
-        email = request.POST.get('email')
-        message = request.POST.get('subject')
+        form = ContactForm(request.POST)
 
-        # Validate and process the form data
-        if not name or not email or not message:
-            messages.error(request, "Please fill in all the required fields.")
+        if form.is_valid():
+            name = form.cleaned_data['firstname']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['subject']
 
-        # Process the form data and send an email
-
-        # After successful processing
-        messages.success(request, "Your message has been sent successfully.")
-        return redirect('index')
+            messages.success(request, "Your message has been sent successfully.")
+            return redirect('home')
+        else:
+            messages.error(request, "Please correct the errors in the form.")
     else:
-        return render(request, 'home/contact_us.html')
+        form = ContactForm()
+
+    return render(request, 'home/contact_us.html', {'form': form})
 
 def sustainability(request):
     """ A view to return the terms and conditions page """
