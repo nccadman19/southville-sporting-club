@@ -5,7 +5,8 @@
 {% for provider in socialaccount_providers %}
 {% if provider.id == "google" %}
 <!-- Replace the default Google Sign-In button with your custom button -->
-<button class="gsi-material-button">
+<button class="gsi-material-button"
+  onclick="window.location.href='{% provider_login_url provider.id openid=brand.openid_url process=process %}'">
   <div class="gsi-material-button-state"></div>
   <div class="gsi-material-button-content-wrapper">
     <div class="gsi-material-button-icon">

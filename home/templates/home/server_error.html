@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'home/css/home.css' %}" type="text/css" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block content %}
+<div class="section no-pad-bot hero-image-about" id="index-banner"
+    style="background: url('https://southville-sporting-club-ed7d11c9dd6e.s3.eu-west-2.amazonaws.com/media/hero-image-maybe.webp') no-repeat center center fixed;">
+    <div class="container error-height">
+        <div class="container error-page">
+            <br><br>
+            <h2 class="error-title">500 - Server Error</h2>
+            <p>Sorry, there was an internal server error. Our team has been notified, and we are working to fix the
+                issue. Please try again later or contact support if the problem persists.</p>
+            <a href="{% url 'home' %}"
+                class="waves-effect waves-light btn-large align-top latest-drop-button transparent">
+                Return Home
+            </a>
+            <br><br>
+        </div>
+    </div>
+    {% endblock %}
