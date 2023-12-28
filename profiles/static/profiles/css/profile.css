@@ -19,3 +19,43 @@ div.col.l4.s11.z-depth-3 {
 div.col.l7.s11.z-depth-3 {
     margin: 1rem 0;
 }
+
+div.wishlist-item.card.horizontal {
+    box-shadow: none;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem;
+}
+
+div.wishlist-item.card.horizontal .card-image img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+div.wishlist-item.card.horizontal .card-content.profile {
+    font-size: 14px;
+}
+
+div.wishlist-item.card.horizontal .card-action a {
+    font-size: 12px;
+}
+
+div.col.s5.profile.buttons {
+    text-align: right;
+}
+
+a.waves-effect.waves-light.profile {
+    margin-bottom: 5px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 10px;
+}
+
+div.row.profile {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 992px) {
+    div.col.l7.s11.z-depth-3 {
+        margin: 1rem 2rem;
+    }
+}

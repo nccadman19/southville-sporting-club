@@ -13,7 +13,7 @@
             <h3 class="">MY PROFILE</h3>
         </div>
     </div>
-    <div class="row">
+    <div class="row profile">
         <div class="col l4 s11 z-depth-3">
             <p class="">Default Delivery Information</p>
             <button id="edit-button" class="waves-effect waves-light grey darken-3 btn profile">Edit</button>
@@ -76,21 +76,25 @@
             <div class="wishlist-item card horizontal">
                 <div class="card-image">
                     {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="responsive-img">
                     {% else %}
-                    <img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    <img src="{{ MEDIA_URL }}no-image.webp" alt="{{ product.name }}" class="responsive-img">
                     {% endif %}
                 </div>
                 <div class="card-stacked">
-                    <div class="card-content">
-                        <h6>{{ product.name }}</h6>
-                        <p class="text-muted">Price: £{{ product.price }}</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="{% url 'add_to_bag' product.id %}?quantity=1"
-                            class="waves-effect waves-light btn-small">Add to Cart</a>
-                        <a href="{% url 'remove_from_wishlist' product.id %}"
-                            class="waves-effect waves-light btn-small red">Remove</a>
+                    <div class="card-content profile">
+                        <div class="row">
+                            <div class="col s7">
+                                <h6>{{ product.name }}</h6>
+                                <p class="text-muted">Price: £{{ product.price }}</p>
+                            </div>
+                            <div class="col s5 profile buttons">
+                                <a href="{% url 'add_to_bag' product.id %}?quantity=1"
+                                    class="waves-effect waves-light btn-small profile">Add to Cart</a>
+                                <a href="{% url 'remove_from_wishlist' product.id %}"
+                                    class="waves-effect waves-light btn-small red profile">Remove</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,7 +103,6 @@
             <p class="center-align">Your wishlist is empty.</p>
             {% endif %}
         </div>
-
     </div>
 </div>
 {% endblock %}
