@@ -1289,6 +1289,7 @@ Thanks are given for the following posts and tutorials:
 * [Getting quantity to show correctly](https://www.quora.com/How-do-I-fix-AttributeError-int-object-has-no-attribute-get-in-Python) - Fixing AttributeError in Python
 * [Timezone help](https://stackoverflow.com/questions/18622007/runtimewarning-datetimefield-received-a-naive-datetime) - Stack Overflow thread on fixing RuntimeWarning in Django
 * [Favicon error](https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests) - Stack Overflow thread on preventing favicon.ico requests
+* [404 Pages](https://stackoverflow.com/questions/17662928/django-creating-a-custom-500-404-error-page) - Help to make the pages redirect to 404 and 500 pages when required
 
 ### Content
 

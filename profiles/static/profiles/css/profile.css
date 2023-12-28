@@ -1,3 +1,5 @@
+/* Profile */
+
 .container.profile {
     width: 90%;
     height: fit-content;
@@ -7,4 +9,13 @@
 
 .waves-effect.waves-light.grey.darken-3.btn.profile {
     float: right;
+    margin-bottom: 1rem;
+}
+
+div.col.l4.s11.z-depth-3 {
+    margin: 1rem 2rem;
+}
+
+div.col.l7.s11.z-depth-3 {
+    margin: 1rem 0;
 }

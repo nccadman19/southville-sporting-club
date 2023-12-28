@@ -17,9 +17,23 @@
                 <div class="card no-shadow">
                     <div class="card-image">
                         <div class="img-container-detail">
+                            {% if request.user.is_authenticated %}
+                            <div class="heart-icon-container">
+                                <a class="btn-sm rounded-0" href="{% url 'add_to_wishlist' product.id %}"
+                                    data-product-id="{{ product.id }}" aria-label="Add to Wishlist Heart">
+                                    <i class="fa-regular fa-heart heart-icon"></i>
+                                </a>
+                            </div>
+                            {% else %}
+                            <div class="heart-icon-container">
+                                <a class="btn-sm rounded-0" href="{% url 'account_login' %}"
+                                    data-product-id="{{ product.id }}" aria-label="Add to Wishlist Heart">
+                                    <i class="fa-regular fa-heart heart-icon"></i>
+                                </a>
+                            </div>
+                            {% endif %}
                             <img src="{% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.webp{% endif %}"
                                 alt="{{ product.name }}" class="materialboxed">
-
                         </div>
                     </div>
                 </div>
@@ -41,7 +55,8 @@
                         <div id="deleteModal{{ product.id }}" class="modal">
                             <div class="modal-content">
                                 <h4>Delete Product</h4>
-                                <p>Are you sure you want to delete {{ product.name }} (Product ID: {{ product.id }})?
+                                <p>Are you sure you want to delete {{ product.name }} (Product ID: {{ product.id
+                                    }})?
                                 </p>
                             </div>
                             <div class="modal-footer">
@@ -125,7 +140,8 @@
                                         <li>X-Large (XL): Waist: 34-36 inches</li>
                                         <li>XX-Large (XXL): Waist: 36-38 inches</li>
                                         <li>Please note that these measurements are approximate and may vary
-                                            slightlybdepending on the specific product and brand. We recommend customers
+                                            slightlybdepending on the specific product and brand. We recommend
+                                            customers
                                             refer to the sizing chart provided on your website for the most accurate
                                             sizing information.</li>
                                     </ul>

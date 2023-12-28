@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from .models import UserProfile
+from .models import UserProfile, Wishlist
 from.forms import UserProfileForm
+from products.models import Product
 
 from checkout.models import Order
 
@@ -18,6 +19,15 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
+    
+    # Get the user's wishlist or open an empty one
+    try:
+        wishlist = Wishlist.objects.get(user=request.user)
+    except Wishlist.DoesNotExist:
+        wishlist = None
+        
+    print("Wishlist:", wishlist)
+    print("Wishlist Products:", wishlist.products.all())
 
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
@@ -26,7 +36,8 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
-        'on_profile_page': True
+        'on_profile_page': True,
+        'wishlist': wishlist 
     }
 
     return render(request, template, context)
@@ -46,3 +57,41 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+@login_required
+def add_to_wishlist(request, product_id):
+    """ Add a product to the user's wishlist """
+
+    product = get_object_or_404(Product, id=product_id)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+
+    if product not in wishlist.products.all():
+        wishlist.products.add(product)
+        messages.success(request, 'Product added to wishlist.')
+    else:
+        messages.info(request, 'Product is already in wishlist.')
+
+    # Inside your view function
+    print('DEBUG: User wishlist:', wishlist.products.all())
+
+    return redirect('product_detail', product_id=product_id)
+
+
+@login_required
+def remove_from_wishlist(request, product_id):
+
+    """ Remove a product from the user's wishlist """
+
+    product = get_object_or_404(Product, id=product_id)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+
+    product = get_object_or_404(Product, id=product_id)
+    wishlist = Wishlist.objects.get(user=request.user)
+
+    if product in wishlist.products.all():
+        wishlist.products.remove(product)
+        messages.success(request, 'Product removed from wishlist.')
+    else:
+        messages.info(request, 'Product is not in wishlist.')
+
+    return redirect('product_detail', product_id=product_id)
