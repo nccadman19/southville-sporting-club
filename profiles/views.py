@@ -25,9 +25,6 @@ def profile(request):
         wishlist = Wishlist.objects.get(user=request.user)
     except Wishlist.DoesNotExist:
         wishlist = None
-        
-    print("Wishlist:", wishlist)
-    print("Wishlist Products:", wishlist.products.all())
 
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
