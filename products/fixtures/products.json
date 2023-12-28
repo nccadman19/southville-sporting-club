@@ -109,7 +109,7 @@
         "model": "products.product",
         "fields": {
             "sku": "SSC0008",
-            "name": "Lemon T-Shirt - White",
+            "name": "Lemon T-Shirt",
             "color": "White",
             "description": "Featuring an oversized fit, with dropped shoulders, exaggerated wide long sleeves, a centre back seam and a heavy fabric that give this a noticeably luxury drape across the body. The neck fit is close to a mock neck tee. It is finished with our signature logo and lemon tree background.",
             "price": 84.99,
