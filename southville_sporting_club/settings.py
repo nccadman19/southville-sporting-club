@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'profiles',
     'admin_dashboard',
     'storages',
+    'anymail',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -231,9 +233,15 @@ DELIVERY_THRESHOLDS = {
 handler404 = 'southville_sporting_club.views.error'
 handler500 = 'southville_sporting_club.views.error'
 
+# Contact page information 
+ANYMAIL = {
+    "POSTMARK_SERVER_TOKEN": os.environ.get('POSTMARK_SERVER_TOKEN'),
+}
+
+
 if 'DEVELOPMENT' in os.environ:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'noreply@southville-sporting-club.com'
+    EMAIL_BACKEND = "anymail.backends.postmark.EmailBackend"
+    DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
@@ -245,8 +253,8 @@ else:
 
 
 if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'noreply@southville-sporting-club.com'
+    EMAIL_BACKEND = "anymail.backends.postmark.EmailBackend"
+    DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 else:
     # Use your production email settings here
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
