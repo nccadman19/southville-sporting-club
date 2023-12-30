@@ -44,10 +44,10 @@ div.col.s5.profile.buttons {
 }
 
 a.waves-effect.waves-light.profile {
-    margin-bottom: 5px;
-    height: 22px;
-    line-height: 22px;
-    font-size: 10px;
+    margin-top: 1rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.8rem;
 }
 
 div.row.profile {
@@ -57,5 +57,23 @@ div.row.profile {
 @media (max-width: 992px) {
     div.col.l7.s11.z-depth-3 {
         margin: 1rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    div.col.l4.s11.z-depth-3 {
+        margin: 0;
+        width: 100%;
+        box-shadow: none;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    div.col.l7.s11.z-depth-3 {
+        margin: 0;
+        width: 100%;
+        box-shadow: none;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
     }
 }
