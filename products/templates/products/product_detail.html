@@ -73,11 +73,24 @@
                                 <div class="col s12">
                                     <div class="product-form">
                                         {% for size in product.get_sizes_list %}
-                                        <a href="#"
-                                            class="btn btn-small product-size-button {% if size == 'One Size' %}selected disabled{% endif %}"
-                                            data-size="{{ size }}">{{ size }}</a>
-                                        {% endfor %}
-                                        <input type="hidden" name="selected_size" id="selected-size" value="">
+                                        {% for key, value in product.size_quantity.items %}
+                                        {% if key == size %}
+                                        {% if value <= 0 %} <a href="#"
+                                            class="btn btn-small product-size-button disabled" data-size="{{ size }}">
+                                            {{ size }}</a>
+                                            {% else %}
+                                            <a href="#"
+                                                class="btn btn-small product-size-button {% if size == 'One Size' %}selected disabled{% endif %}"
+                                                data-size="{{ size }}">{{ size }}</a>
+                                            {% endif %}
+                                            {% endif %}
+                                            {% empty %}
+                                            <a href="#" class="btn btn-small product-size-button disabled"
+                                                data-size="{{ size }}">{{ size }}</a>
+                                            {% endfor %}
+                                            {% endfor %}
+
+                                            <input type="hidden" name="selected_size" id="selected-size" value="">
                                     </div>
                                 </div>
                                 <!-- Add to bag button -->
