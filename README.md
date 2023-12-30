@@ -389,9 +389,9 @@ Futher information about the brand and where the store is located.
 
 The contact us page has the following features:
 
-A form for the user to fill out to get in contact with the brand. 
+A user-friendly form has been integrated with Postmark, allowing users to submit inquiries directly through the platform.
 
-Information about the location and opening times of the store. 
+Information about the location and opening times of the store is also available on the contact us page.
 
 <details>
 <summary>View Here</summary>
@@ -1184,6 +1184,7 @@ HTML5, CSS3, Python, and JavaScript were used to create this website.
 * [Font Awesome](https://fontawesome.com/) was used for the icons.
 * [DBDiagram](https://dbdiagram.io/) was used to map the models.
 * [Amazon Web Services](https://aws.amazon.com/) was used to host the images for the Heroku-hosted site.
+* [Postmark](https://postmarkapp.com/) was used to route emails to the site owner. 
 
 ### Deployment
 
@@ -1291,6 +1292,7 @@ Thanks are given for the following posts and tutorials:
 * [Favicon error](https://stackoverflow.com/questions/1321878/how-to-prevent-favicon-ico-requests) - Stack Overflow thread on preventing favicon.ico requests
 * [404 Pages](https://stackoverflow.com/questions/17662928/django-creating-a-custom-500-404-error-page) - Help to make the pages redirect to 404 and 500 pages when required
 * [Wishlist](https://stackoverflow.com/questions/63497844/adding-items-to-wishlist-django) - created a wishlist using the code noted in stack overflow 
+* [Contact](https://medium.com/powered-by-django/send-emails-with-django-contact-form-example-d8820c875731) - created a seperate contact app for users to contact us 
 
 ### Content
 
