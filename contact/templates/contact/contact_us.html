@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% include 'includes/auto_reply.html' %}
 
 {% block extra_css %}
 <link href="{% static 'home/css/home.css' %}" type="text/css" rel="stylesheet" media="screen">
@@ -16,23 +15,23 @@
                     <form id="contactForm" method="post">
                         {% csrf_token %}
                         <div class="input-field contact">
-                            <input type="text" id="fname" name="firstname" class="validate" required>
-                            <label for="fname">First Name</label>
+                            {{ form.name.label_tag }}
+                            {{ form.name }}
                         </div>
 
                         <div class="input-field contact">
-                            <input type="text" id="lname" name="lastname" class="validate">
-                            <label for="lname">Last Name</label>
+                            {{ form.email.label_tag }}
+                            {{ form.email }}
                         </div>
 
                         <div class="input-field contact">
-                            <input type="email" id="email" name="email" class="validate" required>
-                            <label for="email">Email</label>
+                            {{ form.subject.label_tag }}
+                            {{ form.subject }}
                         </div>
 
-                        <div class="input-field contact">
-                            <textarea id="subject" name="subject" class="materialize-textarea"></textarea>
-                            <label for="subject">Subject</label>
+                        <div class="contact">
+                            {{ form.message.label_tag }}
+                            {{ form.message }}
                         </div>
 
                         <button class="waves-effect waves-light btn black rounded-0 right-align" type="submit"
@@ -80,5 +79,5 @@
         </div>
     </div>
 </div>
-<script src="../../static/home/js/send_email.js"></script>
+<script src="../../static/contact/js/send_email.js"></script>
 {% endblock %}

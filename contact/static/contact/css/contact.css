@@ -1,0 +1,21 @@
+/* Contact */
+div.input-field.contact {
+    position: sticky !important;
+}
+
+.contact-container {
+    text-align: center;
+}
+
+.contact-container h5 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.email-link {
+    color: black;
+    text-decoration: underline;
+}
+
+.contact-title {
+    font-family: 'Times New Roman', Times, serif;
+}
