@@ -26,7 +26,9 @@
 
 
 .card-title,
-.color-title {
+.color-title,
+.price {
+    display: block;
     text-align: left;
 }
 
@@ -35,7 +37,7 @@
 }
 
 .card .card-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
 }
 
@@ -89,10 +91,6 @@
     font-weight: 600;
 }
 
-.product-edit {
-    margin-left: 14rem;
-}
-
 .red-text.text-accent-4.btn.transparent.z-depth-0.modal-trigger {
     margin-right: 0px;
     transition: color .3s ease;
@@ -123,10 +121,13 @@
 /* Products Details */
 
 .product-detail {
-    display: flex;
     margin-left: 80px;
     margin-right: 80px;
     align-items: center;
+}
+
+.product-image-container {
+    position: sticky !important;
 }
 
 .product-name {
@@ -370,16 +371,5 @@ i.material-icons.love-icon-outline {
 
     .card-title {
         height: 40px;
-    }
-
-    .product-edit {
-        margin-left: 0 !important;
-    }
-
-}
-
-@media (max-width: 1144px) {
-    .product-edit {
-        margin-left: 10rem;
     }
 }

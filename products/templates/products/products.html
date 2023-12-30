@@ -5,6 +5,10 @@
 <link href="{% static 'products/css/products.css' %}" type="text/css" rel="stylesheet" media="screen">
 {% endblock %}
 
+{% block extra_js %}
+<script src="{% static 'products/js/products.js' %}"></script>
+{% endblock %}
+
 {% block content %}
 <main>
     <section class="section no-pad-bot" id="index-banner">
@@ -78,21 +82,20 @@
         <h2 class="visually-hidden">Products</h2>
         <div class="row">
             {% for product in products %}
-            <div class="col s6 m6 l4 card no-shadow">
+            <div class="col s6 m6 l3 card no-shadow">
                 <div class="card-image products">
                     <a href="{% url 'product_detail' product.id %}">
                         <!-- Link to individual product detail page -->
                         <img src="{% if product.image %}{{ product.image.url }}{% else %}{{ MEDIA_URL }}no-image.webp{% endif %}"
-                            alt="{{ product.name }}" class="zoom">
+                            alt="{{ product.name }}" class="zoom-image">
                     </a>
                 </div>
                 <div class="card-content">
-                    <!-- Display product name and color -->
+                    <!-- Display product name, color and price -->
                     <span class="card-title">{{ product.name }}</span>
                     <span class="color-title">{{ product.color }}</span>
+                    <span class="price">£{{ product.price }}</span>
                     <div class="card-action">
-                        <!-- Display product price -->
-                        <span class="price">£{{ product.price }}</span>
                         {% if request.user.is_superuser %}
                         <span class="product-edit">
                             <a href="{% url 'edit_product' product.id %}" class="teal-text text-darken-1">Edit</a> |
@@ -120,7 +123,4 @@
         </div>
     </section>
 </main>
-{% block postloadjs %}
-<script src="{% static 'products/js/products.js' %}"></script>
-{% endblock %}
 {% endblock %}
