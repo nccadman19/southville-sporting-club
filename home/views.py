@@ -23,24 +23,6 @@ def about(request):
 
     return render(request, 'home/about_us.html')
 
-def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-
-        if form.is_valid():
-            name = form.cleaned_data['firstname']
-            email = form.cleaned_data['email']
-            message = form.cleaned_data['subject']
-
-            messages.success(request, "Your message has been sent successfully.")
-            return redirect('home')
-        else:
-            messages.error(request, "Please correct the errors in the form.")
-    else:
-        form = ContactForm()
-
-    return render(request, 'home/contact_us.html', {'form': form})
-
 def sustainability(request):
     """ A view to return the terms and conditions page """
 
