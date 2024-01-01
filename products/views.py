@@ -151,9 +151,6 @@ def edit_product(request, product_id):
             form.save()
             messages.success(request, 'Successfully updated product!')
 
-            # Print the full form data
-            print("Full Form Data:", request.POST)
-
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to update product. Please ensure the form is valid.')

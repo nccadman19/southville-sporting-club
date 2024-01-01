@@ -75,11 +75,11 @@
                         </p>
                         <p>
                             <label>
-                                <input type="checkbox" name="size" value="XL" id="size-xl"
-                                {% if 'XL' in product.sizes and 'XXL' not in product.sizes %}checked{% endif %}>
+                                <input type="checkbox" name="size" value="XL" id="size-xl" {% if 'XL' in product.sizes and product.size_quantity.XL > 0 %}checked{% endif %}>
                                 <span>XL</span>
                             </label>
                         </p>
+                                               
                         <p>
                             <label>
                                 <input type="checkbox" name="size" value="XXL" id="size-xxl"
