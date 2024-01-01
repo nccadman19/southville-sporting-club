@@ -172,11 +172,12 @@ def edit_product(request, product_id):
 @login_required
 def delete_product(request, product_id):
     """ Delete a product from the store """
-    product = get_object_or_404(Product, pk=product_id)
-    
     try:
+        product = Product.objects.get(pk=product_id)
         product.delete()
         messages.success(request, 'Product deleted!')
+    except Product.DoesNotExist:
+        messages.error(request, 'Product not found.')
     except Exception as e:
         messages.error(request, f'Error deleting product: {e}')
 
