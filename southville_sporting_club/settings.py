@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['localhost', 'southville-sporting-club-ed7d11c9dd6e.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'southville-sporting-club-ed7d11c9dd6e.herokuapp.com', '8000-nccadman19-southvillesp-xmp9b25vp00.ws-eu107.gitpod.io']
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://southville-sporting-club-ed7d11c9dd6e.herokuapp.com/*', 'https://8000-nccadman19-southvillesp-xmp9b25vp00.ws-eu107.gitpod.io']
 
