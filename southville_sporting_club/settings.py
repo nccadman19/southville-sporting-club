@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from decimal import Decimal
-from decouple import config
 from dotenv import load_dotenv
 
 import os
@@ -24,19 +23,18 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ.get('SECRET_KEY', '')
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
-# # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = 'DEVELOPMENT' in os.environ
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = True
 ALLOWED_HOSTS = ['localhost', '8000-nccadman19-southvillesp-xmp9b25vp00.ws-eu107.gitpod.io']
 
 # ALLOWED_HOSTS = ['localhost', 'southville-sporting-club-ed7d11c9dd6e.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://southville-sporting-club-ed7d11c9dd6e.herokuapp.com/*', 'https://8000-nccadman19-southvillesp-xmp9b25vp00.ws-eu107.gitpod.io']
+
 
 # Application definition
 
