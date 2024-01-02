@@ -68,9 +68,6 @@ def add_to_wishlist(request, product_id):
     else:
         messages.info(request, 'Product is already in wishlist.')
 
-    # Inside your view function
-    print('DEBUG: User wishlist:', wishlist.products.all())
-
     return redirect('product_detail', product_id=product_id)
 
 

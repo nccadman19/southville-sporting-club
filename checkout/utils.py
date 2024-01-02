@@ -14,8 +14,3 @@ def update_total_quantity(order):
             product.size_quantity[item.product_size] -= quantity
             product.save()
 
-    # Print the updated size_quantity for each product
-    for item in order_line_items:
-        product = item.product
-        print(f"SKU: {product.sku}, Size: {item.product_size}, Quantity Left: {product.size_quantity[item.product_size]}")
-
