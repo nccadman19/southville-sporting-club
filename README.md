@@ -404,6 +404,24 @@ A user-friendly form has been integrated with Postmark, allowing users to submit
 
 Information about the location and opening times of the store is also available on the contact us page.
 
+#### Components
+
+- **Name:** Captures the name of the individual submitting the contact form.
+- **Email:** Stores the email address of the user for communication purposes.
+- **Subject:** Records the subject or reason for the contact submission.
+- **Message:** Holds the detailed message or inquiry from the user.
+- **Created At:** Automatically timestamps the submission for chronological tracking.
+
+#### Usage
+
+1. **Form Handling:**
+   - The model is integrated into the `contact_us` view, which processes form submissions.
+   - Upon a valid form submission, a `ContactSubmission` instance is created and saved to the database.
+
+2. **Email Notification:**
+   - Simultaneously, the system sends an email notification to the specified address with details from the contact form.
+   - This feature ensures that relevant parties are promptly informed of new inquiries.
+
 <details>
 <summary>View Here</summary>
 
