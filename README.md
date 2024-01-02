@@ -23,7 +23,8 @@ This website has been created to sell UK created athletic wear, it is based on a
 5. [Accessibility](#accessibility)
 6. [Technologies Used](#technologies-used)
 7. [Deployment and Local Development](#deployment-and-local-development)
-8. [Credits](#credits)
+8. [Acknowledgements](#acknowledgements)
+9. [Changelog](#changelog)
 ---
 # User Experience
 
@@ -250,9 +251,19 @@ Mobile
 
 ### Database Schema
 ------
-This map represents the current models in the relational database, a few of the databases been modified or are completely new. Note the green items are new database models added.
+This map represents the current models in the relational database, a few of the databases been modified or are completely new. Note the pink items are new database models added.
+
+![Updated Database Diagram](media/readme/new-database-diagram.webp)
+
+
+<details>
+<summary>Original Database Diagram</summary>
 
 ![Database Schema](media/readme/database-schema1.png)
+
+</details>
+<br>
+
 
 
 ### Surface
@@ -746,6 +757,10 @@ A form for the user to input the necessary details to login to the site.
 A login button that takes the user to the login page in case they already have an account.
 
 A forgot password button for the user to reset their password via their email if they're having issues logging in. 
+
+### Google Login Integration
+
+To enhance user authentication and streamline the sign-in process, Google login functionality has been integrated into this project. Leveraging the power of Django Allauth and a dedicated Google API setup, users can now conveniently sign in using their Google accounts.
 
 <details>
 <summary>Login</summary>
@@ -1294,9 +1309,31 @@ Thanks are given for the following posts and tutorials:
 * [Wishlist](https://stackoverflow.com/questions/63497844/adding-items-to-wishlist-django) - created a wishlist using the code noted in stack overflow 
 * [Contact](https://medium.com/powered-by-django/send-emails-with-django-contact-form-example-d8820c875731) - created a seperate contact app for users to contact us 
 
-### Content
+## Changelog
 
-Content was made by [Nathan Brain](https://www.linkedin.com/in/nathan-brain-3434a0163/?originalSubdomain=uk)
+| Commit Reference | Commit Title| Commit Description|
+| -----------------| --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 7434c62 | Moved error pages and views to the main app | Ensured error pages and views apply to all pages correctly.|
+| 5a219a8| Server error 500 page and Google login enhancement| Created a server error 500 page and added onclick functionality to Google login for social media login access.|
+| 14f91c4| Fixed monthly sales calculation in admin dashboard| Adjusted calculation of the first and last moments of the month for accurate monthly sales data. Set the first moment of the month to midnight (00:00:00) on the first day and the last moment to 23:59:59 on the last day.|
+| 04a3255| Removed redundant JS for Heroku contact test| Removed redundant JS code for testing Heroku contact functionality.|
+| d76dc86| New product category added to edit product page| Added a new product category to the edit product page for the site owner's flexibility in changing new products.|
+| 30b9c85| Tracksuits removed from menu as item was deleted| Removed tracksuits from the menu as the tracksuit item was deleted.|
+| 27d604c| Refactored image size on products page| Refactored image size on the products page to display the full item.|
+| ee77ce7| Attempted fix on product deletion issue (multiple commits) | Fixed issue for a product deletion in the delete_product view.|
+| 1559f99| Updated navbars for new contact page location| Updated navbars to function with the new location of the contact page, allowing storage of contact form submissions in the database.|
+| 025d76f| Removed redundant code related to migrated contact us html | Removed redundant code from the urls and views pages related to the migrated contact us HTML.|
+| b44b6fa| Moved contact us form, js, and css to its own model| Moved the contact us form, JS, and CSS to its own model in the contact app.|
+| 7fd687e| Created initial migration for ContactSubmission model| Created an initial migration for the ContactSubmission model and applied migrations to update the database schema.|
+| 8342c65| Created and implemented ContactSubmission model| Created and implemented the ContactSubmission model in the contact app.|
+| c68a311| Refactor: Enhanced page layout for improved viewing| Applied optimisations to the layout of products and product detail pages for improved viewing and navigation.|
+| 4772da8| Made Out of Stock Products unable to purchase | Enhance product detail page to dynamically disable size buttons based on available stock. Updated the product detail page to generate buttons for available sizes. Buttons are now dynamically disabled if the item has no stock associated with it.| 
+
+### Acknowledgements 
+
+The content for this project was a concept piece of graphic design crafted by [Nathan Brain](https://www.nathanbraindesign.co.uk/)<br>
+View his linkedin profile [HERE](https://www.linkedin.com/in/nathan-brain-3434a0163/?originalSubdomain=uk)<br>
+His expertise and dedication greatly contributed to the quality of the material.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- [issues-shield]:  -->
