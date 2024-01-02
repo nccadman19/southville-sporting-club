@@ -740,10 +740,20 @@ A form where the user can update their personal information, which is then auto 
 
 A section that shows the user their order history, the order number takes the user to the full information of their order. 
 
+A section that shows the user their wishlist, the images are clickable so that the user can select the item that they want to buy and add their size to basket to purchase. The user can also remove the item from their wishlist if they no longer like it. 
+
 <details>
 <summary>Profile</summary>
 
 ![Profile](/media/readme/features/profile.webp)
+
+</details>
+<br>
+
+<details>
+<summary>Wishlist</summary>
+
+![Profile](/media/readme/features/wishlist.webp)
 
 </details>
 <br>
