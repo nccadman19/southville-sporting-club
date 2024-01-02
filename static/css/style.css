@@ -408,7 +408,8 @@ div.col.s12.m6.toast {
   opacity: 8%;
 }
 
-#remember-me {
+input#id_remember,
+label[for][for*="id_remember"] {
   display: none;
 }
 
