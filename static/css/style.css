@@ -392,7 +392,7 @@ div.col.s12.m6.toast {
   opacity: 38%;
 }
 
-.gsi-material-button:not(:disabled):active .gsi-material-button-state, 
+.gsi-material-button:not(:disabled):active .gsi-material-button-state,
 .gsi-material-button:not(:disabled):focus .gsi-material-button-state {
   background-color: #303030;
   opacity: 12%;
@@ -408,6 +408,9 @@ div.col.s12.m6.toast {
   opacity: 8%;
 }
 
+#remember-me {
+  display: none;
+}
 
 /* Profiles Icon */
 
