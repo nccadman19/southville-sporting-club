@@ -4,6 +4,7 @@ from django.contrib import messages
 from . import views
 from products.models import Product
 
+
 def view_bag(request):
     """ A view to return contents of the users bag """
 
@@ -12,6 +13,7 @@ def view_bag(request):
             item.image_url = f"{settings.MEDIA_URL}no-image.webp"
 
     return render(request, 'bag/bag.html')
+
 
 def add_to_bag(request, item_id):
     """ Add item to the bag, add only 1 item initially """
@@ -23,7 +25,7 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     item_id = f"{item_id}_{selected_size}"
-    
+
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
         message = f'Updated {product.name} quantity to {bag[item_id]}'
@@ -38,6 +40,7 @@ def add_to_bag(request, item_id):
     request.session.modified = True
     return redirect(redirect_url)
 
+
 def remove_item(request, item_id):
     selected_size = request.POST.get('selected_size')
 
@@ -48,9 +51,9 @@ def remove_item(request, item_id):
     """ Remove one item from bag """
     if item_id in bag:
         if bag[item_id] > 1:
-            bag[item_id] -= 1  
+            bag[item_id] -= 1
         else:
-            del bag[item_id]  
+            del bag[item_id]
         request.session.modified = True
 
         """ Send a success message to the user """
@@ -59,6 +62,6 @@ def remove_item(request, item_id):
         return JsonResponse({'status': 'success'})
     else:
         """ If the item was not found in the bag, send an error message """
-        return JsonResponse({'status': 'error', 'message': 'Item not found in your bag'})
-
-
+        return JsonResponse(
+            {'status': 'error', 'message': 'Item not found in your bag'}
+        )

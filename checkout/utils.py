@@ -1,6 +1,7 @@
 from products.models import Product
 from .models import Order, OrderLineItem
 
+
 def update_total_quantity(order):
     # Retrieve the order line items associated with the order
     order_line_items = order.lineitems.all()
@@ -13,4 +14,3 @@ def update_total_quantity(order):
         if item.product_size in product.size_quantity:
             product.size_quantity[item.product_size] -= quantity
             product.save()
-
