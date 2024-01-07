@@ -1377,6 +1377,9 @@ Thanks are given for the following posts and tutorials:
 | Attempted fix on product deletion issue             | Attempted fix on the product deletion issue in the delete_product view.|
 | Fixed modal display issue by correcting line break  | Fixed modal display issue by correcting the line break in the delete confirmation message.|
 | Copy products page delete modal code to product details page| Copied products page delete modal code to the product details page for troubleshooting.|
+| Remove AJAX profile update functionality in checkout process | Due to timing constraints and wanting the website as fully functional as possible, the site wasn't ensuring payment when user was logged in. |
+| Updated terms and conditions page | Resolved 500 error. Contact URL was causing an error as the contact has moved to its own app. Removed redundat code from home views page. |                                                                        
+| Remove 'defer' attribute from stylesheet link| The 'defer' attribute is not applicable to stylesheets and has no effect in this context. |
 
 ### Acknowledgements 
 

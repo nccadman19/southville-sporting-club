@@ -1,4 +1,10 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render,
+    redirect,
+    reverse,
+    get_object_or_404,
+    HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -14,6 +20,7 @@ from bag.contexts import bag_contents
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -26,14 +33,18 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, your payment cannot be processed right now. Please try again later.')
+        messages.error(
+            request,
+            'Sorry, your payment cannot be processed'
+            'right now. Please try again later.'
+        )
         return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    bag = request.session.get('bag', {}) 
+    bag = request.session.get('bag', {})
 
     if request.method == 'POST':
         order_form = OrderForm(request.POST)
@@ -41,7 +52,8 @@ def checkout(request):
             # Empty string to gather form data
             form_data = {}
 
-            order = order_form.save(commit=False)  # Don't save it to the database yet
+            # Don't save it to the database yet
+            order = order_form.save(commit=False)
 
             # Calculate the delivery cost
             delivery_cost = Decimal(request.POST.get('delivery_cost', '0.00'))
@@ -52,7 +64,7 @@ def checkout(request):
             order.save()  # Now, save the order to the database
 
             grand_total = Decimal(request.POST.get('grand_total', '0.00'))
-            
+
             # Store the bag items as line items in the order
             for item_key, quantity in request.session.get('bag', {}).items():
                 product_id, selected_size = item_key.split('_')
@@ -75,7 +87,12 @@ def checkout(request):
                 except Product.DoesNotExist:
                     messages.error(request, "Product not found")
 
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse(
+                    'checkout_success',
+                    args=[order.order_number]
+                )
+            )
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double-check your information.')
@@ -94,7 +111,8 @@ def checkout(request):
         currency=settings.STRIPE_CURRENCY,
     )
 
-    # Attempt to prefill the form with any info the user maintains in their profile
+    # Attempt to prefill the form with any info the
+    # user maintains in their profile
     if request.user.is_authenticated:
         try:
             profile = UserProfile.objects.get(user=request.user)
@@ -131,6 +149,7 @@ def checkout(request):
     }
 
     return render(request, template, context)
+
 
 def checkout_success(request, order_number):
     """
