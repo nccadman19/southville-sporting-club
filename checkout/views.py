@@ -61,39 +61,53 @@ def checkout(request):
             # Set the delivery cost on the order
             order.delivery_cost = delivery_cost
 
-            order.save()  # Now, save the order to the database
+            # ... (existing code)
 
-            grand_total = Decimal(request.POST.get('grand_total', '0.00'))
-            order_total = Decimal(request.POST.get('order_total', '0.00'))
-
-            # Store the bag items as line items in the order
-            for item_key, quantity in request.session.get('bag', {}).items():
-                product_id, selected_size = item_key.split('_')
-                try:
-                    product = Product.objects.get(pk=product_id)
-                    subtotal = product.price * quantity
-                    # OrderLineItem instance and append it to the order
-                    OrderLineItem.objects.create(
-                        order=order,
-                        product=product,
-                        quantity=quantity,
-                        lineitem_total=subtotal,
-                        product_size=selected_size,
-                    )
-                    # Decrement item quantity in the bag
-                    if product_id in request.session['bag']:
-                        request.session['bag'][product_id] -= quantity
-                        if request.session['bag'][product_id] <= 0:
-                            del request.session['bag'][product_id]
-                except Product.DoesNotExist:
-                    messages.error(request, "Product not found")
-
-            return redirect(
-                reverse(
-                    'checkout_success',
-                    args=[order.order_number]
-                )
+            # Only create the 'intent' if you are in the correct code path
+            intent = stripe.PaymentIntent.create(
+                amount=stripe_total,
+                currency=settings.STRIPE_CURRENCY,
             )
+
+            # Check if the payment was successful
+            if intent.status == 'succeeded':
+                # Now, save the order to the database
+                order.save()
+
+                # Store the bag items as line items in the order
+                for item_key, quantity in request.session.get('bag', {}).items():
+                    product_id, selected_size = item_key.split('_')
+                    try:
+                        product = Product.objects.get(pk=product_id)
+                        subtotal = product.price * quantity
+                        # OrderLineItem instance and append it to the order
+                        OrderLineItem.objects.create(
+                            order=order,
+                            product=product,
+                            quantity=quantity,
+                            lineitem_total=subtotal,
+                            product_size=selected_size,
+                        )
+                        # Decrement item quantity in the bag
+                        if product_id in request.session['bag']:
+                            request.session['bag'][product_id] -= quantity
+                            if request.session['bag'][product_id] <= 0:
+                                del request.session['bag'][product_id]
+                    except Product.DoesNotExist:
+                        messages.error(request, "Product not found")
+
+                # Redirect to the success page
+                return redirect(
+                    reverse(
+                        'checkout_success',
+                        args=[order.order_number]
+                    )
+                )
+            else:
+                messages.error(
+                    request,
+                    'Payment failed. Please try again.'
+                )
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double-check your information.')
