@@ -117,12 +117,6 @@ def checkout(request):
     stripe_total = round(total * 100)
     stripe.api_key = stripe_secret_key
 
-    # Only create the 'intent' if you are in the correct code path
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-    )
-
     # Attempt to prefill the form with any info
     # the user maintains in their profile
     if request.user.is_authenticated:
