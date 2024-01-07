@@ -1,10 +1,4 @@
-from django.shortcuts import (
-    render,
-    redirect,
-    reverse,
-    get_object_or_404,
-    HttpResponse
-)
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -20,7 +14,6 @@ from bag.contexts import bag_contents
 import stripe
 import json
 
-
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -33,18 +26,14 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(
-            request,
-            'Sorry, your payment cannot be processed right now. '
-            'Please try again later.'
-        )
+        messages.error(request, 'Sorry, your payment cannot be processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    bag = request.session.get('bag', {})
+    bag = request.session.get('bag', {}) 
 
     if request.method == 'POST':
         order_form = OrderForm(request.POST)
@@ -52,8 +41,7 @@ def checkout(request):
             # Empty string to gather form data
             form_data = {}
 
-            # Don't save it to the database yet
-            order = order_form.save(commit=False)
+            order = order_form.save(commit=False)  # Don't save it to the database yet
 
             # Calculate the delivery cost
             delivery_cost = Decimal(request.POST.get('delivery_cost', '0.00'))
@@ -61,53 +49,36 @@ def checkout(request):
             # Set the delivery cost on the order
             order.delivery_cost = delivery_cost
 
-            # ... (existing code)
+            order.save()  # Now, save the order to the database
 
-            # Only create the 'intent' if you are in the correct code path
-            intent = stripe.PaymentIntent.create(
-                amount=stripe_total,
-                currency=settings.STRIPE_CURRENCY,
-            )
-            print("Intent:", intent)
-
-            # Check if the payment was successful
-            if intent.status == 'succeeded':
-                # Now, save the order to the database
-                order.save()
-
-                # Store the bag items as line items in the order
-                for item_key, quantity in request.session.get('bag', {}).items():
-                    product_id, selected_size = item_key.split('_')
-                    try:
-                        product = Product.objects.get(pk=product_id)
-                        subtotal = product.price * quantity
-                        # OrderLineItem instance and append it to the order
-                        OrderLineItem.objects.create(
-                            order=order,
-                            product=product,
-                            quantity=quantity,
-                            lineitem_total=subtotal,
-                            product_size=selected_size,
-                        )
-                        # Decrement item quantity in the bag
-                        if product_id in request.session['bag']:
-                            request.session['bag'][product_id] -= quantity
-                            if request.session['bag'][product_id] <= 0:
-                                del request.session['bag'][product_id]
-                    except Product.DoesNotExist:
-                        messages.error(request, "Product not found")
-
-                # Redirect to the success page
-                return redirect(
-                    reverse(
-                        'checkout_success',
-                        args=[order.order_number]
+            grand_total = Decimal(request.POST.get('grand_total', '0.00'))
+            
+            # Store the bag items as line items in the order
+            for item_key, quantity in request.session.get('bag', {}).items():
+                product_id, selected_size = item_key.split('_')
+                try:
+                    product = Product.objects.get(pk=product_id)
+                    subtotal = product.price * quantity
+                    # OrderLineItem instance and append it to the order
+                    OrderLineItem.objects.create(
+                        order=order,
+                        product=product,
+                        quantity=quantity,
+                        lineitem_total=subtotal,
+                        product_size=selected_size,
                     )
-                )
-            else:
-                messages.error(request, f'Payment failed. Status: {intent.status}')
+                    # Decrement item quantity in the bag
+                    if product_id in request.session['bag']:
+                        request.session['bag'][product_id] -= quantity
+                        if request.session['bag'][product_id] <= 0:
+                            del request.session['bag'][product_id]
+                except Product.DoesNotExist:
+                    messages.error(request, "Product not found")
+
+            return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
-             messages.error(request, f'Payment failed. Status: {intent.status}')
+            messages.error(request, 'There was an error with your form. \
+                Please double-check your information.')
     elif not bag:
         messages.error(request, "There's nothing in your bag at the moment")
         return redirect(reverse('products'))
@@ -117,8 +88,13 @@ def checkout(request):
     stripe_total = round(total * 100)
     stripe.api_key = stripe_secret_key
 
-    # Attempt to prefill the form with any info
-    # the user maintains in their profile
+    # Only create the 'intent' if you are in the correct code path
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+
+    # Attempt to prefill the form with any info the user maintains in their profile
     if request.user.is_authenticated:
         try:
             profile = UserProfile.objects.get(user=request.user)
@@ -155,7 +131,6 @@ def checkout(request):
     }
 
     return render(request, template, context)
-
 
 def checkout_success(request, order_number):
     """
@@ -209,3 +184,6 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+def checkout_cancel(request):
+    return render(request, 'checkout/checkout_cancel.html')
