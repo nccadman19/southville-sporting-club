@@ -54,6 +54,10 @@ div.row.profile {
     margin-bottom: 1rem;
 }
 
+div.col.l11.s11.z-depth-3.wishlist-container {
+    margin: 1rem 3rem;
+}
+
 @media (max-width: 992px) {
     div.col.l7.s11.z-depth-3 {
         margin: 1rem 2rem;
@@ -61,15 +65,10 @@ div.row.profile {
 }
 
 @media (max-width: 600px) {
-    div.col.l4.s11.z-depth-3 {
-        margin: 0;
-        width: 100%;
-        box-shadow: none;
-        border-top: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
-    }
 
-    div.col.l7.s11.z-depth-3 {
+    div.col.l4.s11.z-depth-3,
+    div.col.l7.s11.z-depth-3,
+    div.col.l11.s11.z-depth-3.wishlist-container {
         margin: 0;
         width: 100%;
         box-shadow: none;
