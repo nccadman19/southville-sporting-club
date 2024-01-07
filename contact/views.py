@@ -5,9 +5,10 @@ from django.contrib import messages
 from .forms import ContactForm
 from .models import ContactSubmission
 
+
 def contact_us(request):
     """ Renders the contact form and handles form submissions """
-    
+
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -20,10 +21,10 @@ def contact_us(request):
             contact_submission.save()  # Save the data to the database
 
             send_mail(
-                form.cleaned_data['subject'], 
+                form.cleaned_data['subject'],
                 f"Message from {form.cleaned_data['name']} "
                 f"<{form.cleaned_data['email']}>\n\n"
-                f"{form.cleaned_data['message']}",  
+                f"{form.cleaned_data['message']}",
                 'tomedi6527@usoplay.com',
                 ['tomedi6527@usoplay.com'],
             )

@@ -2,7 +2,7 @@ from django.db import models
 
 
 class ContactSubmission(models.Model):
-    """ This model represents a submission made through a contact form on the website """
+    """ Contact submission made through contact form on the website """
     name = models.CharField(max_length=100)
     email = models.EmailField()
     subject = models.CharField(max_length=200)
