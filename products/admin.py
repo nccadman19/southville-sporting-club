@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Product, Category
 
-# Models
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
@@ -25,6 +24,7 @@ class ProductAdmin(admin.ModelAdmin):
         return ', '.join([category.name for category in obj.category.all()])
     display_categories.short_description = 'Category'
 
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -32,6 +32,7 @@ class CategoryAdmin(admin.ModelAdmin):
         'updated_at')
     search_fields = ('name', 'friendly_name')
     prepopulated_fields = {'friendly_name': ('name',)}
+
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)

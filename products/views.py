@@ -16,6 +16,7 @@ synonyms = {
 
 }
 
+
 def preprocess_query(query):
     query = query.lower()
     # Check if the query is in the synonyms dictionary
@@ -28,7 +29,7 @@ def product_list(request):
     # Retrieve all products from the database
     products = Product.objects.all()
     query = request.GET.get('q')
-    sort = request.GET.get('sort', 'name') 
+    sort = request.GET.get('sort', 'name')
     category = request.GET.get('category', 'all')
     direction = request.GET.get('direction', 'asc')
 
@@ -77,15 +78,19 @@ def product_list(request):
         # Redirect to the "nothing found" view when no results are found
         return redirect('nothing_found')
 
+
 def product_detail(request, product_id):
-    # Retrieve the product with the specified ID or return a 404 error if not found
+    # Retrieve the product with the specified ID or
+    # return a 404 error if not found
     product = get_object_or_404(Product, pk=product_id)
-    
+
     context = {'product': product, 'title': 'Product Detail'}
     return render(request, 'products/product_detail.html', context)
 
+
 def nothing_found(request):
     return render(request, 'products/nothing_found.html')
+
 
 @login_required
 def add_product(request):
@@ -118,10 +123,13 @@ def add_product(request):
 
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add the product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add the product. Please ensure the form is valid.'
+            )
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -136,10 +144,10 @@ def edit_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-    
-    # Retrieve the product information  
+
+    # Retrieve the product information
     product = get_object_or_404(Product, pk=product_id)
-    
+
     # Retrieve the selected category IDs for the product
     selected_category_ids = product.category.all().values_list('id', flat=True)
 
@@ -153,7 +161,10 @@ def edit_product(request, product_id):
 
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.'
+            )
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
