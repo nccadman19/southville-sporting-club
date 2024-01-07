@@ -3,9 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import UserProfile, Wishlist
-from.forms import UserProfileForm
+from .forms import UserProfileForm
 from products.models import Product
-
 from checkout.models import Order
 
 
@@ -19,7 +18,7 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
-    
+
     # Get the user's wishlist or open an empty one
     try:
         wishlist = Wishlist.objects.get(user=request.user)
@@ -34,10 +33,11 @@ def profile(request):
         'form': form,
         'orders': orders,
         'on_profile_page': True,
-        'wishlist': wishlist 
+        'wishlist': wishlist
     }
 
     return render(request, template, context)
+
 
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
@@ -54,6 +54,7 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def add_to_wishlist(request, product_id):

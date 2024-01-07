@@ -29,10 +29,17 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'southville-sporting-club-ed7d11c9dd6e.herokuapp.com', '8000-nccadman19-southvillesp-xmp9b25vp00.ws-eu107.gitpod.io']
+ALLOWED_HOSTS = [
+    'localhost',
+    'southville-sporting-club-ed7d11c9dd6e.herokuapp.com',
+    '8000-nccadman19-southvillesp-xmp9b25vp00.ws-eu107.gitpod.io',
+]
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'https://southville-sporting-club-ed7d11c9dd6e.herokuapp.com/*', 'https://8000-nccadman19-southvillesp-xmp9b25vp00.ws-eu107.gitpod.io']
-
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost',
+    'https://southville-sporting-club-ed7d11c9dd6e.herokuapp.com/*',
+    'https://8000-nccadman19-southvillesp-xmp9b25vp00.ws-eu107.gitpod.io',
+]
 
 # Application definition
 
@@ -114,7 +121,7 @@ LOGIN_REDIRECT_URL = '/'
 
 # Additional configuration settings
 SOCIALACCOUNT_QUERY_EMAIL = True
-ACCOUNT_LOGOUT_ON_GET= True
+ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 WSGI_APPLICATION = 'southville_sporting_club.wsgi.application'
@@ -145,16 +152,20 @@ STRIPE_CURRENCY = 'gbp'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'NumericPasswordValidator',
     },
 ]
 
@@ -164,7 +175,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-gb'
 
-TIME_ZONE = 'Europe/London' 
+TIME_ZONE = 'Europe/London'
 
 USE_I18N = True
 
@@ -198,7 +209,6 @@ if 'USE_AWS' in os.environ:
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-    
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -221,7 +231,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # Delivery price caps for items
 DELIVERY_THRESHOLDS = {
-    'UK_MAINLAND_STANDARD': Decimal('100.00'),  
+    'UK_MAINLAND_STANDARD': Decimal('100.00'),
     'UK_MAINLAND_1ST_CLASS': Decimal('150.00'),
 }
 
@@ -229,7 +239,7 @@ DELIVERY_THRESHOLDS = {
 handler404 = 'southville_sporting_club.views.error'
 handler500 = 'southville_sporting_club.views.error'
 
-# Contact page information 
+# Contact page information
 ANYMAIL = {
     "POSTMARK_SERVER_TOKEN": os.environ.get('POSTMARK_SERVER_TOKEN'),
 }
