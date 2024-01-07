@@ -68,6 +68,7 @@ def checkout(request):
                 amount=stripe_total,
                 currency=settings.STRIPE_CURRENCY,
             )
+            print("Intent:", intent)
 
             # Check if the payment was successful
             if intent.status == 'succeeded':
@@ -104,13 +105,9 @@ def checkout(request):
                     )
                 )
             else:
-                messages.error(
-                    request,
-                    'Payment failed. Please try again.'
-                )
+                messages.error(request, f'Payment failed. Status: {intent.status}')
         else:
-            messages.error(request, 'There was an error with your form. \
-                Please double-check your information.')
+             messages.error(request, f'Payment failed. Status: {intent.status}')
     elif not bag:
         messages.error(request, "There's nothing in your bag at the moment")
         return redirect(reverse('products'))
