@@ -54,46 +54,4 @@ document.addEventListener('DOMContentLoaded', function () {
         var selectedDeliveryType = $(this);
         updateHiddenDeliveryCost(selectedDeliveryType);
     });
-
-    // Function to update the user's profile information via AJAX
-    function updateProfileInfo() {
-        // Collect the user's information from the form
-        var formData = {
-            // Extract other form fields as needed
-            'default_phone_number': $('#id_default_phone_number').val(),
-            'default_country': $('#id_default_country').val(),
-            'default_postcode': $('#id_default_postcode').val(),
-            'default_town_or_city': $('#id_default_town_or_city').val(),
-            'default_street_address1': $('#id_default_street_address1').val(),
-            'default_street_address2': $('#id_default_street_address2').val(),
-            'default_county': $('#id_default_county').val(),
-        };
-
-        // Send the data to the server using AJAX
-        $.ajax({
-            type: 'POST',
-            url: '/update_profile/',  // Replace with your actual URL for updating the profile
-            data: formData,
-            success: function (data) {
-                console.log('Profile information updated successfully');
-            },
-            error: function (error) {
-                console.error('Error updating profile information');
-            }
-        });
-    }
-
-    var form = document.getElementById('payment-form');
-
-    form.addEventListener('submit', function (event) {
-        // Check if the checkbox is checked before submitting the form
-        if (saveInfoCheckbox.checked) {
-            // Prevent the default form submission
-            event.preventDefault();
-
-            // Update the profile info
-            updateProfileInfo();
-            form.submit();
-        }
-    });
 });

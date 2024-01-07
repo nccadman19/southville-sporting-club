@@ -67,20 +67,6 @@
                         {{ order_form.postcode }}
                         <label for="{{ order_form.postcode.id_for_label }}">Postcode</label>
                     </div>
-                    <p>
-                        {% if user.is_authenticated %}
-                        <label>
-                            <input type="checkbox" class="filled-in" id="id-save-info" name="save-info"
-                                checked="checked" />
-                            <span>Save this delivery information to my profile</span>
-                        </label>
-                        {% else %}
-                        <label>
-                            <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
-                            <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
-                        </label>
-                        {% endif %}
-                    </p>
                     <div class="input-field checkout" id="delivery-type">
                         <p>Choose Delivery Type:</p>
                         <p>
