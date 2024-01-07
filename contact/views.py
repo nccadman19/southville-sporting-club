@@ -6,6 +6,8 @@ from .forms import ContactForm
 from .models import ContactSubmission
 
 def contact_us(request):
+    """ Renders the contact form and handles form submissions """
+    
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
